@@ -2,16 +2,16 @@
 
 Stream Editor for filtering and transforming text, really handy one-liners for SED
 
-* Insert a new string above and below matched string
 
-![sed1](https://user-images.githubusercontent.com/26827453/174434701-da94e247-bbf8-40e7-b119-e77c1c9f5aae.gif)
+### Insert a new string above and below matched string
 
-* Method 1
 ```sh
 echo netstat  |sed 's/netstat.*/```sh      \n&\n```/g' > curl
 ```
 
-* Method 2
+![sed1](https://user-images.githubusercontent.com/26827453/174434701-da94e247-bbf8-40e7-b119-e77c1c9f5aae.gif)
+
+### Insert a new string above and below matched string
 
 ```sh
 echo "hello world"|sed 's/world/\n&/g' 
@@ -19,13 +19,13 @@ hello
 world
 ```
 
-* Method 3
+### Insert a new string above and below matched string
 
 ```sh
 sed "s/regexp/\\`echo -e '\n\r'`/g"
 ````
 
-* Method 4: Make a new line after every comma ','
+### Method 4: Make a new line after every comma ','
 
 ```sh
 echo one,two,three | sed 's/,/\
@@ -43,21 +43,13 @@ echo pattern | sed -E -e $'s/^(pattern)/\\\n\\1/'
 pattern
 ```
 
-* Method 5:
+### Insert a new string above and below matched string
 
 ```sh 
 echo 'foobar' | sed -r 's/(bar)/\n\1/;'
 ```
 
-* Method 6:
-* 
-```sh
-echo "Hello" | sed -e 's/Hello/\0\ntmow/g'
-```
-
-* Method 7 
- 
-Add '''sh above curl, good for writiing wikis for example
+### Add '''sh above curl, good for writiing wikis for example
  
 ```sh
 echo "    curl" |sed 's/    curl/```sh\n&/;s/$/\n```/g'
