@@ -1,10 +1,9 @@
 # sqlmap 
 
-## Simple Usage
-
 If you don’t know anything about the target site then use the normal command first, 
 Observe if the SQLMap found something juicy for you
 
+### Basic usage
 ```sh
 sqlmap -u “https://target_site.com/page/”
 ```
@@ -28,6 +27,7 @@ sqlmap -u “https://target_site.com/page/” --data="p1=value1&p2=value2"
 ### SQLMap Request file as input
 
 You can specify a request file containing the HTTP request, You can get it quickly from BurpSuite.
+
 ```sh
 sqlmap -r request.txt
 ```
