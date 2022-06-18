@@ -59,12 +59,6 @@ apt-cache policy mythtv
 apt-cache show Your_package
 ```
 
-### Display a list of upgradeable packages (```sh      
-apt)
-```
-```sh      
-apt-show-versions -u
-```
 
 ### Remove unused libs/packages in debian-based distros
 ```sh      
@@ -81,12 +75,6 @@ aptitude search \~ilinux-image
 aptitude show packages_name
 ```
 
-### Remove all unused kernels with ```sh      
-apt-get
-```
-```sh      
-aptitude purge linux-image | grep ^i | grep -v $(uname -r)
-```
 
 ### Refined repository search
 ```sh      
@@ -234,12 +222,6 @@ apt purge linux*{14..18}*
 apt-cache pkgnames linux-
 ```
 
-### locating packages held back, such as with "```sh      
-aptitude hold <package>"
-```
-```sh      
-aptitude search ~ahold
-```
 
 ### Aptitude pattern match
 ```sh      
@@ -385,19 +367,6 @@ apt-file package-only search /lib/firmware
 aptitude search ~i ~nfirmware
 ```
 
-### Remove all unused kernels with ```sh      
-apt-get
-```
-```sh      
-apt-get remove $(dpkg -l | awk "/^ii  linux-(image|headers)/ && ! /`uname -r`/ {print \$2}")
-```
-
-### Remove all unused kernels with ```sh      
-apt-get
-```
-```sh      
-aptitude remove $(dpkg -l|egrep '^ii  linux-(im|he)'|awk '{print $2}'|grep -v `uname -r`)
-```
 
 ### Remove all unused kernels with apt-get
 
