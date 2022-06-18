@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="120px" src="https://i.imgur.com/o2WZgcl.png" />
+  <img width="220px" src="https://user-images.githubusercontent.com/26827453/174434578-86b58af1-276a-4d2a-ac07-9154965fde7e.png" />
   <h1 align="center"># wuseman's wiki</h1>
   <h2 align="center">The personal website of <i>wuseman</i></h2>
 </p>
@@ -11,3 +11,6 @@
 ![Screenshot_20220618_101705](https://user-images.githubusercontent.com/26827453/174430256-6ee60f36-2358-46b5-b87f-83fa6195558e.png)
 
 ![Screenshot_20220618_101621](https://user-images.githubusercontent.com/26827453/174430249-7d628262-ee7e-4d0d-8562-3be526e7fce1.png)
+
+
+)
