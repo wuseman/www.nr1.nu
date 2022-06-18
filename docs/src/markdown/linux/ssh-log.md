@@ -70,7 +70,7 @@ awk '{if($6=="Failed"&&$7=="password"){if($9=="invalid"){ips[$13]++;users[$11]++
 
 ### Look at the just saved one ip.log Top 10 items in the document
 
-
+```sh
 head -10 ip.log | awk '{print $1" ";system("curl http://freeapi.ipip.net/"$1);print("\n")}'
 ```
 
