@@ -6,7 +6,7 @@ Stream Editor for filtering and transforming text, really handy one-liners for S
 ### Insert a new string above and below matched string
 
 ```sh
-echo netstat  |sed 's/netstat.*/```sh      \n&\n```/g' > curl
+echo netstat  |sed 's/netstat.*/```sh      \n&\n```/g' > netstat.md
 ```
 
 ![sed1](https://user-images.githubusercontent.com/26827453/174434701-da94e247-bbf8-40e7-b119-e77c1c9f5aae.gif)
