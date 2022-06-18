@@ -10,8 +10,8 @@ R = REBUILT
 ### Version 3.4.3
 
 +    Created https://github.com/wuseman/emagnet-scraper repo, this is the script we using for scrape pastebin and add everything to nr1.nu
-+
-+    -- All brute-force tool works as expected again
++    -- 
++    All brute-force tool works as expected again
 +    Gmail bruter-forcer has been fixed
 +    Instagram brute-forcer has been fixed
 +    SSH bruter-forcer has been fixed
