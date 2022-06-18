@@ -57,6 +57,7 @@ nav:
         - 'changelog': hacking/emagnet/changelog.md
         - 'license': hacking/emagnet/license.md
   - Linux:
+     - apt: linux/apt.md
      - awk: linux/awk.md
      - chroot: linux/chroot.md
      - cryptsetup: linux/cryptsetup.md
