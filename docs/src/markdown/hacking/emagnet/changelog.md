@@ -227,7 +227,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -  Fixed so emagnet.log wont log both X emails and X passwords, if there is 0 passwords found and 2 email addresses then we just will add in wich files email addresses was found
 -  Fixed typos
 
-#### Version 1.6.0 - BETA
+### Version 1.6.0 - BETA
 
 -    After few days emagnet have download over 10 000+ files so now emagnet using day directories for keep things sorted
 -    Emagnet is now supported on ANDROID via termux app.
@@ -255,7 +255,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -    emagnet-setup has added descriptions for every setting
 -    updated storage dirs so we can store dirs with dated dirs
 
-##### Version 1.5 - BETA
+### Version 1.5 - BETA
 
 -   Some small fixes has been solved with setup script
 -   emagnet-wbruter has been added as a new feature, consider this as a beta since this is still under active development
