@@ -1,6 +1,6 @@
 site_name: Nr1 (wuseman's wiki)
 site_url: https://www.nr1.nu
-repo_url: https://github.com/wuseman/www.nr1.nu
+repo_url: https://github.com/wuseman/emagnet
 edit_uri: tree/master/docs/src/markdown
 site_author: wuseman
 site_description: >-
@@ -50,17 +50,29 @@ nav:
   - Hacking:
      - info: 
         - hacking/index.md
+  - HP: 
+        - 'hp bios hacking': https://github.com/wuseman/HP_Device_and_Bios-Hacking/README.md
      - emagnet: 
         - 'emagnet': hacking/emagnet/readme.md
-        - 'emagnet.sh': hacking/emagnet/emagnet.sh
-        - 'emagnet.conf': hacking/emagnet/emagnet.conf
+        - 'emagnet.sh': https://raw.githubusercontent.com/wuseman/EMAGNET/master/emagnet.sh
+        - 'emagnet.conf': https://raw.githubusercontent.com/wuseman/EMAGNET/master/emagnet.conf
         - 'changelog': hacking/emagnet/changelog.md
         - 'license': hacking/emagnet/license.md
+     - wbruter:
+        - 'wbruter': hacking/wbruter/README.md
+        - 'wbruter.sh': https://raw.githubusercontent.com/wuseman/WBRUTER/master/wbruter
+     - wssh: 
+        - 'wssh': hacking/wssh/README.md
+        - 'wssh.sh': https://github.com/wuseman/WSSH/blob/master/wssh
+     - wordlist:
+        - 'swedish': hacking/swedish_wordlist.txt/README.md
+        - 'download': hacking/swedish_wordlist.txt/swedish_wordlist.txt
   - Linux:
      - apt: linux/apt.md
      - awk: linux/awk.md
      - chroot: linux/chroot.md
      - cryptsetup: linux/cryptsetup.md
+     - curl: linux/curl.md
      - dev and proc: linux/dev_and_proc.md
      - exiftool: linux/exiftool.md
      - find: linux/find.md
