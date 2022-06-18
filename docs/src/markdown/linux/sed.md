@@ -2,13 +2,16 @@
 
 Stream Editor for filtering and transforming text, really handy one-liners for SED
 
-### Method 0: Insert a new string above and below matched string
+* Insert a new string above and below matched string
 
+![sed1](https://user-images.githubusercontent.com/26827453/174434701-da94e247-bbf8-40e7-b119-e77c1c9f5aae.gif)
+
+* Method 1
 ```sh
 echo netstat  |sed 's/netstat.*/```sh      \n&\n```/g' > curl
 ```
 
-### Method 1: Insert a new line before every match
+* Method 2
 
 ```sh
 echo "hello world"|sed 's/world/\n&/g' 
@@ -16,12 +19,14 @@ hello
 world
 ```
 
-### Method 2: Another method for above
+* Method 3
 
 ```sh
 sed "s/regexp/\\`echo -e '\n\r'`/g"
 ````
-### Method 3: Make a new line after every comma ','
+
+* Method 4: Make a new line after every comma ','
+
 ```sh
 echo one,two,three | sed 's/,/\
 /g'
@@ -45,12 +50,15 @@ echo 'foobar' | sed -r 's/(bar)/\n\1/;'
 ```
 
 * Method 6:
+* 
 ```sh
 echo "Hello" | sed -e 's/Hello/\0\ntmow/g'
 ```
 
-
-* Method 7 - Add '''sh above curl, good for writiing wikis for example
+* Method 7 
+ 
+Add '''sh above curl, good for writiing wikis for example
+ 
 ```sh
 echo "    curl" |sed 's/    curl/```sh\n&/;s/$/\n```/g'
 
@@ -63,8 +71,6 @@ curl
 echo "Hello World"| sed 's/\(Hello\)/World\1/g'
 World Hello
 ```
-
-
 
 ### Double space a file
 
