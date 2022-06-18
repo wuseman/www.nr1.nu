@@ -1,9 +1,14 @@
-# rename files as a pro
+# rename
 
 ### Remove all Parentheses from file/folder names
+
 ```sh
-rename '(' '' *```sh
+rename '(' '' *
+```
+
+```sh
 rename ')' '' *
+```
 
 ### Rename all spaces to underscore
 
@@ -20,11 +25,11 @@ for file in *;  do   mv -- "$file" "${file// /_}";  done
 ### Rename uppercase to lowercase
 
 ```sh
-    for i in * ; do mv $i `echo $i | tr 'A-Z' 'a-z'`; done    
+for i in * ; do mv $i `echo $i | tr 'A-Z' 'a-z'`; done    
 ```
 
 ```sh                     
-    for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr 'A-Z' 'a-z'`; done  
+for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr 'A-Z' 'a-z'`; done  
 ```
 ###  Rename all uppercase to lowercase
 ```sh
@@ -117,7 +122,7 @@ rename -v 's/.*[s,S](\d{2}).*[e,E](\d{2}).*\.avi/SHOWNAME\ S$1E$2.avi/' poorly.n
 ```
 ### Yet Another Rename (bash function)
 ```sh
-    rename(){ txtToReplace=${1} ; replacementTxt=${2} ; shift 2 ; files=${@} ; for file in $files ; do mv ${file} ${file/${txtToReplace}/${replacementTxt}} ; done ; }
+rename(){ txtToReplace=${1} ; replacementTxt=${2} ; shift 2 ; files=${@} ; for file in $files ; do mv ${file} ${file/${txtToReplace}/${replacementTxt}} ; done ; }
 ```
 ### Convert spaces in file names to underscores
 ```sh
@@ -205,7 +210,7 @@ rename "s/ /_/g" * .*
 ```
 ### Adding leading zeros to a filename (1.jpg -> 001.jpg)
 ```sh
-    rename.ul "" 00 ?.jpg; rename "" 0 ??.jpg;
+rename.ul "" 00 ?.jpg; rename "" 0 ??.jpg;
 ```
 ### Replace Space In Filenames With Underscore
 ```sh
@@ -380,5 +385,4 @@ rename 's/ /_/g' *
 ### Rename with regular expression and leading zeros
 ```sh
 rename 's/result_([0-9]+)_([0-9]+)_([0-9]+)\.json\.txt/sprintf("%d%02d%02d.txt",$3,$2,$1)/ge' result_*.txt
-
 ```
