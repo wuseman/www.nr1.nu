@@ -50,8 +50,8 @@ nav:
   - Hacking:
      - info: 
         - hacking/index.md
-  - HP: 
-        - 'hp bios hacking': https://github.com/wuseman/HP_Device_and_Bios-Hacking/README.md
+     - hp: 
+        - 'hp bios hacking': hacking/hp_device_and_bios-hacking/README.md
      - emagnet: 
         - 'emagnet': hacking/emagnet/readme.md
         - 'emagnet.sh': https://raw.githubusercontent.com/wuseman/EMAGNET/master/emagnet.sh
@@ -63,7 +63,7 @@ nav:
         - 'wbruter.sh': https://raw.githubusercontent.com/wuseman/WBRUTER/master/wbruter
      - wssh: 
         - 'wssh': hacking/wssh/README.md
-        - 'wssh.sh': https://github.com/wuseman/WSSH/blob/master/wssh
+        - 'wssh.sh': https://raw.githubusercontent.com/wuseman/WSSH/master/wssh
      - wordlist:
         - 'swedish': hacking/swedish_wordlist.txt/README.md
         - 'download': hacking/swedish_wordlist.txt/swedish_wordlist.txt
