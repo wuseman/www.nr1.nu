@@ -1,18 +1,23 @@
 # apt
 
 ### Grep output from apt
+
 ```sh     
 apt-cache -qq search apache2 |awk 'BEGIN{IGNORECASE=0} /php$|mysql|security2/ {print $0}'
+```
 
 ```sh
 apt-cache search apache2 | grep -Ei "(php|mysql|security2) "   
 ```
+
 ```sh
 apt-cache search apache2 |grep -o -Ei "^[^[:space:]]+(php|mysql|security2)[[:space:]]"
 ```
+
 ```sh
 apt-cache search apache2|awk '/^[^[:space:]]+(php|mysql|security2)[[:space:]]/ {print $1}'
 ```
+
 ```sh
 apt-cache search apache2|awk '/^[^[:space:]]+(php|mysql|security2)[[:space:]]/ {print $1}'
 ```
