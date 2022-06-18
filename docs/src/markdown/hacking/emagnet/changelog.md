@@ -1,8 +1,4 @@
-### CHANGELOG FOR EMAGNET
-
-##### EMAGNET IS A NEW PROJECT, I WILL RELEASE VERSION IN SHORT INTERVALLS SO I CAN GO BACK TO SEE EVERYTHING I ADDED AND REMOVED DURING THE TIME
-
-# DESCRIPTION
+### Description
 
 + = NEW FEATURE
 - = DELETED FEATURE
@@ -11,7 +7,7 @@ r = RE-ADDED FEATURE FROM AN EARLIER VERSION
      that has been re-added is now stable and not "half done" so they are here for stay.
 R = REBUILT
 
-# Version 3.4.3
+### Version 3.4.3
 
 +    Created https://github.com/wuseman/emagnet-scraper repo, this is the script we using for scrape pastebin and add everything to nr1.nu
 +
@@ -41,7 +37,7 @@ R = REBUILT
 +    emagnet_check_pastebin was added for check if everything is fine when visits pastebin
 +    Prtaudio message when bruteforcing with spotify, we fixed typos also message for libspotify was added
 
-# Version 3.4.2
+### Version 3.4.2
 
 +    Added  better support for requirements, changed hash/which
 +    Added API to emagnet.conf, if you have whitlisted your IP at pastebin.com please set this value to true otherwise leave it to false - If this is set
@@ -54,7 +50,7 @@ r    Emagnet stats is back on track, was added in version 1.6. Show stats for ho
 +    Created a symlink to emagnet from emagnet.sh 
 +    Added scripts folder, released with scrape-pastebin.sh for store all uploads from pastebin on your own place
 
-# Version 3.4.1 
+### Version 3.4.1 
 
 +    Fixed an issue with --merge, now incoming files getting merged to archive again
 +    Fixed a bug wich caused spotify brute-forcing run over and over again, now we run it once and then we fetching more uploads
@@ -65,7 +61,7 @@ r    Emagnet stats is back on track, was added in version 1.6. Show stats for ho
 +    Removed android functions and stuff from emagnet.conf
 +    Added values to all variables, we keep "mustbefilled" if you remove any variable by mistake
 
-# Version 3.4
+### Version 3.4
 
 +    Added it possible to search for various stuff
 +    Added a function to figure out if you have been blocked or not before you running emagnet
@@ -100,7 +96,7 @@ r    Emagnet stats is back on track, was added in version 1.6. Show stats for ho
 -    Removed elinks and lynx requirements so we can use emagnet on more systems without install more tools then we really need
 -    Removed requirements part as default, it will be used when you using stuff that may need requirements like smtp/parallel for spammer & ssh bruteforce
 
-# Version 3.2
+### Version 3.2
 
 -    Removed fuzzer, and find temporary
 +    Spotify BRUTEFORCE has been added
@@ -112,7 +108,7 @@ r    Emagnet stats is back on track, was added in version 1.6. Show stats for ho
 +    Removed almost all comments since it toke alot of place
 +    General fixes
 
-# Version 3.1
+### Version 3.1
 
 +    From now you will see how many files the current session was downloading
 +    Fixed bug so emagnet-files never was created and no email files was stored, they was still stored in logs so nothing was missed
@@ -134,7 +130,7 @@ r    Emagnet stats is back on track, was added in version 1.6. Show stats for ho
 +    If no new files has been downloaded you will see that 0 files has been downloading by blinking + you will be noticed that you should raise the REFRESH time probably? (this happends mostly if you run emagnet within 3 seconds or less for testing
 +    Pastebin has added a new protection, if you are scraping pastebin to fast you will be banned from archive page and will only be available to get 8 downloads at each visit - Emagnet will notice when this happends from now.
 
-# Version 3.0
+### Version 3.0
 
 -    Removed LOGS2 from emagnet.conf
 R    Spammer has been rebuilded totally since it didnt work any good before. From now we gonna spam all targets from our daily dir if there is any email addresses stored
@@ -150,7 +146,7 @@ r    Added inotify script example to README again
 +    Added browser function, if the values are empty then we asking for wich browser you want to use
 +    Added threader, if threader has been deleted we gonna set the threader to 1 else things gets broken, edit this after your needs if you have removed this value then you know how to fix it
 
-# Version 2.1
+### Version 2.1
 
 +    Added support for email all targets that has been found, 'emagnet -e spammer' must be runned beside 'emagnet -e emagnet'
 +    You are now able to get notifications via notify-send, set NOTIFY to true or false in /etc/emagnet.conf (Default: false)
@@ -167,7 +163,7 @@ r    Added inotify script example to README again
 -    Emagnet download fetched urls has been removed
 -    Emagnet pastebin uploader has been removed
 
-# Version 2.0
+### Version 2.0
 
 r    Emagnet now has full support for AUTO BRUTE MODE - Current version have support for GMAIL accounts
 +    Emagnet now have support for check wich IP you downloading files from via -i
@@ -179,7 +175,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -    Removed _old scripts, download them from my repo instead
 -    Small fixes
 
-# Version 1.6.4 - BETA 
+     ### Version 1.6.4 - BETA 
 
 -    'Emagnet -f' - Fetching URLS has been improved alot
 -    Added a colorized spinner while we counting stats, you can of course turn off colors in /etc/emagnet.conf
@@ -191,7 +187,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -    General fixes
 
 
-# Version 1.6.3 - BETA
+### Version 1.6.3 - BETA
 
 -    Fixed interface for gathering urls
 -    In this version the big changes has been in emagnet-setup.sh
@@ -209,7 +205,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -    Improved STATS
 -    Improved MERGE
 
-##### Version 1.6.2 - BETA
+### Version 1.6.2 - BETA
 
 -    Emagnet mirror has been removed
 -    Emagnet clone any users git repositories has been removed
@@ -221,8 +217,8 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -    Edited so we grab our IP from nr1.nu properly since they rebuilt the page, no more sed is required
 -    Small fixes
 
-- Version 1.6.1 - BETA 
--  --------------------
+### Version 1.6.1 - BETA
+
 -  ./emagnet-f.sh has been removed
 -  Fixed the issue when a user choosed elinks as prefered browser it deleted wrong lines so emagnet got broken. Now you can run emagnet on Android(termux) again.
 -  Bugfixes
@@ -231,7 +227,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -  Fixed so emagnet.log wont log both X emails and X passwords, if there is 0 passwords found and 2 email addresses then we just will add in wich files email addresses was found
 -  Fixed typos
 
-##### Version 1.6.0 - BETA
+#### Version 1.6.0 - BETA
 
 -    After few days emagnet have download over 10 000+ files so now emagnet using day directories for keep things sorted
 -    Emagnet is now supported on ANDROID via termux app.
@@ -251,7 +247,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -    Small layout changes.
 -    Changed question emagnet used if you got banned and wanted to read the message for idle in 1200 seconds instead and then we start again, you can leave emagnet running 24/7 now it will handle everything perfect, you can change idle time if you want in /etc/emagnet.conf but remember pastebin use 20 minutes until they remove the temp ban if you wasn't PERMANENT banned (you must have been abusing pastebin VERY much for get permanent banned)
 
-##### Version 1.5.1 - BETA
+### Version 1.5.1 - BETA
 
 -    Added idle time setting to conf file, this setting is for how long you want to stay idle if emagnet have noticed a ip ban from pastebin
 -    Since we get millions of uploads then our path will be extremely big so now i have fixed that we gonna use daily folders instead
@@ -264,7 +260,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -   Some small fixes has been solved with setup script
 -   emagnet-wbruter has been added as a new feature, consider this as a beta since this is still under active development
 
-##### Version 1.4 - BETA
+### Version 1.4 - BETA
 
 -   I decided to split everything into small scripts instead since it's alot easier to troubleshoot if something goes wrong, you wont notice any difference at all, run 'emagnet' to execute them, 
     there is no  reason to run any of the scripts from .scripts dir, listing the new ones only:
@@ -289,7 +285,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -   Gather all urls from a webpage, this is meant to be a web crawler.
 -   It's now possible to clone all repos from any user on github.
 
-##### Version 1.3 - BETA
+### Version 1.3 - BETA
 
 -   Emagnet will notice if you getting ip-banned from pastebin and then emagnet will stop and after X minutes emagnet will continue.
 -   Small fixes
@@ -298,7 +294,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
     /etc/emagnet.conf anymore, just run emagnet-setup.sh and then you will be able to run emagnet.
 -   Debug mode has been enable, use debug mode with arg: -d 
 
-##### Version: 1.2 - BETA
+### Version: 1.2 - BETA
 
 -   Fixed so we wont keep any duplicate.
 -   Set your paths in /etc/emagnet.conf. There is no need for change stuff in 'emagnet' anymore.
@@ -310,7 +306,7 @@ r    Emagnet now has full support for AUTO BRUTE MODE - Current version have sup
 -   If pastebin has banned the current IP beccause you was an idiot and was trying to fetch uploads every <10s then emagnet will stop (just change ip)
 -   Mirror any site and download all files that is possible from a website
 
-##### Version: 1.0 - ALPHA
+### Version: 1.0 - ALPHA
 
 -   Support for download latest uploads from pastebin via Lynx Web Browser
 -   Emagnet 1.0 Has Been Created (Current: 3 lines of code)
