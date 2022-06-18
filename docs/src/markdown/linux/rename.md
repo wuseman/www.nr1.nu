@@ -3,11 +3,13 @@
 ### Remove all Parentheses from file/folder names
 
 ```sh
-rename '(' '' *
+rename "(" "" *
 ```
 
+### Remove all Parentheses from file/folder names
+
 ```sh
-rename ')' '' *
+rename ")" "" *
 ```
 
 ### Rename all spaces to underscore
