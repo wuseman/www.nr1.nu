@@ -1,6 +1,6 @@
 site_name: Nr1 (wuseman's wiki)
 site_url: https://w.nr1.nu
-repo_url: https://github.com/wuseman/www.nr1.nu
+repo_url: https://github.com/wuseman/w.nr1.nu
 edit_uri: tree/master/docs/src/markdown
 site_author: wuseman
 site_description: >-
@@ -71,6 +71,7 @@ nav:
      - matomo: linux/matomo.md
      - merge tricks: linux/merge-tricks.md
      - nmap: linux/nmap.md
+     - netstat: linux/netstat.md
      - perf: linux/perf.md
      - rename: linux/rename.md
      - ripgrep: linux/rg.md
