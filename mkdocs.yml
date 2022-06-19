@@ -1,17 +1,30 @@
 site_name: Nr1 (wuseman's wiki)
-site_url: https://www.nr1.nu
-repo_url: https://github.com/wuseman/emagnet
-edit_uri: tree/master/docs/src/markdown
 site_author: wuseman
 site_description: >-
   The personal website of wuseman, it's the Nr1 wiki for cool tips and trikes for all kind of hacks/cracks you can imagine
+
 copyright: |
   Copyright &copy; 2015 - 2022 <a href="https://github.com/wuseman"  target="_blank" rel="noopener">wuseman</a>
 
+site_url: https://www.nr1.nu
+repo_name: ""
+repo_url: "https://github.com/wuseman/www.nr1.nu/"
 docs_dir: docs/src/markdown
+site_dir: site
+edit_uri: tree/master/docs/src/markdown
+
+extra:
+  analytics:
+    provider: google
+    property: G-B5KK88V0K4
+
 theme:
+  use_directory_urls: true
   name: material
+  favicon: images/favicon.png
   custom_dir: docs/theme
+  static_templates:
+    - sitemap.html
   icon:
     logo: material/book-open-page-variant
   palette:
@@ -21,15 +34,17 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
+    include_sidebar: true
   features:
     - navigation.tabs
     - navigation.top
-    - navigation.instant
+    - navigation.indexes
     - content.tabs.link
+    - navigation.prune
  # pymdownx:
 #    sponsor: "https://github.com/sponsors/facelessuser"
 
-nav:
+nav: 
   - Home:
     - About: index.md
     - Contact: contact.md
@@ -41,6 +56,9 @@ nav:
         - 'adb': android/adb/readme.md
         - 'at-commands': android/adb/at.md
         - 'uusd-codes': android/adb/uusd_codes.md
+  - Cracking: 
+        -  cracking/index.md
+        - 'wloader': cracking/wloader/README.md
   - Gentoo:
      - gentoo-cheatsheet: gentoo/gentoo-tools.md
      - gentoo-chroot: gentoo/gentoo-chroot.md
@@ -48,25 +66,30 @@ nav:
      - wuseman-overlay: gentoo/wuseman-overlay/README.md
      - gentoo-wupdate:  gentoo/gentoo-update.md
   - Hacking:
-     - info: 
-        - hacking/index.md
-     - hp: 
-        - 'hp bios hacking': hacking/hp_device_and_bios-hacking/README.md
-     - emagnet: 
-        - 'emagnet': hacking/emagnet/readme.md
-        - 'emagnet.sh': https://raw.githubusercontent.com/wuseman/EMAGNET/master/emagnet.sh
-        - 'emagnet.conf': https://raw.githubusercontent.com/wuseman/EMAGNET/master/emagnet.conf
-        - 'changelog': hacking/emagnet/changelog.md
-        - 'license': hacking/emagnet/license.md
-     - wbruter:
-        - 'wbruter': hacking/wbruter/README.md
-        - 'wbruter.sh': https://raw.githubusercontent.com/wuseman/WBRUTER/master/wbruter
-     - wssh: 
-        - 'wssh': hacking/wssh/README.md
-        - 'wssh.sh': https://raw.githubusercontent.com/wuseman/WSSH/master/wssh
-     - wordlist:
-        - 'swedish': hacking/swedish_wordlist.txt/README.md
-        - 'download': hacking/swedish_wordlist.txt/swedish_wordlist.txt
+     - 'hacking': hacking/index.md
+     - Bios: 
+        - 'bios': hacking/bios/index.md
+        - 'hp bios': hacking/bios/hp_device_and_bios-hacking/README.md
+     - Bruteforce:
+        - 'bruteforce': hacking/bruteforce/index.md
+        - 'emagnet': hacking/bruteforce/emagnet/README.md
+        - 'wbruter': hacking/bruteforce/wbruter/README.md
+        - 'wssh': hacking/bruteforce/wssh/README.md
+        - 'swedish wordlist': hacking/bruteforce/swedish_wordlist.txt/README.md
+     - Cameras:
+        -  hacking/cameras/index.md
+        - 'biltemas babycam': hacking/cameras/biltemas_babycam/README.md
+        - 'dlink-6100lh': hacking/cameras/dlink-6100lh/README.md
+     - Chromebook: 
+        - 'hacking/chromebook/index.md'
+        - 'acer c720': hacking/chromebook/acer_chromebook_c720/README.md
+        - 'acer c740': hacking/chromebook/acer_chromebook_c740/README.md
+     - Radio: 
+        -  hacking/radio/index.md
+        - 'boose soundtouch': hacking/radio/boose_soundtouch/README.md
+     - Router: 
+        -  hacking/routers/index.md
+        - 'technicolor dga4330ts': hacking/routers/technicolor_dga4330ts/README.md
   - Linux:
      - apt: linux/apt.md
      - awk: linux/awk.md
@@ -99,6 +122,9 @@ nav:
      - vim: linux/vim.md
 
 markdown_extensions:
+  - toc:
+      permalink: True
+      separator: "_"
   - markdown.extensions.toc:
       slugify: !!python/object/apply:pymdownx.slugs.slugify {kwds: {case: lower}}
       permalink: ""
@@ -116,8 +142,8 @@ markdown_extensions:
       preserve_tabs: true
       custom_fences:
         # Mermaid diagrams
-        - name: diagram
-          class: diagram
+        - name: mermaid
+          class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
         - name: math
           class: arithmatex
@@ -144,14 +170,14 @@ markdown_extensions:
       social_url_shorthand: true
       social_url_shortener: true
       user: facelessuser
-      repo: pymdown-extensions
+      repo: www.nr1.nu
       normalize_issue_symbols: true
   - pymdownx.tilde:
   - pymdownx.caret:
   - pymdownx.smartsymbols:
-  - pymdownx.emoji:
-      emoji_index: !!python/name:materialx.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+#  - pymdownx.emoji:
+#      emoji_index: !!python/name:materialx.emoji.twemoji
+#      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.escapeall:
       hardbreak: True
       nbsp: True
@@ -166,7 +192,6 @@ markdown_extensions:
   - pymdownx.snippets:
       base_path:
       - docs/src/markdown/.snippets
-      - LICENSE.md
       auto_append:
       - refs.md
       check_paths: true
@@ -183,18 +208,45 @@ extra:
       link: https://github.com/wuseman
     - icon: fontawesome/brands/discord
       link: https://discord.gg/wuseman
+
 extra_css:
-  # - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css
+  - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css
   - assets/pymdownx-extras/extra-e384f43f0f.css
+
 extra_javascript:
   - https://unpkg.com/mermaid@8.13.3/dist/mermaid.min.js
-  # - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - assets/pymdownx-extras/extra-loader-5bb526e4.js
 
+
 plugins:
-  - search
-#  - git-revision-date-localized
+  - search:
+      lang: en
+      lang: sv
+  - git-revision-date-localized
   - minify:
       minify_html: true
+
+extra:
+  analytics: 
+    provider: google
+    property: G-B5KK88V0K4
+    feedback:
+      title: Was this page helpful?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: This page was helpful
+          data: 1
+          note: >-
+            Thanks for your feedback!
+        - icon: material/emoticon-sad-outline
+          name: This page could be improved
+          data: 0
+          note: >- 
+
+
+            Thanks for your feedback! Help us improve this page by
+            using our <a href="..." target=_blank>feedback form</a>.
+
