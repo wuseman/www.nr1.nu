@@ -1,5 +1,3 @@
-# About
-
 !!! success "This website is my worldHQ from now."
 
 - For me time is more valuable than money and I love to hack everything that you can imagine. 
