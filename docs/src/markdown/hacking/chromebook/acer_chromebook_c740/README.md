@@ -1,4 +1,4 @@
- # Acer (Chromebook) - C740
+# Acer (Chromebook) - C740
 
 This repo is far from done, it can be updated any time.
 
@@ -124,15 +124,15 @@ In my opinion, it is not possible to clear the BIOS by resetting the chip alone.
 
 So, to cut to the chase, how did the computer get trashed and what is it doing or not doing? Why did you decide that you needed to perform the reset to reinstall the factory BIOS settings? Have you already tried any of the many fixes on YouTube and the like?"
 
-## REQUIREMENTS
+### Requirements
 
 A chromebook device, soic 8 clip and a ch341 eeprom/bios reader
 
-## CONTACT 
+### Contact
 
 If you have problems, questions, ideas or suggestions please contact me by posting to wuseman@nr1.nu
 
-## WEB SITE
+### Web
 
 Visit my websites and profiles for the latest info and updated tools
 

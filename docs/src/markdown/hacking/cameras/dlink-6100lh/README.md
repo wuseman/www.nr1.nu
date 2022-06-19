@@ -113,7 +113,7 @@ tail -f dc_6200lh.txt|egrep -o 'user=admin,pass=......'
 
 Right click on the video and press open image on a new tab for get 1080p resolution for readable text.
 
-![Screenshot](https://user-images.githubusercontent.com/26827453/174461534-3ee340e4-2dcf-4384-a19e-0c72181abeff.gif)
+![Screenshot](https://www.nr1.nu/hacking/cameras/dlink-6100lh/4.gif)
 
 ### IP/Ports
 
