@@ -155,9 +155,8 @@ apt-cache stats
 aptitude install '?and(~nlib.*perl, ~Dmodule)'
 ```
 
-### List available upgrades from ```sh      
-apt without upgrading the system
-```
+### List available upgrades from apt without upgrading the system
+
 ```sh      
 apt-get just-print upgrade
 ```
@@ -178,10 +177,10 @@ aptitude install bash-completion ; source /etc/bash_completion
 ```
 
 ### Purge configuration files of removed packages on  debian based systems
+
 ```sh      
 aptitude purge '~c'
 ```
-
 
 ### List manually installed packages (excluding Essentials)
 ```sh      
@@ -193,10 +192,8 @@ aptitude search '~i!~E' | grep -v "i A" | cut -d " " -f 4
 apt-get -y install git-core gitosis; adduser home /home/git gecos "git user" git; su git -c "ssh-keygen -t rsa -f /home/git/.ssh/id_rsa; gitosis-init < ~/.ssh/id_rsa"
 ```
 
-### Remove all unused kernels with ```sh      
-apt-get
-```
-```sh      
+### Remove all unused kernels with aptitude
+```sh     
 aptitude remove ?and(~i~nlinux-(im|he) ?not(~n`uname -r`))
 ```
 
@@ -213,6 +210,7 @@ aptitude search '?and( ?automatic(?reverse-recommends(?installed)), ?not(?automa
 ```
 
 ### Remove specific versions of old kernels (Ubuntu/Debian)
+
 ```sh      
 apt purge linux*{14..18}*
 ```
@@ -222,13 +220,14 @@ apt purge linux*{14..18}*
 apt-cache pkgnames linux-
 ```
 
-
 ### Aptitude pattern match
+
 ```sh      
 aptitude purge remove ~i^foo ~i^bar
 ```
 
 ### List upgrade-able packages on Ubuntu
+
 ```sh      
 apt-get ignore-hold allow-unauthenticated -s dist-upgrade | grep ^Inst | cut -d ' ' -f2
 ```
@@ -245,12 +244,12 @@ aptitude purge ~c
 ```
 
 ### Purge configuration file of all desinstalled package
+
 ```sh      
 aptitude purge ~c
 ```
 
-### List available upgrades from ```sh      
-apt without upgrading the system
+### List available upgrades from apt without upgrading the system
 ```
 ```sh      
 apt list upgradable
@@ -266,12 +265,6 @@ aptitude search ~i -F %p
 apt-get update && apt-get dist-upgrade -y show-progress && apt-get autoremove -y && apt-get check && apt-get autoclean -y
 ```
 
-### search package descriptions (```sh      
-apt)
-```
-```sh      
-apt-cache search someregex
-```
 
 ### Removes all packages recommended by other packages
 ```sh      
@@ -323,16 +316,13 @@ apt-get update -y && apt-get upgrade -y && apt-get dist-upgrade -y && apt-get au
 apt-show-versions | grep '\bpython\b'
 ```
 
-### Show package dependencies with ```sh      
-apt
-```
+### Show package dependencies with apt
+
 ```sh      
 apt-cache depends <packagename>
 ```
 
-### Show package reverse dependencies with ```sh      
-apt
-```
+### Show package reverse dependencies with apt
 ```sh      
 apt-cache rdepends <packagename>
 ```
@@ -422,7 +412,6 @@ aptitude install '?and(~nlib.*perl, ~Dmodule)'
 
 ### List available upgrades from apt without upgrading the system
 
-```
 ```sh      
 apt-get just-print upgrade
 ```
@@ -463,8 +452,7 @@ aptitude search '~i!~E' | grep -v "i A" | cut -d " " -f 4
 apt-get -y install git-core gitosis; adduser home /home/git gecos "git user" git; su git -c "ssh-keygen -t rsa -f /home/git/.ssh/id_rsa; gitosis-init < ~/.ssh/id_rsa"
 ```
 
-### Remove all unused kernels with ```sh      
-apt-get
+### Remove all unused kernels with apt
 ```
 ```sh      
 aptitude remove ?and(~i~nlinux-(im|he) ?not(~n`uname -r`))
@@ -498,14 +486,14 @@ apt (package names only)
 apt-cache pkgnames linux-
 ```
 
-### locating packages held back, such as with "```sh      
-aptitude hold <package>"
-```
+### Locating packages held back, such as with "aptitude hold <package>"
+
 ```sh      
 aptitude search ~ahold
 ```
 
 ### Aptitude pattern match
+  
 ```sh      
 aptitude purge remove ~i^foo ~i^bar
 ```
@@ -514,8 +502,6 @@ aptitude purge remove ~i^foo ~i^bar
 ```sh      
 apt-get ignore-hold allow-unauthenticated -s dist-upgrade | grep ^Inst | cut -d ' ' -f2
 ```
-
-
 
 ### "Clone" a list of installed packages from one Debian/Ubuntu Server to another
 ```sh      
@@ -549,9 +535,8 @@ aptitude search ~i -F %p
 apt-get update && apt-get dist-upgrade -y show-progress && apt-get autoremove -y && apt-get check && apt-get autoclean -y
 ```
 
-### search package descriptions (```sh      
-apt)
-```
+### search package descriptions (apt)
+  
 ```sh      
 apt-cache search someregex
 ```
