@@ -26,8 +26,7 @@ theme:
   favicon: images/favicon.png
   custom_dir: docs/theme
   static_templates:
-    - sitemap.html
-    - 404.html
+    - 404.php
   icon:
     logo: material/book-open-page-variant
 
@@ -139,6 +138,8 @@ nav:
      - whatismyip: linux/whatismyip.md
      - wireguard: linux/wireguard.md
      - vim: linux/vim.md
+  - Misc: 
+     - UserAgents: 'archive/useragents/user_agents.txt'
 
 markdown_extensions:
   - smarty:
