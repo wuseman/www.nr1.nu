@@ -90,7 +90,7 @@ nav:
         - 'hp bios': hacking/bios/hp_device_and_bios-hacking/README.md
      - Bruteforce: 
         - 'bruteforce': hacking/bruteforce/index.md
-        - 'emagnet': 'hacking/bruteforce/EMAGNET/README.md'
+        - 'emagnet': 'hacking/bruteforce/emagnet/readme.md'
         - 'wbruter': hacking/bruteforce/wbruter/README.md
         - 'wssh': hacking/bruteforce/wssh/README.md
         - 'swedish wordlist': hacking/bruteforce/swedish_wordlist.txt/README.md
