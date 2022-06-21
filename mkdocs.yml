@@ -8,8 +8,8 @@ copyright: |
   Copyright &copy; 2015 - 2022 <a href="https://github.com/wuseman"  target="_blank" rel="noopener">wuseman</a>
 
 site_url: https://www.nr1.nu
-repo_name: ""
-repo_url: "https://github.com/wuseman/www.nr1.nu/"
+repo_name: "www.nr1.nu"
+repo_url: "https://github.com/wuseman/www.nr1.nu"
 docs_dir: docs/src/markdown
 site_dir: site
 edit_uri: tree/master/docs/src/markdown
@@ -88,9 +88,9 @@ nav:
      - Bios: 
         - 'bios': hacking/bios/index.md
         - 'hp bios': hacking/bios/hp_device_and_bios-hacking/README.md
-     - Bruteforce:
+     - Bruteforce: 
         - 'bruteforce': hacking/bruteforce/index.md
-        - 'emagnet': hacking/bruteforce/emagnet/README.md
+        - 'emagnet': 'hacking/bruteforce/EMAGNET/README.md'
         - 'wbruter': hacking/bruteforce/wbruter/README.md
         - 'wssh': hacking/bruteforce/wssh/README.md
         - 'swedish wordlist': hacking/bruteforce/swedish_wordlist.txt/README.md
@@ -238,8 +238,8 @@ extra_javascript:
 
 
 plugins:
+  - multirepo:
 # https://smarie.github.io/mkdocs-gallery/
-  - ezlinks
   - search:
       lang: en
       lang: sv
