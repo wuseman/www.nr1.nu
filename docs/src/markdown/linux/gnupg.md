@@ -177,6 +177,7 @@ gpg -o wuseman.gpg --export-options backup --export-secret-keys wuseman@nr1.nu
   ```sh
 gpg --import-options restore --import wuseman.gpg
 ```
+
 ### Get some more info then keyid
 
  ```sh
