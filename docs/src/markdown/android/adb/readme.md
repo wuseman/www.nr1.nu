@@ -36,8 +36,8 @@ All commands that require root will have (Root_Required) in descriptionn.
 <li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v10.apk">Google Account Manager Android 10</a></li>
 
 ### Custom Apks ™ <small>Blocked</small>
-
-:bangbang: - Notice! On rooted devices samsung health crashing and wont launch anymore and it wont help to change tima from 1 to 0 in build.prop anymore, download the below apk instead to get samsung health working on your rooted device
+	
+!!! Notice "On rooted devices samsung health crashing and wont launch anymore and it wont help to change tima from 1 to 0 in build.prop anymore, download the below apk instead to get samsung health working on your rooted device"
 
 	
 <li><a href="https://w.nr1.nu/archive/android/apks/samsung_health__android.v12.working.apk">Samsung Health - Android 12</a></li>
