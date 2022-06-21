@@ -2,312 +2,282 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://www.nr1.nu/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/contact/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/cv/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/usage_notes/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/android/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/android/adb/at/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/android/adb/readme/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/android/adb/uusd_codes/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/cracking/</loc>
-         <lastmod>2022-06-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://www.nr1.nu/cracking/wloader/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/gentoo/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/gentoo/gentoo-chroot/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/gentoo/gentoo-tools/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/gentoo/gentoo-update/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/gentoo/gentoo-vmware/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/gentoo/wuseman-overlay/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.nr1.nu/gentoo/wuseman-overlay/LICENSE/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/hacking/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/bios/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/emagnet/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/bios/hp_device_and_bios-hacking/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/emagnet/CHANGELOG/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/bruteforce/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/emagnet/LICENSE/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/bruteforce/EMAGNET/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/hp_device_and_bios-hacking/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/bruteforce/swedish_wordlist.txt/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/swedish_wordlist.txt/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/bruteforce/wbruter/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/wbruter/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/bruteforce/wssh/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/wbruter/CHANGELOG/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/cameras/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/wbruter/LICENSE/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/cameras/biltemas_babycam/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/wssh/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://www.nr1.nu/hacking/cameras/dlink-6100lh/</loc>
-         <lastmod>2022-06-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://www.nr1.nu/hacking/chromebook/</loc>
-         <lastmod>2022-06-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://www.nr1.nu/hacking/chromebook/acer_chromebook_c720/</loc>
-         <lastmod>2022-06-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://www.nr1.nu/hacking/chromebook/acer_chromebook_c740/</loc>
-         <lastmod>2022-06-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://www.nr1.nu/hacking/radio/</loc>
-         <lastmod>2022-06-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://www.nr1.nu/hacking/radio/boose_soundtouch/</loc>
-         <lastmod>2022-06-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://www.nr1.nu/hacking/routers/</loc>
-         <lastmod>2022-06-21</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://www.nr1.nu/hacking/routers/technicolor_dga4330ts/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <loc>https://www.nr1.nu/hacking/wssh/LICENSE/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/apt/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/awk/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/chroot/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/cryptsetup/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/curl/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/dev_and_proc/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/exiftool/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/find/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/git/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/gnupg/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/grep/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/kernel/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://www.nr1.nu/linux/license/</loc>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/log/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/matomo/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/merge-tricks/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/netstat/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/nmap/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/perf/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/rename/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/rg/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/sed/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/sqlmap/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/ssh-log/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/sys/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/tcpdump/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/vim/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/whatismyip/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/wireguard/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://www.nr1.nu/linux/syslog-ng/syslog-conf.ng/</loc>
-         <lastmod>2022-06-21</lastmod>
+         <lastmod>2022-06-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
