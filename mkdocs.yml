@@ -238,7 +238,6 @@ extra_javascript:
 
 
 plugins:
-  - multirepo:
 # https://smarie.github.io/mkdocs-gallery/
   - search:
       lang: en
