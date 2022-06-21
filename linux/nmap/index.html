@@ -1,0 +1,625 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="The personal website of wuseman, it's the Nr1 wiki for cool tips and trikes for all kind of hacks/cracks you can imagine"><meta name=author content=wuseman><link href=https://www.github.com/wuseman/linux/nmap/ rel=canonical><link rel=icon href=../../images/favicon.png><meta name=generator content="mkdocs-1.3.0, mkdocs-material-8.3.5"><title>nmap - Nr1 (wuseman's wiki)</title><link rel=stylesheet href=../../assets/stylesheets/main.4a0965b7.min.css><link rel=stylesheet href=../../assets/stylesheets/palette.cbb835fc.min.css><meta name=theme-color content=#7e56c2><script src=../../assets/pymdownx-extras/material-extra-theme-7c147bb7.js type=text/javascript></script><script src=../../assets/pymdownx-extras/material-extra-3rdparty-69a692a6.js type=text/javascript></script><script>assets/pymdownx-extras/analytics.js</script><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css><link rel=stylesheet href=../../assets/pymdownx-extras/extra-e384f43f0f.css><script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-B5KK88V0K4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-B5KK88V0K4",{page_path:e.pathname})})})</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-B5KK88V0K4"></script></head> <body dir=ltr data-md-color-scheme=dracula data-md-color-primary=deep-purple data-md-color-accent=deep-purple> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#nmap class=md-skip> Skip to content </a> </div> <div data-md-component=announce> <aside class=md-banner> <div class="md-banner__inner md-grid md-typeset"> <span class=twemoji> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68L23 12m-10 5h-2v-2h2v2m0-4h-2V7h2v6Z"/></svg> </span> Welcome back, <a href=https://github.com/wuseman/www.nr1.nu>wuseman's</a> wiki is now up and running again! Hack To Learn <b>Not</b> Learn To Hack! <span class="twemoji heart-throb"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 16 16"><path fill-rule=evenodd d="M7.655 14.916 8 14.25l.345.666a.752.752 0 0 1-.69 0zm0 0L8 14.25l.345.666.002-.001.006-.003.018-.01a7.643 7.643 0 0 0 .31-.17 22.08 22.08 0 0 0 3.433-2.414C13.956 10.731 16 8.35 16 5.5 16 2.836 13.914 1 11.75 1 10.203 1 8.847 1.802 8 3.02 7.153 1.802 5.797 1 4.25 1 2.086 1 0 2.836 0 5.5c0 2.85 2.045 5.231 3.885 6.818a22.075 22.075 0 0 0 3.744 2.584l.018.01.006.003h.002z"/></svg> </span> </div> </aside> </div> <div data-md-component=outdated hidden> <aside class="md-banner md-banner--warning"> </aside> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=https://www.github.com/wuseman/ title="Nr1 (wuseman's wiki)" class="md-header__button md-logo" aria-label="Nr1 (wuseman's wiki)"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Nr1 (wuseman's wiki) </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> nmap </span> </div> </div> </div> <div class=md-header__options> <div class="md-header-nav__scheme md-header-nav__button md-source__icon md-icon"> <a href=javascript:toggleScheme(); title="Light mode" class=light-mode> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg> </a> <a href=javascript:toggleScheme(); title="Dark mode" class=dark-mode> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg> </a> <a href=javascript:toggleScheme(); title="System preference" class=system-mode> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M7.5 2c-1.79 1.15-3 3.18-3 5.5s1.21 4.35 3.03 5.5C4.46 13 2 10.54 2 7.5A5.5 5.5 0 0 1 7.5 2m11.57 1.5 1.43 1.43L4.93 20.5 3.5 19.07 19.07 3.5m-6.18 2.43L11.41 5 9.97 6l.42-1.7L9 3.24l1.75-.12.58-1.65L12 3.1l1.73.03-1.35 1.13.51 1.67m-3.3 3.61-1.16-.73-1.12.78.34-1.32-1.09-.83 1.36-.09.45-1.29.51 1.27 1.36.03-1.05.87.4 1.31M19 13.5a5.5 5.5 0 0 1-5.5 5.5c-1.22 0-2.35-.4-3.26-1.07l7.69-7.69c.67.91 1.07 2.04 1.07 3.26m-4.4 6.58 2.77-1.15-.24 3.35-2.53-2.2m4.33-2.7 1.15-2.77 2.2 2.54-3.35.23m1.15-4.96-1.14-2.78 3.34.24-2.2 2.54M9.63 18.93l2.77 1.15-2.53 2.19-.24-3.34Z"/></svg> </a> <a href=javascript:toggleScheme(); title="Unknown scheme" class=unknown-mode> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="m15.07 11.25-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 0 0-2-2 2 2 0 0 0-2 2H8a4 4 0 0 1 4-4 4 4 0 0 1 4 4 3.2 3.2 0 0 1-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-5.53-4.5-10-10-10Z"/></svg> </a> </div> </div> <label class="md-header__button md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label=Search placeholder=Search autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg> </label> <nav class=md-search__options aria-label=Search> <button type=reset class="md-search__icon md-icon" aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg> </button> </nav> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/wuseman/www.nr1.nu/ title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class="md-tabs__inner md-grid"> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../.. class=md-tabs__link> Home </a> </li> <li class=md-tabs__item> <a href=../../android/ class=md-tabs__link> Android </a> </li> <li class=md-tabs__item> <a href=../../cracking/ class=md-tabs__link> Cracking </a> </li> <li class=md-tabs__item> <a href=../../gentoo/gentoo-tools/ class=md-tabs__link> Gentoo </a> </li> <li class=md-tabs__item> <a href=../../hacking/ class=md-tabs__link> Hacking </a> </li> <li class=md-tabs__item> <a href=../apt/ class="md-tabs__link md-tabs__link--active"> Linux </a> </li> <li class=md-tabs__item> <a href=../../archive/useragents/user_agents.txt class=md-tabs__link> Misc </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <!-- Determine class according to configuration --> <!-- Main navigation --> <nav class="md-nav md-nav--primary md-nav--lifted" aria-label=Navigation data-md-level=0> <!-- Site title --> <!--
+  <label class="md-nav__title" for="__drawer">
+    <a
+      href="../.."
+      title="Nr1 (wuseman&#39;s wiki)"
+      class="md-nav__button md-logo"
+      aria-label="Nr1 (wuseman's wiki)"
+      data-md-component="logo"
+    >
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m19 2-5 4.5v11l5-4.5V2M6.5 5C4.55 5 2.45 5.4 1 6.5v14.66c0 .25.25.5.5.5.1 0 .15-.07.25-.07 1.35-.65 3.3-1.09 4.75-1.09 1.95 0 4.05.4 5.5 1.5 1.35-.85 3.8-1.5 5.5-1.5 1.65 0 3.35.31 4.75 1.06.1.05.15.03.25.03.25 0 .5-.25.5-.5V6.5c-.6-.45-1.25-.75-2-1V19c-1.1-.35-2.3-.5-3.5-.5-1.7 0-4.15.65-5.5 1.5V6.5C10.55 5.4 8.45 5 6.5 5Z"/></svg>
+
+    </a>
+    Nr1 (wuseman's wiki)
+  </label>
+--> <!-- Repository information --> <div class=md-nav__source> <a href=https://github.com/wuseman/www.nr1.nu/ title="Go to repository" class=md-source data-md-component=source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> </div> </a> </div> <!-- Render item list --> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_1 type=checkbox id=__nav_1> <div class="md-nav__link md-nav__link--index "> <a href=../..>Home</a> <label for=__nav_1> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Home data-md-level=1> <label class=md-nav__title for=__nav_1> <span class="md-nav__icon md-icon"></span> Home </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../contact/ class=md-nav__link> Contact </a> </li> <li class=md-nav__item> <a href=../../cv/ class=md-nav__link> CV </a> </li> <li class=md-nav__item> <a href=../../usage_notes/ class=md-nav__link> Help </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_2 type=checkbox id=__nav_2> <div class="md-nav__link md-nav__link--index "> <a href=../../android/ >Android</a> <label for=__nav_2> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Android data-md-level=1> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> Android </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_2_2 type=checkbox id=__nav_2_2> <label class=md-nav__link for=__nav_2_2> adb <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=adb data-md-level=2> <label class=md-nav__title for=__nav_2_2> <span class="md-nav__icon md-icon"></span> adb </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../android/adb/readme/ class=md-nav__link> adb </a> </li> <li class=md-nav__item> <a href=../../android/adb/at/ class=md-nav__link> at-commands </a> </li> <li class=md-nav__item> <a href=../../android/adb/uusd_codes/ class=md-nav__link> uusd-codes </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3 type=checkbox id=__nav_3> <div class="md-nav__link md-nav__link--index "> <a href=../../cracking/ >Cracking</a> <label for=__nav_3> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Cracking data-md-level=1> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Cracking </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../cracking/wloader/ class=md-nav__link> wloader </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4 type=checkbox id=__nav_4> <div class="md-nav__link md-nav__link--index "> <a href=../../gentoo/wuseman-overlay/ >Gentoo</a> <label for=__nav_4> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Gentoo data-md-level=1> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> Gentoo </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../gentoo/gentoo-tools/ class=md-nav__link> gentoo-cheatsheet </a> </li> <li class=md-nav__item> <a href=../../gentoo/gentoo-chroot/ class=md-nav__link> gentoo-chroot </a> </li> <li class=md-nav__item> <a href=../../gentoo/gentoo-vmware/ class=md-nav__link> gentoo-vmware </a> </li> <li class=md-nav__item> <a href=../../gentoo/gentoo-update/ class=md-nav__link> gentoo-wupdate </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_5 type=checkbox id=__nav_5> <div class="md-nav__link md-nav__link--index "> <a href=../../hacking/ >Hacking</a> <label for=__nav_5> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Hacking data-md-level=1> <label class=md-nav__title for=__nav_5> <span class="md-nav__icon md-icon"></span> Hacking </label> <ul class=md-nav__list data-md-scrollfix> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_5_2 type=checkbox id=__nav_5_2> <div class="md-nav__link md-nav__link--index "> <a href=../../hacking/bios/ >Bios</a> <label for=__nav_5_2> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Bios data-md-level=2> <label class=md-nav__title for=__nav_5_2> <span class="md-nav__icon md-icon"></span> Bios </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../hacking/bios/hp_device_and_bios-hacking/ class=md-nav__link> hp bios </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_5_3 type=checkbox id=__nav_5_3> <div class="md-nav__link md-nav__link--index "> <a href=../../hacking/bruteforce/ >Bruteforce</a> <label for=__nav_5_3> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Bruteforce data-md-level=2> <label class=md-nav__title for=__nav_5_3> <span class="md-nav__icon md-icon"></span> Bruteforce </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=https://github.com/wuseman/emagnet class=md-nav__link> emagnet </a> </li> <li class=md-nav__item> <a href=../../hacking/bruteforce/wbruter/ class=md-nav__link> wbruter </a> </li> <li class=md-nav__item> <a href=../../hacking/bruteforce/wssh/ class=md-nav__link> wssh </a> </li> <li class=md-nav__item> <a href=../../hacking/bruteforce/swedish_wordlist.txt/ class=md-nav__link> swedish wordlist </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_5_4 type=checkbox id=__nav_5_4> <div class="md-nav__link md-nav__link--index "> <a href=../../hacking/cameras/ >Cameras</a> <label for=__nav_5_4> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Cameras data-md-level=2> <label class=md-nav__title for=__nav_5_4> <span class="md-nav__icon md-icon"></span> Cameras </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../hacking/cameras/biltemas_babycam/ class=md-nav__link> biltemas babycam </a> </li> <li class=md-nav__item> <a href=../../hacking/cameras/dlink-6100lh/ class=md-nav__link> dlink-6100lh </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_5_5 type=checkbox id=__nav_5_5> <div class="md-nav__link md-nav__link--index "> <a href=../../hacking/chromebook/ >Chromebook</a> <label for=__nav_5_5> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Chromebook data-md-level=2> <label class=md-nav__title for=__nav_5_5> <span class="md-nav__icon md-icon"></span> Chromebook </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../hacking/chromebook/acer_chromebook_c720/ class=md-nav__link> acer c720 </a> </li> <li class=md-nav__item> <a href=../../hacking/chromebook/acer_chromebook_c740/ class=md-nav__link> acer c740 </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_5_6 type=checkbox id=__nav_5_6> <div class="md-nav__link md-nav__link--index "> <a href=../../hacking/radio/ >Radio</a> <label for=__nav_5_6> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Radio data-md-level=2> <label class=md-nav__title for=__nav_5_6> <span class="md-nav__icon md-icon"></span> Radio </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../hacking/radio/boose_soundtouch/ class=md-nav__link> boose soundtouch </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_5_7 type=checkbox id=__nav_5_7> <div class="md-nav__link md-nav__link--index "> <a href=../../hacking/routers/ >Router</a> <label for=__nav_5_7> <span class="md-nav__icon md-icon"></span> </label> </div> <nav class=md-nav aria-label=Router data-md-level=2> <label class=md-nav__title for=__nav_5_7> <span class="md-nav__icon md-icon"></span> Router </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../hacking/routers/technicolor_dga4330ts/ class=md-nav__link> technicolor dga4330ts </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--active md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_6 type=checkbox id=__nav_6 checked> <label class=md-nav__link for=__nav_6> Linux <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Linux data-md-level=1> <label class=md-nav__title for=__nav_6> <span class="md-nav__icon md-icon"></span> Linux </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../apt/ class=md-nav__link> apt </a> </li> <li class=md-nav__item> <a href=../awk/ class=md-nav__link> awk </a> </li> <li class=md-nav__item> <a href=../chroot/ class=md-nav__link> chroot </a> </li> <li class=md-nav__item> <a href=../cryptsetup/ class=md-nav__link> cryptsetup </a> </li> <li class=md-nav__item> <a href=../curl/ class=md-nav__link> curl </a> </li> <li class=md-nav__item> <a href=../dev_and_proc/ class=md-nav__link> dev and proc </a> </li> <li class=md-nav__item> <a href=../exiftool/ class=md-nav__link> exiftool </a> </li> <li class=md-nav__item> <a href=../find/ class=md-nav__link> find </a> </li> <li class=md-nav__item> <a href=../git/ class=md-nav__link> git </a> </li> <li class=md-nav__item> <a href=../gnupg/ class=md-nav__link> gnupg </a> </li> <li class=md-nav__item> <a href=../grep/ class=md-nav__link> grep </a> </li> <li class=md-nav__item> <a href=../kernel/ class=md-nav__link> kernel </a> </li> <li class=md-nav__item> <a href=../log/ class=md-nav__link> log </a> </li> <li class=md-nav__item> <a href=../matomo/ class=md-nav__link> matomo </a> </li> <li class=md-nav__item> <a href=../merge-tricks/ class=md-nav__link> merge tricks </a> </li> <li class="md-nav__item md-nav__item--active"> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <label class="md-nav__link md-nav__link--active" for=__toc> nmap <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> nmap </a> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#after-you-installed-nmap-go-get-all-scripts-by-below-command class=md-nav__link> After you installed nmap go get all scripts by below command: </a> </li> <li class=md-nav__item> <a href=#afp---brute-force class=md-nav__link> AFP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ajp---brute-force class=md-nav__link> AJP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#backorifice---brute-force class=md-nav__link> Backorifice - Brute-Force </a> </li> <li class=md-nav__item> <a href=#cassandra---brute-force class=md-nav__link> Cassandra - Brute-Force </a> </li> <li class=md-nav__item> <a href=#citrix---brute-force-xml class=md-nav__link> Citrix - Brute-Force-xml </a> </li> <li class=md-nav__item> <a href=#cisco---cvs---test-whether-host-is-vulnerable-or-not class=md-nav__link> Cisco - Cvs - Test whether host is vulnerable or not </a> </li> <li class=md-nav__item> <a href=#you-can-pass-argument-to-get-config class=md-nav__link> You can pass argument to get config </a> </li> <li class=md-nav__item> <a href=#cvs---brute-force class=md-nav__link> Cvs - Brute-Force </a> </li> <li class=md-nav__item> <a href=#cvs-repository---brute-force class=md-nav__link> Cvs Repository - Brute-Force </a> </li> <li class=md-nav__item> <a href=#deluge-rpc---brute-force class=md-nav__link> Deluge-RPC - Brute-Force </a> </li> <li class=md-nav__item> <a href=#domcon---brute-force class=md-nav__link> Domcon - Brute-Force </a> </li> <li class=md-nav__item> <a href=#dpap---brute-force class=md-nav__link> DPAP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#drda---brute-force class=md-nav__link> DRDA - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ftp---brute-force class=md-nav__link> FTP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http---brute-force class=md-nav__link> HTTP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-form---brute-force class=md-nav__link> HTTP-Form - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-iis-short-name---brute-force class=md-nav__link> HTTP-IIS-Short-Name - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-joomla---brute-force class=md-nav__link> HTTP-Joomla - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-proxy---brute-force class=md-nav__link> HTTP-Proxy - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-wordpress---brute-force class=md-nav__link> HTTP-WordPress - Brute-Force </a> </li> <li class=md-nav__item> <a href=#iax2---brute-force class=md-nav__link> IAX2 - Brute-Force </a> </li> <li class=md-nav__item> <a href=#imap---brute-force class=md-nav__link> IMAP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#impress-remote-discover class=md-nav__link> Impress-Remote-Discover </a> </li> <li class=md-nav__item> <a href=#informix---brute-force class=md-nav__link> Informix - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ipmi---brute-force class=md-nav__link> IPMI - Brute-Force </a> </li> <li class=md-nav__item> <a href=#irc---brute-force class=md-nav__link> IRC - Brute-Force </a> </li> <li class=md-nav__item> <a href=#irc-sasl---brute-force class=md-nav__link> IRC-sasl - Brute-Force </a> </li> <li class=md-nav__item> <a href=#iscsi---brute-force class=md-nav__link> ISCSI - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ldap---brute-force class=md-nav__link> LDAP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#lu-enum class=md-nav__link> LU-Enum </a> </li> <li class=md-nav__item> <a href=#membase---brute-force class=md-nav__link> Membase - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mikrotik-routeros---brute-force class=md-nav__link> Mikrotik-RouterOS - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mmouse---brute-force class=md-nav__link> MMouse - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mongodb---brute-force class=md-nav__link> MongoDB - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ms-sql---brute-force class=md-nav__link> MS-SQL - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mysql---brute-force class=md-nav__link> MySQL - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mysql-enum class=md-nav__link> MySQL-enum </a> </li> <li class=md-nav__item> <a href=#nessus-xmlrpc---brute-force class=md-nav__link> Nessus-XMLRPC - Brute-Force </a> </li> <li class=md-nav__item> <a href=#netbus---brute-force class=md-nav__link> Netbus - Brute-Force </a> </li> <li class=md-nav__item> <a href=#nexpose---brute-force class=md-nav__link> Nexpose - Brute-Force </a> </li> <li class=md-nav__item> <a href=#nje-node---brute-force class=md-nav__link> NJE-Node - Brute-Force </a> </li> <li class=md-nav__item> <a href=#nje-pass---brute-force class=md-nav__link> NJE-Pass - Brute-Force </a> </li> <li class=md-nav__item> <a href=#nping---brute-force class=md-nav__link> Nping - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ompv2---brute-force class=md-nav__link> OMPv2 - Brute-Force </a> </li> <li class=md-nav__item> <a href=#openvas-otp---brute-force class=md-nav__link> OpenVAS-OTP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#oracle---brute-force class=md-nav__link> Oracle - Brute-Force </a> </li> <li class=md-nav__item> <a href=#oracle---brute-force-stealth class=md-nav__link> Oracle - Brute-Force-stealth </a> </li> <li class=md-nav__item> <a href=#oracle-sid---brute-force class=md-nav__link> oracle-sid - Brute-Force </a> </li> <li class=md-nav__item> <a href=#pcanywhere---brute-force class=md-nav__link> pcAnywhere - Brute-Force </a> </li> <li class=md-nav__item> <a href=#postgresql---brute-force class=md-nav__link> PostgreSQL - Brute-Force </a> </li> <li class=md-nav__item> <a href=#pop3---brute-force class=md-nav__link> POP3 - Brute-Force </a> </li> <li class=md-nav__item> <a href=#redis---brute-force class=md-nav__link> Redis - Brute-Force </a> </li> <li class=md-nav__item> <a href=#rexec---brute-force class=md-nav__link> RExec - Brute-Force </a> </li> <li class=md-nav__item> <a href=#unix-rlogin---brute-force class=md-nav__link> UNIX-RLogin - Brute-Force </a> </li> <li class=md-nav__item> <a href=#rpcap---brute-force class=md-nav__link> RPcap - Brute-Force </a> </li> <li class=md-nav__item> <a href=#rsync---brute-force class=md-nav__link> Rsync - Brute-Force </a> </li> <li class=md-nav__item> <a href=#rtsp-url---brute-force class=md-nav__link> RTSP-Url - Brute-Force </a> </li> <li class=md-nav__item> <a href=#smb---brute-force class=md-nav__link> SMB - Brute-Force </a> </li> <li class=md-nav__item> <a href=#smtp---brute-force class=md-nav__link> SMTP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#snmp---brute-force class=md-nav__link> SNMP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ssh---brute-force class=md-nav__link> SSH - Brute-Force </a> </li> <li class=md-nav__item> <a href=#svn---brute-force class=md-nav__link> SVN - Brute-Force </a> </li> <li class=md-nav__item> <a href=#telnet---brute-force class=md-nav__link> Telnet - Brute-Force </a> </li> <li class=md-nav__item> <a href=#tso-enu class=md-nav__link> TSO-Enu </a> </li> <li class=md-nav__item> <a href=#vmware-authentication-daemon---bruteforce class=md-nav__link> VMWare Authentication Daemon - BruteForce </a> </li> <li class=md-nav__item> <a href=#vnc---brute-force class=md-nav__link> VNC - Brute-Force </a> </li> <li class=md-nav__item> <a href=#vtam-enum class=md-nav__link> VTAM-Enum </a> </li> <li class=md-nav__item> <a href=#xmpp---brute-force class=md-nav__link> XMPP - Brute-Force </a> <nav class=md-nav aria-label="XMPP - Brute-Force"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#requirements class=md-nav__link> REQUIREMENTS </a> </li> <li class=md-nav__item> <a href=#contact class=md-nav__link> CONTACT </a> </li> <li class=md-nav__item> <a href=#web-site class=md-nav__link> WEB SITE </a> </li> <li class=md-nav__item> <a href=#end class=md-nav__link> END! </a> </li> </ul> </nav> </li> </ul> </nav> </li> <li class=md-nav__item> <a href=../netstat/ class=md-nav__link> netstat </a> </li> <li class=md-nav__item> <a href=../perf/ class=md-nav__link> perf </a> </li> <li class=md-nav__item> <a href=../rename/ class=md-nav__link> rename </a> </li> <li class=md-nav__item> <a href=../rg/ class=md-nav__link> ripgrep </a> </li> <li class=md-nav__item> <a href=../sed/ class=md-nav__link> sed </a> </li> <li class=md-nav__item> <a href=../ssh-log/ class=md-nav__link> ssh-log </a> </li> <li class=md-nav__item> <a href=../syslog-ng/syslog-conf.ng/ class=md-nav__link> syslog-ng </a> </li> <li class=md-nav__item> <a href=../sys/ class=md-nav__link> sys </a> </li> <li class=md-nav__item> <a href=../sqlmap/ class=md-nav__link> sqlmap </a> </li> <li class=md-nav__item> <a href=../tcpdump/ class=md-nav__link> tcpdump </a> </li> <li class=md-nav__item> <a href=../whatismyip/ class=md-nav__link> whatismyip </a> </li> <li class=md-nav__item> <a href=../wireguard/ class=md-nav__link> wireguard </a> </li> <li class=md-nav__item> <a href=../vim/ class=md-nav__link> vim </a> </li> </ul> </nav> </li> <li class="md-nav__item md-nav__item--nested"> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_7 type=checkbox id=__nav_7> <label class=md-nav__link for=__nav_7> Misc <span class="md-nav__icon md-icon"></span> </label> <nav class=md-nav aria-label=Misc data-md-level=1> <label class=md-nav__title for=__nav_7> <span class="md-nav__icon md-icon"></span> Misc </label> <ul class=md-nav__list data-md-scrollfix> <li class=md-nav__item> <a href=../../archive/useragents/user_agents.txt class=md-nav__link> UserAgents </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <nav class="md-nav md-nav--secondary" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <li class=md-nav__item> <a href=#after-you-installed-nmap-go-get-all-scripts-by-below-command class=md-nav__link> After you installed nmap go get all scripts by below command: </a> </li> <li class=md-nav__item> <a href=#afp---brute-force class=md-nav__link> AFP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ajp---brute-force class=md-nav__link> AJP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#backorifice---brute-force class=md-nav__link> Backorifice - Brute-Force </a> </li> <li class=md-nav__item> <a href=#cassandra---brute-force class=md-nav__link> Cassandra - Brute-Force </a> </li> <li class=md-nav__item> <a href=#citrix---brute-force-xml class=md-nav__link> Citrix - Brute-Force-xml </a> </li> <li class=md-nav__item> <a href=#cisco---cvs---test-whether-host-is-vulnerable-or-not class=md-nav__link> Cisco - Cvs - Test whether host is vulnerable or not </a> </li> <li class=md-nav__item> <a href=#you-can-pass-argument-to-get-config class=md-nav__link> You can pass argument to get config </a> </li> <li class=md-nav__item> <a href=#cvs---brute-force class=md-nav__link> Cvs - Brute-Force </a> </li> <li class=md-nav__item> <a href=#cvs-repository---brute-force class=md-nav__link> Cvs Repository - Brute-Force </a> </li> <li class=md-nav__item> <a href=#deluge-rpc---brute-force class=md-nav__link> Deluge-RPC - Brute-Force </a> </li> <li class=md-nav__item> <a href=#domcon---brute-force class=md-nav__link> Domcon - Brute-Force </a> </li> <li class=md-nav__item> <a href=#dpap---brute-force class=md-nav__link> DPAP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#drda---brute-force class=md-nav__link> DRDA - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ftp---brute-force class=md-nav__link> FTP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http---brute-force class=md-nav__link> HTTP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-form---brute-force class=md-nav__link> HTTP-Form - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-iis-short-name---brute-force class=md-nav__link> HTTP-IIS-Short-Name - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-joomla---brute-force class=md-nav__link> HTTP-Joomla - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-proxy---brute-force class=md-nav__link> HTTP-Proxy - Brute-Force </a> </li> <li class=md-nav__item> <a href=#http-wordpress---brute-force class=md-nav__link> HTTP-WordPress - Brute-Force </a> </li> <li class=md-nav__item> <a href=#iax2---brute-force class=md-nav__link> IAX2 - Brute-Force </a> </li> <li class=md-nav__item> <a href=#imap---brute-force class=md-nav__link> IMAP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#impress-remote-discover class=md-nav__link> Impress-Remote-Discover </a> </li> <li class=md-nav__item> <a href=#informix---brute-force class=md-nav__link> Informix - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ipmi---brute-force class=md-nav__link> IPMI - Brute-Force </a> </li> <li class=md-nav__item> <a href=#irc---brute-force class=md-nav__link> IRC - Brute-Force </a> </li> <li class=md-nav__item> <a href=#irc-sasl---brute-force class=md-nav__link> IRC-sasl - Brute-Force </a> </li> <li class=md-nav__item> <a href=#iscsi---brute-force class=md-nav__link> ISCSI - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ldap---brute-force class=md-nav__link> LDAP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#lu-enum class=md-nav__link> LU-Enum </a> </li> <li class=md-nav__item> <a href=#membase---brute-force class=md-nav__link> Membase - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mikrotik-routeros---brute-force class=md-nav__link> Mikrotik-RouterOS - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mmouse---brute-force class=md-nav__link> MMouse - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mongodb---brute-force class=md-nav__link> MongoDB - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ms-sql---brute-force class=md-nav__link> MS-SQL - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mysql---brute-force class=md-nav__link> MySQL - Brute-Force </a> </li> <li class=md-nav__item> <a href=#mysql-enum class=md-nav__link> MySQL-enum </a> </li> <li class=md-nav__item> <a href=#nessus-xmlrpc---brute-force class=md-nav__link> Nessus-XMLRPC - Brute-Force </a> </li> <li class=md-nav__item> <a href=#netbus---brute-force class=md-nav__link> Netbus - Brute-Force </a> </li> <li class=md-nav__item> <a href=#nexpose---brute-force class=md-nav__link> Nexpose - Brute-Force </a> </li> <li class=md-nav__item> <a href=#nje-node---brute-force class=md-nav__link> NJE-Node - Brute-Force </a> </li> <li class=md-nav__item> <a href=#nje-pass---brute-force class=md-nav__link> NJE-Pass - Brute-Force </a> </li> <li class=md-nav__item> <a href=#nping---brute-force class=md-nav__link> Nping - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ompv2---brute-force class=md-nav__link> OMPv2 - Brute-Force </a> </li> <li class=md-nav__item> <a href=#openvas-otp---brute-force class=md-nav__link> OpenVAS-OTP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#oracle---brute-force class=md-nav__link> Oracle - Brute-Force </a> </li> <li class=md-nav__item> <a href=#oracle---brute-force-stealth class=md-nav__link> Oracle - Brute-Force-stealth </a> </li> <li class=md-nav__item> <a href=#oracle-sid---brute-force class=md-nav__link> oracle-sid - Brute-Force </a> </li> <li class=md-nav__item> <a href=#pcanywhere---brute-force class=md-nav__link> pcAnywhere - Brute-Force </a> </li> <li class=md-nav__item> <a href=#postgresql---brute-force class=md-nav__link> PostgreSQL - Brute-Force </a> </li> <li class=md-nav__item> <a href=#pop3---brute-force class=md-nav__link> POP3 - Brute-Force </a> </li> <li class=md-nav__item> <a href=#redis---brute-force class=md-nav__link> Redis - Brute-Force </a> </li> <li class=md-nav__item> <a href=#rexec---brute-force class=md-nav__link> RExec - Brute-Force </a> </li> <li class=md-nav__item> <a href=#unix-rlogin---brute-force class=md-nav__link> UNIX-RLogin - Brute-Force </a> </li> <li class=md-nav__item> <a href=#rpcap---brute-force class=md-nav__link> RPcap - Brute-Force </a> </li> <li class=md-nav__item> <a href=#rsync---brute-force class=md-nav__link> Rsync - Brute-Force </a> </li> <li class=md-nav__item> <a href=#rtsp-url---brute-force class=md-nav__link> RTSP-Url - Brute-Force </a> </li> <li class=md-nav__item> <a href=#smb---brute-force class=md-nav__link> SMB - Brute-Force </a> </li> <li class=md-nav__item> <a href=#smtp---brute-force class=md-nav__link> SMTP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#snmp---brute-force class=md-nav__link> SNMP - Brute-Force </a> </li> <li class=md-nav__item> <a href=#ssh---brute-force class=md-nav__link> SSH - Brute-Force </a> </li> <li class=md-nav__item> <a href=#svn---brute-force class=md-nav__link> SVN - Brute-Force </a> </li> <li class=md-nav__item> <a href=#telnet---brute-force class=md-nav__link> Telnet - Brute-Force </a> </li> <li class=md-nav__item> <a href=#tso-enu class=md-nav__link> TSO-Enu </a> </li> <li class=md-nav__item> <a href=#vmware-authentication-daemon---bruteforce class=md-nav__link> VMWare Authentication Daemon - BruteForce </a> </li> <li class=md-nav__item> <a href=#vnc---brute-force class=md-nav__link> VNC - Brute-Force </a> </li> <li class=md-nav__item> <a href=#vtam-enum class=md-nav__link> VTAM-Enum </a> </li> <li class=md-nav__item> <a href=#xmpp---brute-force class=md-nav__link> XMPP - Brute-Force </a> <nav class=md-nav aria-label="XMPP - Brute-Force"> <ul class=md-nav__list> <li class=md-nav__item> <a href=#requirements class=md-nav__link> REQUIREMENTS </a> </li> <li class=md-nav__item> <a href=#contact class=md-nav__link> CONTACT </a> </li> <li class=md-nav__item> <a href=#web-site class=md-nav__link> WEB SITE </a> </li> <li class=md-nav__item> <a href=#end class=md-nav__link> END! </a> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <a href=https://github.com/wuseman/www.nr1.nu/tree/master/docs/src/markdown/linux/nmap.md title="Edit this page" class="md-content__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg> </a> <h1 id=nmap>nmap<a class=headerlink href=#nmap title="Permanent link"></a></h1> <p>As a pentester, we must understand and know what this extremely powerful tool is capable of, it can do SO Much more then just scanning ports ;-)</p> <h3 id=after-you-installed-nmap-go-get-all-scripts-by-below-command>After you installed nmap go get all scripts by below command:<a class=headerlink href=#after-you-installed-nmap-go-get-all-scripts-by-below-command title="Permanent link"></a></h3> <div class=highlight><pre><span></span><code> nmap --script-updatedb
+</code></pre></div> <h3 id=afp---brute-force>AFP - Brute-Force<a class=headerlink href=#afp---brute-force title="Permanent link"></a></h3> <p><em>Performs password guessing against Apple Filing Protocol (AFP)</em></p> <div class=highlight><pre><span></span><code> nmap -p 548 --script afp-brute 192.168.1.12
+
+ |PORT    STATE SERVICE
+ |548/tcp open  afp
+ | afp-brute:
+ |_  admin:KenSentMe =&gt; Valid credentials
+</code></pre></div> <h3 id=ajp---brute-force>AJP - Brute-Force<a class=headerlink href=#ajp---brute-force title="Permanent link"></a></h3> <p><em>Performs brute force passwords auditing against the Apache JServ protocol. The Apache JServ Protocol is commonly used by web servers to communicate with back-end Java application server containers</em></p> <div class=highlight><pre><span></span><code> nmap -p 8009 192.168.1.12 --script ajp-brute
+
+ |PORT     STATE SERVICE
+ |8009/tcp open  ajp13
+ | ajp-brute:
+ |   Accounts
+ |     root:secret - Valid credentials
+ |   Statistics
+ |_    Performed 1946 guesses in 23 seconds, average tps: 82
+</code></pre></div> <h3 id=backorifice---brute-force>Backorifice - Brute-Force<a class=headerlink href=#backorifice---brute-force title="Permanent link"></a></h3> <div class=highlight><pre><span></span><code> nmap -sU --script backorifice-brute 192.168.1.12 --script-args backorifice-brute.
+
+ |PORT       STATE  SERVICE
+ |31337/udp  open   BackOrifice
+ | backorifice-brute:
+ |   Accounts:
+ |     michael =&gt; Valid credentials
+ |   Statistics
+ |_    Perfomed 60023 guesses in 467 seconds, average tps: 138
+</code></pre></div> <h3 id=cassandra---brute-force>Cassandra - Brute-Force<a class=headerlink href=#cassandra---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the Cassandra database</em></p> <div class=highlight><pre><span></span><code> nmap -p 9160 192.168.1.12 --script=cassandra-brute
+
+ |PORT     STATE SERVICE VERSION
+ |9160/tcp open  apani1?
+ | cassandra-brute:
+ |   Accounts
+ |     admin:lover - Valid credentials
+ |     admin:lover - Valid credentials
+ |   Statistics
+ |_    Performed 4581 guesses in 1 seconds, average tps: 4581
+</code></pre></div> <h3 id=citrix---brute-force-xml>Citrix - Brute-Force-xml<a class=headerlink href=#citrix---brute-force-xml title="Permanent link"></a></h3> <p><em>Attempts to guess valid credentials for the Citrix PN Web Agent XML Service</em> The XML service authenticates against the local Windows server or the Active Directory_</p> <div class=highlight><pre><span></span><code> nmap --script=citrix - Brute-Force-xml --script-args=userdb=&lt;userdb&gt;,passdb=&lt;passdb&gt;,ntdomain=&lt;domain&gt; -p 80,443,8080 192.168.1.12
+
+ |PORT     STATE SERVICE    REASON
+ |8080/tcp open  http-proxy syn-ack
+ | citrix-brute-xml:
+ |   Joe:password =&gt; Must change password at next logon
+ |   Luke:summer =&gt; Login was successful
+ |_  Jane:secret =&gt; Account is disabled
+</code></pre></div> <h3 id=cisco---cvs---test-whether-host-is-vulnerable-or-not>Cisco - Cvs - Test whether host is vulnerable or not<a class=headerlink href=#cisco---cvs---test-whether-host-is-vulnerable-or-not title="Permanent link"></a></h3> <div class=highlight><pre><span></span><code>nmap -p 4786 -v 192.168.0.1 # By default, it will just test whether host is vulnerable or not
+nmap -p 4786 -v 192.168.0.1 --script ./cisco-siet.nse
+</code></pre></div> <h3 id=you-can-pass-argument-to-get-config>You can pass argument to get config<a class=headerlink href=#you-can-pass-argument-to-get-config title="Permanent link"></a></h3> <p>If you are attacking public ip, make sure to provide your public ip to the script (cisco-siet.addr=<public_ip>)</p> <div class=highlight><pre><span></span><code>nmap -p 4786 -v 192.168.0.1 --script ./cisco-siet.nse --script-args &quot;cisco-siet.get&quot;
+</code></pre></div> <h3 id=cvs---brute-force>Cvs - Brute-Force<a class=headerlink href=#cvs---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against CVS pserver authentication</em></p> <div class=highlight><pre><span></span><code> nmap -p 2401 --script cvs-brute 192.168.1.12
+
+ |2401/tcp open  cvspserver syn-ack
+ | cvs-brute:
+ |   Accounts
+ |     hotchner:francisco - Account is valid
+ |     reid:secret - Account is valid
+ |   Statistics
+ |_    Performed 544 guesses in 14 seconds, average tps: 38
+</code></pre></div> <h3 id=cvs-repository---brute-force>Cvs Repository - Brute-Force<a class=headerlink href=#cvs-repository---brute-force title="Permanent link"></a></h3> <p><em>Attempts to guess the name of the CVS repositories hosted on the remote server</em> With knowledge of the correct repository name, usernames and passwords can be guessed_</p> <div class=highlight><pre><span></span><code> nmap -p 2401 --script cvs-brute-repository 192.168.1.12
+
+ |PORT     STATE SERVICE    REASON
+ |2401/tcp open  cvspserver syn-ack
+ | cvs-brute-repository:
+ |   Repositories
+ |     /myrepos
+ |     /demo
+ |   Statistics
+ |_    Performed 14 guesses in 1 seconds, average tps: 14
+</code></pre></div> <h3 id=deluge-rpc---brute-force>Deluge-RPC - Brute-Force<a class=headerlink href=#deluge-rpc---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the DelugeRPC daemon</em></p> <div class=highlight><pre><span></span><code> nmap --script deluge-rpc-brute -p 58846 192.168.1.12
+
+ |PORT      STATE SERVICE REASON  TTL
+ |58846/tcp open  unknown syn-ack 0
+ | deluge-rpc-brute:
+ |   Accounts
+ |     admin:default - Valid credentials
+ |   Statistics
+ |_    Performed 8 guesses in 1 seconds, average tps: 8
+</code></pre></div> <h3 id=domcon---brute-force>Domcon - Brute-Force<a class=headerlink href=#domcon---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the Lotus Domino Console</em></p> <div class=highlight><pre><span></span><code> nmap --script domcon-brute -p 2050 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |2050/tcp open  unknown syn-ack
+ | domcon-brute:
+ |   Accounts
+ |_    patrik karlsson:secret =&gt; Login correct
+</code></pre></div> <h3 id=dpap---brute-force>DPAP - Brute-Force<a class=headerlink href=#dpap---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against an iPhoto Library</em></p> <div class=highlight><pre><span></span><code> nmap --script dpap-brute -p 8770 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |8770/tcp open  apple-iphoto syn-ack
+ | dpap-brute:
+ |   Accounts
+ |     secret =&gt; Login correct
+ |   Statistics
+ |_    Perfomed 5007 guesses in 6 seconds, average tps: 834
+</code></pre></div> <h3 id=drda---brute-force>DRDA - Brute-Force<a class=headerlink href=#drda---brute-force title="Permanent link"></a></h3> <p><em>Performs password guessing against databases sup |PORTing the IBM DB2 protocol such as Informix, DB2 and Derby</em></p> <div class=highlight><pre><span></span><code> nmap -p 50000 --script drda-brute 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |50000/tcp open  drda
+ | drda-brute:
+ |_  db2admin:db2admin =&gt; Valid credentials
+</code></pre></div> <h3 id=ftp---brute-force>FTP - Brute-Force<a class=headerlink href=#ftp---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against FTP servers</em></p> <div class=highlight><pre><span></span><code> nmap --script ftp-brute -p 21 192.168.1.12
+
+ |PORT   STATE SERVICE
+ |21/tcp open  ftp
+ | ftp-brute:
+ |   Accounts
+ |     root:root - Valid credentials
+ |   Statistics
+ |_    Performed 510 guesses in 610 seconds, average tps: 0
+</code></pre></div> <h3 id=http---brute-force>HTTP - Brute-Force<a class=headerlink href=#http---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against http basic, digest and ntlm authentication</em></p> <div class=highlight><pre><span></span><code> nmap --script http-brute -p 80 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |80/tcp   open  http    syn-ack
+ | http-brute:
+ |   Accounts:
+ |     user:user - Valid credentials
+ |_  Statistics: Performed 123 guesses in 1 seconds, average tps: 123
+</code></pre></div> <h3 id=http-form---brute-force>HTTP-Form - Brute-Force<a class=headerlink href=#http-form---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against http form-based authentication</em></p> <div class=highlight><pre><span></span><code> nmap --script http-form-brute -p 80 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |80/tcp   open  http    syn-ack
+ | http-form-brute:
+ |   Accounts
+ |     Patrik Karlsson:secret - Valid credentials
+ |   Statistics
+ |_    Perfomed 60023 guesses in 467 seconds, average tps: 138
+</code></pre></div> <h3 id=http-iis-short-name---brute-force>HTTP-IIS-Short-Name - Brute-Force<a class=headerlink href=#http-iis-short-name---brute-force title="Permanent link"></a></h3> <p><em>Attempts to Brute-Force the 8_3 filenames (commonly known as short names) of files and directories in the root folder of vulnerable IIS servers</em> This script is an implementation of the PoC "iis shortname scanner"_</p> <div class=highlight><pre><span></span><code> nmap -p80 --script http-iis-short-name-brute 192.168.1.12
+
+ |PORT   STATE SERVICE
+ |80/tcp open  http
+ | http-iis-short-name-brute:
+ |   VULNERABLE:
+ |   Microsoft IIS tilde character &quot;~&quot; short name disclosure and denial of service
+ |     State: VULNERABLE (Exploitable)
+ |     Description:
+ |      Vulnerable IIS servers disclose folder and file names with a Windows 8.3 naming scheme inside the webroot folder.
+ |      Shortnames can be used to guess or brute force sensitive filenames. Attackers can exploit this vulnerability to
+ |      cause a denial of service condition.
+ |
+ |     Extra information:
+ |
+ |   8.3 filenames found:
+ |     Folders
+ |       admini~1
+ |     Files
+ |       backup~1.zip
+ |       certsb~2.zip
+ |       siteba~1.zip
+ |
+ |     References:
+ |       http://soroush.secproject.com/downloadable/microsoft_iis_tilde_character_vulnerability_feature.pdf
+ |_      https://github.com/irsdl/IIS-ShortName-Scanner
+</code></pre></div> <h3 id=http-joomla---brute-force>HTTP-Joomla - Brute-Force<a class=headerlink href=#http-joomla---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against Joomla web CMS installations</em></p> <div class=highlight><pre><span></span><code> nmap -sV --script http-joomla-brute --script-args &#39;userdb=users.txt,passdb=passwds.txt,http-joomla-brute.hostname=domain.com,http-joomla-brute.threads=3,brute.firstonly=true&#39; 192.168.1.12
+
+
+ |PORT     STATE SERVICE REASON
+ |80/tcp open  http    syn-ack
+ | http-joomla-brute:
+ |   Accounts
+ |     xdeadbee:i79eWBj07g =&gt; Login correct
+ |   Statistics
+ |_    Perfomed 499 guesses in 301 seconds, average tps: 0
+</code></pre></div> <h3 id=http-proxy---brute-force>HTTP-Proxy - Brute-Force<a class=headerlink href=#http-proxy---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password guessing against HTTP proxy servers</em></p> <div class=highlight><pre><span></span><code> nmap --script http-proxy-brute -p 8080 192.168.1.12
+
+ |PORT     STATE SERVICE
+ |8080/tcp open  http-proxy
+ | http-proxy-brute:
+ |   Accounts
+ |     patrik:12345 - Valid credentials
+ |   Statistics
+ |_    Performed 6 guesses in 2 seconds, average tps: 3
+</code></pre></div> <h3 id=http-wordpress---brute-force>HTTP-WordPress - Brute-Force<a class=headerlink href=#http-wordpress---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against Wordpress CMS/blog installations</em></p> <div class=highlight><pre><span></span><code> nmap -sV --script http-wordpress-brute --script-args &#39;userdb=users.txt,passdb=passwds.txt,http-wordpress-brute.hostname=domain.com,http-wordpress-brute.threads=3,brute.firstonly=true&#39; 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |80/tcp   open  http    syn-ack
+ | http-wordpress-brute:
+ |   Accounts
+ |     0xdeadb33f:god =&gt; Login correct
+ |   Statistics
+ |_    Perfomed 103 guesses in 17 seconds, average tps: 6
+</code></pre></div> <h3 id=iax2---brute-force>IAX2 - Brute-Force<a class=headerlink href=#iax2---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the Asterisk IAX2 protocol</em> Guessing fails when a large number of attempts is made due to the maxcallnumber limit (default 2048)_ In case your getting "ERROR: Too many retries, aborted ___" after a while, this is most likely what's happening_ In order to avoid this problem try: - reducing the size of your dictionary - use the brute delay option to introduce a delay between guesses - split the guessing up in chunks and wait for a while between them_ </p> <div class=highlight><pre><span></span><code> nmap -sU -p 4569 192.168.1.12 --script iax2-brute
+
+ | PORT     STATE         SERVICE   
+ |4569/udp open     |filtered unknown
+ |  iax2-brute:
+ |    Accounts
+ |      1002:password12 - Valid credentials
+ |    Statistics
+ _    Performed 1850 guesses in 2 seconds, average tps: 925
+</code></pre></div> <h3 id=imap---brute-force>IMAP - Brute-Force<a class=headerlink href=#imap---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against IMAP servers using either LOGIN, PLAIN, CRAM-MD5, DIGEST-MD5 or NTLM authentication</em></p> <div class=highlight><pre><span></span><code> nmap -p 143,993 --script imap-brute 192.168.1.12
+
+ |PORT    STATE SERVICE REASON
+ |143/tcp open  imap    syn-ack
+ | imap-brute:
+ |   Accounts
+ |     braddock:jules - Valid credentials
+ |     lane:sniper - Valid credentials
+ |     parker:scorpio - Valid credentials
+ |   Statistics
+ |_    Performed 62 guesses in 10 seconds, average tps: 6
+</code></pre></div> <h3 id=impress-remote-discover>Impress-Remote-Discover<a class=headerlink href=#impress-remote-discover title="Permanent link"></a></h3> <p><em>Tests for the presence of the LibreOffice Impress Remote server</em> Checks if a PIN is valid if provided and will bruteforce the PIN if requested_</p> <div class=highlight><pre><span></span><code> nmap -p 1599 --script impress-remote-discover 192.168.1.12
+
+ |PORT     STATE SERVICE        Version
+ |1599/tcp open  impress-remote LibreOffice Impress remote 4.3.3.2
+ | impress-remote-discover:
+ |   Impress Version: 4.3.3.2
+ |   Remote PIN: 0000
+ |_  Client Name used: Firefox OS
+</code></pre></div> <h3 id=informix---brute-force>Informix - Brute-Force<a class=headerlink href=#informix---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against IBM Informix Dynamic Server</em></p> <div class=highlight><pre><span></span><code> nmap --script informix-brute -p 9088 192.168.1.12
+
+ |PORT     STATE SERVICE
+ |9088/tcp open  unknown
+ | informix-brute:
+ |   Accounts
+ |     ifxnoob:ifxnoob =&gt; Valid credentials
+ |   Statistics
+ |_    Perfomed 25024 guesses in 75 seconds, average tps: 320
+</code></pre></div> <h3 id=ipmi---brute-force>IPMI - Brute-Force<a class=headerlink href=#ipmi---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against IPMI RPC server</em></p> <div class=highlight><pre><span></span><code> nmap -sU --script ipmi-brute -p 623 192.168.1.12
+
+ |PORT     STATE  SERVICE REASON
+ |623/udp  open     |filtered  unknown
+ | ipmi-brute:
+ |   Accounts
+ |_    admin:admin =&gt; Valid credentials
+</code></pre></div> <h3 id=irc---brute-force>IRC - Brute-Force<a class=headerlink href=#irc---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against IRC (Internet Relay Chat) servers</em></p> <div class=highlight><pre><span></span><code> nmap --script irc-brute -p 6667 192.168.1.12
+
+ |PORT     STATE SERVICE
+ |6667/tcp open  irc
+ | irc-brute:
+ |   Accounts
+ |     password - Valid credentials
+ |   Statistics
+ |_    Performed 1927 guesses in 36 seconds, average tps: 74
+</code></pre></div> <h3 id=irc-sasl---brute-force>IRC-sasl - Brute-Force<a class=headerlink href=#irc-sasl---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against IRC (Internet Relay Chat) servers sup |PORTing SASL authentication</em></p> <div class=highlight><pre><span></span><code> nmap --script irc-sasl-brute -p 6667 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |6667/tcp open  irc     syn-ack
+ | irc-sasl-brute:
+ |   Accounts
+ |     root:toor - Valid credentials
+ |   Statistics
+ |_    Performed 60 guesses in 29 seconds, average tps: 2
+</code></pre></div> <h3 id=iscsi---brute-force>ISCSI - Brute-Force<a class=headerlink href=#iscsi---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against iSCSI targets</em></p> <div class=highlight><pre><span></span><code> nmap -sV --script=iscsi-brute 192.168.1.12
+
+ |PORT     STATE SERVICE
+ |3260/tcp open  iscsi   syn-ack
+ | iscsi-brute:
+ |   Accounts
+ |     user:password123456 =&gt; Valid credentials
+ |   Statistics
+ |_    Perfomed 5000 guesses in 7 seconds, average tps: 714
+</code></pre></div> <h3 id=ldap---brute-force>LDAP - Brute-Force<a class=headerlink href=#ldap---brute-force title="Permanent link"></a></h3> <p><em>Attempts to brute-force LDAP authentication</em> By default it uses the built-in username and password lists_ In order to use your own lists use the userdb and passdb script arguments_</p> <div class=highlight><pre><span></span><code> nmap -p 389 --script ldap-brute --script-args ldap.base=&#39;&quot;cn=users,dc=cqure,dc=net&quot;&#39; 192.168.1.12
+
+ |389/tcp open  ldap
+ | ldap-brute:
+ |_  ldaptest:ldaptest =&gt; Valid credentials
+ |   restrict.ws:restricted1 =&gt; Valid credentials, account cannot log in from current host
+ |   restrict.time:restricted1 =&gt; Valid credentials, account cannot log in at current time
+ |   valid.user:valid1 =&gt; Valid credentials
+ |   expired.user:expired1 =&gt; Valid credentials, account expired
+ |   disabled.user:disabled1 =&gt; Valid credentials, account disabled
+ |_  must.change:need2change =&gt; Valid credentials, password must be changed at next logon
+</code></pre></div> <h3 id=lu-enum>LU-Enum<a class=headerlink href=#lu-enum title="Permanent link"></a></h3> <p><em>Attempts to enumerate Logical Units (LU) of TN3270E servers</em></p> <div class=highlight><pre><span></span><code> nmap --script lu-enum --script-args lulist=lus.txt,lu-enum.path=&quot;/home/dade/screenshots/&quot; -p 23 -sV &lt;targets&gt;
+
+ |PORT     STATE SERVICE REASON  VERSION
+ |23/tcp   open  tn3270  syn-ack IBM Telnet TN3270 (TN3270E)
+ | lu-enum: 
+ |   Logical Units: 
+ |     LU:BSLVLU69 - Valid credentials
+ |_  Statistics: Performed 7 guesses in 7 seconds, average tps: 1.0
+</code></pre></div> <h3 id=membase---brute-force>Membase - Brute-Force<a class=headerlink href=#membase---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against Couchbase Membase servers</em></p> <div class=highlight><pre><span></span><code> nmap -p 11211 --script membase-brute
+
+ |PORT      STATE SERVICE
+ |11211/tcp open  unknown
+ | membase-brute:
+ |   Accounts
+ |     buckettest:toledo - Valid credentials
+ |   Statistics
+ |_    Performed 5000 guesses in 2 seconds, average tps: 2500
+</code></pre></div> <h3 id=mikrotik-routeros---brute-force>Mikrotik-RouterOS - Brute-Force<a class=headerlink href=#mikrotik-routeros---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against Mikrotik RouterOS devices with the API RouterOS interface enabled</em></p> <div class=highlight><pre><span></span><code> nmap -p8728 --script mikrotik-routeros-brute 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |8728/tcp open  unknown syn-ack
+ | mikrotik-routeros-brute:
+ |   Accounts
+ |     admin:dOsmyvsvJGA967eanX - Valid credentials
+ |   Statistics
+ |_    Performed 60 guesses in 602 seconds, average tps: 0
+</code></pre></div> <h3 id=mmouse---brute-force>MMouse - Brute-Force<a class=headerlink href=#mmouse---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the RPA Tech Mobile Mouse servers</em></p> <div class=highlight><pre><span></span><code> nmap --script mmouse-brute -p 51010 192.168.1.12
+
+ |PORT      STATE SERVICE
+ |51010/tcp open  unknown
+ | mmouse-brute:
+ |   Accounts
+ |     vanilla - Valid credentials
+ |   Statistics
+ |_    Performed 1199 guesses in 23 seconds, average tps: 47
+</code></pre></div> <h3 id=mongodb---brute-force>MongoDB - Brute-Force<a class=headerlink href=#mongodb---brute-force title="Permanent link"></a></h3> <p>_ Performs Brute-Force password auditing against the MongoDB database_</p> <div class=highlight><pre><span></span><code> nmap -p 27017 192.168.1.12 --script mongodb-brute
+
+ |PORT      STATE SERVICE
+ |27017/tcp open  mongodb
+ | mongodb-brute:
+ |   Accounts
+ |     root:Password1 - Valid credentials
+ |   Statistics
+ |_    Performed 3542 guesses in 9 seconds, average tps: 393
+</code></pre></div> <h3 id=ms-sql---brute-force>MS-SQL - Brute-Force<a class=headerlink href=#ms-sql---brute-force title="Permanent link"></a></h3> <p><em>Performs password guessing against Microsoft SQL Server (ms-sql)</em> Works best in conjunction with the broadcast-ms-sql-discover script_</p> <div class=highlight><pre><span></span><code> nmap -p 445 --script ms-sql-brute --script-args mssql.instance-all,userdb=customuser.txt,passdb=custompass.txt 192.168.1.12
+ nmap -p 1433 --script ms-sql-brute --script-args userdb=customuser.txt,passdb=custompass.txt 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ | ms-sql-brute:
+ |   [192.168.100.128\TEST]
+ |     No credentials found
+ |     Warnings:
+ |       sa: AccountLockedOut
+ |   [192.168.100.128\PROD]
+ |     Credentials found:
+ |       webshop_reader:secret =&gt; Login Success
+ |       testuser:secret1234 =&gt; PasswordMustChange
+ |_      lordvader:secret1234 =&gt; Login Success
+</code></pre></div> <h3 id=mysql---brute-force>MySQL - Brute-Force<a class=headerlink href=#mysql---brute-force title="Permanent link"></a></h3> <p><em>Performs password guessing against MySQL</em></p> <div class=highlight><pre><span></span><code> nmap --script=mysql-brute 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |3306/tcp open  mysql
+ | mysql-brute:
+ |   Accounts
+ |     root:root - Valid credentials
+</code></pre></div> <h3 id=mysql-enum>MySQL-enum<a class=headerlink href=#mysql-enum title="Permanent link"></a></h3> <p><em>Performs valid-user enumeration against MySQL server using a bug discovered and published by Kingcope (<a href=http://seclists_org/fulldisclosure/2012/Dec/9>http://seclists_org/fulldisclosure/2012/Dec/9</a>)</em></p> <div class=highlight><pre><span></span><code> nmap --script=mysql-enum 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |3306/tcp open  mysql   syn-ack
+ | mysql-enum:
+ |   Accounts
+ |     admin:&lt;empty&gt; - Valid credentials
+ |     test:&lt;empty&gt; - Valid credentials
+ |     test_mysql:&lt;empty&gt; - Valid credentials
+ |   Statistics
+ |_    Performed 11 guesses in 1 seconds, average tps: 11
+</code></pre></div> <h3 id=nessus-xmlrpc---brute-force>Nessus-XMLRPC - Brute-Force<a class=headerlink href=#nessus-xmlrpc---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against a Nessus vulnerability scanning daemon using the XMLRPC protocol</em></p> <div class=highlight><pre><span></span><code> nmap -sV --script=nessus-xmlrpc-brute 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |8834/tcp open  unknown syn-ack
+ | nessus-xmlrpc-brute:
+ |   Accounts
+ |     nessus:nessus - Valid credentials
+ |   Statistics
+ |_    Performed 1933 guesses in 26 seconds, average tps: 73
+</code></pre></div> <h3 id=netbus---brute-force>Netbus - Brute-Force<a class=headerlink href=#netbus---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the Netbus backdoor ("remote administration") service</em></p> <div class=highlight><pre><span></span><code> nmap -p 12345 --script netbus-brute 192.168.1.12
+
+ |12345/tcp open  netbus
+ |_netbus-brute: password123
+</code></pre></div> <h3 id=nexpose---brute-force>Nexpose - Brute-Force<a class=headerlink href=#nexpose---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against a Nexpose vulnerability scanner using the API 1_1</em></p> <div class=highlight><pre><span></span><code> nmap --script nexpose-brute -p 3780 192.168.1.12
+
+ |PORT     STATE SERVICE     REASON  VERSION
+ |3780/tcp open  ssl/nexpose syn-ack NeXpose NSC 0.6.4
+ | nexpose-brute:
+ |   Accounts
+ |     nxadmin:nxadmin - Valid credentials
+ |   Statistics
+ |_    Performed 5 guesses in 1 seconds, average tps: 5
+</code></pre></div> <h3 id=nje-node---brute-force>NJE-Node - Brute-Force<a class=headerlink href=#nje-node---brute-force title="Permanent link"></a></h3> <p><em>z/OS JES Network Job Entry (NJE) target node name Brute-Force</em></p> <div class=highlight><pre><span></span><code> nmap -sV --script=nje-node-brute 192.168.1.12
+ nmap --script=nje-node-brute --script-args=hostlist=nje_names.txt -p 175 192.168.1.12
+
+ |PORT    STATE SERVICE REASON
+ |175/tcp open  nje     syn-ack
+ | nje-node-brute:
+ |   Node Name:
+ |     POTATO:CACTUS - Valid credentials
+ |_  Statistics: Performed 6 guesses in 14 seconds, average tps: 0
+</code></pre></div> <h3 id=nje-pass---brute-force>NJE-Pass - Brute-Force<a class=headerlink href=#nje-pass---brute-force title="Permanent link"></a></h3> <p><em>z/OS JES Network Job Entry (NJE) 'I record' password Brute-Forcer</em></p> <div class=highlight><pre><span></span><code> nmap -sV --script=nje-pass-brute --script-args=ohost=&#39;POTATO&#39;,rhost=&#39;CACTUS&#39; 192.168.1.12
+ nmap --script=nje-pass-brute --script-args=ohost=&#39;POTATO&#39;,rhost=&#39;CACTUS&#39;,sleep=5 -p 175 192.168.1.12
+
+ |PORT    STATE SERVICE VERSION
+ |175/tcp open  nje     IBM Network Job Entry (JES)
+ | nje-pass-brute:
+ |   NJE Password:
+ |     Password:A - Valid credentials
+ |_  Statistics: Performed 8 guesses in 12 seconds, average tps: 0
+</code></pre></div> <h3 id=nping---brute-force>Nping - Brute-Force<a class=headerlink href=#nping---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against an Nping Echo service</em></p> <div class=highlight><pre><span></span><code> nmap -p 9929 --script nping-brute 192.168.1.12
+
+ |9929/tcp open  nping-echo
+ | nping-brute:
+ |   Accounts
+ |     123abc =&gt; Valid credentials
+ |   Statistics
+ |_    Perfomed 204 guesses in 204 seconds, average tps: 1
+</code></pre></div> <h3 id=ompv2---brute-force>OMPv2 - Brute-Force<a class=headerlink href=#ompv2---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the OpenVAS manager using OMPv2</em></p> <div class=highlight><pre><span></span><code> nmap -p 9390 --script omp2-brute 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |9390/tcp open  openvas syn-ack
+ | omp2-brute:
+ |   Accounts
+ |_    admin:secret =&gt; Valid credentials
+</code></pre></div> <h3 id=openvas-otp---brute-force>OpenVAS-OTP - Brute-Force<a class=headerlink href=#openvas-otp---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against a OpenVAS vulnerability scanner daemon using the OTP 1_0 protocol</em></p> <div class=highlight><pre><span></span><code> nmap -sV --script=openvas-otp-brute 192.168.1.12
+
+ |PORT     STATE SERVICE    REASON  VERSION
+ |9391/tcp open  ssl/openvas syn-ack
+ | openvas-otp-brute:
+ |   Accounts
+ |     openvas:openvas - Valid credentials
+ |   Statistics
+ &#39;-.&gt;   Performed 4 guesses in 4 seconds, average tps: 1
+</code></pre></div> <h3 id=oracle---brute-force>Oracle - Brute-Force<a class=headerlink href=#oracle---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against Oracle servers</em></p> <div class=highlight><pre><span></span><code> nmap --script oracle-brute -p 1521 --script-args oracle-brute.sid=ORCL 192.168.1.12
+
+ |PORT     STATE  SERVICE REASON
+ |1521/tcp open  oracle  syn-ack
+ | oracle-brute:
+ |   Accounts
+ |     system:powell =&gt; Account locked
+ |     haxxor:haxxor =&gt; Valid credentials
+ |   Statistics
+ |_    Perfomed 157 guesses in 8 seconds, average tps: 19
+</code></pre></div> <h3 id=oracle---brute-force-stealth>Oracle - Brute-Force-stealth<a class=headerlink href=#oracle---brute-force-stealth title="Permanent link"></a></h3> <p><em>Exploits the CVE-2012-3137 vulnerability, a weakness in Oracle's O5LOGIN authentication scheme</em> The vulnerability exists in Oracle 11g R1/R2 and allows linking the session key to a password hash_ When initiating an authentication attempt as a valid user the server will respond with a session key and salt_ Once received the script will disconnect the connection thereby not recording the login attempt_ The session key and salt can then be used to Brute-Force the users password_</p> <div class=highlight><pre><span></span><code> nmap --script oracle-brute-stealth -p 1521 --script-args oracle-brute-stealth.sid=ORCL 192.168.1.12
+
+ |PORT     STATE  SERVICE REASON
+ |1521/tcp open  oracle  syn-ack
+ | oracle-brute-stealth:
+ |   Accounts
+ |     dummy:$o5logon$1245C95384E15E7F0C893FCD1893D8E19078170867E892CE86DF90880E09FAD3B4832CBCFDAC1A821D2EA8E3D2209DB6*4202433F49DE9AE72AE2 - Hashed valid or invalid credentials
+ |     nmap:$o5logon$D1B28967547DBA3917D7B129E339F96156C8E2FE5593D42540992118B3475214CA0F6580FD04C2625022054229CAAA8D*7BCF2ACF08F15F75B579 - Hashed valid or invalid credentials
+ |   Statistics
+ |_    Performed 2 guesses in 1 seconds, average tps: 2
+</code></pre></div> <h3 id=oracle-sid---brute-force>oracle-sid - Brute-Force<a class=headerlink href=#oracle-sid---brute-force title="Permanent link"></a></h3> <p><em>Guesses Oracle instance/SID names against the TNS-listener</em></p> <div class=highlight><pre><span></span><code> nmap --script=oracle-sid-brute --script-args=oraclesids=/path/to/sidfile -p 1521-1560 192.168.1.12
+ nmap --script=oracle-sid-brute -p 1521-1560 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |1521/tcp open  oracle  syn-ack
+ | oracle-sid-brute:
+ |   orcl
+ |   prod
+ |_  devel
+</code></pre></div> <h3 id=pcanywhere---brute-force>pcAnywhere - Brute-Force<a class=headerlink href=#pcanywhere---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the pcAnywhere remote access protocol</em></p> <div class=highlight><pre><span></span><code> nmap --script=pcanywhere-brute 192.168.1.12
+
+ |5631/tcp open  pcanywheredata syn-ack
+ | pcanywhere-brute:
+ |   Accounts
+ |     administrator:administrator - Valid credentials
+ |   Statistics
+ |_    Performed 2 guesses in 55 seconds, average tps: 0
+</code></pre></div> <h3 id=postgresql---brute-force>PostgreSQL - Brute-Force<a class=headerlink href=#postgresql---brute-force title="Permanent link"></a></h3> <p><em>Performs password guessing against PostgreSQL</em></p> <div class=highlight><pre><span></span><code> nmap -p 5432 --script pgsql-brute 192.168.1.12
+
+ |5432/tcp open  pgsql
+ | pgsql-brute:
+ |   root:&lt;empty&gt; =&gt; Valid credentials
+ |_  test:test =&gt; Valid credentials
+</code></pre></div> <h3 id=pop3---brute-force>POP3 - Brute-Force<a class=headerlink href=#pop3---brute-force title="Permanent link"></a></h3> <p><em>Tries to log into a POP3 account by guessing usernames and passwords</em></p> <div class=highlight><pre><span></span><code> nmap -sV --script=pop3-brute 192.168.1.12
+
+ |PORT    STATE SERVICE
+ |110/tcp open  pop3
+ | pop3-brute-     |PORTed:
+ | Accounts:
+ |  user:pass =&gt; Login correct
+ | Statistics:
+ |_ Performed 8 scans in 1 seconds, average tps: 8
+</code></pre></div> <h3 id=redis---brute-force>Redis - Brute-Force<a class=headerlink href=#redis---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force passwords auditing against a Redis key-value store</em></p> <div class=highlight><pre><span></span><code> nmap -p 6379 192.168.1.12 --script redis-brute
+
+ |PORT     STATE SERVICE
+ |6379/tcp open  unknown
+ | redis-brute:
+ |   Accounts
+ |     toledo - Valid credentials
+ |   Statistics
+ |_    Performed 5000 guesses in 3 seconds, average tps: 1666
+</code></pre></div> <h3 id=rexec---brute-force>RExec - Brute-Force<a class=headerlink href=#rexec---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the classic UNIX rexec (remote exec) service</em></p> <div class=highlight><pre><span></span><code> nmap -p 512 --script rexec-brute 192.168.1.12
+
+ |PORT    STATE SERVICE
+ |512/tcp open  exec
+ | rexec-brute:
+ |   Accounts
+ |     nmap:test - Valid credentials
+ |   Statistics
+ |_    Performed 16 guesses in 7 seconds, average tps: 2
+</code></pre></div> <h3 id=unix-rlogin---brute-force>UNIX-RLogin - Brute-Force<a class=headerlink href=#unix-rlogin---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the classic UNIX rlogin (remote login) service</em> This script must be run in privileged mode on UNIX because it must bind to a low source |PORT number_</p> <div class=highlight><pre><span></span><code> nmap -p 513 --script rlogin-brute 192.168.1.12
+
+ |PORT    STATE SERVICE
+ |513/tcp open  login
+ | rlogin-brute:
+ |   Accounts
+ |     nmap:test - Valid credentials
+ |   Statistics
+ |_    Performed 4 guesses in 5 seconds, average tps: 0
+</code></pre></div> <h3 id=rpcap---brute-force>RPcap - Brute-Force<a class=headerlink href=#rpcap---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the WinPcap Remote Capture Daemon (rpcap)</em></p> <div class=highlight><pre><span></span><code> nmap -p 2002 192.168.1.12 --script rpcap-brute
+
+ |PORT     STATE SERVICE REASON
+ |2002/tcp open  globe   syn-ack
+ | rpcap-brute:
+ |   Accounts
+ |     monkey:Password1 - Valid credentials
+ |   Statistics
+ |_    Performed 3540 guesses in 3 seconds, average tps: 1180
+</code></pre></div> <h3 id=rsync---brute-force>Rsync - Brute-Force<a class=headerlink href=#rsync---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the rsync remote file syncing protocol</em></p> <div class=highlight><pre><span></span><code> nmap -p 873 --script rsync-brute --script-args &#39;rsync-brute.module=www&#39; 192.168.1.12
+
+ |PORT    STATE SERVICE REASON
+ |873/tcp open  rsync   syn-ack
+ | rsync-brute:
+ |   Accounts
+ |     user1:laptop - Valid credentials
+ |     user2:password - Valid credentials
+ |   Statistics
+ |_    Performed 1954 guesses in 20 seconds, average tps: 97
+</code></pre></div> <h3 id=rtsp-url---brute-force>RTSP-Url - Brute-Force<a class=headerlink href=#rtsp-url---brute-force title="Permanent link"></a></h3> <p><em>Attempts to enumerate RTSP media URLS by testing for common paths on devices such as surveillance IP cameras</em></p> <div class=highlight><pre><span></span><code> nmap --script rtsp-url-brute -p 554 192.168.1.12
+
+ |PORT    STATE SERVICE
+ |554/tcp open  rtsp
+ | rtsp-url-brute:
+ |   discovered:
+ |     rtsp://camera.example.com/mpeg4
+ |   other responses:
+ |     401:
+ |_      rtsp://camera.example.com/live/mpeg4
+</code></pre></div> <h3 id=smb---brute-force>SMB - Brute-Force<a class=headerlink href=#smb---brute-force title="Permanent link"></a></h3> <p><em>Attempts to guess username/password combinations over SMB, storing discovered combinations for use in other scripts</em> Every attempt will be made to get a valid list of users and to verify each username before actually using them_ When a username is discovered, besides being printed, it is also saved in the Nmap registry so other Nmap scripts can use it_ That means that if you're going to run smb - Brute-Force_nse, you should run other smb scripts you want_ This checks passwords in a case-insensitive way, determining case after a password is found, for Windows versions before Vista_</p> <div class=highlight><pre><span></span><code> nmap -sU -sS --script smb-brute.nse -p U:137,T:139 192.168.1.12
+
+ | smb-brute:
+ |   bad name:test =&gt; Valid credentials
+ |   consoletest:test =&gt; Valid credentials, password must be changed at next logon
+ |   guest:&lt;anything&gt; =&gt; Valid credentials, account disabled
+ |   mixcase:BuTTeRfLY1 =&gt; Valid credentials
+ |   test:password1 =&gt; Valid credentials, account expired
+ |   this:password =&gt; Valid credentials, account cannot log in at current time
+ |   thisisaverylong:password =&gt; Valid credentials
+ |   thisisaverylongname:password =&gt; Valid credentials
+ |   thisisaverylongnamev:password =&gt; Valid credentials
+ |_  web:TeSt =&gt; Valid credentials, account disabled
+</code></pre></div> <h3 id=smtp---brute-force>SMTP - Brute-Force<a class=headerlink href=#smtp---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against SMTP servers using either LOGIN, PLAIN, CRAM-MD5, DIGEST-MD5 or NTLM authentication</em></p> <div class=highlight><pre><span></span><code> nmap -p 25 --script smtp-brute 192.168.1.12
+
+ |PORT    STATE SERVICE REASON
+ |25/tcp  open  stmp    syn-ack
+ | smtp-brute:
+ |   Accounts
+ |     braddock:jules - Valid credentials
+ |     lane:sniper - Valid credentials
+ |     parker:scorpio - Valid credentials
+ |   Statistics
+ |_    Performed 1160 guesses in 41 seconds, average tps: 33
+</code></pre></div> <h3 id=snmp---brute-force>SNMP - Brute-Force<a class=headerlink href=#snmp---brute-force title="Permanent link"></a></h3> <p><em>Attempts to find an SNMP community string by Brute-Force guessing</em></p> <div class=highlight><pre><span></span><code> nmap --script socks-brute -p 1080 192.168.1.12
+
+ |PORT     STATE SERVICE
+ |1080/tcp open  socks
+ | socks-brute:
+ |   Accounts
+ |     patrik:12345 - Valid credentials
+ |   Statistics
+ |_    Performed 1921 guesses in 6 seconds, average tps: 320
+</code></pre></div> <h3 id=ssh---brute-force>SSH - Brute-Force<a class=headerlink href=#ssh---brute-force title="Permanent link"></a></h3> <p><em>Performs brute-force password guessing against ssh servers</em></p> <div class=highlight><pre><span></span><code> nmap -p 22 --script ssh-brute --script-args userdb=users.lst,passdb=pass.lst --script-args ssh-brute.timeout=4s 192.168.1.12
+
+ |22/ssh open  ssh
+ | ssh-brute:
+ |  Accounts
+ |    username:password
+ |  Statistics
+ |_   Performed 32 guesses in 25 seconds.
+</code></pre></div> <h3 id=svn---brute-force>SVN - Brute-Force<a class=headerlink href=#svn---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against Subversion source code control servers</em></p> <div class=highlight><pre><span></span><code> nmap --script svn-brute --script-args svn-brute.repo=/svn/ -p 3690 192.168.1.12
+
+ |PORT     STATE SERVICE REASON
+ |3690/tcp open  svn     syn-ack
+ | svn-brute:
+ |   Accounts
+ |_    patrik:secret =&gt; Login correct
+</code></pre></div> <h3 id=telnet---brute-force>Telnet - Brute-Force<a class=headerlink href=#telnet---brute-force title="Permanent link"></a></h3> <p><em>Performs brute-force password auditing against telnet servers</em></p> <div class=highlight><pre><span></span><code> nmap -p 23 --script telnet-brute --script-args userdb=myusers.lst,passdb=mypwds.lst,telnet-brute.timeout=8s 192.168.1.12
+
+ |23/tcp open  telnet
+ | telnet-brute:
+ |   Accounts
+ |     wkurtz:colonel
+ |   Statistics
+ |_    Performed 15 guesses in 19 seconds, average tps: 0
+</code></pre></div> <h3 id=tso-enu>TSO-Enu<a class=headerlink href=#tso-enu title="Permanent link"></a></h3> <p><em>TSO User ID enumerator for IBM mainframes (z/OS)</em> The TSO logon panel tells you when a user ID is valid or invalid with the message: IKJ56420I Userid <user id> not authorized to use TSO_</p> <div class=highlight><pre><span></span><code> nmap -sV -p 9923 10.32.70.10 --script tso-enum --script-args userdb=tso_users.txt,tso-enum.commands=&quot;logon applid(tso)&quot;
+
+ |PORT   STATE SERVICE VERSION
+ |23/tcp open  tn3270  IBM Telnet TN3270
+ | tso-enum:
+ |   TSO User ID:
+ |     TSO User:RAZOR -  Valid User ID
+ |     TSO User:BLADE -  Valid User ID
+ |     TSO User:PLAGUE -  Valid User ID
+ |_  Statistics: Performed 6 guesses in 3 seconds, average tps: 2
+</code></pre></div> <h3 id=vmware-authentication-daemon---bruteforce>VMWare Authentication Daemon - BruteForce<a class=headerlink href=#vmware-authentication-daemon---bruteforce title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against the VMWare Authentication Daemon (vmware-authd)</em></p> <div class=highlight><pre><span></span><code> nmap -p 902 192.168.1.12 --script vmauthd-brute
+
+ |PORT    STATE SERVICE
+ |902/tcp open  iss-realsecure
+ | vmauthd-brute:
+ |   Accounts
+ |     root:00000 - Valid credentials
+ |   Statistics
+ |_    Performed 183 guesses in 40 seconds, average tps: 4
+</code></pre></div> <h3 id=vnc---brute-force>VNC - Brute-Force<a class=headerlink href=#vnc---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against VNC servers</em></p> <div class=highlight><pre><span></span><code> nmap --script vnc-brute -p 5900 192.168.1.12
+
+ |PORT     STATE  SERVICE REASON
+ |5900/tcp open   vnc     syn-ack
+ | vnc-brute:
+ |   Accounts
+ |_    123456 =&gt; Valid credentials
+</code></pre></div> <h3 id=vtam-enum>VTAM-Enum<a class=headerlink href=#vtam-enum title="Permanent link"></a></h3> <p><em>Many mainframes use VTAM screens to connect to various applications (CICS, IMS, TSO, and many more)</em></p> <div class=highlight><pre><span></span><code> nmap --script vtam-enum --script-args idlist=defaults.txt,vtam-enum.command=&quot;exit;logon applid(logos)&quot;,vtam-enum.macros=truevtam-enum.path=&quot;/home/dade/screenshots/&quot; -p 23 -sV &lt;targets&gt;
+
+ |PORT   STATE SERVICE VERSION
+ |23/tcp open  tn3270  IBM Telnet TN3270
+ | vtam-enum:
+ |   VTAM Application ID:
+ |     applid:TSO - Valid credentials
+ |     applid:CICSTS51 - Valid credentials
+ |_  Statistics: Performed 14 guesses in 5 seconds, average tps: 2
+</code></pre></div> <h3 id=xmpp---brute-force>XMPP - Brute-Force<a class=headerlink href=#xmpp---brute-force title="Permanent link"></a></h3> <p><em>Performs Brute-Force password auditing against XMPP (Jabber) instant messaging servers</em></p> <div class=highlight><pre><span></span><code> nmap -p 5222 --script xmpp-brute 192.168.1.12
+
+ |PORT     STATE SERVICE
+ |5222/tcp open  xmpp-client
+ | xmpp-brute:
+ |   Accounts
+ |     CampbellJ:arthur321 - Valid credentials
+ |     CampbellA:joan123 - Valid credentials
+ |     WalkerA:auggie123 - Valid credentials
+ |   Statistics
+ |_    Performed 6237 guesses in 5 seconds, average tps: 1247
+</code></pre></div> <h4 id=requirements>REQUIREMENTS<a class=headerlink href=#requirements title="Permanent link"></a></h4> <p>A device of any kind ;]</p> <h4 id=contact>CONTACT<a class=headerlink href=#contact title="Permanent link"></a></h4> <p>If you have problems, questions, ideas or suggestions please contact me by posting to <a href=mailto:wuseman@nr1.nu>&#119;&#117;&#115;&#101;&#109;&#97;&#110;&#64;&#110;&#114;&#49;&#46;&#110;&#117;</a></p> <h4 id=web-site>WEB SITE<a class=headerlink href=#web-site title="Permanent link"></a></h4> <p>Visit my websites and profiles for the latest info and updated tools</p> <p><a class="magiclink magiclink-github magiclink-mention" href=https://github.com/wuseman/ title="GitHub User: wuseman">@wuseman</a> &amp;&amp; <a href=https://nr1.nu>https://nr1.nu</a> &amp;&amp; <a href=https://stackoverflow.com/users/9887151/wuseman>https://stackoverflow.com/users/9887151/wuseman</a></p> <h4 id=end>END!<a class=headerlink href=#end title="Permanent link"></a></h4> <hr> <div class=md-source-file> <small> Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 18, 2022</span> <br> Created: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 18, 2022</span> </small> </div> </article> <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script> </div> </div> <a href=# class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg> Back to top </a> </main> <footer class=md-footer> <nav class="md-footer__inner md-grid" aria-label=Footer> <a href=../merge-tricks/ class="md-footer__link md-footer__link--prev" rel=prev> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg> </div> <div class=md-footer__title> <div class=md-ellipsis> <span class=md-footer__direction> Previous </span> merge tricks </div> </div> </a> <a href=../netstat/ class="md-footer__link md-footer__link--next" rel=next> <div class=md-footer__title> <div class=md-ellipsis> <span class=md-footer__direction> Next </span> netstat </div> </div> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg> </div> </a> </nav> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-footer-copyright> <div class=md-footer-copyright__highlight> Copyright &copy; 2015 - 2022 <a href=https://github.com/wuseman target=_blank rel=noopener>wuseman</a> </div> It's Not About Money or Politics - It's All About Sending A Message That You All Are Vulnerable! </a> </div> <div class=md-social> <a href=https://github.com/wuseman target=_blank rel=noopener title=github.com class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 496 512"><!-- Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg> </a> <a href=https://discord.gg/wuseman target=_blank rel=noopener title=discord.gg class=md-social__link> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 640 512"><!-- Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M524.531 69.836a1.5 1.5 0 0 0-.764-.7A485.065 485.065 0 0 0 404.081 32.03a1.816 1.816 0 0 0-1.923.91 337.461 337.461 0 0 0-14.9 30.6 447.848 447.848 0 0 0-134.426 0 309.541 309.541 0 0 0-15.135-30.6 1.89 1.89 0 0 0-1.924-.91 483.689 483.689 0 0 0-119.688 37.107 1.712 1.712 0 0 0-.788.676C39.068 183.651 18.186 294.69 28.43 404.354a2.016 2.016 0 0 0 .765 1.375 487.666 487.666 0 0 0 146.825 74.189 1.9 1.9 0 0 0 2.063-.676A348.2 348.2 0 0 0 208.12 430.4a1.86 1.86 0 0 0-1.019-2.588 321.173 321.173 0 0 1-45.868-21.853 1.885 1.885 0 0 1-.185-3.126 251.047 251.047 0 0 0 9.109-7.137 1.819 1.819 0 0 1 1.9-.256c96.229 43.917 200.41 43.917 295.5 0a1.812 1.812 0 0 1 1.924.233 234.533 234.533 0 0 0 9.132 7.16 1.884 1.884 0 0 1-.162 3.126 301.407 301.407 0 0 1-45.89 21.83 1.875 1.875 0 0 0-1 2.611 391.055 391.055 0 0 0 30.014 48.815 1.864 1.864 0 0 0 2.063.7A486.048 486.048 0 0 0 610.7 405.729a1.882 1.882 0 0 0 .765-1.352c12.264-126.783-20.532-236.912-86.934-334.541ZM222.491 337.58c-28.972 0-52.844-26.587-52.844-59.239s23.409-59.241 52.844-59.241c29.665 0 53.306 26.82 52.843 59.239 0 32.654-23.41 59.241-52.843 59.241Zm195.38 0c-28.971 0-52.843-26.587-52.843-59.239s23.409-59.241 52.843-59.241c29.667 0 53.307 26.82 52.844 59.239 0 32.654-23.177 59.241-52.844 59.241Z"/></svg> </a> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "../..", "features": ["navigation.tabs", "navigation.top", "navigation.indexes", "content.tabs.link", "navigation.prune"], "search": "../../assets/javascripts/workers/search.85cb4492.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "version": 1.0}</script> <script src=../../assets/javascripts/bundle.a877e258.min.js></script> <script src=https://unpkg.com/mermaid@8.13.3/dist/mermaid.min.js></script> <script src=https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js></script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script> <script src=../../assets/pymdownx-extras/extra-loader-5bb526e4.js></script> </body> </html>
