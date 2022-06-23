@@ -1,4 +1,4 @@
-dev_addr: 127.0.0.1:8000
+dev_addr: www.nr1.nu:8000
 site_name: Nr1 (wuseman's wiki)
 site_author: wuseman
 site_description: >-
@@ -138,8 +138,7 @@ nav:
      - whatismyip: linux/whatismyip.md
      - wireguard: linux/wireguard.md
      - vim: linux/vim.md
-  - Misc: 
-     - UserAgents: 'archive/useragents/user_agents.txt'
+  - UserAgents: 'archive/useragents/user_agents.txt'
 
 markdown_extensions:
   - smarty:
