@@ -238,6 +238,21 @@ extra_javascript:
 
 
 plugins:
+  - mkdocs-nav-enhancements
+  - awesome-pages
+  - mkdocstrings:
+    handlers:
+      python:
+        import:
+        - https://docs.python.org/3/objects.inv
+        - https://installer.readthedocs.io/en/stable/objects.inv  # demonstration purpose in the docs
+        - https://mkdocstrings.github.io/autorefs/objects.inv
+        options:
+          docstring_style: google
+          docstring_options:
+            ignore_init_summary: yes
+          merge_init_into_class: yes
+          show_submodules: no
 # https://smarie.github.io/mkdocs-gallery/
   - search:
       lang: en
