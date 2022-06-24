@@ -259,9 +259,9 @@ certbot --apache --agree-tos --redirect --hsts --staple-ocsp --email you@example
 ```
 
 ### Step 6: Finish the Installation in your Web Browser
-```sh
-[visit http://localhost/matomo/](https://w.nr1.nu)
-```
+
+[visit http://localhost/matomo/](https://www.nr1.nu/matomo)
+
 
 ### Permissions problem
 
