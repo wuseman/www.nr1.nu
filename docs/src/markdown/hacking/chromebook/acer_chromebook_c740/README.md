@@ -37,14 +37,14 @@ Either you can buy a fixed clip or you can connect cables as I do in the banner.
 
 From store, you will get a jumper for pins, hence my own jump on the picture but when 1&2 are bracked the device is conifgured as a programmer:
 
-![Screenshot](.pictures/ch3441_as_a_ftdi_sio_reader.jpg)
+![Screenshot](ch3441_as_a_ftdi_sio_reader.jpg)
 
 If you remove the jumper the ch341 is a serial console reader, as a TTL Serial Converter (ftdi rs232, for example) adapter:
 
-![Screenshot](.pictures/ch341a_dmesg_jumpered.png)
+![Screenshot](ch341a_dmesg_jumpered.png)
 
 The dot i marked is were the VOLTAGE should be, this is really really important otherwise your ship may burn:
-![Screenshot](.pictures/ch341_programmer_voltage_dots.jpg)
+![Screenshot](ch341_programmer_voltage_dots.jpg)
 
 ## Flashing
 

@@ -342,17 +342,9 @@ client: 127.0.0.1, server: 127.0.0.1, request: "GET /api/reload HTTP/1.1", host:
 Couldn't find systeminfo section: Device config error: Configurator error: Configurator error: No section named 'systeminfo'
 ```
 
-## Changelog
-
-[Versions changelog](CHANGELOG.md).
-
 ## Authors: 
 
 * **wuseman <wuseman@nr1.nu\>** 
-
-## License
-
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
 
 ### Contact
 

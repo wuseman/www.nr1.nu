@@ -303,7 +303,7 @@ G5 has extra features then older elitebooks for bios password. It is possible to
 
 ### Fuck, now things was bricked! I thought
 
-![Screenshot](.800.g5.pics/leds_blinking_red.gif)
+![Screenshot](leds_blinking_red.gif)
 
 ### ...After device is blinking red and fan had run at 10k rpm few times we finally have device booting, THUMBS UP! HP's manuals sucks! ;-)
 
@@ -751,11 +751,6 @@ Greetings to Jeff, all resepect!
 
 * [August, 2010 - Bios Password Hack for HP EliteBook Part 1
 ](https://syntaxerrorready.wordpress.com/2010/08/24/bios-password-hack-for-hp-elitebook-part-1/)
-
-
-## License
-
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details... 
 
 ## Contact
 

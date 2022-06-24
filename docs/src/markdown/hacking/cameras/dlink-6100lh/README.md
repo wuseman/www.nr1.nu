@@ -223,10 +223,6 @@ reset
 
 * **wuseman <wuseman@nr1.nu\>** 
 
-## License
-
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
-
 ### Contact
 
   If you have problems, questions, ideas or suggestions please contact me on *_wuseman@nr1.nu_  - For faster contact visit Libera irc network or the webchat and type '/msg wuseman hi!' in the input bar and I will reply to you ASAP.

@@ -108,7 +108,7 @@ nav:
            - TG799vnv2-10.5.1.Q:  https://github.com/wuseman/TG799vnv2-10.5.1.Q-SMART-3.6.1/blob/87c7c016a8d9a44cae298c16a1233348350a6de3/README.md
      - Switches:
         - Cisco: 
-           - C1111 8PLTEEA:
+           - C1111 8PLTEEA: hacking/switches/cisco/c1111_8plteea/README.md
      - Wordlists: 
            - Swedish Wordlist: hacking/bruteforce/swedish_wordlist.txt/README.md
   - Linux:
@@ -142,8 +142,7 @@ nav:
      - wireguard: linux/wireguard.md
      - vim: linux/vim.md
   - Misc: 
-     - misc/index.md
-     - UserAgents: 'archive/useragents/user_agents.md'
+     - UserAgents: 'misc/user_agents.md'
 
 markdown_extensions:
   - smarty:

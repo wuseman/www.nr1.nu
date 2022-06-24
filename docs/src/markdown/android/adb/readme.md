@@ -1926,9 +1926,6 @@ Enter Libera's network via your own client 'chat.libera.chat:+6697 or use their 
 
 - *wuseman <wuseman@nr1.nu\>**
 
-## Wiki <small>License</small>
-
-Android Nr1 nu wiki is licensed under the GNU General Public License v3.0 - See the [LICENSE.md](LICENSE.md) file for details
 
 - Happy Hacking!
 

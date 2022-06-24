@@ -113,17 +113,13 @@ _Get started with spotify brute forcing - How emagnet will work with your openvp
 - [Regex - Tips For Search](https://github.com/wuseman/EMAGNET/wiki/Searching-&-Regex) - How to find your facebook credenticals, if they have been leaked._
 - [Leaked Databases](https://github.com/wuseman/EMAGNET/wiki/Leaked-Databases) - Various Public Leaks
 
-## Changelog
-
-[Versions changelog](CHANGELOG.md).
-
 ## Authors: 
 
 * **wuseman <wuseman@nr1.nu\>** 
 
 ## License
 
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU General Public License v3.0 
 
 ### Contact
 

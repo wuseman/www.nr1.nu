@@ -59,8 +59,6 @@ $.post(
 );
 ```
 
-![Screenshot](.previews/export_config.gif)
-
 ### Via curl command for Linux
 
 ```shell

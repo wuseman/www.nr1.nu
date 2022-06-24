@@ -22,17 +22,13 @@ This video has not been made by myself - For make it faster, use more threads ;-
 - PSSH     - Find more info about _pssh_ [here](http://code.google.com/p/parallel-ssh/)
 - SSHPASS  - Find more info about _sshpass_ [here](https://sourceforge.net/projects/sshpass/)
 
-## Changelog
-
-[Versions changelog](CHANGELOG.md).
-
 ### Authors: 
 
 * **wuseman <wuseman@nr1.nu\>** 
 
 ### License
 
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the GNU General Public License v3.0
 
 ### Contact
 
