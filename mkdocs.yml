@@ -41,7 +41,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.top
-    - navigation.indexes
+#    - navigation.indexes
     - content.tabs.link
     - navigation.prune
   highlightjs: true
@@ -83,31 +83,34 @@ nav:
      - gentoo-vmware: gentoo/gentoo-vmware.md
      - wuseman-overlay: gentoo/wuseman-overlay/README.md
      - gentoo-wupdate:  gentoo/gentoo-update.md
-  - Hacking:
-     - 'hacking': hacking/index.md
+  - Hacking: 
+     - 'hacking/index.md'
      - Bios: 
-        - 'bios': hacking/bios/index.md
-        - 'hp bios': hacking/bios/hp_device_and_bios-hacking/README.md
+        - HP Bios: hacking/bios/hp_device_and_bios-hacking/README.md
      - Bruteforce: 
-        - 'bruteforce': hacking/bruteforce/index.md
-        - 'emagnet': 'hacking/bruteforce/emagnet/readme.md'
-        - 'wbruter': hacking/bruteforce/wbruter/README.md
-        - 'wssh': hacking/bruteforce/wssh/README.md
-        - 'swedish wordlist': hacking/bruteforce/swedish_wordlist.txt/README.md
+        - EMAGNET: 'hacking/bruteforce/emagnet/readme.md'
+        - WBRUTER': hacking/bruteforce/wbruter/README.md
+        - WSSH': hacking/bruteforce/wssh/README.md
      - Cameras:
-        -  hacking/cameras/index.md
-        - 'biltemas babycam': hacking/cameras/biltemas_babycam/README.md
-        - 'dlink-6100lh': hacking/cameras/dlink-6100lh/README.md
+        - Biltemas Babycam: hacking/cameras/biltemas_babycam/README.md
+        - DLink 6100lh: hacking/cameras/dlink-6100lh/README.md
      - Chromebook: 
-        - 'hacking/chromebook/index.md'
-        - 'acer c720': hacking/chromebook/acer_chromebook_c720/README.md
-        - 'acer c740': hacking/chromebook/acer_chromebook_c740/README.md
+        - Acer C720: hacking/chromebook/acer_chromebook_c720/README.md
+        - Acer C740: hacking/chromebook/acer_chromebook_c740/README.md
+        - Asus C203sa: hacking/chromebook/asus_c203sa/README.md
      - Radio: 
-        -  hacking/radio/index.md
-        - 'boose soundtouch': hacking/radio/boose_soundtouch/README.md
-     - Router: 
-        -  hacking/routers/index.md
-        - 'technicolor dga4330ts': hacking/routers/technicolor_dga4330ts/README.md
+        - Boose Soundtouch: hacking/radio/boose_soundtouch/README.md
+     - Router:
+        - Technicolor:
+           - DGAGA4330TS: hacking/routers/technicolor/dga4330ts/README.md
+           - TG799vacXTREAM 17.2: hacking/routers/technicolor/t799vacxtreme17.2/README.md
+           - TG799vacXTREAM 18.1: hacking/routers/technicolor/tg799vacxtream18.1/README.md
+           - TG799vnv2-10.5.1.Q:  https://github.com/wuseman/TG799vnv2-10.5.1.Q-SMART-3.6.1/blob/87c7c016a8d9a44cae298c16a1233348350a6de3/README.md
+     - Switches:
+        - Cisco: 
+           - C1111 8PLTEEA:
+     - Wordlists: 
+           - Swedish Wordlist: hacking/bruteforce/swedish_wordlist.txt/README.md
   - Linux:
      - apt: linux/apt.md
      - awk: linux/awk.md
@@ -138,7 +141,9 @@ nav:
      - whatismyip: linux/whatismyip.md
      - wireguard: linux/wireguard.md
      - vim: linux/vim.md
-  - UserAgents: 'archive/useragents/user_agents.txt'
+  - Misc: 
+     - misc/index.md
+     - UserAgents: 'archive/useragents/user_agents.md'
 
 markdown_extensions:
   - smarty:
@@ -237,10 +242,6 @@ extra_javascript:
 
 
 plugins:
-  - awesome-pages
-  - mkdocs-nav-enhancements
-  - mkdocstrings_handlers
-
 # https://smarie.github.io/mkdocs-gallery/
   - search:
       lang: en
@@ -293,9 +294,13 @@ extra:
           note: >- 
             Thanks for your feedback! Help us improve this page by
             using our <a href="..." target=_blank>feedback form</a>.
+  
   version: 1.0
+
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/wuseman
     - icon: fontawesome/brands/discord
       link: https://discord.gg/wuseman
+
+
