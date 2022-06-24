@@ -3,12 +3,13 @@
 ### Shuffle A Random UserAgent
 
 ```sh
-    curl -s https://www.nr1.nu/archive/useragents/user_agents.txt|shuf -n1 
+curl -s https://www.nr1.nu/archive/useragents/user_agents.txt|shuf -n1 
 ```
 
 ### Add below code in your script 
 ```sh
-useragent="$(curl -s https://www.nr1.nu/archive/useragents/user_agents.txt|shuf -n1)"
+useragent="$(curl -s https://www.nr1.nu/archive/useragents/user_agents.txt\ 
+            |shuf -n1)"
 shuf -e "${useragent}"
 ```
 
