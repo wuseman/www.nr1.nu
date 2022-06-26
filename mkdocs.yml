@@ -3,10 +3,8 @@ site_name: Nr1 (wuseman's wiki)
 site_author: wuseman
 site_description: >-
   The personal website of wuseman, it's the Nr1 wiki for cool tips and trikes for all kind of hacks/cracks you can imagine
-
 copyright: |
   Copyright &copy; 2015 - 2022 <a href="https://github.com/wuseman"  target="_blank" rel="noopener">wuseman</a>
-
 site_url: https://www.nr1.nu
 repo_name: "www.nr1.nu"
 repo_url: "https://github.com/wuseman/www.nr1.nu"
@@ -62,12 +60,13 @@ theme:
  # pymdownx:
 #    sponsor: "https://github.com/sponsors/facelessuser"
 
+
 nav: 
   - Home:
-    - About: index.md
-    - Contact: contact.md
-    - CV: cv.md
-    - Help: usage_notes.md
+    - About: about/index.md
+    - Contact: about/contact.md
+    - CV: about/cv.md
+    - Help: about/usage_notes.md
   - Android:
      - 'android/index.md'
      - adb:
@@ -143,6 +142,7 @@ nav:
      - vim: linux/vim.md
   - Misc: 
      - UserAgents: 'misc/user_agents.md'
+
 
 markdown_extensions:
   - smarty:
@@ -238,9 +238,13 @@ extra_javascript:
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
   - assets/pymdownx-extras/extra-loader-5bb526e4.js
+  - assets/pymdownx-extras/matomo.js
+  - https://www.nr1.nu/m.js
 
 
 plugins:
+  - simple
+  - awesome-list
 # https://smarie.github.io/mkdocs-gallery/
   - search:
       lang: en
@@ -267,9 +271,9 @@ plugins:
         utm_source: "documentation"
         utm_medium: "RSS"
         utm_campaign: "feed-syndication"
-  - git-revision-date-localized:
-      enable_creation_date: true
-      type: date
+#  - git-revision-date-localized:
+#      enable_creation_date: true
+#      type: date
   - git-revision-date:
       enabled_if_env: CI
   - minify:
@@ -301,5 +305,3 @@ extra:
       link: https://github.com/wuseman
     - icon: fontawesome/brands/discord
       link: https://discord.gg/wuseman
-
-
