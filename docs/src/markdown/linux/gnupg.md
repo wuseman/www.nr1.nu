@@ -61,14 +61,8 @@ gpg --list-secret-keys
 
 ### Export gpg key                                                                        
 ```sh
-gpg --output public.pgp --armor --export username@email
-gpg --output private.pgp --armor --export-secret-key username@email
-```
-
-### Print private keys
-
-```sh
-gpg --keyid-format 0xlong -K --fingerprint  
+gpg -o key.gpg --export <KEY ID>   
+gpg -o key.asc --armor --export <KEY ID>       
 ```
 
 ### Import keys 
@@ -183,7 +177,6 @@ gpg -o wuseman.gpg --export-options backup --export-secret-keys wuseman@nr1.nu
   ```sh
 gpg --import-options restore --import wuseman.gpg
 ```
-
 ### Get some more info then keyid
 
  ```sh

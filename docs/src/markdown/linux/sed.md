@@ -2,617 +2,298 @@
 
 Stream Editor for filtering and transforming text, really handy one-liners for SED
 
+ # double space a file
 
-### Insert a new string above and below matched string
+ sed G
 
-```sh
-echo netstat  |sed 's/netstat.*/```sh      \n&\n```/g' > netstat.md
-```
+ # double space a file which already has blank lines in it. Output file
+ # should contain no more than one blank line between lines of text.
+ sed '/^$/d;G'
 
-![sed1](https://user-images.githubusercontent.com/26827453/174434701-da94e247-bbf8-40e7-b119-e77c1c9f5aae.gif)
+ # triple space a file
+ sed 'G;G'
 
-### Insert a new string above and below matched string
+ # undo double-spacing (assumes even-numbered lines are always blank)
+ sed 'n;d'
 
-```sh
-echo "hello world"|sed 's/world/\n&/g' 
-hello 
-world
-```
+NUMBERING:
 
-### Insert a new string above and below matched string
+ # number each line of a file (simple left alignment). Using a tab (see
+ # note on '\t' at end of file) instead of space will preserve margins.
+ sed = filename | sed 'N;s/\n/\t/'
 
-```sh
-sed "s/regexp/\\`echo -e '\n\r'`/g"
-````
+ # number each line of a file (number on left, right-aligned)
+ sed = filename | sed 'N; s/^/     /; s/ *\(.\{6,\}\)\n/\1  /'
 
-### Method 4: Make a new line after every comma ','
+ # number each line of file, but only print numbers if line is not blank
+ sed '/./=' filename | sed '/./N; s/\n/ /'
 
-```sh
-echo one,two,three | sed 's/,/\
-/g'
-one
-two
-three
-```
+ # count lines (emulates "wc -l")
+ sed -n '$='
 
-* Method 4:
+TEXT CONVERSION AND SUBSTITUTION:
 
-```sh
-echo pattern | sed -E -e $'s/^(pattern)/\\\n\\1/'
+ # IN UNIX ENVIRONMENT: convert DOS newlines (CR/LF) to Unix format
+ sed 's/.$//'               # assumes that all lines end with CR/LF
+ sed 's/^M$//'              # in bash/tcsh, press Ctrl-V then Ctrl-M
+ sed 's/\x0D$//'            # gsed 3.02.80, but top script is easier
 
-pattern
-```
+ # IN UNIX ENVIRONMENT: convert Unix newlines (LF) to DOS format
+ sed "s/$/`echo -e \\\r`/"            # command line under ksh
+ sed 's/$'"/`echo \\\r`/"             # command line under bash
+ sed "s/$/`echo \\\r`/"               # command line under zsh
+ sed 's/$/\r/'                        # gsed 3.02.80
 
-### Insert a new string above and below matched string
+ # IN DOS ENVIRONMENT: convert Unix newlines (LF) to DOS format
+ sed "s/$//"                          # method 1
+ sed -n p                             # method 2
 
-```sh 
-echo 'foobar' | sed -r 's/(bar)/\n\1/;'
-```
+ # IN DOS ENVIRONMENT: convert DOS newlines (CR/LF) to Unix format
+ # Cannot be done with DOS versions of sed. Use "tr" instead.
+ tr -d \r <infile >outfile            # GNU tr version 1.22 or higher
 
-### Add '''sh above curl, good for writiing wikis for example
- 
-```sh
-echo "    curl" |sed 's/    curl/```sh\n&/;s/$/\n```/g'
+ # delete leading whitespace (spaces, tabs) from front of each line
+ # aligns all text flush left
+ sed 's/^[ \t]*//'                    # see note on '\t' at end of file
 
-curl
-```
+ # delete trailing whitespace (spaces, tabs) from end of each line
+ sed 's/[ \t]*$//'                    # see note on '\t' at end of file
 
-### Replace 2 words with sans escaping
+ # delete BOTH leading and trailing whitespace from each line
+ sed 's/^[ \t]*//;s/[ \t]*$//'
 
-```sh
-echo "Hello World"| sed 's/\(Hello\)/World\1/g'
-World Hello
-```
+ # insert 5 blank spaces at beginning of each line (make page offset)
+ sed 's/^/     /'
 
-### Double space a file
+ # align all text flush right on a 79-column width
+ sed -e :a -e 's/^.\{1,78\}$/ &/;ta'  # set at 78 plus 1 space
 
-```sh
-sed G
-```
+ # center all text in the middle of 79-column width. In method 1,
+ # spaces at the beginning of the line are significant, and trailing
+ # spaces are appended at the end of the line. In method 2, spaces at
+ # the beginning of the line are discarded in centering the line, and
+ # no trailing spaces appear at the end of lines.
+ sed  -e :a -e 's/^.\{1,77\}$/ & /;ta'                     # method 1
+ sed  -e :a -e 's/^.\{1,77\}$/ &/;ta' -e 's/\( *\)\1/\1/'  # method 2
 
-### Double space a file which already has blank lines in it. 
+ # substitute (find and replace) "foo" with "bar" on each line
+ sed 's/foo/bar/'             # replaces only 1st instance in a line
+ sed 's/foo/bar/4'            # replaces only 4th instance in a line
+ sed 's/foo/bar/g'            # replaces ALL instances in a line
+ sed 's/\(.*\)foo\(.*foo\)/\1bar\2/' # replace the next-to-last case
+ sed 's/\(.*\)foo/\1bar/'            # replace only the last case
 
-Output fileshould contain no more than one blank line between lines of text.
+ # substitute "foo" with "bar" ONLY for lines which contain "baz"
+ sed '/baz/s/foo/bar/g'
 
-```sh
-sed '/^$/d;G'
-```
+ # substitute "foo" with "bar" EXCEPT for lines which contain "baz"
+ sed '/baz/!s/foo/bar/g'
 
-### Triple space a file
+ # change "scarlet" or "ruby" or "puce" to "red"
+ sed 's/scarlet/red/g;s/ruby/red/g;s/puce/red/g'   # most seds
+ gsed 's/scarlet\|ruby\|puce/red/g'                # GNU sed only
 
-```sh
-sed 'G;G'
-```
+ # reverse order of lines (emulates "tac")
+ # bug/feature in HHsed v1.5 causes blank lines to be deleted
+ sed '1!G;h;$!d'               # method 1
+ sed -n '1!G;h;$p'             # method 2
 
-### Undo double-spacing (assumes even-numbered lines are always blank)
-```sh
-sed 'n;d'
-```
-### Number each line of a file (simple left alignment). 
-
-### Using a tab (see note on '\t' at end of file) instead of space will preserve margins.
-```sh
-sed = filename | sed 'N;s/\n/\t/'
-```
-
-### Number each line of a file (number on left, right-aligned)
-
-```sh
-sed = filename | sed 'N; s/^/     /; s/ *\(.\{6,\}\)\n/\1  /'
-```
-
-### Number each line of file, but only print numbers if line is not blank
-
-```sh
-sed '/./=' filename | sed '/./N; s/\n/ /'
-```
-
-### Count lines (emulates "wc -l")
-
-```sh
-sed -n '$='
-```
-
-### Delete leading whitespace (spaces, tabs) from front of each line aligns all text flush left
-
-!!! note "see note on '\t' at end of file"
-```sh
-sed 's/^[ \t]*//'                   
-```
-
-### delete trailing whitespace (spaces, tabs) from end of each line
-
-```sh
-sed 's/[ \t]*$//'                    # see note on '\t' at end of file
-```
-
-### Delete BOTH leading and trailing whitespace from each line
-
-```sh
-sed 's/^[ \t]*//;s/[ \t]*$//'
-```
-
-### Insert 5 blank spaces at beginning of each line (make page offset)
-
-```sh
-sed 's/^/     /'
-```
-
-### Align all text flush right on a 79-column width, set at 78 plus 1 space
-
-```sh
-sed -e :a -e 's/^.\{1,78\}$/ &/;ta'
-```
-
-### Center all text in the middle of 79-column width. 
-
-In method 1, spaces at the beginning of the line are significant, and trailing
-spaces are appended at the end of the line. In method 2, spaces at
-the beginning of the line are discarded in centering the line, and
-no trailing spaces appear at the end of lines.
-
-* Method 1
-
-```sh
- sed  -e :a -e 's/^.\{1,77\}$/ & /;ta'                     
-```
-
-* Method 2
-
-```sh
-sed  -e :a -e 's/^.\{1,77\}$/ &/;ta' -e 's/\( *\)\1/\1/'  
-```
-
-### Replaces only 1st instance in a line
-
-```sh
-sed 's/foo/bar/'             
-```
-### Replaces only 4th instance in a line
-```sh
-sed 's/foo/bar/4'         
-```
-### Replaces ALL instances in a line  
-```sh
-sed 's/foo/bar/g'           
-```
-
-### Replace the next-to-last case
-```sh
-sed 's/\(.*\)foo\(.*foo\)/\1bar\2/'
-```
-
-### Replace only the last case 
-
-```sh
-sed 's/\(.*\)foo/\1bar/'         
-```
-
-### Substitute "foo" with "bar" ONLY for lines which contain "baz"
-```sh
-sed '/baz/s/foo/bar/g'
-```
-
-### Substitute "foo" with "bar" EXCEPT for lines which contain "baz"
-
-```sh
-sed '/baz/!s/foo/bar/g'
-```
-
-### Change "scarlet" or "ruby" or "puce" to "red"
-
-* Most seds
-
-```sh
-sed 's/scarlet/red/g;s/ruby/red/g;s/puce/red/g'  
-```
-
-* GNU sed only
-
-```sh
-gsed 's/scarlet\|ruby\|puce/red/g'                
-```
-
-### Reverse order of lines (emulates "tac") bug/feature in HHsed v1.5 causes blank lines to be deleted
-
-* Method 1
-```sh
- sed '1!G;h;$!d'            
-```
-* Method 2
-```sh
- sed -n '1!G;h;$p'          
-```
-### Reverse each character on the line (emulates "rev")
-```sh
+ # reverse each character on the line (emulates "rev")
  sed '/\n/!G;s/\(.\)\(.*\n\)/&\2\1/;//D;s/.//'
-```
-### Join pairs of lines side-by-side (like "paste")
-```sh
+
+ # join pairs of lines side-by-side (like "paste")
  sed '$!N;s/\n/ /'
-```
-### If a line ends with a backslash, append the next line to it
-```sh
+
+ # if a line ends with a backslash, append the next line to it
  sed -e :a -e '/\\$/N; s/\\\n//; ta'
-```
-### If a line begins with an equal sign, append it to the previous line and replace the "=" with a single space
-```sh
+
+ # if a line begins with an equal sign, append it to the previous line
+ # and replace the "=" with a single space
  sed -e :a -e '$!N;s/\n=/ /;ta' -e 'P;D'
-```
-### Add commas to numeric strings, changing "1234567" to "1,234,567"
 
-* GNU sed only
- ```sh
- gsed ':a;s/\B[0-9]\{3\}\>/,&/;ta'                   
-```
-* Other seds
-```sh
- sed -e :a -e 's/\(.*[0-9]\)\([0-9]\{3\}\)/\1,\2/;ta' 
-```
-### Add commas to numbers with decimal points and minus signs (GNU sed)
+ # add commas to numeric strings, changing "1234567" to "1,234,567"
+ gsed ':a;s/\B[0-9]\{3\}\>/,&/;ta'                     # GNU sed
+ sed -e :a -e 's/\(.*[0-9]\)\([0-9]\{3\}\)/\1,\2/;ta'  # other seds
+
+ # add commas to numbers with decimal points and minus signs (GNU sed)
  gsed ':a;s/\(^\|[^0-9.]\)\([0-9]\+\)\([0-9]\{3\}\)/\1\2,\3/g;ta'
-```
-### Add a blank line every 5 lines (after lines 5, 10, 15, 20, etc.)
 
-* GNU sed only
-```sh
- gsed '0~5G'                  
-```
+ # add a blank line every 5 lines (after lines 5, 10, 15, 20, etc.)
+ gsed '0~5G'                  # GNU sed only
+ sed 'n;n;n;n;G;'             # other seds
 
-* Other seds
-```sh
- sed 'n;n;n;n;G;'          
-```
+SELECTIVE PRINTING OF CERTAIN LINES:
 
-### Print first 10 lines of file (emulates behavior of "head")
-
-```sh
+ # print first 10 lines of file (emulates behavior of "head")
  sed 10q
-```
-### Print first line of file (emulates "head -1")
 
-```sh
+ # print first line of file (emulates "head -1")
  sed q
-```
-### Print the last 10 lines of a file (emulates "tail")
 
-```sh
+ # print the last 10 lines of a file (emulates "tail")
  sed -e :a -e '$q;N;11,$D;ba'
-```
-### Print the last 2 lines of a file (emulates "tail -2")
 
-```sh
+ # print the last 2 lines of a file (emulates "tail -2")
  sed '$!N;$!D'
-```
-### Print the last line of a file (emulates "tail -1")
 
-* Method 1
+ # print the last line of a file (emulates "tail -1")
+ sed '$!d'                    # method 1
+ sed -n '$p'                  # method 2
 
-```sh
- sed '$!d'                   
-```
+ # print only lines which match regular expression (emulates "grep")
+ sed -n '/regexp/p'           # method 1
+ sed '/regexp/!d'             # method 2
 
-* Method 2
+ # print only lines which do NOT match regexp (emulates "grep -v")
+ sed -n '/regexp/!p'          # method 1, corresponds to above
+ sed '/regexp/d'              # method 2, simpler syntax
 
-```sh
- sed -n '$p'                  
-```
-### Print only lines which match regular expression (emulates "grep")
+ # print the line immediately before a regexp, but not the line
+ # containing the regexp
+ sed -n '/regexp/{g;1!p;};h'
 
-* Method 1
-```sh
- sed -n '/regexp/p'          
-```
-
-* Method 2
-```sh
- sed '/regexp/!d'             
-```
-### Print only lines which do NOT match regexp (emulates "grep -v")
-
-* Method 1
-```sh
-sed -n '/regexp/!p'      
-```
-
-* Method 2
-
-```sh
-sed '/regexp/d'      
-```
-
-### Print the line immediately before a regexp, but not the line ccontaining the regexp
-
-```sh
-sed -n '/regexp/{g;1!p;};h'
-```
-
-### Print the line immediately after a regexp, but not the line containing the regexp
-
-```sh
+ # print the line immediately after a regexp, but not the line
+ # containing the regexp
  sed -n '/regexp/{n;p;}'
-```
-### Print 1 line of context before and after regexp, with line number indicating where the regexp occurred (similar to "grep -A1 -B1")
 
-```sh
-sed -n -e '/regexp/{=;x;1!p;g;$!N;p;D;}' -e h
-```
-### Grep for AAA and BBB and CCC (in any order)
+ # print 1 line of context before and after regexp, with line number
+ # indicating where the regexp occurred (similar to "grep -A1 -B1")
+ sed -n -e '/regexp/{=;x;1!p;g;$!N;p;D;}' -e h
 
-```sh
-sed '/AAA/!d; /BBB/!d; /CCC/!d'
-```
+ # grep for AAA and BBB and CCC (in any order)
+ sed '/AAA/!d; /BBB/!d; /CCC/!d'
 
-### Grep for AAA and BBB and CCC (in that order)
+ # grep for AAA and BBB and CCC (in that order)
+ sed '/AAA.*BBB.*CCC/!d'
 
-```sh
-sed '/AAA.*BBB.*CCC/!d'
-```
-### Grep for AAA or BBB or CCC (emulates "egrep")
+ # grep for AAA or BBB or CCC (emulates "egrep")
+ sed -e '/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d    # most seds
+ gsed '/AAA\|BBB\|CCC/!d'                        # GNU sed only
 
-
-* Other seds
-```sh
- sed -e '/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d   
-```
-* GNU sed only
-```sh
- gsed '/AAA\|BBB\|CCC/!d'                        
-```
-
-### Print paragraph if it contains AAA (blank lines separate paragraphs) sed v1.5 must insert a 'G;' after 'x;' in the next 3 scripts below
-
-```sh
+ # print paragraph if it contains AAA (blank lines separate paragraphs)
+ # HHsed v1.5 must insert a 'G;' after 'x;' in the next 3 scripts below
  sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;'
-```
-### Print paragraph if it contains AAA and BBB and CCC (in any order)
 
-```sh
+ # print paragraph if it contains AAA and BBB and CCC (in any order)
  sed -e '/./{H;$!d;}' -e 'x;/AAA/!d;/BBB/!d;/CCC/!d'
-```
-### Print paragraph if it contains AAA or BBB or CCC
 
-```sh
+ # print paragraph if it contains AAA or BBB or CCC
  sed -e '/./{H;$!d;}' -e 'x;/AAA/b' -e '/BBB/b' -e '/CCC/b' -e d
-```
+ gsed '/./{H;$!d;};x;/AAA\|BBB\|CCC/b;d'         # GNU sed only
 
-* GNU Sed only
-```sh
-gsed '/./{H;$!d;};x;/AAA\|BBB\|CCC/b;d'
-```
-
-### Print only lines of 65 characters or longer
-
-```sh
+ # print only lines of 65 characters or longer
  sed -n '/^.\{65\}/p'
-```
-### Print only lines of less than 65 characters
 
-* Method 1
+ # print only lines of less than 65 characters
+ sed -n '/^.\{65\}/!p'        # method 1, corresponds to above
+ sed '/^.\{65\}/d'            # method 2, simpler syntax
 
-```sh
-sed -n '/^.\{65\}/!p'    
-```
-
-* Method 2
-
-```sh
- sed '/^.\{65\}/d'       
-```
-
-### Print section of file from regular expression to end of file
-
-```sh
+ # print section of file from regular expression to end of file
  sed -n '/regexp/,$p'
-```
-### Print section of file based on line numbers (lines 8-12, inclusive)
 
-* Method 1
+ # print section of file based on line numbers (lines 8-12, inclusive)
+ sed -n '8,12p'               # method 1
+ sed '8,12!d'                 # method 2
 
-```sh
- sed -n '8,12p'
-```
+ # print line number 52
+ sed -n '52p'                 # method 1
+ sed '52!d'                   # method 2
+ sed '52q;d'                  # method 3, efficient on large files
 
-* Method 2
-```sh
- sed '8,12!d'   
-```
+ # beginning at line 3, print every 7th line
+ gsed -n '3~7p'               # GNU sed only
+ sed -n '3,${p;n;n;n;n;n;n;}' # other seds
 
-### Print line number 52
+ # print section of file between two regular expressions (inclusive)
+ sed -n '/Iowa/,/Montana/p'             # case sensitive
 
-* Method 1
-```sh
-sed -n '52p'                
-```
+SELECTIVE DELETION OF CERTAIN LINES:
 
-* Method 2
-```sh
-sed '52!d'                   
-```
-
-* Method 3
-```sh
-sed '52q;d'              
-```
-
-### Beginning at line 3, print every 7th line
-
-* GNU Sed only
-
-```sh
- gsed -n '3~7p'            
-```
-
-* Other seds
-
-```sh
- sed -n '3,${p;n;n;n;n;n;n;}' 
-```
-
-### Print section of file between two regular expressions (inclusive)
-
-```sh
- sed -n '/Iowa/,/Montana/p'  
-```
-
-### Print all of file EXCEPT section between 2 regular expressions
-
-```sh
+ # print all of file EXCEPT section between 2 regular expressions
  sed '/Iowa/,/Montana/d'
-```
 
-### Delete duplicate, consecutive lines from a file (emulates "uniq").
-
-*  First line in a set of duplicate lines is kept, rest are deleted.
-
-```sh
+ # delete duplicate, consecutive lines from a file (emulates "uniq").
+ # First line in a set of duplicate lines is kept, rest are deleted.
  sed '$!N; /^\(.*\)\n\1$/!P; D'
-```
 
-### Delete duplicate, nonconsecutive lines from a file. 
-
-* Beware not to overflow the buffer size of the hold space, or else use GNU sed.
- ```sh
+ # delete duplicate, nonconsecutive lines from a file. Beware not to
+ # overflow the buffer size of the hold space, or else use GNU sed.
  sed -n 'G; s/\n/&&/; /^\([ -~]*\n\).*\n\1/d; s/\n//; h; P'
-```
 
-### Delete the first 10 lines of a file
-
-```sh
+ # delete the first 10 lines of a file
  sed '1,10d'
-```
 
-### Delete the last line of a file
-
-```sh
+ # delete the last line of a file
  sed '$d'
-```
 
-### Delete the last 2 lines of a file
+ # delete the last 2 lines of a file
+ sed 'N;$!P;$!D;$d'
 
-```sh
-sed 'N;$!P;$!D;$d'
-```
+ # delete the last 10 lines of a file
+ sed -e :a -e '$d;N;2,10ba' -e 'P;D'   # method 1
+ sed -n -e :a -e '1,10!{P;N;D;};N;ba'  # method 2
 
-### Dlete the last 10 lines of a file
+ # delete every 8th line
+ gsed '0~8d'                           # GNU sed only
+ sed 'n;n;n;n;n;n;n;d;'                # other seds
 
-* Method 1
-```sh
- sed -e :a -e '$d;N;2,10ba' -e 'P;D' 
-```
+ # delete ALL blank lines from a file (same as "grep '.' ")
+ sed '/^$/d'                           # method 1
+ sed '/./!d'                           # method 2
 
-* Method 2
+ # delete all CONSECUTIVE blank lines from file except the first; also
+ # deletes all blank lines from top and end of file (emulates "cat -s")
+ sed '/./,/^$/!d'          # method 1, allows 0 blanks at top, 1 at EOF
+ sed '/^$/N;/\n$/D'        # method 2, allows 1 blank at top, 0 at EOF
 
-```sh
- sed -n -e :a -e '1,10!{P;N;D;};N;ba'
-```
-
-### Delete every 8th line
-
-* GNU sed only
-
-```sh
- gsed '0~8d'                           
-```
-
-* Other seds
-```sh
-sed 'n;n;n;n;n;n;n;d;'               
-```
-
-### Delete ALL blank lines from a file (same as "grep '.' ")
-
-* Method 1
-```sh
- sed '/^$/d'                      
-```
-
-* Method 2
-```sh
- sed '/./!d'                          
-```
-
-### Delete all CONSECUTIVE blank lines from file except the first; also deletes all blank lines from top and end of file (emulates "cat -s")
-
-* Method 1
-```sh
- sed '/./,/^$/!d'        
-```
-
-* Method 2
-```sh
- sed '/^$/N;/\n$/D'        
-```
-
-### Delete all CONSECUTIVE blank lines from file except the first 2:
-
-```sh
+ # delete all CONSECUTIVE blank lines from file except the first 2:
  sed '/^$/N;/\n$/N;//D'
-```
 
-### Delete all leading blank lines at top of file
-
-```sh
+ # delete all leading blank lines at top of file
  sed '/./,$!d'
-```
-### Delete all trailing blank lines at end of file
+
+ # delete all trailing blank lines at end of file
+ sed -e :a -e '/^\n*$/{$d;N;ba' -e '}'  # works on all seds
+ sed -e :a -e '/^\n*$/N;/\n$/ba'        # ditto, except for gsed 3.02*
+
+ # delete the last line of each paragraph
+ sed -n '/^$/{p;h;};/./{x;/./p;}'
+
+### SPECIAL APPLICATIONS:
+
+remove nroff overstrikes (char, backspace) from man pages. The 'echo'
+command may need an -e switch if you use Unix System V or bash shell.
 
 ```sh
-sed -e :a -e '/^\n*$/N;/\n$/ba'       
+ sed "s/.`echo \\\b`//g"    # double quotes required for Unix environment
+ sed 's/.^H//g'             # in bash/tcsh, press Ctrl-V and then Ctrl-H
+ sed 's/.\x08//g'           # hex expression for sed v1.5
 ```
+ # get Usenet/e-mail message header
+ sed '/^$/q'                # deletes everything after first blank line
 
-### Delete the last line of each paragraph
+ # get Usenet/e-mail message body
+ sed '1,/^$/d'              # deletes everything up to first blank line
 
-```sh
-sed -n '/^$/{p;h;};/./{x;/./p;}'
-```
+ # get Subject header, but remove initial "Subject: " portion
+ sed '/^Subject: */!d; s///;q'
 
-### Deletes everything after first blank line
+ # get return address header
+ sed '/^Reply-To:/q; /^From:/h; /./d;g;q'
 
-```sh
- sed '/^$/q'              
-```
-
-###  Deletes everything up to first blank line
-
-```sh
- sed '1,/^$/d'              
-```
-
-### Get Subject header, but remove initial "Subject: " portion
-
-```sh
-sed '/^Subject: */!d; s///;q'
-```
-
-### Get return address header
-
-```sh
-sed '/^Reply-To:/q; /^From:/h; /./d;g;q'
-```
-
-### Parse out the address proper. 
-
-* Pulls out the e-mail address by itself from the 1-line return address header (see preceding script)
-
-```sh
+ # parse out the address proper. Pulls out the e-mail address by itself
+ # from the 1-line return address header (see preceding script)
  sed 's/ *(.*)//; s/>.*//; s/.*[:<] *//'
-```
 
-### Add a leading angle bracket and space to each line (quote a message)
-
-```sh
+ # add a leading angle bracket and space to each line (quote a message)
  sed 's/^/> /'
-```
 
-### Delete leading angle bracket & space from each line (unquote a message)
-
-```sh
+ # delete leading angle bracket & space from each line (unquote a message)
  sed 's/^> //'
-### Remove most HTML tags (accommodates multiple-line tags)
 
-```sh
-sed -e :a -e 's/<[^>]*>//g;/</N;//ba'
+ # remove most HTML tags (accommodates multiple-line tags)
+ ```sh
+ sed -e :a -e 's/<[^>]*>//g;/</N;//ba'
 ```
 
 ### Add one blank line between all of them with sed
