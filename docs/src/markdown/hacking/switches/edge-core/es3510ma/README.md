@@ -30,7 +30,7 @@ Well, the day this repo was created is the day I started playing with this devic
 
  Serial console, boot:
 
-![Screenshot](.previews/bootlog.gif)
+![Screenshot](bootlog.gif)
 
 - Serial Console (RS-232)
 

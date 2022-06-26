@@ -22,7 +22,7 @@ Here is new pictures from the date this post was updated:
 
 #### Find hidden settings in latest firmware (3.42.3)
 
-![Screenshot](misc/hidden-settings.gif)
+![Screenshot](hidden-settings.gif)
 
     $.xmo.getValuesTree("*")
     $.xmo.getValuesTree("*/*")
@@ -1256,7 +1256,7 @@ fun! :)):
 
 ![Bootloader Log](https://raw.githubusercontent.com/wuseman/SAGEMCOM-FAST-5370e-TELIA/master/bootlogs/sagemcom_bootlog.txt)
 
-![Screnshot](.pics/sagemcim_bootlaoder.gif)
+![Screnshot](sagemcim_bootlaoder.gif)
 
 ###### Hidden hacks:
 
