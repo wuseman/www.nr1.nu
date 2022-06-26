@@ -17,6 +17,19 @@ extra:
     provider: google
     property: G-B5KK88V0K4
 
+
+extra_css:
+  - assets/pymdownx-extras/katex.min.css
+  - assets/pymdownx-extras/extra-e384f43f0f.css
+
+extra_javascript:
+  - assets/pymdownx-extras/katex.min.js
+  - assets/pymdownx-extras/polyfill.min.js
+  - assets/pymdownx-extras/tex-mml-chtml.js
+  - assets/pymdownx-extras/extra-loader-5bb526e4.js
+  - assets/pymdownx-extras/m.js
+
+
 theme:
   nav_style: dark
   use_directory_urls: true
@@ -142,8 +155,6 @@ nav:
      - vim: linux/vim.md
   - Misc: 
      - UserAgents: 'misc/user_agents.md'
-
-
 markdown_extensions:
   - smarty:
   - toc:
@@ -227,24 +238,7 @@ markdown_extensions:
       alternate_style: true
   - pymdownx.saneheaders:
 
-
-extra_css:
-  - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.css
-  - assets/pymdownx-extras/extra-e384f43f0f.css
-
-extra_javascript:
-  - https://unpkg.com/mermaid@8.13.3/dist/mermaid.min.js
-  - https://cdn.jsdelivr.net/npm/katex@0.13.18/dist/katex.min.js
-  - https://polyfill.io/v3/polyfill.min.js?features=es6
-  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
-  - assets/pymdownx-extras/extra-loader-5bb526e4.js
-  - assets/pymdownx-extras/matomo.js
-  - https://www.nr1.nu/m.js
-
-
 plugins:
-  - simple
-  - awesome-list
 # https://smarie.github.io/mkdocs-gallery/
   - search:
       lang: en
@@ -271,15 +265,19 @@ plugins:
         utm_source: "documentation"
         utm_medium: "RSS"
         utm_campaign: "feed-syndication"
-#  - git-revision-date-localized:
-#      enable_creation_date: true
-#      type: date
+  - git-revision-date-localized:
+      enable_creation_date: true
+      type: date
   - git-revision-date:
       enabled_if_env: CI
   - minify:
       minify_html: true
 
 extra:
+  analytics:
+    provider: matomo
+    url: www.nr1.nu/matomo
+    site: 1
   analytics: 
     provider: google
     property: G-B5KK88V0K4
