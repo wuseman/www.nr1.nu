@@ -75,14 +75,14 @@ theme:
 
 nav: 
   - Home:
-    - About: about/index.md
-    - Contact: about/contact.md
-    - CV: about/cv.md
-    - Help: about/usage_notes.md
+    - About: index.md
+    - Contact: contact.md
+    - CV: cv.md
+    - Help: usage_notes.md
   - Android:
      - 'android/index.md'
      - adb:
-        - 'adb': android/adb/readme.md
+        - 'adb-cheatsheet': android/adb/readme.md
         - 'at-commands': android/adb/at.md
         - 'uusd-codes': android/adb/uusd_codes.md
   - Cracking: 
@@ -148,6 +148,7 @@ nav:
      - merge tricks: linux/merge-tricks.md
      - nmap: linux/nmap.md
      - netstat: linux/netstat.md
+     - parallel: linux/parallel.md
      - perf: linux/perf.md
      - rename: linux/rename.md
      - ripgrep: linux/rg.md
