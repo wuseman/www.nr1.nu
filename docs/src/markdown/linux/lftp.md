@@ -42,8 +42,8 @@ lftp -e open -u ${USER}:${PASSWORD} nr1.nu -p 65005 -e "mirror -c -P20 /path/to/
 
 ## lftp.rc
 
-##### For fix `ls`' at 0 [`500 I won't open a connection to 192.168.1.102 (only to x.x.x.x)`]
+##### For fix `ls` at 0 [`500 I won't open a connection to 192.168.1.102 (only to x.x.x.x)`]
 
-	```sh
+```sh
 set ftp:ssl-allow off
 ```
