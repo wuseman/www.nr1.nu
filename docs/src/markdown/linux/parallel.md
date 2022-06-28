@@ -25,6 +25,8 @@ cd parallel-20160622
 
 ### Ping all tld domains of a host
 
+![Full Script](https://pastebin.com/raw/BcYJjDcD)
+
 Save all tld domains into a file: 
 
 ```sh 
