@@ -161,6 +161,36 @@ nav:
      - whatismyip: linux/whatismyip.md
      - wireguard: linux/wireguard.md
      - vim: linux/vim.md
+     - bash: linux/bash.md
+     - bluetoothctl: linux/bluetoothctl.md
+     - btmgt: linux/btmgt.md
+     - btmon: linux/btmon.md
+     - ciptool: linux/ciptool.md
+     - databases: linux/databases.md
+     - dd: linux/dd.md
+     - df: linux/df.md
+     - dig: linux/dig.md
+     - echo: linux/echo.md
+     - ffmpeg: linux/ffmpeg.md
+     - hciconfig: linux/hciconfig.md
+     - hcitool: linux/hcitool.md
+     - iw: linux/iw.md
+     - lftp: linux/lftp.md
+     - ls: linux/ls.md
+     - lsof: linux/lsof.md
+     - nmap2: linux/nmap2.md
+     - paste and pr: linux/paste_and_pr.md
+     - printf: linux/printf.md
+     - ps: linux/ps.md
+     - strace: linux/strace.md
+     - sudo: linux/sudo.md
+     - tar: linux/tar.md
+     - thermal: linux/thermal.md
+     - tshark: linux/tshark.md
+     - wget: linux/wget.md
+  - Windows:
+     - bios: windows/bios.md
+     - wmic: windows/wmic2.md
 
 
 
