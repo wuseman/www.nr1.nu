@@ -161,11 +161,13 @@ write to STDOUT and save into $cookie variable read cookie from $cookie variable
 
     curl  -o magazine.pdf -C - https://uuruu.ru/foo.pd
 
+### Get the HTTP status code of a URL
+
+    curl -Lw '%{http_code}' -s -o /dev/null -I SOME_URL
+
 ### Check response time to a website
 
     curl -s -w 'Http code: %{http_code}\nTotal time:%{time_total}s\n' -o /dev/null https://uuruu.ru 
-    Http code: 200
-    Total time:0.106495s
 
 ### Just basic documentio
 

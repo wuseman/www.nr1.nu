@@ -1,0 +1,274 @@
+# btmgt
+
+
+### Select a different index
+
+btmgmt select
+
+### Get the MGMT Revision
+
+btmgmt revision
+
+### List supported commands
+
+btmgmt commands
+
+### Show configuration info
+
+btmgmt config
+
+### Show controller info
+
+btmgmt info
+
+### Show extended controller info
+
+btmgt extinfo
+
+### Power all available features
+
+btmgt auto-power
+
+### Toggle powered state
+
+btmgt power
+
+### Toggle discoverable state
+
+btmgt discov
+
+### Toggle connectable state
+
+btmgt connectable
+
+### Toggle fast connectable state
+
+btmgt fast-conn
+
+### Toggle bondable state
+
+btmgt bondable
+
+### Toggle bondable state
+
+btmgt pairable
+
+### Toggle link level security
+
+btmgt linksec
+
+### Toggle SSP mode
+
+btmgt ssp
+
+### Toogle SC support
+
+btmgt sc
+
+### Toggle HS support
+
+btmgt hs
+
+### Toggle LE support
+
+btmgt le
+
+### Toggle LE advertising
+
+btmgt advertising
+
+### Toggle BR/EDR support
+
+btmgt bredr
+
+### Toggle privacy support
+
+btmgt privacy
+
+### Set device major/minor class
+
+btmgt class
+
+### Disconnect device
+
+btmgt disconnect
+
+### List connections
+
+btmgt con
+
+### Discover nearby devices
+
+btmgt find
+
+### Discover nearby service
+
+btmgt find-service
+
+### Stop discovery
+
+btmgt stop-find
+
+### Set local name
+
+btmgt name
+
+### Pair with a remote device
+
+btmgt pair
+
+### Cancel pairing
+
+btmgt cancelpair
+
+### Unpair device
+
+btmgt unpair
+
+### Load Link Keys
+
+btmgt keys
+
+### Load Long Term Keys
+
+btmgt ltks
+
+### Load Identity Resolving Keys
+
+btmgt irks
+
+### Block Device
+
+btmgt block
+
+### Unblock Device
+
+btmgt unblock
+
+### Add UUID
+
+btmgt add-uuid
+
+### Remove UUID
+
+btmgt rm-uuid
+
+### Clear UUIDs
+
+btmgt clr-uuids
+
+### Local OOB data
+
+btmgt local-oob
+
+### Remote OOB data
+
+btmgt remote-oob
+
+### Set Device ID
+
+btmgt did
+
+### Set static address
+
+btmgt static-addr
+
+### Set public address
+
+btmgt public-addr
+
+### External configuration
+
+btmgt ext-config
+
+### Toogle debug keys
+
+btmgt debug-keys
+
+### Get connection information
+
+btmgt conn-info
+
+### Set IO Capability
+
+btmgt io-cap
+
+### Set Scan Parameters
+
+btmgt scan-params
+
+### Get Clock Information
+
+btmgt get-clock
+
+### Add Device
+
+btmgt add-device
+
+### Remove Device
+
+btmgt del-device
+
+### Clear Devices
+
+btmgt clr-devices
+
+### Local OOB data (BR/EDR)
+
+btmgt bredr-oob
+
+### Local OOB data (LE)
+
+btmgt le-oob
+
+### Show advertising features
+
+btmgt advinfo
+
+### Show advertising size info
+
+btmgt advsize
+
+### Add advertising instance
+
+btmgt add-adv
+
+### Remove advertising instance
+
+btmgt rm-adv
+
+### Clear advertising instances
+
+btmgt clr-adv
+
+### Set appearance
+
+btmgt appearance
+
+### Get/Set PHY Configuration
+
+btmgt phy
+
+### Toggle Wideband-Speech support
+
+btmgt wbs
+
+### Show security information
+
+btmgt secinfo
+
+### Show experimental features
+
+btmgt expinfo
+
+### Set debug feature
+
+btmgt exp-debug
+
+### Read System Configuration
+
+btmgt read-sysconfig
+
+### Set System Configuration
+
+btmgt set-sysconfig

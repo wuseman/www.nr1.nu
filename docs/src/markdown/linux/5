@@ -1,0 +1,343 @@
+# btmgt
+
+bbbbb \
+
+### Select a different index
+
+btmgmt select
+bbbbb \
+
+### Get the MGMT Revision
+
+btmgmt revision
+bbbbb \
+
+### List supported commands
+
+btmgmt commands
+bbbbb \
+
+### Show configuration info
+
+btmgmt config
+bbbbb \
+
+### Show controller info
+
+btmgmt info
+bbbbb \
+
+### Show extended controller info
+
+btmgt extinfo
+bbbbb \
+
+### Power all available features
+
+btmgt auto-power
+bbbbb \
+
+### Toggle powered state
+
+btmgt power
+bbbbb \
+
+### Toggle discoverable state
+
+btmgt discov
+bbbbb \
+
+### Toggle connectable state
+
+btmgt connectable
+bbbbb \
+
+### Toggle fast connectable state
+
+btmgt fast-conn
+bbbbb \
+
+### Toggle bondable state
+
+btmgt bondable
+bbbbb \
+
+### Toggle bondable state
+
+btmgt pairable
+bbbbb \
+
+### Toggle link level security
+
+btmgt linksec
+bbbbb \
+
+### Toggle SSP mode
+
+btmgt ssp
+bbbbb \
+
+### Toogle SC support
+
+btmgt sc
+bbbbb \
+
+### Toggle HS support
+
+btmgt hs
+bbbbb \
+
+### Toggle LE support
+
+btmgt le
+bbbbb \
+
+### Toggle LE advertising
+
+btmgt advertising
+bbbbb \
+
+### Toggle BR/EDR support
+
+btmgt bredr
+bbbbb \
+
+### Toggle privacy support
+
+btmgt privacy
+bbbbb \
+
+### Set device major/minor class
+
+btmgt class
+bbbbb \
+
+### Disconnect device
+
+btmgt disconnect
+bbbbb \
+
+### List connections
+
+btmgt con
+bbbbb \
+
+### Discover nearby devices
+
+btmgt find
+bbbbb \
+
+### Discover nearby service
+
+btmgt find-service
+bbbbb \
+
+### Stop discovery
+
+btmgt stop-find
+bbbbb \
+
+### Set local name
+
+btmgt name
+bbbbb \
+
+### Pair with a remote device
+
+btmgt pair
+bbbbb \
+
+### Cancel pairing
+
+btmgt cancelpair
+bbbbb \
+
+### Unpair device
+
+btmgt unpair
+bbbbb \
+
+### Load Link Keys
+
+btmgt keys
+bbbbb \
+
+### Load Long Term Keys
+
+btmgt ltks
+bbbbb \
+
+### Load Identity Resolving Keys
+
+btmgt irks
+bbbbb \
+
+### Block Device
+
+btmgt block
+bbbbb \
+
+### Unblock Device
+
+btmgt unblock
+bbbbb \
+
+### Add UUID
+
+btmgt add-uuid
+bbbbb \
+
+### Remove UUID
+
+btmgt rm-uuid
+bbbbb \
+
+### Clear UUIDs
+
+btmgt clr-uuids
+bbbbb \
+
+### Local OOB data
+
+btmgt local-oob
+bbbbb \
+
+### Remote OOB data
+
+btmgt remote-oob
+bbbbb \
+
+### Set Device ID
+
+btmgt did
+bbbbb \
+
+### Set static address
+
+btmgt static-addr
+bbbbb \
+
+### Set public address
+
+btmgt public-addr
+bbbbb \
+
+### External configuration
+
+btmgt ext-config
+bbbbb \
+
+### Toogle debug keys
+
+btmgt debug-keys
+bbbbb \
+
+### Get connection information
+
+btmgt conn-info
+bbbbb \
+
+### Set IO Capability
+
+btmgt io-cap
+bbbbb \
+
+### Set Scan Parameters
+
+btmgt scan-params
+bbbbb \
+
+### Get Clock Information
+
+btmgt get-clock
+bbbbb \
+
+### Add Device
+
+btmgt add-device
+bbbbb \
+
+### Remove Device
+
+btmgt del-device
+bbbbb \
+
+### Clear Devices
+
+btmgt clr-devices
+bbbbb \
+
+### Local OOB data (BR/EDR)
+
+btmgt bredr-oob
+bbbbb \
+
+### Local OOB data (LE)
+
+btmgt le-oob
+bbbbb \
+
+### Show advertising features
+
+btmgt advinfo
+bbbbb \
+
+### Show advertising size info
+
+btmgt advsize
+bbbbb \
+
+### Add advertising instance
+
+btmgt add-adv
+bbbbb \
+
+### Remove advertising instance
+
+btmgt rm-adv
+bbbbb \
+
+### Clear advertising instances
+
+btmgt clr-adv
+bbbbb \
+
+### Set appearance
+
+btmgt appearance
+bbbbb \
+
+### Get/Set PHY Configuration
+
+btmgt phy
+bbbbb \
+
+### Toggle Wideband-Speech support
+
+btmgt wbs
+bbbbb \
+
+### Show security information
+
+btmgt secinfo
+bbbbb \
+
+### Show experimental features
+
+btmgt expinfo
+bbbbb \
+
+### Set debug feature
+
+btmgt exp-debug
+bbbbb \
+
+### Read System Configuration
+
+btmgt read-sysconfig
+bbbbb \
+
+### Set System Configuration
+
+btmgt set-sysconfig
+bbbbb \

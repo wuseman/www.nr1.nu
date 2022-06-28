@@ -37,3 +37,8 @@ rg 'bar' | rg -v 'foobar'
 ### The following command restricts the search for the pattern key to json files only.
 
 rg key -t json
+
+### Very fast history search with Ripgrep
+
+ rh() { rg "$1" ~/.bash_history }
+

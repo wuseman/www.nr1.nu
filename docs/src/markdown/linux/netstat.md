@@ -1,5 +1,10 @@
 # netstat
 
+### Displays the quantity of connections to port 80 on a per IP basis 
+```sh  
+clear;while x=0; do clear;date;echo "";echo "  [Count] | [IP ADDR]";echo "-------------------";netstat -np|grep :80|grep -v LISTEN|awk '{print $5}'|cut -d: -f1|uniq -c; sleep 5;done
+```
+
 ### Find all IP connected to my host through TCP connection and count it
 ```sh      
 netstat -an |grep ":80" |awk '{print $5}' | sed s/::ffff://g | cut -d: -f1 |sort |uniq -c |sort -n | tail -1000 | grep -v "0.0.0.0"

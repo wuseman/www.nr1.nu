@@ -613,7 +613,13 @@ tcpdump -n icmp and 'icmp[0] != 8 and icmp[0] != 0'
 
     sudo tcpdump -i any -c10 -nn -A port 80
 
-# References & Awesome wikis
+### Using tcpdump with port ranges and file count/size
+
+    sudo /usr/sbin/tcpdump -i any -s 0 -n -Z <user_name> -C 500 -W 100 -w /home/<user_name>/$(hostname).pcap -f '(port (# or # or # or # or # or # or ...) or portrange <start>-<end>)' &>/dev/null
+
+
+
+## References & Awesome wikis
 
 * https://hackertarget.com/tcpdump-examples/
 
@@ -635,16 +641,4 @@ tcpdump -n icmp and 'icmp[0] != 8 and icmp[0] != 0'
 
 * https://sectools.org/tool/tcpdump/
 
-#### CONTACT 
-
-If you have problems, questions, ideas or suggestions please contact
-us by posting to wuseman@nr1.nu
-
-#### WEB SITE
-
-Visit our homepage for the latest info and updated tools
-
-https://nr1.nu & https://github.com/wuseman/
-
-#### END!
 
