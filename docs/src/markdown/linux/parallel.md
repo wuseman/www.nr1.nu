@@ -23,6 +23,26 @@ cd parallel-20160622
 ./configure --prefix=$HOME && make && make install
 ```
 
+### Ping all tld domains of a host
+
+https://pastebin.com/raw/BcYJjDcD
+
+Save all tld domains into a file: 
+
+```sh 
+curl -sL https://raw.githubusercontent.com/samayo/country-json/master/src/country-by-domain-tld.json \
+      -A 'Mozilla/5.0 (Idoesnotusephones; Android 1.1; S20 Ultra) AppleWebKit/537.36 (KHTML, like Gecko) SamsungBrowser/13.2' \
+      |jq -r '.[].tld'|grep -v "null" >  ${wping_tld}.log
+```
+
+Check online status with colorized output
+
+```sh 
+seq 590 | parallel -j25 -a ${wping_hosts}.log     'ping -c 1 nr1{} >/dev/null \
+        && echo -e "{}\r.,........................... [\e[1;32m..up\e[0m]\rHost: nr1{}" \
+        || echo -e "{}\r.,........................... [\e[1;31m..dn\e[0m]\rHost: nr1{}"' 2>/dev/null
+```
+
 ### To print the command before running them use --verbose:
 
 ```sh 
