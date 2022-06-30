@@ -133,61 +133,65 @@ nav:
   - Linux:
      - apt: linux/apt.md
      - awk: linux/awk.md
-     - chroot: linux/chroot.md
-     - cryptsetup: linux/cryptsetup.md
-     - curl: linux/curl.md
-     - dev and proc: linux/dev_and_proc.md
-     - exiftool: linux/exiftool.md
-     - find: linux/find.md
-     - git: linux/git.md
-     - gnupg: linux/gnupg.md
-     - grep: linux/grep.md
-     - kernel: linux/kernel.md
-     - log: linux/log.md
-     - matomo: linux/matomo.md
-     - merge tricks: linux/merge-tricks.md
-     - nmap: linux/nmap.md
-     - netstat: linux/netstat.md
-     - parallel: linux/parallel.md
-     - perf: linux/perf.md
-     - rename: linux/rename.md
-     - ripgrep: linux/rg.md
-     - sed: linux/sed.md
-     - ssh-log: linux/ssh-log.md
-     - syslog-ng: linux/syslog-ng/syslog-conf.ng.md
-     - sys: linux/sys.md
-     - sqlmap: linux/sqlmap.md
-     - tcpdump: linux/tcpdump.md
-     - whatismyip: linux/whatismyip.md
-     - wireguard: linux/wireguard.md
-     - vim: linux/vim.md
      - bash: linux/bash.md
      - bluetoothctl: linux/bluetoothctl.md
      - btmgt: linux/btmgt.md
      - btmon: linux/btmon.md
+     - chroot: linux/chroot.md
      - ciptool: linux/ciptool.md
+     - cryptsetup: linux/cryptsetup.md
+     - curl: linux/curl.md
      - databases: linux/databases.md
      - dd: linux/dd.md
+     - dev_and_proc: linux/dev_and_proc.md
      - df: linux/df.md
      - dig: linux/dig.md
      - echo: linux/echo.md
+     - enviroment: linux/enviroment.md
+     - exiftool: linux/exiftool.md
      - ffmpeg: linux/ffmpeg.md
+     - find: linux/find.md
+     - git: linux/git.md
+     - gnupg: linux/gnupg.md
+     - grep: linux/grep.md
      - hciconfig: linux/hciconfig.md
      - hcitool: linux/hcitool.md
      - iw: linux/iw.md
+     - kernel: linux/kernel.md
      - lftp: linux/lftp.md
+     - license: linux/license.md
+     - log: linux/log.md
      - ls: linux/ls.md
      - lsof: linux/lsof.md
+     - matomo: linux/matomo.md
+     - merge-tricks: linux/merge-tricks.md
+     - netstat: linux/netstat.md
      - nmap2: linux/nmap2.md
-     - paste and pr: linux/paste_and_pr.md
+     - nmap: linux/nmap.md
+     - parallel: linux/parallel.md
+     - paste_and_pr: linux/paste_and_pr.md
+     - perf: linux/perf.md
      - printf: linux/printf.md
      - ps: linux/ps.md
+     - rename: linux/rename.md
+     - rg: linux/rg.md
+     - sed: linux/sed.md
+     - sqlmap: linux/sqlmap.md
+     - ssh-config: linux/ssh-config.md
+     - ssh-log: linux/ssh-log.md
      - strace: linux/strace.md
      - sudo: linux/sudo.md
+     - syslog-ng: syslog-ng/syslog-ng.md
+     - sys: linux/sys.md
      - tar: linux/tar.md
+     - tcpdump: linux/tcpdump.md
      - thermal: linux/thermal.md
      - tshark: linux/tshark.md
+     - vim: linux/vim.md
      - wget: linux/wget.md
+     - whatismyip: linux/whatismyip.md
+     - wireguard: linux/wireguard.md
+
   - Windows:
      - bios: windows/bios.md
      - wmic: windows/wmic2.md

@@ -1,6 +1,5 @@
 # btmgt
 
-
 ### Select a different index
 ```sh
 btmgmt select

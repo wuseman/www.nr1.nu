@@ -2,7 +2,7 @@
 
 Various ways to print your WAN IP -Address:
 
-### Curl
+### curl
 
 ```sh
 curl -s https://w.nr1.nu/i 
@@ -24,7 +24,7 @@ curl -s https://ifconfig.co
 curl -s checkip.dyndns.org|grep -o '[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}'
 ```
 
-### Wget
+### wget
    
 ```sh
 wget -qO - https://w.nr1.nu/i/

@@ -2,13 +2,17 @@
 
 ### Print temperature without third-party 
 
+```sh
 cat /sys/class/thermal/thermal_zone*/temp 
+```
 
 ### To see what zones the temperatures are referring to use:
-paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'    
 
+```sh
+paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) | column -s $'\t' -t | sed 's/\(.\)..$/.\1°C/'    
+```
 ### Monitor temps
--------
+```sh
 getTemp () {
   for zone in `ls /sys/class/thermal/ | grep thermal_zone`
   do
@@ -31,4 +35,4 @@ update () {
     sleep 5
   done
 }
--------
+```

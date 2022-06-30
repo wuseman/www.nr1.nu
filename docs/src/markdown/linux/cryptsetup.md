@@ -16,7 +16,7 @@ Encrypt, format, overwrite, zeroing and alot more for secure your system / drive
 
 * Variables
 
-```bash
+```sh
 DISKU="/dev/sda"
 DISKE="/dev/sdb"
 DISK1="/dev/nvme0n1"
@@ -29,7 +29,7 @@ DISK1_H="$(hostname)_header_backup"
 
 ### Generate 4096-bit random key file
 
-```bash
+```sh
 dd if=/dev/urandom of=${DISK1_K} bs=8M count=1
 ```
 
@@ -37,13 +37,13 @@ dd if=/dev/urandom of=${DISK1_K} bs=8M count=1
 
 !!! notice "You can have up to 8 slots."
 
-```bash
+```sh
 cryptsetup luksAddKey /dev/${DISK1} ${DISK1_K}
 ```
 
 ### Add a key file to specific key slot, e.g slot 2
 
-```bash
+```sh
 cryptsetup luksAddKey --key-slot 7 /dev/${DISK1_3} ${DISK1_K}.key
 ```
 
@@ -51,7 +51,7 @@ cryptsetup luksAddKey --key-slot 7 /dev/${DISK1_3} ${DISK1_K}.key
 
 !!! tip "(use | `grep Slot if needed`)""
 
-```bash
+```sh
 cryptsetup luksDump ${DISK1_3}
 ```
 
@@ -59,68 +59,68 @@ cryptsetup luksDump ${DISK1_3}
 
 !!! notice "The slot will automatically be detected and slot key removed."
 
-```bash
+```sh
 cryptsetup luksRemoveKey ${DISK1_3}
 cryptsetup luksRemoveKey ${DISK1_3} ${DISK1_K}.key
 ```
 
 ### Add password to a luks volume when we only have a keyfile
 
-```bash
+```sh
 cryptsetup -d ${DISK1_K}.key luksAddKey ${DISK1_3}
 ```
 
 ### Create header backup
 
-```bash
+```sh
 cryptsetup luksHeaderBackup ${DISK1_3} --header-backup-file ${DISK1_H}.img
 ```
 
 ### Encrypt Dríve
 
-```bash
+```sh
 cryptsetup -d ${DISK1_K}.key --key-description kiss_my_fucking_ass --cipher twofish-xts-plain64 --hash sha512 --iter-time 5000 --use-urandom luksFormat ${DISK1}
 ```
 
 ### Decrypt and luksOpen our Drive With keyFile 
 
-```bash
+```sh
 cryptsetup -d ${DISK1_K}.key luksOpen /dev/sdc usb
 ```
 
 ### View status of the map
 
-```bash
+```sh
 cryptsetup -v status /dev/mapper/rootfs'
 ```
 
 ### Zero the partition prior to formatting
 
-```bash
+```sh
 dd if=/dev/zero of=/dev/mapper/${DISK1_VGName} status=progress
 ```
 
 ### Urandomize the partition prior to formatting
 
-```bash
+```sh
 dd if=/dev/urandom of=/dev/mapper/${DISK1_VGName} status=progress
 ```
 
 ### Format LUKS and use ext4 filesystem
 
-```bash
+```sh
 mkfs.ext4 /dev/mapper/${DISK1_VGName}
 ```
 
 ### Decrypt and Mount
 
-```bash
+```sh
 cryptsetup luksOpen ${DISK1_3} <choosen_name>
 mount /dev/mapper/${DISK1_3} /mnt/<choosen_name>
 ```
 ### Close and Unmount the LUKS partition
 
-```bash
+```sh
 cryptsetup luksClose /dev/mapper/${DISK1_VGname}
 ```
 

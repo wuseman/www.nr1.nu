@@ -10,10 +10,7 @@ ps aux | sort -nk +4 | tail
 ps awwfux | less -S
 ```
 
-```
-
-### Hide the name of a process listed in the ps` output
-```sh
+### Hide the name of a process listed in the ps output
 ps aux | grep -v name_you_want_to_hide
 ```
 
@@ -52,8 +49,7 @@ ps -e -o pid,vsz,comm= | sort -n -k 2
 ps gv [pid] | head -2
 ```
 
-### ```sh
-ps to show child thread PIDs
+### ps to show child thread PIDs
 ```sh
 ps -efL | grep <Process Name>
 ```
@@ -166,14 +162,12 @@ ps ho command $$
 ps -axgu | cut -f1 -d' ' | sort -u
 ```
 
-### Kill process by searching something from '```sh
-ps' command
+### Kill process by searching something from ps' command
 ```sh
 ps h -o pid,command | grep 'TEXT' | sed 's/^ \+//' | cut -d ' ' -f 1 | xargs -n 1 kill
 ```
 
-### Kill process by searching something from '```sh
-ps' command
+### Kill process by searching something from ps' command
 ```sh
 ps ux|grep <process name>|awk '{print $2}'|xargs -n 1 kill
 ```
@@ -191,8 +185,7 @@ pstokill
 ps -auwx|egrep hunger|grep -v grep| awk '{print "kill -9",$1}' > ~/fu.bar
 ```
 
-### ```sh
-psgrep
+### psgrep
 ```sh
 psgrep() { if [ ! -z $1 ]; then echo "Grepping for processes matching $1..." ```sh
 ps aux | grep -i $1 | grep -v grep; else echo "!! Need name to grep for"; fi }
@@ -310,10 +303,6 @@ ps aux
 ps aux | sort -nk +4 | tail
 ```
 
-### ```sh
-ps -A
-```sh
-ps -A
 ```
 
 ### easily strace all your apache processes
@@ -447,8 +436,7 @@ ps -o ppid= -p $$)
 ps aux | sort -nk +4 | tail
 ```
 
-### ```sh
-ps a process keeping the header info so you know what the columns of numbers mean!
+### ps a process keeping the header info so you know what the columns of numbers mean!
 ```sh
 ps auxw |egrep "PID|process_to_look_at"
 ```
@@ -479,8 +467,7 @@ ps ax -o "%p %U %u %x %c %n"
 ps aux | sort -nk +4 | tail
 ```
 
-### ```sh
-ps with parent/child process tree
+### ps with parent/child process tree
 ```sh
 ps auxf
 ```
@@ -682,8 +669,7 @@ ps -eo %cpu,args | grep -m1 PROCESS | awk '{print $1}'
 ps -ef | awk '/process-name/ && !/awk/ {print}'
 ```
 
-### Nicely display mem usage with ```sh
-ps
+### Nicely display mem usage with ps
 ```sh
 ps -o comm,%mem,args -u www-data
 ```
@@ -816,8 +802,7 @@ ps -eo pid,lstart,cmd
 ps aux | sed -n '/USER/!s/\([^ ]\) .*/\1/p' | sort -u
 ```
 
-### ```sh
-psgrepp
+### psgrepp
 ```sh
 ps aux | grep $(echo $1 | sed "s/^\(.\)/[\1]/g")
 ```
@@ -832,11 +817,9 @@ ps -a | grep -c cat
 ps aux | awk '{ print $8 " " $2 " " $11}' | grep -w Z
 ```
 
-### ```sh
-ps grep with header
+### ps grep with header
 ```sh
-psg () { ```sh
-ps auxwww | egrep "$1|PID" | grep -v grep }
+psg () { ps auxwww | egrep "$1|PID" | grep -v grep }
 ```
 
 ### List Threads by Pid along with Thread Start Time
@@ -896,11 +879,9 @@ ps -u $USER -lf | grep -vE "\-bash|sshd|```sh
 ps|grep|PPID" > .tmpkill; if (( $(cat .tmpkill | wc -l) > 0 )); then echo "# KILL EM ALL"; cat .tmpkill; cat .tmpkill | awk '{print $4}' | xargs kill -9; else echo "# NOTHING TO KILL"; fi; cat .tmpkill; rm .tmpkill;
 ```
 
-### ```sh
-psgrep(command)
+### psgrep(command)
 ```sh
-psgrep() { ```sh
-ps aux | tee >(head -1>&2) | grep -v " grep $@" | grep "$@" -i color=auto; }
+psgrep() { ps aux | tee >(head -1>&2) | grep -v " grep $@" | grep "$@" -i color=auto; }
 ```
 
 ### Sum using awk
@@ -1193,15 +1174,9 @@ ps -C httpd -o rss no-headers | awk '{SUM += $1} END {printf("%.0f\n",SUM/1024)}
 ps -fu userid | awk '/userid/{print $2}' | xargs kill
 ```
 
-### ```sh
-psg (```sh
-ps grep) function if you don't have pgrep or don't know how to use it
+### psg (ps grep) function if you don't have pgrep or don't know how to use it
 ```sh
-psg()  { if [ -z "$2" ]; then ```sh
-psargs="aux"; greparg="$1"; else ```sh
-psargs="$1"; greparg="$2"; fi; ```sh
-ps $```sh
-psargs | grep -i "$(echo $greparg | sed -e 's/^\(.\)/[\1]/')\|^$(ps $psargs | head -1)" ; }
+psg()  { if [ -z "$2" ]; then psargs="aux"; greparg="$1"; else psargs="$1"; greparg="$2"; fi;psargs | grep -i "$(echo $greparg | sed -e 's/^\(.\)/[\1]/')\|^$(ps $psargs | head -1)" ; }
 ```
 
 ### the executable that started the currently running oracle databases and the ORACLE_HOME relative to each
@@ -1223,8 +1198,6 @@ ps ax | grep -i ProcessName| kill -9 `awk '/FileName.Ext/ {print $1}'`
 ### ram usage most top 10 process
 ```sh
 ps aux | awk '{print $2, $4, $11}' | sort -k2rn | head -n 10
-```
-
 ```
 
 ### Display the top ten running processes - sorted by memory usage
@@ -1388,8 +1361,7 @@ ps -o ppid= -p $$)
 ps aux | sort -nk +4 | tail
 ```
 
-### ```sh
-ps a process keeping the header info so you know what the columns of numbers mean!
+### ps a process keeping the header info so you know what the columns of numbers mean!
 ```sh
 ps auxw |egrep "PID|process_to_look_at"
 ```
@@ -1409,8 +1381,7 @@ ps -eo stat,pid,user,command | egrep "^STAT|^D|^R"
 ps aux | sort -nk +4 | tail
 ```
 
-### Format ```sh
-ps command output
+### Format ps command output
 ```sh
 ps ax -o "%p %U %u %x %c %n"
 ```
@@ -1420,8 +1391,7 @@ ps ax -o "%p %U %u %x %c %n"
 ps aux | sort -nk +4 | tail
 ```
 
-### ```sh
-ps with parent/child process tree
+### ps with parent/child process tree
 ```sh
 ps auxf
 ```
@@ -1508,20 +1478,17 @@ ps -p $$
 ps -ef | grep $USERNAME | awk {'print $2'} | xargs kill [-9]
 ```
 
-### List all PostgreSQL databases. Useful when doing backu```sh
-ps
+### List all PostgreSQL databases. Useful when doing backups
 ```sh
 psql -U postgres -lAt | gawk -F\| '$1 !~ /^template/ && $1 !~ /^postgres/ && NF > 1 {print $1}'
 ```
 
-### Show the command line for a PID with ```sh
-ps
+### Show the command line for a PID with ps
 ```sh
 ps h -o %a 21679
 ```
 
-### Check ```sh
-ps output to see if file is running, if not start it
+### Check ps output to see if file is running, if not start it
 ```sh
 ps -C thisdaemon || { thisdaemon & }
 ```
@@ -1549,11 +1516,6 @@ ps -e -m -o user,pid,args,%mem,rss | grep Chrome | perl -ne 'print "$1\n" if / (
 ### Sort output by column
 ```sh
 ps aux | sort -nk 6
-```
-
-### lazy SQL QUERYING
-```sh
-psql
 ```
 
 ### List PHP-FPM pools by total CPU usage
@@ -1618,8 +1580,7 @@ ps -eo %cpu,args | grep -m1 PROCESS | awk '{print $1}'
 ps -ef | awk '/process-name/ && !/awk/ {print}'
 ```
 
-### Nicely display mem usage with ```sh
-ps
+### Nicely display mem usage with ps
 ```sh
 ps -o comm,%mem,args -u www-data
 ```
@@ -1659,8 +1620,7 @@ ps ax | egrep "*.exe|*exe]" | awk '{ print $1 }' | xargs kill
 ps ewwo command PID | tr ' ' '\n' | grep \=
 ```
 
-### 'micro' ```sh
-ps aux (by mem/cpu)
+### 'micro' ps aux (by mem/cpu)
 ```sh
 ps aux | awk '{print($1" "$3" "$4" "$11);}' | grep -v "0.0"
 ```
@@ -1685,8 +1645,7 @@ ps -ef | grep [f]oo | awk '{print $2}' | xargs kill -9
 ps uw ppid $PID
 ```
 
-### Remove grep itself from ```sh
-ps
+### Remove grep itself from ps
 ```sh
 ps afx|grep [a]pache
 ```
@@ -1747,8 +1706,7 @@ ps -eo pid,lstart,cmd
 ps aux | sed -n '/USER/!s/\([^ ]\) .*/\1/p' | sort -u
 ```
 
-### ```sh
-psgrepp
+### psgrepp
 ```sh
 ps aux | grep $(echo $1 | sed "s/^\(.\)/[\1]/g")
 ```
@@ -1763,12 +1721,6 @@ ps -a | grep -c cat
 ps aux | awk '{ print $8 " " $2 " " $11}' | grep -w Z
 ```
 
-### ```sh
-ps grep with header
-```sh
-psg () { ```sh
-ps auxwww | egrep "$1|PID" | grep -v grep }
-```
 
 ### List Threads by Pid along with Thread Start Time
 ```sh
@@ -1805,8 +1757,7 @@ ps -p pid -o logname |tail -1
 ps aux | grep [h]ttpd | cat -n
 ```
 
-### Show WebSphere Ap```sh
-pserver uid|pid|cell|node|jvms
+### Show WebSphere Appserver uid|pid|cell|node|jvms
 ```sh
 ps -ef | grep [j]ava | awk -F ' '  ' { print $1,"    ",$2,"\t",$(NF-2),"\t",$(NF-1),"\t",$NF } '  | sort -k4
 ```
@@ -1827,8 +1778,7 @@ ps -u $USER -lf | grep -vE "\-bash|sshd|```sh
 ps|grep|PPID" > .tmpkill; if (( $(cat .tmpkill | wc -l) > 0 )); then echo "# KILL EM ALL"; cat .tmpkill; cat .tmpkill | awk '{print $4}' | xargs kill -9; else echo "# NOTHING TO KILL"; fi; cat .tmpkill; rm .tmpkill;
 ```
 
-### ```sh
-psgrep(command)
+### psgrep(command)
 ```sh
 psgrep() { ```sh
 ps aux | tee >(head -1>&2) | grep -v " grep $@" | grep "$@" -i color=auto; }
@@ -1859,26 +1809,6 @@ ps -efa | grep httpd | grep -v grep | awk '{ print $2 }' |xargs
 ps axo pid=,stat= | awk '$2~/^Z/ { print $1 }'
 ```
 
-### Get a PostgreSQL servers version
-```sh
-psql -X -A -t -c "SELECT version();"
-```
-
-### printing with ```sh
-psnup
-```sh
-psnup -4 -pa4 -Pa4 file.```sh
-ps file2.```sh
-ps
-```
-
-### Using ```sh
-psnup to get two pages per page
-```sh
-psnup -2 file.```sh
-ps | lpr
-```
-
 ### Kill all Zombie processes one-liner
 ```sh
 ps axo state,ppid | awk '!/PPID/$1~"Z"{print $2}' | xargs -r kill -9
@@ -1904,8 +1834,7 @@ ps aux | grep "[s]ome_text"
 ps hax -o user sort user | uniq -c
 ```
 
-### 'micro' ```sh
-ps aux (by mem/cpu)
+### 'micro' ps aux (by mem/cpu)
 ```sh
 ps -o user,%cpu,%mem,command
 ```
@@ -2005,8 +1934,7 @@ ps -eo pcpu,pmem,cmd | grep Service| grep -v grep| sort -k 1 -nr | head -5
 ps -eo pmem,pid,comm no-headers | sort -k1 -rn | head -10
 ```
 
-### Exclude grep from your grepped output of ```sh
-ps (alias included in description)
+### Exclude grep from your grepped output of ps (alias included in description)
 ```sh
 ps aux | grep [h]ttpd
 ```
@@ -2049,3 +1977,4 @@ ps aux | sort -nk +4 | tail
 ### Processes by CPU usage
 ```sh
 ps -e -o pcpu,cpu,nice,state,cputime,args sort pcpu | sed "/^ 0.0 /d"
+```

@@ -2,7 +2,7 @@
 
 ### Turn off one screen at boot or set custom resolution in bootloader
 
-```
+```sh
 video=LVDS-1:d
 video=<conn>:<xres>x<yres>[M][R][-<bpp>][@<refresh>][i][m][eDd]
 
@@ -23,5 +23,8 @@ video=DVI-I-1:1024x768@85 video=TV-1:d
 ### Find connected screens
 
 ```sh
-for p in /sys/class/drm/*/status; do con=${p%/status}; echo -n "${con#*/card?-}: "; cat $p; done
+for p in /sys/class/drm/*/status; do 
+	con=${p%/status}; echo -n "${con#*/card?-}: "; 
+	cat $p; 
+done
 ```

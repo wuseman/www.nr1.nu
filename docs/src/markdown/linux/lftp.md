@@ -8,7 +8,7 @@ PASSWORD="password"
 IDENTD=""
 ```
 
-## LFTP
+## Transfering 
 
 #### Mirror and Crawl  ftp/website with 25 download threads in Parallel
 ```sh
@@ -39,8 +39,7 @@ lftp -e open -u ${USER}:${PASSWORD} nr1.nu -p 65005 -e "mirror -R /path/to/local
 lftp -e open -u ${USER}:${PASSWORD} nr1.nu -p 65005 -e "mirror -c -P20 /path/to/ftp_dir /path/to/local_dir"          
 ```
 
-
-## lftp.rc
+## Config (lftp.rc)
 
 ##### For fix `ls` at 0 [`500 I won't open a connection to 192.168.1.102 (only to x.x.x.x)`]
 

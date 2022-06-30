@@ -50,7 +50,7 @@ gpg -k
 ```
 ### List keys              
 
- ```sh
+```sh
 gpg --list-keys      
 ```
 ### List the keys in your secret key ring:   
@@ -108,7 +108,7 @@ gpg --send-keys <KEY IDS>
 
 ### Request updates from keyserver for keys already in your keyring
 
- ```sh
+```sh
 gpg --refresh-keys         
 ```
 
@@ -174,18 +174,18 @@ gpg -o wuseman.gpg --export-options backup --export-secret-keys wuseman@nr1.nu
 ```
 ### Restore Backup
 
-  ```sh
+```sh
 gpg --import-options restore --import wuseman.gpg
 ```
 ### Get some more info then keyid
 
- ```sh
+```sh
 gpg --list-packets backups/gnupg/<KEY IDS>.asc 
 ```
 
 ### Get keyid
 
-  ```sh
+```sh
 gpg --list-packets ~/backups/gnupg/<KEY IDS>.asc  | awk '$1=="keyid:"{print$2}'
 ```
 
