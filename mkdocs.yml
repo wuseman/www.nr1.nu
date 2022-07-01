@@ -255,8 +255,8 @@ nav:
         - HP Bios: hacking/bios/hp_device_and_bios-hacking/README.md
      - Bruteforce: 
         - EMAGNET: 'hacking/bruteforce/emagnet/readme.md'
-        - WBRUTER': hacking/bruteforce/wbruter/README.md
-        - WSSH': hacking/bruteforce/wssh/README.md
+        - WBRUTER: hacking/bruteforce/wbruter/README.md
+        - WSSH: hacking/bruteforce/wssh/README.md
      - Cameras:
         - Biltemas Babycam: hacking/cameras/biltemas_babycam/README.md
         - DLink 6100lh: hacking/cameras/dlink-6100lh/README.md
@@ -287,7 +287,7 @@ nav:
            - Swedish Wordlist: hacking/bruteforce/swedish_wordlist.txt/README.md
   - Linux:
      - apt: linux/apt.md
-     - arp: linux/arpös.md
+     - arp: linux/arp.md
      - awk: linux/awk.md
      - bash: linux/bash.md
      - bluetoothctl: linux/bluetoothctl.md
@@ -339,7 +339,7 @@ nav:
      - ssh-log: linux/ssh-log.md
      - strace: linux/strace.md
      - sudo: linux/sudo.md
-     - syslog-ng: syslog-ng/syslog-conf.ng.md
+     - syslog-ng: slinux/syslog-ng/syslog-conf.ng.md
      - sys: linux/sys.md
      - tar: linux/tar.md
      - tcpdump: linux/tcpdump.md
