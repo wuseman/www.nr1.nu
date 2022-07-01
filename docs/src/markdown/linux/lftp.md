@@ -1,48 +1,74 @@
-# lftp
-
-## Settings
-
+##### Use lftp to multi-threaded download files from websites
 ```
-USER="wuseman"
-PASSWORD="password"
-IDENTD=""
+```sh
+lftp -c "pget -n 10 http://example.com/foo.bar"
 ```
 
-## Transfering 
-
-#### Mirror and Crawl  ftp/website with 25 download threads in Parallel
+##### mirrors directory to a ftp server
 ```sh
-lftp -e open "https://share.vx-underground.org/Conti/" -e "mirror -c -P 25 . " -d
-```
-#### Connect -> List [main.dir] -> Disconnect
-```sh
-lftp -e open -u ${USER}:${PASSWORD} nr1.nu -p 65005 -e "ls;exit"        
-```
-#### Connect -> Launch shell command
-```sh
-lftp -e open -u ${USER}:${PASSWORD} nr1.nu -p 65005 -e "!bash_command"
-```
-#### Upload a file from local_dir/file to ftp_dir/file
-```sh
-lftp -e open -u ${USER}:${PASSWORD} nr1.nu -p 65005 -e mirror -R       
-```
-#### Download a folder                                                
-```sh
-lftp -e open -u ${USER}:${PASSWORD} nr1.nu -p 65005 -e "mirror -c /path/to/ftp_dir /path/to/local_dir"                
-```
-#### Upload a folder                                           
-```sh
-lftp -e open -u ${USER}:${PASSWORD} nr1.nu -p 65005 -e "mirror -R /path/to/local_dir /path/to/ftp_dir"                 
-```
-#### Download ftp dir with 20 threads in parallel
-```sh
-lftp -e open -u ${USER}:${PASSWORD} nr1.nu -p 65005 -e "mirror -c -P20 /path/to/ftp_dir /path/to/local_dir"          
+lftp -ulogin,passwd -e "mirror reverse /my/from/dir/ /ftp/target/dir/" ftp.server.xx
 ```
 
-## Config (lftp.rc)
-
-##### For fix `ls` at 0 [`500 I won't open a connection to 192.168.1.102 (only to x.x.x.x)`]
-
+##### Mirror a directory structure from websites with an Apache-generated file indexes
 ```sh
-set ftp:ssl-allow off
+lftp -e "mirror -c" http://example.com/foobar/
+```
+
+##### Internet Speed Test
+```sh
+lftp -e 'pget http://address_to_file; exit; '
+```
+
+##### Multi-segment file downloading with lftp
+```
+```sh
+lftp -u user,pass ftp://site.com -e 'pget -c -n 6 file'
+```
+
+##### Fastest segmented parallel sync of a remote directory over ssh
+```sh
+lftp -u user,pwd -e "set sftp:connect-program 'ssh -a -x -T -c arcfour -o Compression=no'; mirror -v -c loop use-pget-n=3 -P 2 /remote/dir/ /local/dir/; quit" sftp://remotehost:22
+```
+
+##### Multi-segment directory downloading with lftp
+```
+```sh
+lftp -u user,pass ftp://site.com/ -e 'mirror -c parallel=3 use-pget-n=5 "Some folder"'
+```
+
+##### Gets directory and files tree listing from a FTP-server
+```sh
+lftp -u<<credentials>> <<server>> -e "du -a;exit" > server-listing.txt
+```
+
+##### mirrors directory to a ftp server
+```sh
+lftp -ulogin,passwd -e "mirror reverse /my/from/dir/ /ftp/target/dir/" ftp.server.xx
+```
+
+##### Mirror a directory structure from websites with an Apache-generated file indexes
+```sh
+lftp -e "mirror -c" http://example.com/foobar/
+```
+
+##### Internet Speed Test
+```sh
+lftp -e 'pget http://address_to_file; exit; '
+```
+
+##### Multi-segment file downloading with lftp
+```
+```sh
+lftp -u user,pass ftp://site.com -e 'pget -c -n 6 file'
+```
+
+##### Fastest segmented parallel sync of a remote directory over ssh
+```sh
+lftp -u user,pwd -e "set sftp:connect-program 'ssh -a -x -T -c arcfour -o Compression=no'; mirror -v -c loop use-pget-n=3 -P 2 /remote/dir/ /local/dir/; quit" sftp://remotehost:22
+```
+
+##### Multi-segment directory downloading with lftp
+```
+```sh
+lftp -u user,pass ftp://site.com/ -e 'mirror -c parallel=3 use-pget-n=5 "Some folder"'
 ```

@@ -1,50 +1,47 @@
-# tshark
+##### read ajp13 packet contents on terminal using tshark 1.4.15
+```
+```sh
+tshark -r *.eth -S -R "ajp13" -d tcp.port==9009,ajp13  -s 0 -l -V | awk '/Apache JServ/ {p=1} /^ *$/ {p=0;printf "\n"} (p){printf "%s\n", $0} /^(Frame|Internet Pro|Transmission Control)/ {print $0}'
+```
 
-###  Extract post only
+##### Extract infomation form pcap
+```sh
+tshark -r data.pcap -zio,phs
+```
 
+##### Print all connections of a source IP address in pcap
 ```sh
-tshark -Y "http.request.method == POST" -T fields -e text -r sagemcom_update.pcapng
+tshark -r data.pcap -R "ip.src==192.168.1.2" -T fields -e "ip.dst" |sort |uniq -c
 ```
-```sh
-tshark http.user_agent matches "^.{1,9}$"                          
-```
-###  Sniff HTTP Requests
-```sh
-tshark tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2)) - ((tcp[12]&0xf0)>>2)) != 0)' -R 'http.request.method == "GET" || http.request.method == "HEAD"
-```
-###  Log HTTP Request / Receive Headers
-```sh
-tshark tcp port 80 or tcp port 443 -V -R "http.request || http.response"
-```
-###  Using packet filters
-```sh
-tshark -r network.pcap “http.request.method == POST and http.file_data contains password"
-```
-###  Using packet filters
-```sh
-tshark -nr sagemcom_update.pcapng http.request.method == POST and http.file_data contains guest
-```
-###  Grep all post and get
-```sh
-http.request.method == GET or http.request.method == POST
-```
-###  Capture only HTTP GET and POST packets
-```sh
-tcpdump -s 0 -A -vv 'tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x47455420'
-```
-### Extract HTTP Request URL's
-```sh
-tcpdump -s 0 -v -n -l | egrep -i "POST /|GET /|Host:"                                                                          
-```
-###  Extract HTTP Passwords in POST Requests
-```sh
-tcpdump -s 0 -A -n -l | egrep -i "POST /|pwd=|passwd=|password=|Host:"
-```
-### Good output
-```sh
-tcpdump -r AAA.pcap -s 0 -v -n -l -nnnn
-tshark -i enp0s25  -Y 'http.request.method == "POST" and http.file_data'
-```
-### Resources
 
-https://hackertarget.com/tcpdump-examples/
+##### Print out buddy name (aim) which has been capture in pcap
+```sh
+tshark -r data.pcap -R "ip.addr==192.168.1.2 && ip.addr==64.12.24.50 && aim" -d tcp.port==443,aim -T fields -e "aim.buddyname" |sort |uniq -c
+```
+
+##### Tshark to Generate Top Talkers by #TCP conv started per second.
+```sh
+tshark -qr [cap] -z conv,tcp | awk '{printf("%s:%s:%s\n",$1,$3,$10)}' | awk -F: '{printf("%s %s %s\n",$1,$3,substr($5,1,length($5)-10))}' | sort | uniq -c | sort -nr
+```
+
+##### capture mysql queries sent to server
+```sh
+tshark -i any -T fields -R mysql.query -e mysql.query
+```
+
+##### trace http requests with tshark
+```
+```sh
+tshark -i en1 -z proto,colinfo,http.request.uri,http.request.uri -R http.request.uri
+```
+
+##### capture mysql queries sent to server
+```sh
+tshark -i any -T fields -R mysql.query -e mysql.query
+```
+
+##### trace http requests with tshark
+```
+```sh
+tshark -i en1 -z proto,colinfo,http.request.uri,http.request.uri -R http.request.uri
+```

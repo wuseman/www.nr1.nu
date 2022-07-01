@@ -295,49 +295,74 @@ nav:
      - btmon: linux/btmon.md
      - chroot: linux/chroot.md
      - ciptool: linux/ciptool.md
+     - comm: linux/comm.md
+     - contact: linux/contact.md
      - cryptsetup: linux/cryptsetup.md
      - curl: linux/curl.md
      - databases: linux/databases.md
      - dd: linux/dd.md
      - dev_and_proc: linux/dev_and_proc.md
      - df: linux/df.md
+     - diff: linux/diff.md
      - dig: linux/dig.md
+     - dpkg: linux/dpkg.md
+     - du: linux/du.md
      - echo: linux/echo.md
+     - emerge: linux/emerge.md
      - enviroment: linux/enviroment.md
      - exiftool: linux/exiftool.md
      - ffmpeg: linux/ffmpeg.md
      - find: linux/find.md
+     - for: linux/for.md
      - git: linux/git.md
      - gnupg: linux/gnupg.md
      - grep: linux/grep.md
      - hciconfig: linux/hciconfig.md
      - hcitool: linux/hcitool.md
+     - hexdump: linux/hexdump.md
+     - ip: linux/ip.md
      - iptables: linux/iptables.md
      - iw: linux/iw.md
      - kernel: linux/kernel.md
+     - kill: linux/kill.md
      - lftp: linux/lftp.md
      - license: linux/license.md
      - log: linux/log.md
      - ls: linux/ls.md
      - lsof: linux/lsof.md
+     - lynx: linux/lynx.md
+     - mail: linux/mail.md
      - man: linux/man.md
      - matomo: linux/matomo.md
      - merge-tricks: linux/merge-tricks.md
      - mkdocs: linux/mkdocs.md
+     - mplayer: linux/mplayer.md
+     - mutt: linux/mutt.md
+     - mysql: linux/mysql.md
+     - nc: linux/nc.md
      - netstat: linux/netstat.md
      - nmap2: linux/nmap2.md
      - nmap: linux/nmap.md
+     - od: linux/od.md
      - parallel: linux/parallel.md
      - paste_and_pr: linux/paste_and_pr.md
      - perf: linux/perf.md
+     - pgrep: linux/pgrep.md
+     - ping: linux/ping.md
+     - pkill: linux/pkill.md
      - printf: linux/printf.md
      - ps: linux/ps.md
+     - rdesktop: linux/rdesktop.md
      - rename: linux/rename.md
      - rg: linux/rg.md
+     - screen: linux/screen.md
      - sed: linux/sed.md
+     - shopt: linux/shopt.md
+     - sort: linux/sort.md
      - sqlmap: linux/sqlmap.md
      - ssh-config: linux/ssh-config.md
      - ssh-log: linux/ssh-log.md
+     - stat: linux/stat.md
      - strace: linux/strace.md
      - sudo: linux/sudo.md
      - syslog-ng: linux/syslog-ng/syslog-conf.ng.md
@@ -347,10 +372,13 @@ nav:
      - thermal: linux/thermal.md
      - top: linux/top.md
      - tshark: linux/tshark.md
+     - until: linux/until.md
      - vim: linux/vim.md
      - wget: linux/wget.md
      - whatismyip: linux/whatismyip.md
+     - while: linux/while.md
      - wireguard: linux/wireguard.md
+     - xargs: linux/xargs.md
 
   - Wiki:
      - 'android/index.md'
