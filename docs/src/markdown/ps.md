@@ -1,5 +1,3 @@
-# ps
-
 ##### Display the top ten running processes - sorted by memory usage
 ```sh
 ps aux | sort -nk +4 | tail
