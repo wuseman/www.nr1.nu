@@ -323,6 +323,7 @@ nav:
      - man: linux/man.md
      - matomo: linux/matomo.md
      - merge-tricks: linux/merge-tricks.md
+     - mkdocs: linux/mkdocs.md
      - netstat: linux/netstat.md
      - nmap2: linux/nmap2.md
      - nmap: linux/nmap.md
@@ -339,7 +340,7 @@ nav:
      - ssh-log: linux/ssh-log.md
      - strace: linux/strace.md
      - sudo: linux/sudo.md
-     - syslog-ng: slinux/syslog-ng/syslog-conf.ng.md
+     - syslog-ng: linux/syslog-ng/syslog-conf.ng.md
      - sys: linux/sys.md
      - tar: linux/tar.md
      - tcpdump: linux/tcpdump.md

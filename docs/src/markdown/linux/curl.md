@@ -5,7 +5,7 @@
 ```sh
 curl -sL --dump-header cookie.txt http://192.168.32.1
 ```
-## Store and save cookies
+### Store and save cookies
 ```sh
 curl -b cookie.txt -c cookie.txt http://192.168.32.1/index.html
 ```
@@ -18,6 +18,7 @@ curl --cookie cookie.txt \
 ### Method 3: Use STDOUT/STDIN for login
 
 write to `STDOUT` and save into `$cookie` variable read cookie from $cookie variable
+
 ```sh
 cookie=$(curl -c - 192.168.32.1)
 curl --cookie <(echo "$cookie") http://192.168.32.1/index.html
@@ -151,7 +152,7 @@ curl  -s -D - -o /dev/null http://example.com
 ```sh
 curl  -L -v -s -o /dev/null google.de
 ```
-## Print info about Moon
+### Print info about Full Moon
 ```sh
 curl  wttr.in/Moon
 ```
@@ -220,6 +221,6 @@ echo "https://www.google.com https://www.facebook.com https://www.yahoo.com" \
 xargs -P 5 -n 1 curl -O < list.txt
 ```
 
-## Good References
+### Good References
 
 https://fedingo.com/how-to-run-multiple-curl-requests-in-parallel/
