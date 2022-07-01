@@ -6,7 +6,7 @@ site_description: >-
 copyright: |
   Copyright &copy; 2015 - 2022 <a href="https://github.com/wuseman"  target="_blank" rel="noopener">wuseman</a>
 site_url: https://www.nr1.nu
-repo_name: "www.nr1.nu"
+repo_name: ""
 repo_url: "https://github.com/wuseman/www.nr1.nu"
 docs_dir: docs/src/markdown
 site_dir: site
@@ -45,10 +45,7 @@ theme:
     scheme: dracula
     primary: deep purple
     accent: deep purple
-  font:
-    text: Roboto
-    code: Roboto Mono
-    include_sidebar: true
+
   features:
     - navigation.tabs
     - navigation.top
@@ -70,132 +67,8 @@ theme:
     - php
     - json
     - kotlin
- # pymdownx:
-#    sponsor: "https://github.com/sponsors/facelessuser"
-
-nav: 
-  - Home:
-    - About: index.md
-    - Contact: contact.md
-    - CV: cv.md
-    - Help: usage_notes.md
-  - Android:
-     - 'android/index.md'
-     - adb:
-        - 'adb-cheatsheet': android/adb/readme.md
-        - 'at-commands': android/adb/at.md
-        - 'uusd-codes': android/adb/uusd_codes.md
-  - Cracking: 
-        -  cracking/index.md
-        - 'wloader': cracking/wloader/README.md
-  - Gentoo:
-     - gentoo-cheatsheet: gentoo/gentoo-tools.md
-     - gentoo-chroot: gentoo/gentoo-chroot.md
-     - gentoo-vmware: gentoo/gentoo-vmware.md
-     - wuseman-overlay: gentoo/wuseman-overlay/README.md
-     - gentoo-wupdate:  gentoo/gentoo-update.md
-  - Hacking: 
-     - 'hacking/index.md'
-     - Bios: 
-        - HP Bios: hacking/bios/hp_device_and_bios-hacking/README.md
-     - Bruteforce: 
-        - EMAGNET: 'hacking/bruteforce/emagnet/readme.md'
-        - WBRUTER': hacking/bruteforce/wbruter/README.md
-        - WSSH': hacking/bruteforce/wssh/README.md
-     - Cameras:
-        - Biltemas Babycam: hacking/cameras/biltemas_babycam/README.md
-        - DLink 6100lh: hacking/cameras/dlink-6100lh/README.md
-     - Chromebook: 
-        - Acer C720: hacking/chromebook/acer_chromebook_c720/README.md
-        - Acer C740: hacking/chromebook/acer_chromebook_c740/README.md
-        - Asus C203sa: hacking/chromebook/asus_c203sa/README.md
-     - Radio: 
-        - Boose Soundtouch: hacking/radio/boose_soundtouch/README.md
-     - Router:
-        - Inteno:
-            - FG500: hacking/routers/inteno/FG500/README.md
-        - Technicolor: 
-           - DGAGA4330TS: hacking/routers/technicolor/dga4330ts/README.md
-           - TG799vacXTREAM 17.2: hacking/routers/technicolor/t799vacxtreme17.2/README.md
-           - TG799vacXTREAM 18.1: hacking/routers/technicolor/tg799vacxtream18.1/README.md
-           - TG799vnv2-10.5.1.Q:  https://github.com/wuseman/TG799vnv2-10.5.1.Q-SMART-3.6.1/blob/87c7c016a8d9a44cae298c16a1233348350a6de3/README.md
-        - Sagemcom: 
-           - F@st 5430: hacking/routers/sagemcom/FAST5370e/README.md
-     - Switches:
-        - Cisco: 
-           - C1111 8PLTEEA: hacking/switches/cisco/c1111_8plteea/README.md
-        - Édge Core: 
-           - ES3510MA: hacking/switches/edge-core/es3510ma/README.md
-  - Misc: 
-     - UserAgents: 'misc/user_agents.md'
-  - Wordlists: 
-     - Swedish Wordlist: hacking/bruteforce/swedish_wordlist.txt/README.md
-  - Linux:
-     - apt: linux/apt.md
-     - awk: linux/awk.md
-     - bash: linux/bash.md
-     - bluetoothctl: linux/bluetoothctl.md
-     - btmgt: linux/btmgt.md
-     - btmon: linux/btmon.md
-     - chroot: linux/chroot.md
-     - ciptool: linux/ciptool.md
-     - cryptsetup: linux/cryptsetup.md
-     - curl: linux/curl.md
-     - databases: linux/databases.md
-     - dd: linux/dd.md
-     - dev_and_proc: linux/dev_and_proc.md
-     - df: linux/df.md
-     - dig: linux/dig.md
-     - echo: linux/echo.md
-     - enviroment: linux/enviroment.md
-     - exiftool: linux/exiftool.md
-     - ffmpeg: linux/ffmpeg.md
-     - find: linux/find.md
-     - git: linux/git.md
-     - gnupg: linux/gnupg.md
-     - grep: linux/grep.md
-     - hciconfig: linux/hciconfig.md
-     - hcitool: linux/hcitool.md
-     - iw: linux/iw.md
-     - kernel: linux/kernel.md
-     - lftp: linux/lftp.md
-     - license: linux/license.md
-     - log: linux/log.md
-     - ls: linux/ls.md
-     - lsof: linux/lsof.md
-     - matomo: linux/matomo.md
-     - merge-tricks: linux/merge-tricks.md
-     - netstat: linux/netstat.md
-     - nmap2: linux/nmap2.md
-     - nmap: linux/nmap.md
-     - parallel: linux/parallel.md
-     - paste_and_pr: linux/paste_and_pr.md
-     - perf: linux/perf.md
-     - printf: linux/printf.md
-     - ps: linux/ps.md
-     - rename: linux/rename.md
-     - rg: linux/rg.md
-     - sed: linux/sed.md
-     - sqlmap: linux/sqlmap.md
-     - ssh-config: linux/ssh-config.md
-     - ssh-log: linux/ssh-log.md
-     - strace: linux/strace.md
-     - sudo: linux/sudo.md
-     - syslog-ng: syslog-ng/syslog-ng.md
-     - sys: linux/sys.md
-     - tar: linux/tar.md
-     - tcpdump: linux/tcpdump.md
-     - thermal: linux/thermal.md
-     - tshark: linux/tshark.md
-     - vim: linux/vim.md
-     - wget: linux/wget.md
-     - whatismyip: linux/whatismyip.md
-     - wireguard: linux/wireguard.md
-
-  - Windows:
-     - bios: windows/bios.md
-     - wmic: windows/wmic2.md
-
+  pymdownx:
+    sponsor: "https://github.com/sponsors/facelessuser"
 
 
 
@@ -348,3 +221,141 @@ extra:
       link: https://github.com/wuseman
     - icon: fontawesome/brands/discord
       link: https://discord.gg/wuseman
+
+
+
+
+
+
+
+
+
+
+
+nav: 
+  - Home:
+    - About: index.md
+    - Contact: contact.md
+    - CV: cv.md
+    - Help: usage_notes.md
+  - Cracking: 
+        -  cracking/index.md
+        - 'wloader': cracking/wloader/README.md
+  - Gentoo:
+     - gentoo-cheatsheet: gentoo/gentoo-tools.md
+     - gentoo-chroot: gentoo/gentoo-chroot.md
+     - gentoo-vmware: gentoo/gentoo-vmware.md
+     - wuseman-overlay: gentoo/wuseman-overlay/README.md
+     - gentoo-wupdate:  gentoo/gentoo-update.md
+  - Hacking: 
+     - 'hacking/index.md'
+     - Android: 
+        - WADBPWN: hacking/android/wadbpwn/README.md
+     - Bios: 
+        - HP Bios: hacking/bios/hp_device_and_bios-hacking/README.md
+     - Bruteforce: 
+        - EMAGNET: 'hacking/bruteforce/emagnet/readme.md'
+        - WBRUTER': hacking/bruteforce/wbruter/README.md
+        - WSSH': hacking/bruteforce/wssh/README.md
+     - Cameras:
+        - Biltemas Babycam: hacking/cameras/biltemas_babycam/README.md
+        - DLink 6100lh: hacking/cameras/dlink-6100lh/README.md
+     - Chromebook: 
+        - Acer C720: hacking/chromebook/acer_chromebook_c720/README.md
+        - Acer C740: hacking/chromebook/acer_chromebook_c740/README.md
+        - Asus C203sa: hacking/chromebook/asus_c203sa/README.md
+     - Radio: 
+        - Boose Soundtouch: hacking/radio/boose_soundtouch/README.md
+     - Router:
+        - Inteno:
+            - FG500: hacking/routers/inteno/FG500/README.md
+        - Technicolor: 
+           - DGAGA4330TS: hacking/routers/technicolor/dga4330ts/README.md
+           - TG799vacXTREAM 17.2: hacking/routers/technicolor/t799vacxtreme17.2/README.md
+           - TG799vacXTREAM 18.1: hacking/routers/technicolor/tg799vacxtream18.1/README.md
+           - TG799vnv2-10.5.1.Q:  https://github.com/wuseman/TG799vnv2-10.5.1.Q-SMART-3.6.1/blob/87c7c016a8d9a44cae298c16a1233348350a6de3/README.md
+        - Sagemcom: 
+           - F@st 5430: hacking/routers/sagemcom/FAST5370e/README.md
+     - Switches:
+        - Cisco: 
+           - C1111 8PLTEEA: hacking/switches/cisco/c1111_8plteea/README.md
+        - Édge Core: 
+           - ES3510MA: hacking/switches/edge-core/es3510ma/README.md
+     - Misc: 
+           - UserAgents: 'misc/user_agents.md'
+     - Wordlists: 
+           - Swedish Wordlist: hacking/bruteforce/swedish_wordlist.txt/README.md
+  - Linux:
+     - apt: linux/apt.md
+     - arp: linux/arpös.md
+     - awk: linux/awk.md
+     - bash: linux/bash.md
+     - bluetoothctl: linux/bluetoothctl.md
+     - btmgt: linux/btmgt.md
+     - btmon: linux/btmon.md
+     - chroot: linux/chroot.md
+     - ciptool: linux/ciptool.md
+     - cryptsetup: linux/cryptsetup.md
+     - curl: linux/curl.md
+     - databases: linux/databases.md
+     - dd: linux/dd.md
+     - dev_and_proc: linux/dev_and_proc.md
+     - df: linux/df.md
+     - dig: linux/dig.md
+     - echo: linux/echo.md
+     - enviroment: linux/enviroment.md
+     - exiftool: linux/exiftool.md
+     - ffmpeg: linux/ffmpeg.md
+     - find: linux/find.md
+     - git: linux/git.md
+     - gnupg: linux/gnupg.md
+     - grep: linux/grep.md
+     - hciconfig: linux/hciconfig.md
+     - hcitool: linux/hcitool.md
+     - iptables: linux/iptables.md
+     - iw: linux/iw.md
+     - kernel: linux/kernel.md
+     - lftp: linux/lftp.md
+     - license: linux/license.md
+     - log: linux/log.md
+     - ls: linux/ls.md
+     - lsof: linux/lsof.md
+     - man: linux/man.md
+     - matomo: linux/matomo.md
+     - merge-tricks: linux/merge-tricks.md
+     - netstat: linux/netstat.md
+     - nmap2: linux/nmap2.md
+     - nmap: linux/nmap.md
+     - parallel: linux/parallel.md
+     - paste_and_pr: linux/paste_and_pr.md
+     - perf: linux/perf.md
+     - printf: linux/printf.md
+     - ps: linux/ps.md
+     - rename: linux/rename.md
+     - rg: linux/rg.md
+     - sed: linux/sed.md
+     - sqlmap: linux/sqlmap.md
+     - ssh-config: linux/ssh-config.md
+     - ssh-log: linux/ssh-log.md
+     - strace: linux/strace.md
+     - sudo: linux/sudo.md
+     - syslog-ng: syslog-ng/syslog-conf.ng.md
+     - sys: linux/sys.md
+     - tar: linux/tar.md
+     - tcpdump: linux/tcpdump.md
+     - thermal: linux/thermal.md
+     - top: linux/top.md
+     - tshark: linux/tshark.md
+     - vim: linux/vim.md
+     - wget: linux/wget.md
+     - whatismyip: linux/whatismyip.md
+     - wireguard: linux/wireguard.md
+  - Wiki:
+     - 'android/index.md'
+     - adb:
+        - 'adb-cheatsheet': android/adb/readme.md
+        - 'at-commands': android/adb/at.md
+        - 'uusd-codes': android/adb/uusd_codes.md
+  - Windows:
+     - bios: windows/bios.md
+     - wmic: windows/wmic2.md

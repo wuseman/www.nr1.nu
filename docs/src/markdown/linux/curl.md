@@ -9,9 +9,11 @@ curl -sL --dump-header cookie.txt http://192.168.32.1
 ```sh
 curl -b cookie.txt -c cookie.txt http://192.168.32.1/index.html
 ```
-## Method 2: Store and save cookies
+### Method 2: Store and save cookies
 ```sh
-curl --cookie cookie.txt --cookie-jar cookie.txt http://192.168.32.1/index.html will both store and send saved cookies
+curl --cookie cookie.txt \
+	--cookie-jar cookie.txt \
+	http://192.168.32.1/index.html 
 ```
 ### Method 3: Use STDOUT/STDIN for login
 
@@ -19,7 +21,7 @@ write to `STDOUT` and save into `$cookie` variable read cookie from $cookie vari
 ```sh
 cookie=$(curl -c - 192.168.32.1)
 curl --cookie <(echo "$cookie") http://192.168.32.1/index.html
-
+```
 ### Add a Cookie
 ```sh
 curl -b 'session=<token>' https://google.com
@@ -89,7 +91,12 @@ curl  -sI url | sed -n 's/Location: *//p'
 ```
 ### Send email with curl and gmail 
 ```sh
-curl  -n --ssl-reqd --mail-from "<user@gmail.com>"   --mail-rcpt "<user@server.tld>" --url smtps://smtp.gmail.com:465 -T file.txt
+curl  -n \ 
+      --ssl-reqd \ 
+      --mail-from "<user@gmail.com>"   \
+      --mail-rcpt "<user@server.tld>" \
+	  --url smtps://smtp.gmail.com:465 -T file.txt
+
 ```
 ### Read Email
 ```sh
@@ -129,7 +136,8 @@ curl  ipinfo.io/1.1.1.1
 ```
 ### Pentration testing
 ```sh
-curl  -s -D  http://1.1.1.1/ -o /dev/null | grep -i Server\|X-Powered-By
+curl  -s -D  http://1.1.1.1/ -o /dev/null | \
+	grep -i Server\|X-Powered-By
 ```
 ### Sqlmap hacking
 ```sh
@@ -151,7 +159,8 @@ curl  wttr.in/Moon
 
 ### Extract url
 ```sh
-curl  --head --silent --write-out "%{redirect_url}\n"  --output /dev/null https://git.io/Ju8HK  
+curl  --head --silent --write-out "%{redirect_url}\n"  \
+	--output /dev/null https://git.io/Ju8HK  
 ```
 ### Save file download to another nanme
 ```sh
@@ -174,7 +183,6 @@ curl -w "%{time_total}\n" -o /dev/null -s www.example.com
 curl -u username:password --silent "https://mail.google.com/mail/feed/atom" | tr -d '
 ' | awk -F '' '{for (i=2; i<=NF; i++) {print $i}}' | sed -n "s/'
 ```
-## Pastebins
 
 ### Upload stdout to clbin
 ```sh
@@ -193,19 +201,21 @@ cat textfile.txt | curl -F 'sprunge=<-' http://sprunge.us
 curl -F 'f:1=@file.txt' ix.io
 cat file.txt | curl -F 'f:1=<-' ix.io
 ```
-## Parallel
-
 
 ### Visit google five times in one command, various methods below:
 ```sh
 seq 1 5 | xargs -n1 -P 5 curl -I "https://www.google.com"
 ```
+
 ```sh
 xargs -I % -P 5 curl "https://www.google.com" \ < <(printf '%s\n' {1..5})
 ```
+
 ```sh
-echo "https://www.google.com https://www.facebook.com https://www.yahoo.com" | xargs -P 5 -n 1 curl -I
+echo "https://www.google.com https://www.facebook.com https://www.yahoo.com" \
+	| xargs -P 5 -n 1 curl -I
 ```
+
 ```sh
 xargs -P 5 -n 1 curl -O < list.txt
 ```

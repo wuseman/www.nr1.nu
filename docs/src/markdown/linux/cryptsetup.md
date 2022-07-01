@@ -49,7 +49,7 @@ cryptsetup luksAddKey --key-slot 7 /dev/${DISK1_3} ${DISK1_K}.key
 
 ### View key Slots
 
-!!! tip "(use | `grep Slot if needed`)""
+!!! tip "(use | `grep Slot if needed`)"
 
 ```sh
 cryptsetup luksDump ${DISK1_3}

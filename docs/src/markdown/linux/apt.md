@@ -96,9 +96,8 @@ apt-get moo
 apt-cache search php5
 ```
 
-### Remove all unused kernels with ```sh      
-apt-get
-```
+### Remove all unused kernels with apt-get
+
 ```sh      
 aptitude remove $(dpkg -l|awk '/^ii  linux-image-2/{print $2}'|sed 's/linux-image-//'|awk -v v=`uname -r` 'v>$0'|sed 's/-generic//'|awk '{printf("linux-headers-%s\nlinux-headers-%s-generic\nlinux-image-%s-generic\n",$0,$0,$0)}')
 ```
@@ -118,9 +117,8 @@ apt-file find bin/programname
 apt-get moo
 ```
 
-### ```sh      
-aptitude easter eggs
-```
+### aptitude easter eggs
+
 ```sh      
 aptitude moo
 ```
@@ -197,9 +195,7 @@ apt-get -y install git-core gitosis; adduser home /home/git gecos "git user" git
 aptitude remove ?and(~i~nlinux-(im|he) ?not(~n`uname -r`))
 ```
 
-### Cancel all ```sh      
-aptitude scheduled actions
-```
+### Cancel all aptitude scheduled actions
 ```sh      
 aptitude keep-all
 ```
@@ -458,9 +454,7 @@ apt-get -y install git-core gitosis; adduser home /home/git gecos "git user" git
 aptitude remove ?and(~i~nlinux-(im|he) ?not(~n`uname -r`))
 ```
 
-### Cancel all ```sh      
-aptitude scheduled actions
-```
+### Cancel all aptitude scheduled actions
 ```sh      
 aptitude keep-all
 ```
@@ -475,9 +469,8 @@ aptitude search '?and( ?automatic(?reverse-recommends(?installed)), ?not(?automa
 apt purge linux*{14..18}*
 ```
 
-### List available upgrades from `
-
-``sh      
+### List available upgrades from apt
+```sh      
 apt (package names only)
 ```
 
@@ -518,9 +511,7 @@ aptitude purge ~c
 aptitude purge ~c
 ```
 
-### List available upgrades from ```sh      
-apt without upgrading the system
-```
+### List available upgrades from apt without upgrading the system
 ```sh      
 apt list upgradable
 ```
@@ -536,8 +527,7 @@ apt-get update && apt-get dist-upgrade -y show-progress && apt-get autoremove -y
 ```
 
 ### search package descriptions (apt)
-  
-```sh      
+  ```sh      
 apt-cache search someregex
 ```
 
@@ -566,7 +556,7 @@ apt-cache search pidgin* | awk '{print$ 1}' | tr '\n' ' ' | xargs aptitude -y in
 apt-get install phpmyadmin; echo "Include /etc/phpmyadmin/apache.conf" >> /etc/apache2/apache2.conf; service apache2 restart
 ```
 
-### repository search
+### Repository search
 ```sh      
 aptitude search ~d "irc client"|grep -i "irc client"
 ```

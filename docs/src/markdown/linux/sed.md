@@ -2,6 +2,19 @@
 
 Stream Editor for filtering and transforming text, really handy one-liners for SED
 
+### ### Append line after match
+```sh
+sed  '/\[option\]/a Hello World' input
+```
+### Insert line before match
+```sh
+sed  '/\[option\]/i Hello World' input
+```
+### Insert '''sh above every line that begins with ### and insert ''' below every line that match ###
+```sh
+cat dd|sed '/###/a```sh' | sed '/dd/a ```sh'
+```
+
 ### Add a blank line every 5 lines (after lines 5, 10, 15, 20, etc.)
 
 ```sh
