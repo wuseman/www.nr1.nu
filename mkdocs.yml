@@ -266,7 +266,7 @@ nav:
      - Wordlists: 
            - Swedish Wordlist: hacking/bruteforce/swedish_wordlist.txt/README.md
   - Linux:
-     - 'linux/index.md'
+     - a: linux/index.md
      - apt: linux/apt.md
      - arp: linux/arp.md
      - awk: linux/awk.md
@@ -368,20 +368,16 @@ nav:
      - xargs: linux/xargs.md
   - Wiki:
      - 'wiki/index.md'
-     - adb:
-        - 'adb-cheatsheet': wiki/adb/readme.md
-        - 'at-commands': wiki/adb/at.md
-        - 'uusd-codes': wiki/adb/uusd_codes.md
-     - emagnet: 
-        - wiki/emagnet/Getting-Started.md
-        - wiki/emagnet/About.md
-        - wiki/emagnet/Configurations-&-Installation.md
-        - wiki/emagnet/Home.md
-        - wiki/emagnet/Leaked-Databases.md
-        - wiki/emagnet/Searching-&-Regex.md
-        - wiki/emagnet/_Footer.md
-        - wiki/emagnet/__foot.md
-
+     - ADB:
+        - 'Cheatsheet': wiki/adb/readme.md
+        - 'AT Comands': wiki/adb/at.md
+        - 'UUSD Codes': wiki/adb/uusd_codes.md
+     - EMAGNET: 
+        - 'Getting Started': wiki/emagnet/Getting-Started.md
+        - 'Emagnet History': wiki/emagnet/About.md
+        - 'Learn Emagnet': wiki/emagnet/Configurations-&-Installation.md
+        - 'Largest Databases': wiki/emagnet/Leaked-Databases.md
+        - 'Search with Regex': wiki/emagnet/Searching-&-Regex.md
   - Windows:
      - bios: windows/bios.md
      - wmic: windows/wmic2.md
