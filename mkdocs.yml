@@ -390,8 +390,6 @@ nav:
         - 'adb-cheatsheet': wiki/android/readme.md
         - 'at-commands': wiki/android/at.md
         - 'uusd-codes': wiki/android/uusd_codes.md
-     - emagnet:  
-        - emagnet: 
   - Windows:
      - bios: windows/bios.md
      - wmic: windows/wmic2.md
