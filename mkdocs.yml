@@ -266,7 +266,7 @@ nav:
      - Wordlists: 
            - Swedish Wordlist: hacking/bruteforce/swedish_wordlist.txt/README.md
   - Linux:
-     - a: linux/index.md
+     - myBestOnes: linux/index.md
      - apt: linux/apt.md
      - arp: linux/arp.md
      - awk: linux/awk.md
