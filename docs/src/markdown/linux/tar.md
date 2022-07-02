@@ -1,1850 +1,966 @@
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
+# tar
 
-##### Compare a remote file with a local file
+### Remove all files previously extracted from a tar(.gz) file.
 ```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Remove a line in a text file. Useful to fix
-```sh
-ssh-keygen -R <the_offending_host>
-
-##### Attach screen over ssh
-```sh
-ssh -t remote_host screen -r
-
-##### directly ssh to host B that is only accessible through host A
-```sh
-ssh -t hostA ssh hostB
-
-##### Remove a line in a text file. Useful to fix
-```sh
-ssh-keygen -R <the_offending_host>
-
-##### Attach screen over ssh
-```sh
-ssh -t remote_host screen -r
-
-##### directly ssh to host B that is only accessible through host A
-```sh
-ssh -t hostA ssh hostB
-
-##### Recover remote tar backup with ssh
-```
-```sh
-ssh user@host "cat /path/to/backup/backupfile.tar.bz2" |tar jpxf -
+tar -tf <file.tar.gz> | xargs rm -r
 ```
 
-##### Send notification bubbles to the computers remotely.
+### Remove all files previously extracted from a tar(.gz) file.
 ```sh
-ssh -X user@host 'DISPLAY=:0 notify-send "TEST MESSAGE."'
-
-##### dump a remote db via ssh and populate local db with postgres
-```sh
-ssh user@remoteserver "PGPASSWORD='passwd' pg_dump -U user bd_name | bzip2 -zv9" | bzcat | psql -U user bd_name
-
-##### Copy your ssh public key to a server from a machine that doesn't have ssh-copy-id
-```sh
-ssh user@host -c 'nc -l 55555 >> ~/.ssh/authorized_keys' & nc HOSTNAME 55555 < ~/.ssh/id_rsa.pub
-
-##### Copy ssh keys to user@host to enable password-less ssh logins.
-```sh
-ssh-keygen ptaduri@c3pusas1
-
-##### connect via ssh using mac address
-```sh
-ssh root@`for ((i=100; i<=110; i++));do arp -a 192.168.1.$i; done | grep 00:35:cf:56:b2:2g | awk '{print $2}' | sed -e 's/(//' -e 's/)//'`
-
-##### copy ssh id to remote host
-```sh
-ssh-copy-id -i .ssh/id_rsa.pub username:password@remotehost.com
-
-##### Quick way to play remote audio files locally ( Linux )
-```sh
-ssh user@remote "cat /remote/music/dir/*.mp3" | mpg123 -
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Get a MySQL DB dump from a remote machine
-```sh
-ssh user@host "mysqldump -h localhost -u mysqluser -pP@$$W3rD databasename | gzip -cf" | gunzip -c > database.sql
-
-##### ssh hostchange know_host improver
-```sh
-sshostnew () {sed -i "$1d" $HOME/.ssh/known_hosts ; }
-
-##### To generate ssh keypair(public, private) which makes use of dsa as encryption algorithm
-```sh
-ssh-keygen -t dsa -b 1024
-
-##### remote ssh xdmcp session
-```sh
-ssh -XfC -c blowfish user@host Xephyr dpms -fullscreen  -query localhost :5
-
-##### Add EC2 pem key to SSH
-```sh
-ssh-add ~/.ssh/KEY_PAIR_NAME.pem
-
-##### Function to bind MySQL hostport to forward remote MySQL connection to localhost.
-```sh
-sshmysql() { ssh -L 13306:127.0.0.1:3306 -N $* & }
-
-##### Login via SSH
-```sh
-ssh -l <username> <server>
-
-##### Login To SSH Server / Provide SSH Password Using A Shell Script
-```sh
-sshpass -p 't@uyM59bQ' ssh username@server.example.com
-
-##### Forward connections
-```sh
-ssh -g -L 8080:localhost:80 root@$HOST
-
-##### Forward remote server CUPS port to localhost
-```sh
-ssh -NL 12345:localhost:631 username@remote_server
-
-##### tail a log over ssh
-```sh
-ssh remotebox tail -f /var/log/remotelog
-
-##### Run Remote GUI Programs Using SSH Forwarding
-```sh
-ssh -C -X user@remotehost gui_command
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Copy ssh keys to user@host to enable password-less ssh logins.
-```sh
-ssh-copy-id [-i [identity_file]] [user@]machine
-
-##### How to run a specific command in remote server by ssh
-```sh
-ssh user@remotehost [anycommand](i.e uptime,w)
-
-##### ssh and attach to a screen in one line.
-```sh
-ssh -t user@host screen -x <screen name>
-
-##### show you the time when you lost the remote server.
-```sh
-ssh remotehosts;date
-
-##### Execute sudo command remotely with ssh
-```sh
-ssh -t myserver.org 'sudo ls /etc'
-
-##### Duplicate installed packages from one machine to the other (RPM-based systems)
-```sh
-ssh root@remote.host "rpm -qa" | xargs yum -y install
-
-##### 3 Simple Steps to X11 Forward on Mac OS X
-```sh
-ssh -X johndoe@123.456.789
-
-##### Cute, but we already had this figured out when the Linux kids were still slurping down log-sized spliffs in the back of the microbus.
-```sh
-ssh-keygen -R hostname
-
-##### Running applications require X in ssh
-```sh
-ssh -X -l user 192.168.1.25
-
-##### use .ssh file to login the server
-```sh
-ssh root@172.16.1.99 -i my_openssh_key.ssh -p 9999
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Create an SSH tunnel for accessing your remote MySQL database with a local port
-```sh
-ssh -CNL 3306:localhost:3306 user@site.com
-
-##### Start an X app remotely
-```
-```sh
-ssh -f user@remote.ip DISPLAY=:0.0 smplayer movie.avi
-
-##### Securely stream (and save) a file from a remote server
-```sh
-ssh USER@HOST cat REMOTE_FILE.mp4 | tee LOCAL_FILE.mp4 | mplayer -
-
-##### Create a local compressed tarball from remote host directory
-```
-```sh
-ssh user@host "tar -cf - /path/to/dir" | gzip > dir.tar.gz
+tar -tf <file.tar.gz> | xargs rm -r
 ```
 
-##### Create an SSH connection (reverse tunnel) through your firewall.
+### Encrypt directory with GnuPG and tar
 ```sh
-ssh -R 2001:localhost:22 [username]@[remote server ip]
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Sync MySQL Servers via secure SSH-tunnel
-```sh
-ssh -f -L3307:127.0.0.1:3306 -N -t -x user@host sleep 600 ; mk-table-sync execute verbose u=root,p=xxx,h=127.0.0.1,P=3307 u=root,p=xxx,h=localhost
-
-##### poor man's vpn
-```sh
-sshuttle dns -vvr user@server 0/0
-
-##### Stream audio over ssh
-```sh
-ssh [user]@[address] "mpg321 -" < [file].mp3
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### run complex remote shell cmds over ssh, without escaping quotes
-```sh
-ssh host -l user $(<cmd.txt)
-
-##### analyze traffic remotely over ssh w/ wireshark
-```sh
-ssh root@server.com 'tshark -f "port !22" -w -' | wireshark -k -i -
-
-##### How to establish a remote Gnu screen session that you can re-connect to
-```sh
-ssh -t user@some.domain.com /usr/bin/screen -xRR
-
-##### Copy a file over SSH without SCP
-```sh
-ssh HOST cat < LOCALFILE ">" REMOTEFILE
-
-##### ssh -A user@somehost
-```sh
-ssh -A user@somehost
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Record output of any command using 'tee' at backend; mainly can be used to capture the output of ssh from client side while connecting to a server.
-```sh
-ssh user@server | tee logfilename
-
-##### Run local bash script on remote server
-```sh
-ssh -T user@server < script.sh
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Transfer large files/directories with no overhead over the network
-```sh
-ssh user@host "cd targetdir; tar cfp - *" | dd of=file.tar
+tar zcf - foo | gpg -c cipher-algo aes256 -o foo.tgz.gpg
 ```
 
-##### Remove invalid key from the known_hosts file for the IP address of a host
+### netcat - send tar archive remotely (sending side)
 ```sh
-ssh-keygen -R `host hostname | cut -d " " -f 4`
-
-##### Tell local Debian machine to install packages used by remote Debian machine
-```sh
-ssh remotehost 'dpkg get-selections' | dpkg set-selections && dselect install
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Remotely sniff traffic and pass to snort
-```sh
-ssh root@pyramid \ "tcpdump -nn -i eth1 -w -" | snort -c /etc/snort/snort.conf -r -
-
-##### Forward port 8888 to remote machine for SOCKS Proxy
-```sh
-ssh -D 8888 user@site.com
-
-##### Copy ssh keys to user@host to enable password-less ssh logins.
-```sh
-ssh-copy-id user@host
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Launch firefox on a remote linux server
-```sh
-ssh -fY user@REMOTESERVER firefox -no-remote
-
-##### Dump dvd from a different machine onto this one.
-```sh
-ssh user@machine_A dd if=/dev/dvd0 > dvddump.iso
-
-##### Backup entire system through SSH
-```sh
-ssh -C USER@HOST tar -c exclude /proc exclude /sys / | tar -x
+tar -cjf - $DIR | nc $HOST $PORT
 ```
 
-##### Mount folder/filesystem through SSH
+### Tar - Compress by excluding folders
 ```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Reverse SSH
-```sh
-ssh -f -N -R 8888:localhost:22 user@somedomain.org
-
-##### setup a tunnel from destination machine port 80 to localhost 2001, via a second (hub) machine.
-```sh
-ssh -N -L2001:localhost:80 -o "ProxyCommand ssh someuser@hubmachine nc -w 5 %h %p" someuser@destinationmachine
-
-##### Create a persistent remote Proxy server through an SSH channel
-```sh
-ssh -fND localhost:PORT USER@SSH_ENABLED_SERVER
-
-##### Synchronize date and time with a server over ssh
-```sh
-ssh user@server sudo date -s @`( date -u +"%s" )`
-
-##### remote diff with side-by-side ordering.
-```sh
-ssh $HOST -l$USER cat /REMOTE/FILE | sdiff /LOCAL/FILE -
-
-##### Install your ssh key file on a remote system
-```sh
-ssh user@remote 'cat >> ~/.ssh/authorized_keys2' < ~/.ssh/id_rsa.pub
-
-##### Get ssh server fingerprints
-```sh
-ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub && ssh-keygen -l -f /etc/ssh/ssh_host_dsa_key.pub
-
-##### SSH Auto-login with password
-```sh
-sshpass -p "YOUR_PASSWORD" ssh -o StrictHostKeyChecking=no YOUR_USERNAME@SOME_SITE.COM
-
-##### eavesdrop
-```sh
-ssh USER@REMOTESYSTEM arecord - | aplay -
-
-##### ssh: change directory while connecting
-```sh
-ssh -t server 'cd /etc && $SHELL'
-
-##### Single use vnc-over-ssh connection
-```sh
-ssh -f -L 5900:localhost:5900 your.ssh.server "x11vnc -safer -localhost -nopw -once -display :0"; vinagre localhost:5900
-
-##### SSH connection through host in the middle; with key redirection
-```sh
-ssh -o "ProxyCommand ssh user@reachable_host -W %h:%p" user@unreacheable_host
-
-##### Remote execute command as sudoer via ssh
-```sh
-sshpass -p 'sshpssword' ssh -t <sshuser>@<remotehost> "echo <sudopassword> | sudo -S <command>"
-
-##### Get the version of sshd on a remote system
-```sh
-ssh -vN hostname 2>&1 | grep "remote software version"
-
-##### Create a local compressed tarball from remote host directory
-```
-```sh
-ssh user@host "tar -zcf - /path/to/dir" > dir.tar.gz
+tar -cvf /path/dir.tar /path/dir* exclude "/path/dir/name" exclude "/path/dir/opt"
 ```
 
-##### Transfer SSH public key to another machine in one step
+### Create a tar archive using 7z compression
 ```sh
-ssh-keygen; ssh-copy-id user@host; ssh user@host
-
-##### Automatic ssh Session Logger
-```sh
-ssh(){ L="\$HOME/logs/$(date +%F_%H:%M)-$USER";/usr/bin/ssh -t "$@" "mkdir -p \"${L%/*}\";screen -xRRS $USER script -f \"$L\"";}
-
-##### "hidden" remote shell
-```sh
-ssh -T user@host /bin/bash -i
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### send file to remote machine and unzip using ssh
-```sh
-ssh user@host 'gunzip - > file' < file.gz
-
-##### remote-pbzip2 and transfer a directory to local file
-```sh
-ssh user@host 'tar -c use-compress-prog=pbzip2 /<dir>/<subdir>' > <localfile>.tar.bz2
+tar cf - /path/to/data | 7z a -si archivename.tar.7z
 ```
 
-##### Harder, Faster, Stronger SSH clients
+### Move files around local filesystem with tar without wasting space using an intermediate tarball.
 ```sh
-ssh -4 -C -c blowfish-cbc
-
-##### Change SSH RSA passphrase
-```sh
-ssh-keygen -f ~/.ssh/id_rsa -p
-
-##### gzip over ssh
-```sh
-ssh 10.0.0.4 "cat /tmp/backup.sql | gzip -c1" | gunzip -c > backup.sql
-
-##### Restore a local drive from the image on remote host via ssh
-```sh
-ssh user@server 'dd if=sda.img' | dd of=/dev/sda
-
-##### Copy from host 1 to host 2 through your host
-```sh
-ssh root@host1 ?cd /somedir/tocopy/ && tar -cf ? .? | ssh root@host2 ?cd /samedir/tocopyto/ && tar -xf -?
+tar -C <source> -cf - . | tar -C <destination> -xf -
 ```
 
-##### Run a command on a remote machine
+### tar the current directory wihtout the absolute path
 ```sh
-ssh user@host "ps aux | grep httpd | wc -l"
-
-##### Copy stdin to your X11 buffer
-```sh
-ssh user@host cat /path/to/some/file | xclip
-
-##### copy from host1 to host2, through your host
-```sh
-ssh user@<source_host>  tar cz <path> | ssh user@<destination_host>  tar vxzC <path>
+tar -cf "../${PWD##*/}.tar" .
 ```
 
-##### get a directory from one machine to another using tar and ssh
-```
+### Encrypted Tarballs
 ```sh
-ssh somemachine "cd some dir; tar zcpf - somedirname" |tar zxpf -
-```
-
-##### Stream audio over ssh ogg version
-```sh
-ssh [user]@[host] "ogg123 -" < [podcast].ogg
-
-##### Remove invalid key from the known_hosts file for the IP address of a host
-```sh
-ssh-keygen -R $(dig +short host.domain.tld)
-
-##### Backup a remote database to your local filesystem
-```sh
-ssh user@host 'mysqldump dbname | gzip' > /path/to/backups/db-backup-`date +%Y-%m-%d`.sql.gz
-
-##### Debug a remote php application (behind firewall) using ssh tunnel for XDEBUG port 9000
-```sh
-ssh -R 9000:localhost:9000 you@remote-php-web-server.com
-
-##### remove hostname from known_hosts
-```sh
-ssh-keygen -R hostname
-
-##### analyze traffic remotely over ssh w/ wireshark
-```sh
-ssh user@server.com sudo tcpdump -i eth0  -w - 'port 80'| /Applications/Wireshark.app/Contents/Resources/bin/wireshark -k -i -
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Remove a line from a file using sed (useful for updating known SSH server keys when they change)
-```sh
-ssh-keygen -R <thehost>
-
-##### copy from host1 to host2, through your host
-```sh
-ssh root@host1 "cd /somedir/tocopy/ && tar -cf - ." | ssh root@host2 "cd /samedir/tocopyto/ && tar -xf -"
+tar -cf  - folder/ | gpg -c > folder.tpg
 ```
 
-##### Forwards connections to your port 2000 to the port 22 of a remote host via ssh tunnel
+### Copy files from one dir to another using tar.
 ```sh
-ssh -NL 2000:remotehost:22 remotehost
-
-##### HTTP GET request on wireshark remotly
-```sh
-ssh USER@HOST "sudo tshark -i eth0 -f 'tcp port 80 and tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x47455420' -w -" | wireshark -k -i -
-
-##### Run any GUI program remotely
-```sh
-ssh -fX <user>@<host> <program>
-
-##### Get and read log from remote host (works with log on pipe, too)
-```sh
-ssh remoteUser@remoteHost "tail -f /var/log/scs/remoteLogName" | tee localLogName
-
-##### Copy files and directories from a remote machine to the local machine
-```sh
-ssh user@host "(cd /path/to/remote/top/dir ; tar cvf - ./*)" | tar xvf -
+tar cf - . | (cd /new/dir; tar xvf -)
 ```
 
-##### Skip banner on ssh login prompt
+### Create a tar file compressed with xz.
 ```sh
-ssh -q user@server
-
-##### Get backup from remote host, then expand in current directory using tar
-```
-```sh
-ssh -l username server.tdl "tar -czf - /home/username/public_html" | tar -xzf -
+tar cfJ tarfile.tar.xz pathnames
 ```
 
-##### ssh batch jobs: query hundreds of hosts with an ssh command
+### restore <mysqldump>.tar.gz on the fly
 ```sh
-ssh -tq -o "BatchMode yes" $HOST  <some_command> >> to_a_file
-
-##### sshfs usage
-```sh
-sshfs /root/Desktop/mountdirectory root@remotehost:/etc/
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Copy your SSH public key on a remote machine for passwordless login - the easy way
-```sh
-ssh-copy-id username@hostname
-
-##### Copy your SSH public key on a remote machine for passwordless login - the easy way
-```sh
-ssh-copy-id username@hostname
-
-##### Tunnel ssh through Socks Proxy
-```sh
-ssh -o ProxyCommand='nc -x ProxyHost:8080 %h %p' TargetHost
-
-##### copy remote ssh session output to local clipboard
-```sh
-ssh [remote-machine] "cat file" | xclip -selection c
-
-##### tail -f a log file over ssh into growl
-```sh
-ssh -t HOSTNAME 'tail -f LOGFILE' | while read; do growlnotify -t "TITLE" -m "$REPLY"; done
-
-##### A command to copy mysql tables from a remote host to current host via ssh.
-```sh
-ssh username@remotehost 'mysqldump -u <dbusername> -p<dbpassword> <dbname> tbl_name_1 tbl_name_2 tbl_name_3' | mysql -u <localusername> -p<localdbpassword> <localdbname> < /dev/stdin
-
-##### test moduli file  generated  for openssh
-```sh
-ssh-keygen -T moduli-2048 -f /tmp/moduli-2048.candidates
-
-##### tunnel vnc port
-```sh
-ssh -L 5900:localhost:5900 user@exampleserver.com
-
-##### A command to copy mysql tables from a remote host to current host via ssh.
-```sh
-ssh username@remotehost 'mysqldump -u <dbusername> -p<dbpassword> <dbname> tbl_name_1 tbl_name_2 tbl_name_3 | gzip -c -' | gzip -dc - | mysql -u <localusername> -p<localdbpassword> <localdbname>
-
-##### tail a log over ssh
-```sh
-ssh  -t remotebox "tail -f /var/log/remote.log"
-
-##### Backup with SSH in a archive
-```sh
-ssh -i $PRIVATEKEY $HOST -C 'cd $SOURCE; tar -cz numeric-owner .' | tee $DESTINATION/backup.tgz | tar -tz
+tar xfzO <backup_name>.tar.gz | mysql -u root <database_name>
 ```
 
-##### backup system over ssh, exlucde common dirs
+### Compressed Backup of the /etc
 ```sh
-ssh root@192.168.0.1 "cd /;nice -n 10 tar cvpP ?exclude={"/proc/*","/sys*","/tmp/*","/home/user/*"} /">backup.tar.gz
+tar jcpf /home/[usuario]/etc-$(hostname)-backup-$(date +%Y%m%d-%H%M%S).tar.bz2 /etc
 ```
 
-##### Validate openssh key & print checksum
+### backup file with tar
 ```sh
-ssh-keygen -l -f [pubkey] | awk '{print $2}' | tr -ds ':' '' | egrep -ie "[a-f0-9]{32}"
-
-##### Secure netcat chat - SSH
-```sh
-ssh hostname nc -l 9876
-
-##### Live stream a remote desktop over ssh using only ffmpeg
-```sh
-ssh user@host "ffmpeg -f x11grab -r 5 -s 1280x720 -i :0 -f avi -" | ffplay - &>/dev/null
-
-##### Don't save commands in bash history (only for current session)
-```sh
-ssh user@hostname.domain "> ~/.bash_history"
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### ssh X tunneling over multiple ssh hosts (through ssh proxy)
-```sh
-ssh -t -X -A user@sshproxy ssh -X -A user@sshhost
-
-##### RDP through SSH tunnel
-```sh
-ssh -f -L3389:<RDP_HOST>:3389 <SSH_PROXY> "sleep 10" && rdesktop -T'<WINDOW_TITLE>' -uAdministrator -g800x600 -a8 -rsound:off -rclipboard:PRIMARYCLIPBOARD -5 localhost
-
-##### Remote screenshot
-```sh
-ssh user@remote-host "DISPLAY=:0.0 import -window root -format png -"|display -format png -
-
-##### analyze traffic remotely over ssh w/ wireshark
-```sh
-ssh root@HOST tcpdump -U -s0 -w - 'not port 22' | wireshark -k -i -
-
-##### Copy a folder tree through ssh using compression (no temporary files)
-```sh
-ssh <host> 'tar -cz /<folder>/<subfolder>' | tar -xvz
+tar -cvf bind9-config-`date +%s`.tar *
 ```
 
-##### Connect to google talk through ssh by setting your IM client to use the localhost 5432 port
+### Unpack .tgz File On Linux
 ```sh
-ssh -f -N -L 5432:talk.google.com:5222 user@home.network.com
-
-##### Speed Up WAN File Transfer With Compression
-```sh
-ssh 10.0.0.4 "gzip -c /tmp/backup.sql" |gunzip > backup.sql
-
-##### copy public key
-```sh
-ssh-copy-id host
-
-##### Validate openssh key & print checksum
-```sh
-ssh-keygen -l -f [pubkey] | cut -d ' ' -f 2 | tr -ds '\n:' ''
-
-##### Import MySQL db to localhost.
-```sh
-ssh remote_user@remote_host 'mysqldump -h localhost -u username -ppass -B db_name | gzip -cf' | gunzip -c | mysql -uroot
-
-##### SSL tunnel to proxy remote mysql port
-```sh
-ssh -T -N -L 23306:localhost:3306 root@mysql.domain.com
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### ssh to machine behind shared NAT
-```sh
-ssh -NR 0.0.0.0:2222:127.0.0.1:22 user@jump.host.com
-
-##### View ~/.ssh/known_hosts key information
-```sh
-ssh-keygen -l -f ~/.ssh/known_hosts
-
-##### Copy a file over SSH without SCP
-```sh
-ssh username1@servername1 -t ssh username2@servername2 uuencode -m testfile1.tar - | uudecode > testfile1.tar
+tar zxvf fileNameHere.tgz
 ```
 
-##### analyze traffic remotely over ssh w/ wireshark
+### Remove all files previously extracted from a tar(.gz) file.
 ```sh
-ssh root@HOST tcpdump -iany -U -s0 -w - 'not port 22' | wireshark -k -i -
-
-##### Music streaming via ssh
-```sh
-ssh login@server "cat path/filename.mp3" | mplayer -
-
-##### Extract remote gzip tarball
-```
-```sh
-ssh user@remote "cat /path/to/archive.tgz" | tar zxvf -
+tar -tf <file.tar.gz> | parallel rm
 ```
 
-##### list tomcat webapps
+### create tar.gz archive
 ```sh
-ssh tomcat-server ls -l webapp-dir | grep  '->' | awk ' { print $(NF-2) " " $(NF-1) " " $NF; }'
-
-##### Migrate wordpress db between two hosts changing the URL on the fly with encryption and compression
-```sh
-ssh -q ${SRC_HOST} "mysqldump add-drop-database create-options databases wordpress | sed -r \"s/${OLD_URL}/${NEW_URL}/g\" | gzip -9" | ssh ${DST_HOST} "gunzip | mysql"
-
-##### SSH monitor
-```sh
-ssh root@server 'tail max-unchanged-stats=10 -n0 -F /var/log/auth.log ' | grep Accepted | while read l ; do kdialog title "SSH monitor" passivepopup "$l" 3; done
-
-##### Copy uncommitted changes from remote git repository
-```sh
-ssh HOST '(cd REPO_DIR && git diff name-only HEAD | cpio -o -Hnewc quiet)' | cpio -iduv quiet -Hnewc
-
-##### Create a persistent connection to a machine
-```sh
-ssh -MNf <user>@<host>
-
-##### Create a persistent connection to a machine
-```sh
-ssh -MNf <user>@<host>
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Temporarily ignore mismatched SSH host key
-```sh
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no username@host
-
-##### Put at the end of the rsa public key an comment(default value is the hostname)
-```sh
-ssh-keygen -C hello@world
-
-##### mount remote directory
-```sh
-sshfs user@host:/path/to/remote/dir local-mount-point
-
-##### ssh-keygen -b 4048 -t rsa -C "comment"
-```sh
-ssh-keygen -b 4048 -t rsa -C "comment"
-
-##### Set window name when SSH'ing while using screen
-```sh
-ssh() { [ $TERM == screen ] && (screen -X title "${1##*@}"; command ssh "$@"; screen -X title '';exit;) || command ssh "$@"; }
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### runs a X session within your X session
-```sh
-ssh -C -Y -l$USER xserver.mynet.xx 'Xnest -geometry 1900x1150 -query localhost'
-
-##### immediatly attach to previous tmux session when connecting through ssh
-```sh
-ssh -t user@remote_host tmux attach
-
-##### having root on server, add user's public key to his keys (no password required)
-```sh
-ssh-copy-id -i user_public_key.pub root@host
-
-##### Multiple SSH Tunnels
-```sh
-ssh -L :: -L :: @
-
-##### having root on server, add user's public key to his keys (no password required)
-```sh
-ssh-copy-id -i user_public_key.pub <user>@<remotehost>
-
-##### Copy files between hosts while on a proxy host
-```sh
-ssh <source host> "cat file" | ssh <dest host> "cat - > file"
-
-##### VPN without VPN: Get access to networks available from your ssh server and hide behind it
-```sh
-sshuttle -r <username>@<sshserver> 0/0
-
-##### generate the moduli file for openssh if lost
-```sh
-ssh-keygen -G /tmp/moduli-2048.candidates -b 2048
-
-##### Run multiple commands on a remote host with sudo
-```sh
-ssh -t user@host 'sudo bash -c "ls /var/log && cat /etc/passwd"'
-
-##### Create & transfer tarball over ssh
-```
-```sh
-ssh -c 'tar cvzf - -C /path/to/src/*' | tar xzf -
+tar -pczf archive_name.tar.gz /path/to/dir/or/file
 ```
 
-##### scp a good script from host A which has no public access to host C, but with a hop by host B
+### Real full backup copy of /etc folder
 ```sh
-ssh middlehost "ssh -a root@securehost '> nicescript'" < nicescript
-
-##### How to use rysnc over ssh tunnel
-```sh
-sshpass -p [password] rsync -av -e ssh [utente]@[indirizzoip]:/directorydacopiare/ /directorydidestinazione
-
-##### Take a screenshot of x11 over ssh pipe to view on a mac in one line
-```sh
-ssh user@host.com "DISPLAY=:0.0 import -window root png:-" | open -a /Applications/Preview.app -f
-
-##### Generate SSH key
-```sh
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/<ROLE>_rsa -C "Comment goes here"
-
-##### Anonymous ssh using tor proxy (or any socks based proxy)
-```sh
-ssh -o ProxyCommand="nc -X 5 -x localhost:9050 %h %p" username@remote_host
-
-##### SSH with debug to troubleshoot any connection issues
-```sh
-ssh -v jsmith@remotehost.example.com
-
-##### Convert an ssh2 public key to openssh format
-```sh
-ssh-keygen -i -f $sshkeysfile >> authorized_keys
-
-##### execute/start some scripts on a remote machine/server (which will terminate automatically) and disconnect from the server
-```
-```sh
-ssh remoteserver 'nohup /path/to/script `</dev/null` >nohup.out 2>&1 &'
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Remove invalid host keys from ~/.ssh/known_hosts
-```sh
-ssh-keygen -R \[localhost\]:8022
-
-##### back ssh from firewalled hosts
-```sh
-ssh -R 5497:127.0.0.1:22 -p 62220 user@public.ip
-
-##### SSH connection with private key and port 222
-```sh
-ssh -i /root/.ssh/username\@hostname -p 222 username@hostname
-
-##### SSH connection with private key and port 222
-```sh
-ssh -i /root/.ssh/username\@hostname -p 222 username@hostname
-
-##### Create a local compressed tarball from remote host directory
-```
-```sh
-ssh user@host "tar -czf - /path/to/dir" > dir.tar.gz
+tar -cf - /etc | tar -xf - -C </destination/folder>
 ```
 
-##### ssh key generate
+### Bulk copy large blocks of data between File Systems (run as root iff you do not own all of the files!)
 ```sh
-ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
-
-##### Copy your ssh public key to a server from a machine that doesn't have ssh-copy-id
-```sh
-ssh <user>@<host> 'mkdir -m 700 ~/.ssh; echo ' $(< ~/.ssh/id_rsa.pub) ' >> ~/.ssh/authorized_keys ; chmod 600 ~/.ssh/authorized_keys'
-
-##### Create a local compressed tarball from remote host directory
-```
-```sh
-ssh user@host "tar -zcf - /path/to/dir" | tar -xvz
+tar cpof - src |( cd des; tar xpof -)
 ```
 
-##### rsa 4096 key generating with passphrase
+### tar - extract only one file
 ```sh
-ssh-keygen -t rsa -b 4096
-
-##### pipe remote log web server file to lostalgia
-```sh
-ssh -n user@server.tr tail -f /usr/local/nginx/logs/access.log > /tmp/access | tail -f /tmp/access | logstalgia
-
-##### Temporarily ignore known SSH hosts
-```sh
-ssh -o UserKnownHostsFile=/dev/null root@192.168.1.1
-
-##### Sync a remote mysql database to a local db via SSH
-```sh
-ssh <remoteuser>@<remoteserver> \ 'mysqldump -u <user> -p<password> <database>' \ | mysql -u <user> -p<password> <database>
-
-##### open a screenshot of a remote desktop via ssh
-```sh
-ssh user@host "ffmpeg -f x11grab -s 1920x1080 -i :0 -r 1 -t 1 -f mjpeg -" | display
-
-##### Sync local machine date to remote machine over ssh
-```sh
-ssh root@host.domain.tld "date -s '"$(date)"'";
-
-##### Use a server as SOCKS5 proxy over SSH
-```sh
-ssh -D 8080 -f -N srv1
-
-##### Connect via SSH to VirtualBox guest VM without knowing IP address
-```sh
-ssh vm-user@`VBoxManage guestproperty get "vm-name" "/VirtualBox/GuestInfo/Net/0/V4/IP" | awk '{ print $2 }'`
-
-##### SSH/wmic to remotely kill a process on a windows box
-```sh
-ssh <user>@<ip address> $(echo wmic process where \"name like \'%<process to kill>%\'\" delete)
-
-##### get gzipped logs from webserver to local machine
-```sh
-ssh user@remote "tar cfp - /path/to/log/* | gzip" > local.tar.gz
+tar zxvf package.tar.gz strip 1
 ```
 
-##### Replicate a directory structure from a 'basedir' in a remote server.
+### checksum a directory / files
 ```sh
-ssh user@remotehost "find basedir -type d" | xargs -I {} -t mkdir -p {}
-
-##### send message to specific remote user
-```sh
-ssh youraccount@192.168.1.168 write toUsername pts/33
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Remove a line in a text file. Useful to fix
-```sh
-ssh-keygen -R <the_offending_host>
-
-##### Attach screen over ssh
-```sh
-ssh -t remote_host screen -r
-
-##### directly ssh to host B that is only accessible through host A
-```sh
-ssh -t hostA ssh hostB
-
-##### Recover remote tar backup with ssh
-```
-```sh
-ssh user@host "cat /path/to/backup/backupfile.tar.bz2" |tar jpxf -
+tar -cf - file1 dir1/ dir2/ | md5sum
 ```
 
-##### connect via ssh using mac address
+### Move files around local filesystem with tar without wasting space using an intermediate tarball.
 ```sh
-ssh root@`for ((i=100; i<=110; i++));do arp -a 192.168.1.$i; done | grep 00:35:cf:56:b2:2g | awk '{print $2}' | sed -e 's/(//' -e 's/)//'`
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Get a MySQL DB dump from a remote machine
-```sh
-ssh user@host "mysqldump -h localhost -u mysqluser -pP@$$W3rD databasename | gzip -cf" | gunzip -c > database.sql
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### ssh and attach to a screen in one line.
-```sh
-ssh -t user@host screen -x <screen name>
-
-##### Duplicate installed packages from one machine to the other (RPM-based systems)
-```sh
-ssh root@remote.host "rpm -qa" | xargs yum -y install
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Create an SSH tunnel for accessing your remote MySQL database with a local port
-```sh
-ssh -CNL 3306:localhost:3306 user@site.com
-
-##### Start an X app remotely
-```
-```sh
-ssh -f user@remote.ip DISPLAY=:0.0 smplayer movie.avi
-
-##### Securely stream (and save) a file from a remote server
-```sh
-ssh USER@HOST cat REMOTE_FILE.mp4 | tee LOCAL_FILE.mp4 | mplayer -
-
-##### Create a local compressed tarball from remote host directory
-```
-```sh
-ssh user@host "tar -cf - /path/to/dir" | gzip > dir.tar.gz
+tar -C <source_dir> -cf . | tar -C <dest_dir> -xf -
 ```
 
-##### Create an SSH connection (reverse tunnel) through your firewall.
+### backup and remove files with access time older than 5 days.
 ```sh
-ssh -R 2001:localhost:22 [username]@[remote server ip]
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Sync MySQL Servers via secure SSH-tunnel
-```sh
-ssh -f -L3307:127.0.0.1:3306 -N -t -x user@host sleep 600 ; mk-table-sync execute verbose u=root,p=xxx,h=127.0.0.1,P=3307 u=root,p=xxx,h=localhost
-
-##### poor man's vpn
-```sh
-sshuttle dns -vvr user@server 0/0
-
-##### Stream audio over ssh
-```sh
-ssh [user]@[address] "mpg321 -" < [file].mp3
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### run complex remote shell cmds over ssh, without escaping quotes
-```sh
-ssh host -l user $(<cmd.txt)
-
-##### analyze traffic remotely over ssh w/ wireshark
-```sh
-ssh root@server.com 'tshark -f "port !22" -w -' | wireshark -k -i -
-
-##### How to establish a remote Gnu screen session that you can re-connect to
-```sh
-ssh -t user@some.domain.com /usr/bin/screen -xRR
-
-##### Copy a file over SSH without SCP
-```sh
-ssh HOST cat < LOCALFILE ">" REMOTEFILE
-
-##### ssh -A user@somehost
-```sh
-ssh -A user@somehost
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Record output of any command using 'tee' at backend; mainly can be used to capture the output of ssh from client side while connecting to a server.
-```sh
-ssh user@server | tee logfilename
-
-##### Run local bash script on remote server
-```sh
-ssh -T user@server < script.sh
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Transfer large files/directories with no overhead over the network
-```sh
-ssh user@host "cd targetdir; tar cfp - *" | dd of=file.tar
+tar -zcvpf backup_`date +"%Y%m%d_%H%M%S"`.tar.gz `find <target> -atime +5 -type f` 2> /dev/null | parallel -X rm -f
 ```
 
-##### Remove invalid key from the known_hosts file for the IP address of a host
+### Tar Pipe
 ```sh
-ssh-keygen -R `host hostname | cut -d " " -f 4`
-
-##### Tell local Debian machine to install packages used by remote Debian machine
-```sh
-ssh remotehost 'dpkg get-selections' | dpkg set-selections && dselect install
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Remotely sniff traffic and pass to snort
-```sh
-ssh root@pyramid \ "tcpdump -nn -i eth1 -w -" | snort -c /etc/snort/snort.conf -r -
-
-##### Forward port 8888 to remote machine for SOCKS Proxy
-```sh
-ssh -D 8888 user@site.com
-
-##### Copy ssh keys to user@host to enable password-less ssh logins.
-```sh
-ssh-copy-id user@host
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Launch firefox on a remote linux server
-```sh
-ssh -fY user@REMOTESERVER firefox -no-remote
-
-##### Dump dvd from a different machine onto this one.
-```sh
-ssh user@machine_A dd if=/dev/dvd0 > dvddump.iso
-
-##### Backup entire system through SSH
-```sh
-ssh -C USER@HOST tar -c exclude /proc exclude /sys / | tar -x
+tar cvf - /src | ( cd /dest ; tar xvf - )
 ```
 
-##### Mount folder/filesystem through SSH
+### backup the old files
 ```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Reverse SSH
-```sh
-ssh -f -N -R 8888:localhost:22 user@somedomain.org
-
-##### setup a tunnel from destination machine port 80 to localhost 2001, via a second (hub) machine.
-```sh
-ssh -N -L2001:localhost:80 -o "ProxyCommand ssh someuser@hubmachine nc -w 5 %h %p" someuser@destinationmachine
-
-##### Create a persistent remote Proxy server through an SSH channel
-```sh
-ssh -fND localhost:PORT USER@SSH_ENABLED_SERVER
-
-##### Synchronize date and time with a server over ssh
-```sh
-ssh user@server sudo date -s @`( date -u +"%s" )`
-
-##### remote diff with side-by-side ordering.
-```sh
-ssh $HOST -l$USER cat /REMOTE/FILE | sdiff /LOCAL/FILE -
-
-##### Install your ssh key file on a remote system
-```sh
-ssh user@remote 'cat >> ~/.ssh/authorized_keys2' < ~/.ssh/id_rsa.pub
-
-##### Get ssh server fingerprints
-```sh
-ssh-keygen -l -f /etc/ssh/ssh_host_rsa_key.pub && ssh-keygen -l -f /etc/ssh/ssh_host_dsa_key.pub
-
-##### SSH Auto-login with password
-```sh
-sshpass -p "YOUR_PASSWORD" ssh -o StrictHostKeyChecking=no YOUR_USERNAME@SOME_SITE.COM
-
-##### eavesdrop
-```sh
-ssh USER@REMOTESYSTEM arecord - | aplay -
-
-##### ssh: change directory while connecting
-```sh
-ssh -t server 'cd /etc && $SHELL'
-
-##### Single use vnc-over-ssh connection
-```sh
-ssh -f -L 5900:localhost:5900 your.ssh.server "x11vnc -safer -localhost -nopw -once -display :0"; vinagre localhost:5900
-
-##### SSH connection through host in the middle; with key redirection
-```sh
-ssh -o "ProxyCommand ssh user@reachable_host -W %h:%p" user@unreacheable_host
-
-##### Remote execute command as sudoer via ssh
-```sh
-sshpass -p 'sshpssword' ssh -t <sshuser>@<remotehost> "echo <sudopassword> | sudo -S <command>"
-
-##### Get the version of sshd on a remote system
-```sh
-ssh -vN hostname 2>&1 | grep "remote software version"
-
-##### Create a local compressed tarball from remote host directory
-```
-```sh
-ssh user@host "tar -zcf - /path/to/dir" > dir.tar.gz
+tar -zcps <dir> -X <(find <dir> -type f -mtime -<days>) |ssh user@backuphost tar -xzpsC /data/bkup
 ```
 
-##### Transfer SSH public key to another machine in one step
+### Move files around local filesystem with tar without wasting space using an intermediate tarball.
 ```sh
-ssh-keygen; ssh-copy-id user@host; ssh user@host
-
-##### Automatic ssh Session Logger
-```sh
-ssh(){ L="\$HOME/logs/$(date +%F_%H:%M)-$USER";/usr/bin/ssh -t "$@" "mkdir -p \"${L%/*}\";screen -xRRS $USER script -f \"$L\"";}
-
-##### "hidden" remote shell
-```sh
-ssh -T user@host /bin/bash -i
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### send file to remote machine and unzip using ssh
-```sh
-ssh user@host 'gunzip - > file' < file.gz
-
-##### remote-pbzip2 and transfer a directory to local file
-```sh
-ssh user@host 'tar -c use-compress-prog=pbzip2 /<dir>/<subdir>' > <localfile>.tar.bz2
+tar -C <source_dir> -cf . | tar -C <dest_dir> -xf
 ```
 
-##### Harder, Faster, Stronger SSH clients
+### Unzip multi-part zip archive
 ```sh
-ssh -4 -C -c blowfish-cbc
-
-##### Change SSH RSA passphrase
-```sh
-ssh-keygen -f ~/.ssh/id_rsa -p
-
-##### gzip over ssh
-```sh
-ssh 10.0.0.4 "cat /tmp/backup.sql | gzip -c1" | gunzip -c > backup.sql
-
-##### Restore a local drive from the image on remote host via ssh
-```sh
-ssh user@server 'dd if=sda.img' | dd of=/dev/sda
-
-##### Copy from host 1 to host 2 through your host
-```sh
-ssh root@host1 ?cd /somedir/tocopy/ && tar -cf ? .? | ssh root@host2 ?cd /samedir/tocopyto/ && tar -xf -?
+tar -xfv archive.zip
 ```
 
-##### Run a command on a remote machine
+### Tar a subversion working copy...without all those hidden directories!
 ```sh
-ssh user@host "ps aux | grep httpd | wc -l"
-
-##### Copy stdin to your X11 buffer
-```sh
-ssh user@host cat /path/to/some/file | xclip
-
-##### copy from host1 to host2, through your host
-```sh
-ssh user@<source_host>  tar cz <path> | ssh user@<destination_host>  tar vxzC <path>
+tar exclude='.svn' -c -f /path/to/file.tar /path/to/directory
 ```
 
-##### get a directory from one machine to another using tar and ssh
-```
+### Create a tar.gz in a single command
 ```sh
-ssh somemachine "cd some dir; tar zcpf - somedirname" |tar zxpf -
-```
-
-##### Stream audio over ssh ogg version
-```sh
-ssh [user]@[host] "ogg123 -" < [podcast].ogg
-
-##### Remove invalid key from the known_hosts file for the IP address of a host
-```sh
-ssh-keygen -R $(dig +short host.domain.tld)
-
-##### Backup a remote database to your local filesystem
-```sh
-ssh user@host 'mysqldump dbname | gzip' > /path/to/backups/db-backup-`date +%Y-%m-%d`.sql.gz
-
-##### Debug a remote php application (behind firewall) using ssh tunnel for XDEBUG port 9000
-```sh
-ssh -R 9000:localhost:9000 you@remote-php-web-server.com
-
-##### remove hostname from known_hosts
-```sh
-ssh-keygen -R hostname
-
-##### analyze traffic remotely over ssh w/ wireshark
-```sh
-ssh user@server.com sudo tcpdump -i eth0  -w - 'port 80'| /Applications/Wireshark.app/Contents/Resources/bin/wireshark -k -i -
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Remove a line from a file using sed (useful for updating known SSH server keys when they change)
-```sh
-ssh-keygen -R <thehost>
-
-##### copy from host1 to host2, through your host
-```sh
-ssh root@host1 "cd /somedir/tocopy/ && tar -cf - ." | ssh root@host2 "cd /samedir/tocopyto/ && tar -xf -"
+tar cvf - foodir | gzip > foo.tar.gz
 ```
 
-##### Forwards connections to your port 2000 to the port 22 of a remote host via ssh tunnel
+### create one md5 for all files in folder
 ```sh
-ssh -NL 2000:remotehost:22 remotehost
-
-##### HTTP GET request on wireshark remotly
-```sh
-ssh USER@HOST "sudo tshark -i eth0 -f 'tcp port 80 and tcp[((tcp[12:1] & 0xf0) >> 2):4] = 0x47455420' -w -" | wireshark -k -i -
-
-##### Run any GUI program remotely
-```sh
-ssh -fX <user>@<host> <program>
-
-##### Get and read log from remote host (works with log on pipe, too)
-```sh
-ssh remoteUser@remoteHost "tail -f /var/log/scs/remoteLogName" | tee localLogName
-
-##### Copy files and directories from a remote machine to the local machine
-```sh
-ssh user@host "(cd /path/to/remote/top/dir ; tar cvf - ./*)" | tar xvf -
+tar c folderName | md5
 ```
 
-##### Skip banner on ssh login prompt
+### ls -lR with a full path
 ```sh
-ssh -q user@server
-
-##### Get backup from remote host, then expand in current directory using tar
-```
-```sh
-ssh -l username server.tdl "tar -czf - /home/username/public_html" | tar -xzf -
+tar -cvf /dev/null . | while read i; do ls -l $i; done
 ```
 
-##### ssh batch jobs: query hundreds of hosts with an ssh command
+### Copy specific files to another machine, keeping the file hierarchy
 ```sh
-ssh -tq -o "BatchMode yes" $HOST  <some_command> >> to_a_file
-
-##### sshfs usage
-```sh
-sshfs /root/Desktop/mountdirectory root@remotehost:/etc/
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### Copy your SSH public key on a remote machine for passwordless login - the easy way
-```sh
-ssh-copy-id username@hostname
-
-##### Tunnel ssh through Socks Proxy
-```sh
-ssh -o ProxyCommand='nc -x ProxyHost:8080 %h %p' TargetHost
-
-##### copy remote ssh session output to local clipboard
-```sh
-ssh [remote-machine] "cat file" | xclip -selection c
-
-##### tail -f a log file over ssh into growl
-```sh
-ssh -t HOSTNAME 'tail -f LOGFILE' | while read; do growlnotify -t "TITLE" -m "$REPLY"; done
-
-##### A command to copy mysql tables from a remote host to current host via ssh.
-```sh
-ssh username@remotehost 'mysqldump -u <dbusername> -p<dbpassword> <dbname> tbl_name_1 tbl_name_2 tbl_name_3' | mysql -u <localusername> -p<localdbpassword> <localdbname> < /dev/stdin
-
-##### test moduli file  generated  for openssh
-```sh
-ssh-keygen -T moduli-2048 -f /tmp/moduli-2048.candidates
-
-##### tunnel vnc port
-```sh
-ssh -L 5900:localhost:5900 user@exampleserver.com
-
-##### A command to copy mysql tables from a remote host to current host via ssh.
-```sh
-ssh username@remotehost 'mysqldump -u <dbusername> -p<dbpassword> <dbname> tbl_name_1 tbl_name_2 tbl_name_3 | gzip -c -' | gzip -dc - | mysql -u <localusername> -p<localdbpassword> <localdbname>
-
-##### tail a log over ssh
-```sh
-ssh  -t remotebox "tail -f /var/log/remote.log"
-
-##### Backup with SSH in a archive
-```sh
-ssh -i $PRIVATEKEY $HOST -C 'cd $SOURCE; tar -cz numeric-owner .' | tee $DESTINATION/backup.tgz | tar -tz
+tar cpfP - $(find <somedir> -type f -name *.png) | ssh user@host | tar xpfP -
 ```
 
-##### backup system over ssh, exlucde common dirs
+### backup and remove files with access time older than 5 days.
 ```sh
-ssh root@192.168.0.1 "cd /;nice -n 10 tar cvpP ?exclude={"/proc/*","/sys*","/tmp/*","/home/user/*"} /">backup.tar.gz
+tar -zcvpf backup_`date +"%Y%m%d_%H%M%S"`.tar.gz `find <target> -atime +5` 2> /dev/null | xargs rm -fr ;
 ```
 
-##### Validate openssh key & print checksum
+### Exclude .svn, .git and other VCS junk for a pristine tarball
 ```sh
-ssh-keygen -l -f [pubkey] | awk '{print $2}' | tr -ds ':' '' | egrep -ie "[a-f0-9]{32}"
-
-##### Secure netcat chat - SSH
-```sh
-ssh hostname nc -l 9876
-
-##### Live stream a remote desktop over ssh using only ffmpeg
-```sh
-ssh user@host "ffmpeg -f x11grab -r 5 -s 1280x720 -i :0 -f avi -" | ffplay - &>/dev/null
-
-##### Don't save commands in bash history (only for current session)
-```sh
-ssh user@hostname.domain "> ~/.bash_history"
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### ssh X tunneling over multiple ssh hosts (through ssh proxy)
-```sh
-ssh -t -X -A user@sshproxy ssh -X -A user@sshhost
-
-##### RDP through SSH tunnel
-```sh
-ssh -f -L3389:<RDP_HOST>:3389 <SSH_PROXY> "sleep 10" && rdesktop -T'<WINDOW_TITLE>' -uAdministrator -g800x600 -a8 -rsound:off -rclipboard:PRIMARYCLIPBOARD -5 localhost
-
-##### Remote screenshot
-```sh
-ssh user@remote-host "DISPLAY=:0.0 import -window root -format png -"|display -format png -
-
-##### analyze traffic remotely over ssh w/ wireshark
-```sh
-ssh root@HOST tcpdump -U -s0 -w - 'not port 22' | wireshark -k -i -
-
-##### Copy a folder tree through ssh using compression (no temporary files)
-```sh
-ssh <host> 'tar -cz /<folder>/<subfolder>' | tar -xvz
+tar exclude-vcs -cf src.tar src/
 ```
 
-##### Connect to google talk through ssh by setting your IM client to use the localhost 5432 port
+### Pack up some files into a tarball on a remote server without writing to the local filesystem
 ```sh
-ssh -f -N -L 5432:talk.google.com:5222 user@home.network.com
-
-##### Speed Up WAN File Transfer With Compression
-```sh
-ssh 10.0.0.4 "gzip -c /tmp/backup.sql" |gunzip > backup.sql
-
-##### copy public key
-```sh
-ssh-copy-id host
-
-##### Validate openssh key & print checksum
-```sh
-ssh-keygen -l -f [pubkey] | cut -d ' ' -f 2 | tr -ds '\n:' ''
-
-##### Import MySQL db to localhost.
-```sh
-ssh remote_user@remote_host 'mysqldump -h localhost -u username -ppass -B db_name | gzip -cf' | gunzip -c | mysql -uroot
-
-##### SSL tunnel to proxy remote mysql port
-```sh
-ssh -T -N -L 23306:localhost:3306 root@mysql.domain.com
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### ssh to machine behind shared NAT
-```sh
-ssh -NR 0.0.0.0:2222:127.0.0.1:22 user@jump.host.com
-
-##### View ~/.ssh/known_hosts key information
-```sh
-ssh-keygen -l -f ~/.ssh/known_hosts
-
-##### Copy a file over SSH without SCP
-```sh
-ssh username1@servername1 -t ssh username2@servername2 uuencode -m testfile1.tar - | uudecode > testfile1.tar
+tar -czf - * | ssh example.com "cat > files.tar.gz"
 ```
 
-##### analyze traffic remotely over ssh w/ wireshark
+### backup a directory in a timestamped tar.gz
 ```sh
-ssh root@HOST tcpdump -iany -U -s0 -w - 'not port 22' | wireshark -k -i -
-
-##### Music streaming via ssh
-```sh
-ssh login@server "cat path/filename.mp3" | mplayer -
-
-##### Extract remote gzip tarball
-```
-```sh
-ssh user@remote "cat /path/to/archive.tgz" | tar zxvf -
+tar -czvvf backup$(date "+%Y%m%d_%H%M%S").tar.gz /path/to/dir
 ```
 
-##### list tomcat webapps
+### Encrypted archive with openssl and tar
 ```sh
-ssh tomcat-server ls -l webapp-dir | grep  '->' | awk ' { print $(NF-2) " " $(NF-1) " " $NF; }'
-
-##### Migrate wordpress db between two hosts changing the URL on the fly with encryption and compression
-```sh
-ssh -q ${SRC_HOST} "mysqldump add-drop-database create-options databases wordpress | sed -r \"s/${OLD_URL}/${NEW_URL}/g\" | gzip -9" | ssh ${DST_HOST} "gunzip | mysql"
-
-##### SSH monitor
-```sh
-ssh root@server 'tail max-unchanged-stats=10 -n0 -F /var/log/auth.log ' | grep Accepted | while read l ; do kdialog title "SSH monitor" passivepopup "$l" 3; done
-
-##### Copy uncommitted changes from remote git repository
-```sh
-ssh HOST '(cd REPO_DIR && git diff name-only HEAD | cpio -o -Hnewc quiet)' | cpio -iduv quiet -Hnewc
-
-##### Create a persistent connection to a machine
-```sh
-ssh -MNf <user>@<host>
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Temporarily ignore mismatched SSH host key
-```sh
-ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no username@host
-
-##### Put at the end of the rsa public key an comment(default value is the hostname)
-```sh
-ssh-keygen -C hello@world
-
-##### mount remote directory
-```sh
-sshfs user@host:/path/to/remote/dir local-mount-point
-
-##### ssh-keygen -b 4048 -t rsa -C "comment"
-```sh
-ssh-keygen -b 4048 -t rsa -C "comment"
-
-##### Set window name when SSH'ing while using screen
-```sh
-ssh() { [ $TERM == screen ] && (screen -X title "${1##*@}"; command ssh "$@"; screen -X title '';exit;) || command ssh "$@"; }
-
-##### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-
-##### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-
-##### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-
-##### runs a X session within your X session
-```sh
-ssh -C -Y -l$USER xserver.mynet.xx 'Xnest -geometry 1900x1150 -query localhost'
-
-##### immediatly attach to previous tmux session when connecting through ssh
-```sh
-ssh -t user@remote_host tmux attach
-
-##### having root on server, add user's public key to his keys (no password required)
-```sh
-ssh-copy-id -i user_public_key.pub root@host
-
-##### Multiple SSH Tunnels
-```sh
-ssh -L :: -L :: @
-
-##### having root on server, add user's public key to his keys (no password required)
-```sh
-ssh-copy-id -i user_public_key.pub <user>@<remotehost>
-
-##### Copy files between hosts while on a proxy host
-```sh
-ssh <source host> "cat file" | ssh <dest host> "cat - > file"
-
-##### VPN without VPN: Get access to networks available from your ssh server and hide behind it
-```sh
-sshuttle -r <username>@<sshserver> 0/0
-
-##### generate the moduli file for openssh if lost
-```sh
-ssh-keygen -G /tmp/moduli-2048.candidates -b 2048
-
-##### Run multiple commands on a remote host with sudo
-```sh
-ssh -t user@host 'sudo bash -c "ls /var/log && cat /etc/passwd"'
-
-##### Create & transfer tarball over ssh
-```
-```sh
-ssh -c 'tar cvzf - -C /path/to/src/*' | tar xzf -
+tar c folder_to_encrypt | openssl enc -aes-256-cbc -e > secret.tar.enc
 ```
 
-##### scp a good script from host A which has no public access to host C, but with a hop by host B
+### copy working directory and compress it on-the-fly while showing progress
 ```sh
-ssh middlehost "ssh -a root@securehost '> nicescript'" < nicescript
-
-##### How to use rysnc over ssh tunnel
-```sh
-sshpass -p [password] rsync -av -e ssh [utente]@[indirizzoip]:/directorydacopiare/ /directorydidestinazione
-
-##### Take a screenshot of x11 over ssh pipe to view on a mac in one line
-```sh
-ssh user@host.com "DISPLAY=:0.0 import -window root png:-" | open -a /Applications/Preview.app -f
-
-##### Generate SSH key
-```sh
-ssh-keygen -t rsa -b 4096 -f ~/.ssh/<ROLE>_rsa -C "Comment goes here"
-
-##### Anonymous ssh using tor proxy (or any socks based proxy)
-```sh
-ssh -o ProxyCommand="nc -X 5 -x localhost:9050 %h %p" username@remote_host
-
-##### SSH with debug to troubleshoot any connection issues
-```sh
-ssh -v jsmith@remotehost.example.com
-
-##### Convert an ssh2 public key to openssh format
-```sh
-ssh-keygen -i -f $sshkeysfile >> authorized_keys
-
-##### execute/start some scripts on a remote machine/server (which will terminate automatically) and disconnect from the server
+tar -cf - . | pv -s $(du -sb . | awk '{print $1}') | gzip > out.tgz
 ```
-```sh
-ssh remoteserver 'nohup /path/to/script `</dev/null` >nohup.out 2>&1 &'
 
-##### Mount folder/filesystem through SSH
+### Encrypted archive with openssl and tar
 ```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
+tar create file - posix gzip  <dir> | openssl enc -e -aes256 -out <file>
+```
 
-##### Compare a remote file with a local file
+### Create a tar of directory structure only
 ```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
+tar -cf ~/out.tar no-recursion files-from <(find . -type d)
+```
 
-##### SSH connection through host in the middle
+### tar exclude files or directories
 ```sh
-ssh -t reachable_host ssh unreachable_host
+tar -cvzf home_backup.tar.gz exclude={.*,Downloads} /home/<user>
+```
 
-##### Remove invalid host keys from ~/.ssh/known_hosts
+### throttle bandwidth with cstream
 ```sh
-ssh-keygen -R \[localhost\]:8022
+tar -cj /backup | cstream -t 777k | ssh host 'tar -xj -C /backup'
+```
 
-##### back ssh from firewalled hosts
+### Command line progress bar
 ```sh
-ssh -R 5497:127.0.0.1:22 -p 62220 user@public.ip
+tar zcf - user | pv /bin/gzip > /tmp/backup.tar.gz
+```
 
-##### SSH connection with private key and port 222
+### Tar - Compress by excluding folders
 ```sh
-ssh -i /root/.ssh/username\@hostname -p 222 username@hostname
+tar -cvzf arch.tgz $(find /path/dir -not -type d)
+```
 
-##### Temporarily ignore known SSH hosts
+### untar undo
 ```sh
-ssh -o UserKnownHostsFile=/dev/null root@192.168.1.1
+tar tfz filename.tgz |xargs rm -Rf
+```
 
-##### Connect via SSH to VirtualBox guest VM without knowing IP address
+### Compare an archive with filesystem
 ```sh
-ssh vm-user@`VBoxManage guestproperty get "vm-name" "/VirtualBox/GuestInfo/Net/0/V4/IP" | awk '{ print $2 }'`
+tar dfz horde-webmail-1.2.3.tar.gz
+```
+
+### Send a backup job to a remote tape drive on another machine over SSH
+```sh
+tar cvzf - /directory/ | ssh root@host "cat > /dev/nst0"
+```
+
+### Archive a directory with datestamp on filename
+```sh
+tar zcvf somedir-$(date +%Y%m%d-%H%M).tar.gz somedir/
+```
+
+### Create a tar file with the current date in the name.
+```sh
+tar cfz backup-$(date iso).tar.gz somedirs
+```
+
+### tar.gz with gpg-encryption on the fly
+```sh
+tar -cvz /<path>/ | gpg encrypt recipient <keyID> > /<backup-path>/backup_`date +%d_%m_%Y`.tar.gz.gpg
+```
+
+### mail with attachment
+```sh
+tar cvzf - data1 data2 | uuencode data.tar.gz | mail -s 'data' you@host.fr
+```
+
+### oneliner to transfer a directory using ssh and tar
+```sh
+tar cvzf - dir | ssh my_server 'tar xzf -'
+```
+
+### Get a range of SVN revisions from svn diff and tar gz them
+```sh
+tar cvfz changes.tar.gz exclude-vcs `svn diff -rM:N summarize . | grep . | awk '{print $2}' | grep -E -v '^\.$'`
+```
+
+### Split a tarball into multiple parts
+```sh
+tar cf - <dir>|split -b<max_size>M - <name>.tar.
+```
+
+### send a file or directory via ssh compressing with lzma for low trafic
+```sh
+tar -cf - ./file | lzma -c | ssh user@sshserver $(cd /tmp; tar lzma -xf -)
+```
+
+### Simple complete system backup excluding files or directories
+```sh
+tar zcpf backup.tgz exclude=/proc exclude=backup.tgz /
+```
+
+### Update a tarball
+```sh
+tar -tf file.tar | tar -T - -uf file.tar
+```
+
+### Clean up after a poorly-formed tar file
+```sh
+tar ztf tar-lacking-subdirectory.tar.gz | xargs rm
+```
+
+### Adhoc tar backup
+```sh
+tar -cvzf - /source/path | ssh <targethostname> -l <username> dd of=/destination/path/backupfile.tgz
+```
+
+### strip non-constant number of directories from tar archive while decompressing
+```sh
+tar transform 's#.*/\([^/]*\)$#\1#' -xzvf test-archive.tar.gz
+```
+
+### copy paste multiple binary files
+```sh
+tar -c bins/ | gzip -9 | openssl enc -base64
+```
+
+### Tar files matching a certain wildcard
+```sh
+tar -czf ../header.tar.gz $(find . -name *.h)
+```
+
+### Extract tar.gz file with original permission
+```sh
+tar -xvpf file.tar.gz
+```
+
+### Creat a tar file for backup info
+```sh
+tar create file /path/$HOSTNAME-my_name_file-$(date -I).tar.gz atime-preserve -p -P same-owner -z /path/
+```
+
+### create tar archive of files in a directory and its sub-directories
+```sh
+tar czf /path/archive_of_foo.`date -I`.tgz /path/foo
+```
+
+### tar copy
+```sh
+tar cf - dir_to_cp/ | (cd path_to_put/ && tar xvf -)
+```
+
+### Unpack .tgz File On Linux
+```sh
+tar -axf fileNameHere.tgz
+```
+
+### Copy via tar pipe while preserving file permissions (run this command as root!)
+```sh
+tar -C /oldirectory -cvpf - . | tar -C /newdirector -xvf -
+```
+
+### Backup trought SSH
+```sh
+tar cvzf - /wwwdata | ssh root@IP "dd of=/backup/wwwdata.tar.gz"
+```
+
+### tar+pbzip2 a dir
+```sh
+tar exclude='patternToExclude' use-compress-program=pbzip2 -cf 'my-archive.tar.bz2' directoyToZip/
+```
+
+### Extract .tar.lzma archive
+```sh
+tar lzma -xvf /path/to/archive
+```
+
+### Extract multiple tar files at once in zsh
+```sh
+tar -xi < *.tar
+```
+
+### tar directory and compress it with showing progress and Disk IO limits
+```sh
+tar pcf - home | pv -s $(du -sb home | awk '{print $1}') rate-limit 500k | gzip > /mnt/c/home.tar.gz
+```
+
+### Create a tar file with the current date in the name.
+```sh
+tar cfz backup-`date +%F`.tgz somedirs
+```
+
+### Remote backups with tar over ssh
+```sh
+tar jcpf - [sourceDirs] |ssh user@host "cat > /path/to/backup/backupfile.tar.bz2"
+```
+
+### tar a directory and send it to netcat
+```sh
+tar cfvz - /home/user | netcat -l -p 10000
+```
+
+### Create a tar archive using xz compression
+```sh
+tar -cJf myarchive.tar.xz /path/to/archive/
+```
+
+### scping files with streamlines compression (tar gzip)
+```sh
+tar czv file1 file2 folder1 | ssh user@server tar zxv -C /destination
+```
+
+### Extract tar content without leading parent directory
+```sh
+tar -xaf archive.tar.gz strip-components=1
+```
+
+### tar+pbzip2 a dir
+```sh
+tar -c directory_to_compress/ | pbzip2 -vc > myfile.tar.bz2
+```
+
+### Compress a file or directory keeping the owner and permissions
+```sh
+tar -jcvf /folder/file.tar.bz2 same-owner same-permissions /folder/
+```
+
+### Create a tar archive using xz compression
+```sh
+tar -cvf - /path/to/tar/up | xz - > myTarArchive.tar.xz
+```
+
+### Compress files in a directory
+```sh
+tar -zcvf archive-name.tar.gz directory-name
+```
+
+### Create tar over SSH
+```sh
+tar cvzf - /folder/ | ssh root@192.168.0.1 "dd of=/dest/folder/file.tar.gz"
+```
+
+### tar via network
+```sh
+tar cfX - exclude_opt_weblogic . | ssh tmp-esxsb044 "cd /opt/weblogic ; tar xf -"
+```
+
+### Full  remote server backup over cstream using tar (excluding unnecessary files) (reports every 10 seconds)
+```sh
+tar -cj / -X /tmp/exclude.txt | cstream -v 1 -c 3 -T 10 | ssh user@host 'tar -xj -C /backupDestination'
+```
+
+### Archive and compress a directory using gunzip compression
+```sh
+tar -zcvf archive_name.tar.gz directory_to_compress
+```
+
+### encrypt, split and get ready for dvd a large file via tar and ccrypt
+```sh
+tar czf - /directory/to/tar | ccrypt -k yourpassword | split -b50m - /final/encrypted.cpt
+```
+
+### Redirect  tar extract to another directory
+```sh
+tar xfz filename.tar.gz -C PathToDirectory
+```
+
+### oneliner to transfer a directory using ssh and tar
+```sh
+tar -vzc /path/to/cool/directory | ssh -q my_server 'tar -vzx -C /'
+```
+
+### unpack tar.bz2
+```sh
+tar xjvf file.tar.bz2
+```
+
+### pack with tar tar.gz
+```sh
+tar cfvz archiv.tar.gz folder folder
+```
+
+### move a lot of files over ssh
+```sh
+tar -cf - /home/user/test | gzip -c | ssh user@sshServer 'cd /tmp; tar xfz -'
+```
+
+### Backup to tape, rewind and check md5
+```sh
+tar -cvf - $DIR_TO_BACKUP | tee >(md5sum > backup_md5.txt) > /dev/st0 && mt -f /dev/nst0 bsfm 1 && md5sum -c backup_md5.txt < /dev/st0
+```
+
+### Tar all files in a folder including hidden dot files
+```sh
+tar -zcvf file.tgz ./
+```
+
+### Shows the largest files in your archives
+```sh
+tar -tvjf backup.tar.bz2 | sort -nrk 3 | head
+```
+
+### Create a Multi-Part Archive Without Proprietary Junkware
+```sh
+tar czv Pictures | split -d -a 3 -b 16M - pics.tar.gz.
+```
+
+### backup your file with tar and exclude the file or directory which  you don't want
+```sh
+tar zcvf /path/to/your-`date +%Y-%m-%d`.tar.bz2 ./your/directory exclude ./you/dont/want/to/include
+```
+
+### Secure copy from one server to another without rsync and preserve users, etc
+```sh
+tar -czvf - /src/dir | ssh remotehost "(cd /dst/dir ; tar -xzvf -)"
+```
+
+### lists contents of a tar file
+```sh
+tar -tf /path/to/file.tar
+```
+
+### Clone perms and owner group from one file to another
+```sh
+tar -cpf - ./sourceFile | tar -xpf - -C ./targetDir/
+```
+
+### tar's and moves all contents of current directory to target dir
+```sh
+tar cf - . |(cd /targetdir; tar xvf -)
+```
+
+### Create a tar archive with all files of a certain type found in present dir and subdirs
+```sh
+tar cvf my_txt_files.tar `find . -type f -name ".txt"`
+```
+
+### Untar file in current directory
+```sh
+tar xvzf <file.tar.gz>
+```
+
+### backup home dir exclude dot files
+```sh
+tar exclude=".??*" -zcvf ./home_backup_2008.tar.gz  my_home
+```
+
+### Tar a directory excluding CVS, SVN, GIT and similar directories
+```sh
+tar -cvj exclude-vcs -f archive.tar.bz2 somedirectory
+```
+
+### Tar a directory and its sub-directory
+```sh
+tar cvfz dir_name.tgz dir/
+```
+
+### have tar decide compression based on filename
+```sh
+tar -caf some_dir.tar.xz some_dir
+```
+
+### Tar dir excluding tmp
+```sh
+tar -zcvf <archive<.tar.gz exclude /home/szimbaro/tmp /home/szimbaro
+```
+
+### Create a simple backup
+```sh
+tar pzcvf /result_path/result.tar.gz /target_path/target_folder
+```
+
+### Backup hidden files and folders in home directory
+```sh
+tar zcpvf backup.tgz $(find $HOME -maxdepth 1 -name '.*' -and -not -name '.')
+```
+
+### create compressed encrypted backup
+```sh
+tar exclude-from=$excludefile -zcvp "$source" | openssl aes-128-cbc -salt -out $targetfile -k $key
+```
+
+### Create tarball of files modified in git
+```sh
+tar czf git_mods_circa_dec23.tgz files-from <(git ls-files -m)
+```
+
+### create tar.gz on solaris
+```sh
+tar cfp - file-to-be-archived | gzip > archive.tar.gz
+```
+
+### Remove all files previously extracted from a tar(.gz) file.
+```sh
+tar -tf <file.tar.gz> | xargs rm -r
+```
+
+### Create a tar archive using 7z compression
+```sh
+tar cf - /path/to/data | 7z a -si archivename.tar.7z
+```
+
+### Copy specific files to another machine, keeping the file hierarchy
+```sh
+tar cpfP - $(find <somedir> -type f -name *.png) | ssh user@host | tar xpfP -
+```
+
+### backup and remove files with access time older than 5 days.
+```sh
+tar -zcvpf backup_`date +"%Y%m%d_%H%M%S"`.tar.gz `find <target> -atime +5` 2> /dev/null | xargs rm -fr ;
+```
+
+### Exclude .svn, .git and other VCS junk for a pristine tarball
+```sh
+tar exclude-vcs -cf src.tar src/
+```
+
+### Pack up some files into a tarball on a remote server without writing to the local filesystem
+```sh
+tar -czf - * | ssh example.com "cat > files.tar.gz"
+```
+
+### backup a directory in a timestamped tar.gz
+```sh
+tar -czvvf backup$(date "+%Y%m%d_%H%M%S").tar.gz /path/to/dir
+```
+
+### Encrypted archive with openssl and tar
+```sh
+tar c folder_to_encrypt | openssl enc -aes-256-cbc -e > secret.tar.enc
+```
+
+### copy working directory and compress it on-the-fly while showing progress
+```sh
+tar -cf - . | pv -s $(du -sb . | awk '{print $1}') | gzip > out.tgz
+```
+
+### Encrypted archive with openssl and tar
+```sh
+tar create file - posix gzip  <dir> | openssl enc -e -aes256 -out <file>
+```
+
+### Create a tar of directory structure only
+```sh
+tar -cf ~/out.tar no-recursion files-from <(find . -type d)
+```
+
+### tar exclude files or directories
+```sh
+tar -cvzf home_backup.tar.gz exclude={.*,Downloads} /home/<user>
+```
+
+### throttle bandwidth with cstream
+```sh
+tar -cj /backup | cstream -t 777k | ssh host 'tar -xj -C /backup'
+```
+
+### Command line progress bar
+```sh
+tar zcf - user | pv /bin/gzip > /tmp/backup.tar.gz
+```
+
+### Tar - Compress by excluding folders
+```sh
+tar -cvzf arch.tgz $(find /path/dir -not -type d)
+```
+
+### untar undo
+```sh
+tar tfz filename.tgz |xargs rm -Rf
+```
+
+### Compare an archive with filesystem
+```sh
+tar dfz horde-webmail-1.2.3.tar.gz
+```
+
+### Send a backup job to a remote tape drive on another machine over SSH
+```sh
+tar cvzf - /directory/ | ssh root@host "cat > /dev/nst0"
+```
+
+### Archive a directory with datestamp on filename
+```sh
+tar zcvf somedir-$(date +%Y%m%d-%H%M).tar.gz somedir/
+```
+
+### Create a tar file with the current date in the name.
+```sh
+tar cfz backup-$(date iso).tar.gz somedirs
+```
+
+### tar.gz with gpg-encryption on the fly
+```sh
+tar -cvz /<path>/ | gpg encrypt recipient <keyID> > /<backup-path>/backup_`date +%d_%m_%Y`.tar.gz.gpg
+```
+
+### mail with attachment
+```sh
+tar cvzf - data1 data2 | uuencode data.tar.gz | mail -s 'data' you@host.fr
+```
+
+### oneliner to transfer a directory using ssh and tar
+```sh
+tar cvzf - dir | ssh my_server 'tar xzf -'
+```
+
+### Get a range of SVN revisions from svn diff and tar gz them
+```sh
+tar cvfz changes.tar.gz exclude-vcs `svn diff -rM:N summarize . | grep . | awk '{print $2}' | grep -E -v '^\.$'`
+```
+
+### Split a tarball into multiple parts
+```sh
+tar cf - <dir>|split -b<max_size>M - <name>.tar.
+```
+
+### send a file or directory via ssh compressing with lzma for low trafic
+```sh
+tar -cf - ./file | lzma -c | ssh user@sshserver $(cd /tmp; tar lzma -xf -)
+```
+
+### Simple complete system backup excluding files or directories
+```sh
+tar zcpf backup.tgz exclude=/proc exclude=backup.tgz /
+```
+
+### Update a tarball
+```sh
+tar -tf file.tar | tar -T - -uf file.tar
+```
+
+### Clean up after a poorly-formed tar file
+```sh
+tar ztf tar-lacking-subdirectory.tar.gz | xargs rm
+```
+
+### Adhoc tar backup
+```sh
+tar -cvzf - /source/path | ssh <targethostname> -l <username> dd of=/destination/path/backupfile.tgz
+```
+
+### strip non-constant number of directories from tar archive while decompressing
+```sh
+tar transform 's#.*/\([^/]*\)$#\1#' -xzvf test-archive.tar.gz
+```
+
+### copy paste multiple binary files
+```sh
+tar -c bins/ | gzip -9 | openssl enc -base64
+```
+
+### Tar files matching a certain wildcard
+```sh
+tar -czf ../header.tar.gz $(find . -name *.h)
+```
+
+### Extract tar.gz file with original permission
+```sh
+tar -xvpf file.tar.gz
+```
+
+### Creat a tar file for backup info
+```sh
+tar create file /path/$HOSTNAME-my_name_file-$(date -I).tar.gz atime-preserve -p -P same-owner -z /path/
+```
+
+### create tar archive of files in a directory and its sub-directories
+```sh
+tar czf /path/archive_of_foo.`date -I`.tgz /path/foo
+```
+
+### tar copy
+```sh
+tar cf - dir_to_cp/ | (cd path_to_put/ && tar xvf -)
+```
+
+### Unpack .tgz File On Linux
+```sh
+tar -axf fileNameHere.tgz
+```
+
+### Copy via tar pipe while preserving file permissions (run this command as root!)
+```sh
+tar -C /oldirectory -cvpf - . | tar -C /newdirector -xvf -
+```
+
+### Backup trought SSH
+```sh
+tar cvzf - /wwwdata | ssh root@IP "dd of=/backup/wwwdata.tar.gz"
+```
+
+### tar+pbzip2 a dir
+```sh
+tar exclude='patternToExclude' use-compress-program=pbzip2 -cf 'my-archive.tar.bz2' directoyToZip/
+```
+
+### Extract .tar.lzma archive
+```sh
+tar lzma -xvf /path/to/archive
+```
+
+### Extract multiple tar files at once in zsh
+```sh
+tar -xi < *.tar
+```
+
+### tar directory and compress it with showing progress and Disk IO limits
+```sh
+tar pcf - home | pv -s $(du -sb home | awk '{print $1}') rate-limit 500k | gzip > /mnt/c/home.tar.gz
+```
+
+### Create a tar file with the current date in the name.
+```sh
+tar cfz backup-`date +%F`.tgz somedirs
+```
+
+### Remote backups with tar over ssh
+```sh
+tar jcpf - [sourceDirs] |ssh user@host "cat > /path/to/backup/backupfile.tar.bz2"
+```
+
+### tar a directory and send it to netcat
+```sh
+tar cfvz - /home/user | netcat -l -p 10000
+```
+
+### Create a tar archive using xz compression
+```sh
+tar -cJf myarchive.tar.xz /path/to/archive/
+```
+
+### scping files with streamlines compression (tar gzip)
+```sh
+tar czv file1 file2 folder1 | ssh user@server tar zxv -C /destination
+```
+
+### Extract tar content without leading parent directory
+```sh
+tar -xaf archive.tar.gz strip-components=1
+```
+
+### tar+pbzip2 a dir
+```sh
+tar -c directory_to_compress/ | pbzip2 -vc > myfile.tar.bz2
+```
+
+### Compress a file or directory keeping the owner and permissions
+```sh
+tar -jcvf /folder/file.tar.bz2 same-owner same-permissions /folder/
+```
+
+### Create a tar archive using xz compression
+```sh
+tar -cvf - /path/to/tar/up | xz - > myTarArchive.tar.xz
+```
+
+### Compress files in a directory
+```sh
+tar -zcvf archive-name.tar.gz directory-name
+```
+
+### Create tar over SSH
+```sh
+tar cvzf - /folder/ | ssh root@192.168.0.1 "dd of=/dest/folder/file.tar.gz"
+```
+
+### tar via network
+```sh
+tar cfX - exclude_opt_weblogic . | ssh tmp-esxsb044 "cd /opt/weblogic ; tar xf -"
+```
+
+### Full  remote server backup over cstream using tar (excluding unnecessary files) (reports every 10 seconds)
+```sh
+tar -cj / -X /tmp/exclude.txt | cstream -v 1 -c 3 -T 10 | ssh user@host 'tar -xj -C /backupDestination'
+```
+
+### Archive and compress a directory using gunzip compression
+```sh
+tar -zcvf archive_name.tar.gz directory_to_compress
+```
+
+### encrypt, split and get ready for dvd a large file via tar and ccrypt
+```sh
+tar czf - /directory/to/tar | ccrypt -k yourpassword | split -b50m - /final/encrypted.cpt
+```
+
+### Redirect  tar extract to another directory
+```sh
+tar xfz filename.tar.gz -C PathToDirectory
+```
+
+### oneliner to transfer a directory using ssh and tar
+```sh
+tar -vzc /path/to/cool/directory | ssh -q my_server 'tar -vzx -C /'
+```
+
+### unpack tar.bz2
+```sh
+tar xjvf file.tar.bz2
+```
+
+### pack with tar tar.gz
+```sh
+tar cfvz archiv.tar.gz folder folder
+```
+
+### move a lot of files over ssh
+```sh
+tar -cf - /home/user/test | gzip -c | ssh user@sshServer 'cd /tmp; tar xfz -'
+```
+
+### Backup to tape, rewind and check md5
+```sh
+tar -cvf - $DIR_TO_BACKUP | tee >(md5sum > backup_md5.txt) > /dev/st0 && mt -f /dev/nst0 bsfm 1 && md5sum -c backup_md5.txt < /dev/st0
+```
+
+### Tar all files in a folder including hidden dot files
+```sh
+tar -zcvf file.tgz ./
+```
+
+### Shows the largest files in your archives
+```sh
+tar -tvjf backup.tar.bz2 | sort -nrk 3 | head
+```
+
+### Create a Multi-Part Archive Without Proprietary Junkware
+```sh
+tar czv Pictures | split -d -a 3 -b 16M - pics.tar.gz.
+```
+
+### backup your file with tar and exclude the file or directory which  you don't want
+```sh
+tar zcvf /path/to/your-`date +%Y-%m-%d`.tar.bz2 ./your/directory exclude ./you/dont/want/to/include
+```
+
+### Secure copy from one server to another without rsync and preserve users, etc
+```sh
+tar -czvf - /src/dir | ssh remotehost "(cd /dst/dir ; tar -xzvf -)"
+```
+
+### lists contents of a tar file
+```sh
+tar -tf /path/to/file.tar
+```
+
+### Clone perms and owner group from one file to another
+```sh
+tar -cpf - ./sourceFile | tar -xpf - -C ./targetDir/
+```
+
+### tar's and moves all contents of current directory to target dir
+```sh
+tar cf - . |(cd /targetdir; tar xvf -)
+```
+
+### Create a tar archive with all files of a certain type found in present dir and subdirs
+```sh
+tar cvf my_txt_files.tar `find . -type f -name ".txt"`
+```
+
+### Untar file in current directory
+```sh
+tar xvzf <file.tar.gz>
+```
+
+### backup home dir exclude dot files
+```sh
+tar exclude=".??*" -zcvf ./home_backup_2008.tar.gz  my_home
+```
+
+### Tar a directory excluding CVS, SVN, GIT and similar directories
+```sh
+tar -cvj exclude-vcs -f archive.tar.bz2 somedirectory
+```
+
+### Tar a directory and its sub-directory
+```sh
+tar cvfz dir_name.tgz dir/
+```
+
+### have tar decide compression based on filename
+```sh
+tar -caf some_dir.tar.xz some_dir
+```

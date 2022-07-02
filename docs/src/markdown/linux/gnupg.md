@@ -78,7 +78,7 @@ gpg --import key.asc
 gpg -e -o secret.txt.gpg -r <RECIPIENT> secret.txt    
 ```
 
-##### Decrypting a file 
+### Decrypting a file 
 
 ```sh
 gpg -d -o secret.txt secret.txt.gpg     
@@ -118,13 +118,13 @@ gpg --refresh-keys
 gpg --search-keys "<SEARCH STRING>"     
 ```
 
-##### Override keyserver from `~/.gnupg/` to  `gpg.conf`     
+### Override keyserver from `~/.gnupg/` to  `gpg.conf`     
 
 ```sh
 gpg --keyserver <URL> ...                  
 ```
 
-##### Only merge updates for keys already in key-ring:        
+### Only merge updates for keys already in key-ring:        
 
 ```sh
 gpg --import key.asc --merge-options merge-only                                            

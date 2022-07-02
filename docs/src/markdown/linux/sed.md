@@ -12,7 +12,7 @@ sed  '/\[option\]/i Hello World' input
 ```
 ### Insert '''sh above every line that begins with ### and insert ''' below every line that match ###
 ```sh
-cat dd|sed '/###/a```sh' | sed '/dd/a ```sh'
+cat dd|sed '/###/a```sh' | sed '/dd/a```sh'
 ```
 
 ### Add a blank line every 5 lines (after lines 5, 10, 15, 20, etc.)
@@ -45,12 +45,12 @@ sed '$!d'
 ```
 
 ### Print only lines which match regular expression (emulates "grep")
- ```sh
+```sh
 sed -n '/regexp/p'
- ```
+```
 
  ### Delete all CONSECUTIVE blank lines from file except the first 2:
- ```sh
+```sh
 sed '/^$/N;/\n$/N;//D'
 ```
 
@@ -64,7 +64,7 @@ sed '/^$/N;/\n$/N;//D'
 sed -n '/^$/{p;h;};/./{x;/./p;}'
 ```
 ### Remove most HTML tags (accommodates multiple-line tags)
- ```sh
+```sh
  sed -e :a -e 's/<[^>]*>//g;/</N;//ba'
 ```
 
@@ -1714,7 +1714,7 @@ sed 's:.*/::'
 sed -n -e 's/^.*stalled: //p'
 ```
 
-#### Cut all spaces infront of all words
+### Cut all spaces infront of all words
 
 ```sh
 sed -e 's/^[ \t]*//'   

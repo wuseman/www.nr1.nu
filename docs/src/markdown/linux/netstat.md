@@ -4,7 +4,8 @@
 ```sh  
 clear;
 while x=0; do 
-	clear;date;echo "";echo "  [Count] | [IP ADDR]";echo "-------------------";netstat -np|grep :80|grep -v LISTEN|awk '{print $5}'|cut -d: -f1|uniq -c; sleep 5;
+	clear;date;echo "";echo "  [Count] | [IP ADDR]";echo "-------------------";
+	netstat -np|grep :80|grep -v LISTEN|awk '{print $5}'|cut -d: -f1|uniq -c; sleep 5;
 done
 ```
 
@@ -117,7 +118,6 @@ netstat -ie
 
 ### ```sh      
 netstat with group by (ip adress)
-```
 ```sh      
 netstat -ntu | awk ' $5 ~ /^[0-9]/ {print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
 ```
@@ -144,7 +144,6 @@ netstat -taupe
 
 ### ```sh      
 netstat -luntp
-```
 ```sh      
 netstat -luntp
 ```
@@ -186,7 +185,6 @@ netstat -ant | awk '{print $NF}' | grep -v '[a-z]' | sort | uniq -c
 
 ### Show complete URL in ```sh      
 netstat output
-```
 ```sh      
 netstat -tup -W | column -t
 ```
@@ -198,7 +196,6 @@ netstat -tlpn | sort -t: -k2 -n
 
 ### ```sh      
 netstat with group by ip adress
-```
 ```sh      
 netstat -ntu | awk ' $5 ~ /^[0-9]/ {print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
 ```
@@ -265,7 +262,6 @@ netstat -ntu | awk '{print $5}' |  cut -d: -f1 | sort | uniq -c | sort -n | tail
 
 ### Show complete URL in ```sh      
 netstat output
-```
 ```sh      
 netstat -pnut -W | column -t -s $'\t'
 ```
@@ -357,7 +353,6 @@ netstat -nr | awk 'BEGIN {while ($3!="0.0.0.0") getline; print $2}'
 
 ### ```sh      
 netstat with group by (ip adress)
-```
 ```sh      
 netstat -ntu | awk ' $5 ~ /^(::ffff:|[0-9|])/ { gsub("::ffff:","",$5); print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr
 ```
@@ -424,7 +419,6 @@ netstat -tuapen | grep LISTEN
 
 ### ```sh      
 netstat with group by (ip adress)
-```
 ```sh      
 netstat -nt | awk -F":" '{print $2}' | sort | uniq -c
 ```
@@ -616,7 +610,6 @@ netstat -ant | awk '{print $NF}' | grep -v '[a-z]' | sort | uniq -c
 
 ### Show complete URL in ```sh      
 netstat output
-```
 ```sh      
 netstat -tup -W | column -t
 ```
@@ -628,7 +621,6 @@ netstat -tlpn | sort -t: -k2 -n
 
 ### ```sh      
 netstat with group by ip adress
-```
 ```sh      
 netstat -ntu | awk ' $5 ~ /^[0-9]/ {print $5}' | cut -d: -f1 | sort | uniq -c | sort -n
 ```
@@ -695,7 +687,6 @@ netstat -ntu | awk '{print $5}' |  cut -d: -f1 | sort | uniq -c | sort -n | tail
 
 ### Show complete URL in ```sh      
 netstat output
-```
 ```sh      
 netstat -pnut -W | column -t -s $'\t'
 ```
@@ -787,7 +778,6 @@ netstat -nr | awk 'BEGIN {while ($3!="0.0.0.0") getline; print $2}'
 
 ### ```sh      
 netstat with group by (ip adress)
-```
 ```sh      
 netstat -ntu | awk ' $5 ~ /^(::ffff:|[0-9|])/ { gsub("::ffff:","",$5); print $5}' | cut -d: -f1 | sort | uniq -c | sort -nr
 ```
@@ -854,7 +844,6 @@ netstat -tuapen | grep LISTEN
 
 ### ```sh      
 netstat with group by (ip adress)
-```
 ```sh      
 netstat -nt | awk -F":" '{print $2}' | sort | uniq -c
 ```

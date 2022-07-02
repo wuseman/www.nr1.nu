@@ -296,7 +296,6 @@ nav:
      - chroot: linux/chroot.md
      - ciptool: linux/ciptool.md
      - comm: linux/comm.md
-     - contact: linux/contact.md
      - cryptsetup: linux/cryptsetup.md
      - curl: linux/curl.md
      - databases: linux/databases.md

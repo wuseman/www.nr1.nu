@@ -1,18 +1,18 @@
 ### lsof
 
-##### Show 10 Largest Open Files
+### Show 10 Largest Open Files
 ```sh
 lsof / | awk '{ if($7 > 1048576) print $7/1048576 "MB" " " $9 " " $1 }' | sort -n -u | tail
 ```
-##### Kill a process running on port 8080
+### Kill a process running on port 8080
 ```sh
 lsof -i :8080 | awk '{l=$2} END {print l}' | xargs kill
 ```
-##### Kill a process running on port 8080
+### Kill a process running on port 8080
 ```sh
 lsof -i :8080 | awk 'NR > 1 {print $2}' | xargs --no-run-if-empty kill
 ```
-##### Kill a process running on port 8080
+### Kill a process running on port 8080
 ```sh
 lsof -i :8080 | awk '{print $2}' | tail -n 1 | xargs kill
 ```

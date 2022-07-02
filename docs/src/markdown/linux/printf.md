@@ -135,7 +135,6 @@ printf %d 0x`dd if=/dev/urandom bs=1 count=4 2>/dev/null | od -x | awk 'NR==1 {p
 ```
 
 ### get the ascii number with bash builtin printf
-```
 ```sh
 printf "%d\n" "'A" "'B"
 ```
