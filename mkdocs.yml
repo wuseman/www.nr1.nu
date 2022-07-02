@@ -385,11 +385,11 @@ nav:
      - wireguard: linux/wireguard.md
      - xargs: linux/xargs.md
   - Wiki:
-     - 'wiki/android/index.md'
+     - 'wiki/adb/index.md'
      - adb:
-        - 'adb-cheatsheet': wiki/android/readme.md
-        - 'at-commands': wiki/android/at.md
-        - 'uusd-codes': wiki/android/uusd_codes.md
+        - 'adb-cheatsheet': wiki/adb/readme.md
+        - 'at-commands': wiki/adb/at.md
+        - 'uusd-codes': wiki/adb/uusd_codes.md
   - Windows:
      - bios: windows/bios.md
      - wmic: windows/wmic2.md
