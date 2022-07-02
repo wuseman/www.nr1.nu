@@ -234,10 +234,10 @@ extra:
 
 nav: 
   - Home:
-    - About: index.md
-    - Contact: contact.md
-    - CV: cv.md
-    - Help: usage_notes.md
+    - About: about/index.md
+    - Contact: about/contact.md
+    - CV: about/cv.md
+    - Help: about/usage_notes.md
   - Cracking: 
         -  cracking/index.md
         - 'wloader': cracking/wloader/README.md
@@ -384,13 +384,14 @@ nav:
      - while: linux/while.md
      - wireguard: linux/wireguard.md
      - xargs: linux/xargs.md
-
   - Wiki:
-     - 'android/index.md'
+     - 'wiki/android/index.md'
      - adb:
-        - 'adb-cheatsheet': android/adb/readme.md
-        - 'at-commands': android/adb/at.md
-        - 'uusd-codes': android/adb/uusd_codes.md
+        - 'adb-cheatsheet': wiki/android/readme.md
+        - 'at-commands': wiki/android/at.md
+        - 'uusd-codes': wiki/android/uusd_codes.md
+     - emagnet:  
+        - emagnet: 
   - Windows:
      - bios: windows/bios.md
      - wmic: windows/wmic2.md
