@@ -250,7 +250,7 @@ nav:
   - Hacking: 
      - 'hacking/index.md'
      - Android: 
-        - WADBPWN: hacking/android/wadbpwn/README.md
+        - WADBPWN: hacking/android/wadpwn/README.md
      - Bios: 
         - HP Bios: hacking/bios/hp_device_and_bios-hacking/README.md
      - Bruteforce: 
