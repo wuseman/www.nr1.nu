@@ -385,11 +385,21 @@ nav:
      - wireguard: linux/wireguard.md
      - xargs: linux/xargs.md
   - Wiki:
-     - 'wiki/adb/index.md'
+     - 'wiki/index.md'
      - adb:
         - 'adb-cheatsheet': wiki/adb/readme.md
         - 'at-commands': wiki/adb/at.md
         - 'uusd-codes': wiki/adb/uusd_codes.md
+     - emagnet: 
+        - wiki/emagnet/Getting-Started.md
+        - wiki/emagnet/About.md
+        - wiki/emagnet/Configurations-&-Installation.md
+        - wiki/emagnet/Home.md
+        - wiki/emagnet/Leaked-Databases.md
+        - wiki/emagnet/Searching-&-Regex.md
+        - wiki/emagnet/_Footer.md
+        - wiki/emagnet/__foot.md
+
   - Windows:
      - bios: windows/bios.md
      - wmic: windows/wmic2.md
