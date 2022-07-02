@@ -271,6 +271,7 @@ nav:
      - arp: linux/arp.md
      - awk: linux/awk.md
      - bash: linux/bash.md
+     - bettercap: linux/bettercap.md
      - bluetoothctl: linux/bluetoothctl.md
      - btmgt: linux/btmgt.md
      - btmon: linux/btmon.md
@@ -279,6 +280,7 @@ nav:
      - comm: linux/comm.md
      - cryptsetup: linux/cryptsetup.md
      - curl: linux/curl.md
+     - csfr-injections: linux/linux/csfr-injections.md
      - databases: linux/databases.md
      - dd: linux/dd.md
      - dev_and_proc: linux/dev_and_proc.md
@@ -306,6 +308,7 @@ nav:
      - kernel: linux/kernel.md
      - kill: linux/kill.md
      - lftp: linux/lftp.md
+
      - links: linux/links.md
      - license: linux/license.md
      - log: linux/log.md
@@ -314,16 +317,18 @@ nav:
      - lynx: linux/lynx.md
      - mail: linux/mail.md
      - man: linux/man.md
+     - masscan: linux/masscan.md
      - matomo: linux/matomo.md
      - merge-tricks: linux/merge-tricks.md
      - mkdocs: linux/mkdocs.md
      - mplayer: linux/mplayer.md
      - mutt: linux/mutt.md
      - mysql: linux/mysql.md
-     - nc: linux/nc.md
+     - netcat: linux/nc.md
+     - ncrack: linux/ncrack.md
      - netstat: linux/netstat.md
-     - nmap2: linux/nmap2.md
      - nmap: linux/nmap.md
+     - nmap2: linux/nmap2.md
      - od: linux/od.md
      - parallel: linux/parallel.md
      - paste_and_pr: linux/paste_and_pr.md
@@ -348,6 +353,7 @@ nav:
      - ssh-config: linux/ssh-config.md
      - ssh-keygen: linux/ssh-keygen.md
      - sshfs: linux/sshfs.md
+     - ssh-unsorted: linux/ssh.md
      - ssh-log: linux/ssh-log.md
      - stat: linux/stat.md
      - strace: linux/strace.md
@@ -366,6 +372,7 @@ nav:
      - while: linux/while.md
      - wireguard: linux/wireguard.md
      - xargs: linux/xargs.md
+     - xss attack: linux/xsshacking.md
   - Wiki:
      - 'wiki/index.md'
      - ADB:
@@ -380,4 +387,6 @@ nav:
         - 'Search with Regex': wiki/emagnet/Searching-&-Regex.md
   - Windows:
      - bios: windows/bios.md
+     - lpe: windows/lpe.md
+     - rdp: windows/rdp.md
      - wmic: windows/wmic2.md

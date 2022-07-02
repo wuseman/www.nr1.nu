@@ -1,4 +1,4 @@
-# powershell
+# lenovo and dell bios
 
 ## General
 

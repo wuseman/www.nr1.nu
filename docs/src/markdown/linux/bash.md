@@ -1,5 +1,14 @@
 # bash
 
+# Make changes in .bashrc immediately available
+```sh
+bashrc-reload() { 
+	builtin unalias -a; builtin unset -f $(builtin declare -F | \
+	 sed 's/^.*declare[[:blank:]]\+-f[[:blank:]]\+//'); 
+	source ~/.bashrc; 
+}
+```
+
 ### Delete static and dynamic arp for /24 subnet
 ```sh
 for i in {1..254}; do 

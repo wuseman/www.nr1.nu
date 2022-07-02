@@ -5,7 +5,7 @@ Please, use iRC with otr or fish encryption else I will ignore you.
 Respect my choices and I will resepect yours. :) 
 
 ```
-wuseman@Libera
+echo d3VzZW1hbkBucjEubnUK|base64 -d
 ```
 
 ### Mail
