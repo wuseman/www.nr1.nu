@@ -1,3 +1,5 @@
+# wmic 
+
 ### Get info about Pshical disks
 
 ```sh

@@ -1,4 +1,6 @@
-# powershell-bios
+# powershell
+
+## General
 
 ### Show allthing about hp bootings
 ```sh
@@ -11,6 +13,7 @@ Get-WmiObject -Class Win32_BIOS | Format-List *
 ### Print smbiosversion
 ```sh
 Get-WmiObject -Class Win32_BIOS | Select-Object Manufacturer, SMBIOSBIOSVersion 
+```
 ```sh
 Get-CimClass -NameSpace  root/HP/InstrumentedBIOS
 if (gwmi HP_BIOSPassword -Namespace "root\HP\InstrumentedBIOS" -Filter "Name = 'Setup Password' AND IsSet = 1") {"setup password set"} else {"setup password not set"}
@@ -42,7 +45,10 @@ Get-WmiObject -Class Win32_BIOS | Select-Object Manufacturer, SMBIOSBIOSVersion
 
 However, some hardware vendors provide special WMI classes to direct access BIOS from Windows OS (the native drivers by your hardware manufacturer must be installed on a computer).
 
-## Lenovo BIOS Settings Management from PowerShell, you can get the list of BIOS parameters and their values on Lenovo computers like this:
+## Lenovo BIOS Settings Management from PowerShell
+
+You can get the list of BIOS parameters and their values on Lenovo computers like this:
+
 ```sh
 Get-WmiObject -class Lenovo_BiosSetting -namespace root\wmi
 ```
@@ -96,6 +102,7 @@ Else
 {
 write-host "Error - (Return code $ChangeBIOS_State_Code)" -Foreground Red
 }
+```
 
 ### If you want to enable LAN/WLAN Switching in BIOS on an HP laptop to automatically disconnect from Wi-Fi when an Ethernet connection is available, run this command:
 ```sh
