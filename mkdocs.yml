@@ -335,7 +335,7 @@ nav:
      - ps: linux/ps.md
      - rdesktop: linux/rdesktop.md
      - rename: linux/rename.md
-     - rg: linux/rg.md
+     - ripgrep: linux/rg.md
      - rm: linux/rm.md
      - rsync: linux/rsync.md
      - screen: linux/screen.md
@@ -346,7 +346,7 @@ nav:
      - sqlmap: linux/sqlmap.md
      - sqlite3: linux/sqlite3.md
      - ssh-config: linux/ssh-config.md
-     - ssh-mixed: linux/ssh.md
+     - ssh-keygen: linux/ssh-config.md
      - sshfs: linux/sshfs.md
      - ssh-log: linux/ssh-log.md
      - stat: linux/stat.md
