@@ -17,7 +17,6 @@ extra:
     provider: google
     property: G-B5KK88V0K4
 
-
 extra_css:
   - assets/pymdownx-extras/katex.min.css
   - assets/pymdownx-extras/extra-e384f43f0f.css
@@ -27,8 +26,6 @@ extra_javascript:
   - assets/pymdownx-extras/polyfill.min.js
   - assets/pymdownx-extras/tex-mml-chtml.js
   - assets/pymdownx-extras/extra-loader-5bb526e4.js
-  - assets/pymdownx-extras/m.js
-
 
 theme:
   nav_style: dark
@@ -67,12 +64,6 @@ theme:
     - php
     - json
     - kotlin
-  pymdownx:
-    sponsor: "https://github.com/sponsors/facelessuser"
-
-
-
-
 markdown_extensions:
   - smarty:
   - toc:
@@ -366,6 +357,7 @@ nav:
      - sqlite3: linux/sqlite3.md
      - ssh-config: linux/ssh-config.md
      - ssh-mixed: linux/ssh.md
+     - sshfs: linux/ssh.md
      - ssh-log: linux/ssh-log.md
      - stat: linux/stat.md
      - strace: linux/strace.md

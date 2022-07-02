@@ -1,9 +1,6 @@
 ### ssh/sshfs 
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -15,10 +12,7 @@ ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
 ssh -t reachable_host ssh unreachable_host
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -30,10 +24,7 @@ ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
 ssh -t reachable_host ssh unreachable_host
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -45,10 +36,7 @@ ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
 ssh -t reachable_host ssh unreachable_host
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -60,10 +48,7 @@ ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
 ssh -t reachable_host ssh unreachable_host
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -145,11 +130,6 @@ ssh-copy-id -i .ssh/id_rsa.pub username:password@remotehost.com
 ssh user@remote "cat /remote/music/dir/*.mp3" | mpg123 -
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
-
 ### Compare a remote file with a local file
 ```sh
 ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
@@ -220,11 +200,6 @@ ssh remotebox tail -f /var/log/remotelog
 ssh -C -X user@remotehost gui_command
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
-
 ### Compare a remote file with a local file
 ```sh
 ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
@@ -285,10 +260,6 @@ ssh -X -l user 192.168.1.25
 ssh root@172.16.1.99 -i my_openssh_key.ssh -p 9999
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
 
 ### Compare a remote file with a local file
 ```sh
@@ -470,11 +441,6 @@ ssh user@machine_A dd if=/dev/dvd0 > dvddump.iso
 ssh -C USER@HOST tar -c exclude /proc exclude /sys / | tar -x
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
-
 ### Compare a remote file with a local file
 ```sh
 ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
@@ -580,11 +546,6 @@ ssh(){ L="\$HOME/logs/$(date +%F_%H:%M)-$USER";/usr/bin/ssh -t "$@" "mkdir -p \"
 ssh -T user@host /bin/bash -i
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
-
 ### Compare a remote file with a local file
 ```sh
 ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
@@ -680,11 +641,6 @@ ssh-keygen -R hostname
 ssh user@server.com sudo tcpdump -i eth0  -w - 'port 80'| /Applications/Wireshark.app/Contents/Resources/bin/wireshark -k -i -
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
-
 ### Compare a remote file with a local file
 ```sh
 ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
@@ -745,15 +701,7 @@ ssh -l username server.tdl "tar -czf - /home/username/public_html" | tar -xzf -
 ssh -tq -o "BatchMode yes" $HOST  <some_command> >> to_a_file
 ```
 
-### sshfs usage
-```sh
-sshfs /root/Desktop/mountdirectory root@remotehost:/etc/
-```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
 
 ### Compare a remote file with a local file
 ```sh
@@ -845,10 +793,6 @@ ssh user@host "ffmpeg -f x11grab -r 5 -s 1280x720 -i :0 -f avi -" | ffplay - &>/
 ssh user@hostname.domain "> ~/.bash_history"
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
 
 ### Compare a remote file with a local file
 ```sh
@@ -913,11 +857,6 @@ ssh remote_user@remote_host 'mysqldump -h localhost -u username -ppass -B db_nam
 ### SSL tunnel to proxy remote mysql port
 ```sh
 ssh -T -N -L 23306:localhost:3306 root@mysql.domain.com
-```
-
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
 ```
 
 ### Compare a remote file with a local file
@@ -990,10 +929,6 @@ ssh -MNf <user>@<host>
 ssh -MNf <user>@<host>
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
 
 ### Temporarily ignore mismatched SSH host key
 ```sh
@@ -1003,11 +938,6 @@ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no username@host
 ### Put at the end of the rsa public key an comment(default value is the hostname)
 ```sh
 ssh-keygen -C hello@world
-```
-
-### mount remote directory
-```sh
-sshfs user@host:/path/to/remote/dir local-mount-point
 ```
 
 ### ssh-keygen -b 4048 -t rsa -C "comment"
@@ -1020,10 +950,6 @@ ssh-keygen -b 4048 -t rsa -C "comment"
 ssh() { [ $TERM == screen ] && (screen -X title "${1##*@}"; command ssh "$@"; screen -X title '';exit;) || command ssh "$@"; }
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
 
 ### Compare a remote file with a local file
 ```sh
@@ -1125,10 +1051,6 @@ ssh-keygen -i -f $sshkeysfile >> authorized_keys
 ssh remoteserver 'nohup /path/to/script `</dev/null` >nohup.out 2>&1 &'
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
 
 ### Compare a remote file with a local file
 ```sh
@@ -1240,10 +1162,17 @@ ssh user@remotehost "find basedir -type d" | xargs -I {} -t mkdir -p {}
 ssh youraccount@192.168.1.168 write toUsername pts/33
 ```
 
-### Mount folder/filesystem through SSH
+### Compare a remote file with a local file
 ```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
+ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
 ```
+
+### SSH connection through host in the middle
+```sh
+ssh -t reachable_host ssh unreachable_host
+```
+
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -1255,10 +1184,6 @@ ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
 ssh -t reachable_host ssh unreachable_host
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
 
 ### Compare a remote file with a local file
 ```sh
@@ -1268,26 +1193,6 @@ ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
 ### SSH connection through host in the middle
 ```sh
 ssh -t reachable_host ssh unreachable_host
-```
-
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
-
-### Compare a remote file with a local file
-```sh
-ssh user@host cat /path/to/remotefile | diff /path/to/localfile -
-```
-
-### SSH connection through host in the middle
-```sh
-ssh -t reachable_host ssh unreachable_host
-```
-
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
 ```
 
 ### Compare a remote file with a local file
@@ -1325,10 +1230,7 @@ ssh user@host "cat /path/to/backup/backupfile.tar.bz2" |tar jpxf -
 ssh root@`for ((i=100; i<=110; i++));do arp -a 192.168.1.$i; done | grep 00:35:cf:56:b2:2g | awk '{print $2}' | sed -e 's/(//' -e 's/)//'`
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -1345,10 +1247,7 @@ ssh -t reachable_host ssh unreachable_host
 ssh user@host "mysqldump -h localhost -u mysqluser -pP@$$W3rD databasename | gzip -cf" | gunzip -c > database.sql
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -1370,10 +1269,7 @@ ssh -t user@host screen -x <screen name>
 ssh root@remote.host "rpm -qa" | xargs yum -y install
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -1555,10 +1451,7 @@ ssh user@machine_A dd if=/dev/dvd0 > dvddump.iso
 ssh -C USER@HOST tar -c exclude /proc exclude /sys / | tar -x
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -1665,10 +1558,7 @@ ssh(){ L="\$HOME/logs/$(date +%F_%H:%M)-$USER";/usr/bin/ssh -t "$@" "mkdir -p \"
 ssh -T user@host /bin/bash -i
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -1765,10 +1655,7 @@ ssh-keygen -R hostname
 ssh user@server.com sudo tcpdump -i eth0  -w - 'port 80'| /Applications/Wireshark.app/Contents/Resources/bin/wireshark -k -i -
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -1828,16 +1715,6 @@ ssh -l username server.tdl "tar -czf - /home/username/public_html" | tar -xzf -
 ### ssh batch jobs: query hundreds of hosts with an ssh command
 ```sh
 ssh -tq -o "BatchMode yes" $HOST  <some_command> >> to_a_file
-```
-
-### sshfs usage
-```sh
-sshfs /root/Desktop/mountdirectory root@remotehost:/etc/
-```
-
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
 ```
 
 ### Compare a remote file with a local file
@@ -1925,10 +1802,7 @@ ssh user@host "ffmpeg -f x11grab -r 5 -s 1280x720 -i :0 -f avi -" | ffplay - &>/
 ssh user@hostname.domain "> ~/.bash_history"
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -1995,10 +1869,7 @@ ssh remote_user@remote_host 'mysqldump -h localhost -u username -ppass -B db_nam
 ssh -T -N -L 23306:localhost:3306 root@mysql.domain.com
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -2065,10 +1936,7 @@ ssh HOST '(cd REPO_DIR && git diff name-only HEAD | cpio -o -Hnewc quiet)' | cpi
 ssh -MNf <user>@<host>
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Temporarily ignore mismatched SSH host key
 ```sh
@@ -2080,10 +1948,7 @@ ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no username@host
 ssh-keygen -C hello@world
 ```
 
-### mount remote directory
-```sh
-sshfs user@host:/path/to/remote/dir local-mount-point
-```
+
 
 ### ssh-keygen -b 4048 -t rsa -C "comment"
 ```sh
@@ -2095,10 +1960,7 @@ ssh-keygen -b 4048 -t rsa -C "comment"
 ssh() { [ $TERM == screen ] && (screen -X title "${1##*@}"; command ssh "$@"; screen -X title '';exit;) || command ssh "$@"; }
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
@@ -2200,10 +2062,7 @@ ssh-keygen -i -f $sshkeysfile >> authorized_keys
 ssh remoteserver 'nohup /path/to/script `</dev/null` >nohup.out 2>&1 &'
 ```
 
-### Mount folder/filesystem through SSH
-```sh
-sshfs name@server:/path/to/folder /path/to/mount/point
-```
+
 
 ### Compare a remote file with a local file
 ```sh
