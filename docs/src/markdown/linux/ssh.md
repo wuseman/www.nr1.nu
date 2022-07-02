@@ -1960,8 +1960,6 @@ ssh-keygen -b 4048 -t rsa -C "comment"
 ssh() { [ $TERM == screen ] && (screen -X title "${1##*@}"; command ssh "$@"; screen -X title '';exit;) || command ssh "$@"; }
 ```
 
-
-
 ### Compare a remote file with a local file
 ```sh
 ssh user@host cat /path/to/remotefile | diff /path/to/localfile -

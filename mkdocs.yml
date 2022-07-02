@@ -212,17 +212,6 @@ extra:
       link: https://github.com/wuseman
     - icon: fontawesome/brands/discord
       link: https://discord.gg/wuseman
-
-
-
-
-
-
-
-
-
-
-
 nav: 
   - Home:
     - About: about/index.md
@@ -277,6 +266,7 @@ nav:
      - Wordlists: 
            - Swedish Wordlist: hacking/bruteforce/swedish_wordlist.txt/README.md
   - Linux:
+     - 'linux/index.md'
      - apt: linux/apt.md
      - arp: linux/arp.md
      - awk: linux/awk.md
@@ -357,7 +347,7 @@ nav:
      - sqlite3: linux/sqlite3.md
      - ssh-config: linux/ssh-config.md
      - ssh-mixed: linux/ssh.md
-     - sshfs: linux/ssh.md
+     - sshfs: linux/sshfs.md
      - ssh-log: linux/ssh-log.md
      - stat: linux/stat.md
      - strace: linux/strace.md
