@@ -325,6 +325,7 @@ nav:
      - kernel: linux/kernel.md
      - kill: linux/kill.md
      - lftp: linux/lftp.md
+     - links: linux/links.md
      - license: linux/license.md
      - log: linux/log.md
      - ls: linux/ls.md
@@ -354,12 +355,17 @@ nav:
      - rdesktop: linux/rdesktop.md
      - rename: linux/rename.md
      - rg: linux/rg.md
+     - rm: linux/rm.md
+     - rsync: linux/rsync.md
      - screen: linux/screen.md
      - sed: linux/sed.md
+     - shuf: linux/shuf.md
      - shopt: linux/shopt.md
      - sort: linux/sort.md
      - sqlmap: linux/sqlmap.md
+     - sqlite3: linux/sqlite3.md
      - ssh-config: linux/ssh-config.md
+     - ssh-mixed: linux/ssh.md
      - ssh-log: linux/ssh-log.md
      - stat: linux/stat.md
      - strace: linux/strace.md
