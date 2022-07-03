@@ -230,7 +230,21 @@ nav:
   - Hacking: 
      - 'hacking/index.md'
      - Android: 
-        - WADBPWN: hacking/android/wadpwn/README.md
+        - FRP Bypass:
+            - Android 12 (Any): hacking/android/frp_bypass/android.12/README.md
+            - Samsung:
+                - Samsung Galaxy A5: hacking/android/frp_bypass/samsung/Samsung_Galaxy.A5_FRP.Bypass/README.md
+                - Samsung Galaxy A10: hacking/android/frp_bypass/samsung/Samsung_Galaxy.A10_FRP.Bypass
+                - Samsung Galaxy S8: hacking/android/frp_bypass/samsung/Samsung_Galaxy.S8-FRP.Bypass
+                - Samsung Galaxy S10: hacking/android/frp_bypass/samsung/Samsung_Galaxy.s10_FRP.Bypass
+                - Samsung Xcover 4: hacking/android/frp_bypass/samsung/Samsung.Xcover.4-FrpBypass
+            - Huawei:
+                - Huawei Mediatab T5: hacking/android/frp_bypass/huawei/Huawei_Mediatab-T5-FRP-Bypass_V8.0/README.md
+            - Motorola: 
+                - Motorola Moto E4 Plus: hacking/android/frp_bypass/Motorola/Motorola_Moto_E4.Plus.v7.1-FRP_BYPASS/README.md
+            - LG:
+                - LG G6: hacking/android/frp_bypass/lg/LG_G6-FRP-Bypass/README.md
+        - wadpwn: hacking/android/wadpwn/README.md
      - Bios: 
         - HP Bios: hacking/bios/hp_device_and_bios-hacking/README.md
      - Bruteforce: 
@@ -244,24 +258,31 @@ nav:
         - Acer C720: hacking/chromebook/acer_chromebook_c720/README.md
         - Acer C740: hacking/chromebook/acer_chromebook_c740/README.md
         - Asus C203sa: hacking/chromebook/asus_c203sa/README.md
+     - Dorks: 
+        - Google Dorks: /mnt/nr1/home/wuseman/m/docs/src/markdown/hacking/dorks/google/README.md
      - Radio: 
         - Boose Soundtouch: hacking/radio/boose_soundtouch/README.md
      - Router:
+        - Tools:
+            - (Telia)-Bruteforcer: hacking/routers/tools/telia-bruteforcer/README.md
+            - (TFTP)-Flash: hacking/routers/tools/tftp-flash/README.md
+        - Huawei: 
+            - (Tele2)-B593u-12: hacking/routers/huawei/tele2_huawei_b593u-12/README.md
         - Inteno:
-            - FG500: hacking/routers/inteno/FG500/README.md
+            - (NetAtOnce)-FG500: hacking/routers/inteno/FG500/README.md
         - Technicolor: 
-           - DGAGA4330TS: hacking/routers/technicolor/dga4330ts/README.md
-           - TG799vacXTREAM 17.2: hacking/routers/technicolor/t799vacxtreme17.2/README.md
-           - TG799vacXTREAM 18.1: hacking/routers/technicolor/tg799vacxtream18.1/README.md
-           - TG799vnv2-10.5.1.Q:  https://github.com/wuseman/TG799vnv2-10.5.1.Q-SMART-3.6.1/blob/87c7c016a8d9a44cae298c16a1233348350a6de3/README.md
+           - (Telia)-DGAGA4330TS: hacking/routers/technicolor/dga4330ts/README.md
+           - (Telia)-TG799vacXTREAM 17.2: hacking/routers/technicolor/t799vacxtreme17.2/README.md
+           - (Telia)-TG799vnv2-10.5.1.Q:  https://github.com/wuseman/TG799vnv2-10.5.1.Q-SMART-3.6.1/blob/87c7c016a8d9a44cae298c16a1233348350a6de3/README.md
+           - (Telenor)-TG799vacXTREAM 18.1: hacking/routers/technicolor/tg799vacxtream18.1/README.md
         - Sagemcom: 
-           - F@st 5430: hacking/routers/sagemcom/FAST5370e/README.md
+           - (Telia)-F@st 5430: hacking/routers/sagemcom/FAST5370e/README.md
      - Switches:
         - Cisco: 
-           - C1111 8PLTEEA: hacking/switches/cisco/c1111_8plteea/README.md
+           - (Telia)-C1111 8PLTEEA: hacking/switches/cisco/c1111_8plteea/README.md
         - Édge Core: 
-           - ES3510MA: hacking/switches/edge-core/es3510ma/README.md
-     - Misc: 
+           - (Unknown)-ES3510MA: hacking/switches/edge-core/es3510ma/README.md
+     - UserAgents: 
            - UserAgents: 'misc/user_agents.md'
      - Wordlists: 
            - Swedish Wordlist: hacking/bruteforce/swedish_wordlist.txt/README.md
@@ -280,7 +301,7 @@ nav:
      - comm: linux/comm.md
      - cryptsetup: linux/cryptsetup.md
      - curl: linux/curl.md
-     - csfr-injections: linux/linux/csfr-injections.md
+     - csfr injections: linux/lcsfr-injections.md
      - databases: linux/databases.md
      - dd: linux/dd.md
      - dev_and_proc: linux/dev_and_proc.md
@@ -295,7 +316,7 @@ nav:
      - exiftool: linux/exiftool.md
      - ffmpeg: linux/ffmpeg.md
      - find: linux/find.md
-     - for: linux/for.md
+     - for loop: linux/for.md
      - git: linux/git.md
      - gnupg: linux/gnupg.md
      - grep: linux/grep.md
@@ -308,7 +329,6 @@ nav:
      - kernel: linux/kernel.md
      - kill: linux/kill.md
      - lftp: linux/lftp.md
-
      - links: linux/links.md
      - license: linux/license.md
      - log: linux/log.md
@@ -319,7 +339,7 @@ nav:
      - man: linux/man.md
      - masscan: linux/masscan.md
      - matomo: linux/matomo.md
-     - merge-tricks: linux/merge-tricks.md
+     - text tricks: linux/merge-tricks.md
      - mkdocs: linux/mkdocs.md
      - mplayer: linux/mplayer.md
      - mutt: linux/mutt.md
@@ -331,7 +351,7 @@ nav:
      - nmap2: linux/nmap2.md
      - od: linux/od.md
      - parallel: linux/parallel.md
-     - paste_and_pr: linux/paste_and_pr.md
+     - paste and pr: linux/paste_and_pr.md
      - perf: linux/perf.md
      - pgrep: linux/pgrep.md
      - ping: linux/ping.md
@@ -365,11 +385,11 @@ nav:
      - thermal: linux/thermal.md
      - top: linux/top.md
      - tshark: linux/tshark.md
-     - until: linux/until.md
+     - until loop: linux/until.md
      - vim: linux/vim.md
      - wget: linux/wget.md
      - whatismyip: linux/whatismyip.md
-     - while: linux/while.md
+     - while loop: linux/while.md
      - wireguard: linux/wireguard.md
      - xargs: linux/xargs.md
      - xss attack: linux/xsshacking.md

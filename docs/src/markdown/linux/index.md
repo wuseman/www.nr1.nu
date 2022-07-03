@@ -376,7 +376,43 @@ done
 done
 ```
 
+### Generate a random user_agent as User-Agent when mirroring / bruteforcing / spidering
 
+```sh
+shuf -e "$(curl -s https://raw.githubusercontent.com/wuseman/www.nr1.nu/main/docs/src/markdown/misc/user_agents.md | \
+    sed -n '22,$p' | \
+    shuf -n 1)"
+```
+
+### Check were a shorturl is taking us
+
+```sh
+curl -Ls -o /dev/null -w %{url_effective} ${1}
+```
+
+### Scan our network and print result in nice columns
+
+```sh 
+nmap -sn 192.168.1.0/24 -oG | awk '$4=="Status:" && $5=="Up" {print $0}'|column -t
+```
+
+### Ports we probably wanna set as accpepted in our iptable chains
+
+```sh
+lsof -i -nlP|awk '{print $9, $8, $1}'|sed 's/.*://'|sort -u|column  -t
+```
+
+### Print all ips that we have a conection with atm
+
+```sh
+netstat -lantp | grep ESTABLISHED |awk '{print $5}' | awk -F: '{print $1}' | sort -u
+```
+
+### Print title of website:
+
+```sh
+echo -e "URL Title: $(curl -s $1|grep -i title|cut -d'<' -f2|cut -d'>' -f2)"
+```
 
 ### Check if a zip or a rar file has password-protection
 
