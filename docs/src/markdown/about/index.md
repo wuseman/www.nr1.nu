@@ -1,3 +1,9 @@
+<h2 align="center">welcome to wuziduzi world!</h2>
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/26827453/176996391-b918eb23-253c-4df0-a8af-a1034e9e122e.png" />
+</p>
+
+
 !!! success "This website is my worldHQ from now."
 
 - For me time is more valuable than money and I love to hack everything that you can imagine. 
@@ -15,9 +21,5 @@
 - I am a 100% non-profit hacker and if you want to donate money, please send them to GNU or Gentoo and support open source! (don't forget to mention my username, please) Thanks
 
 - If you see something dangerous or what I can do better, get in touch please and we make internet to a better place!!
-
-- If you help me I will help you, ezi?
-
-
 
 
