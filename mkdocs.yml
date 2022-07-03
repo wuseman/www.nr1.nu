@@ -302,7 +302,7 @@ nav:
      - comm: linux/comm.md
      - cryptsetup: linux/cryptsetup.md
      - curl: linux/curl.md
-     - csfr injections: linux/lcsfr-injections.md
+     - csfr injections: linux/csfr-injections.md
      - databases: linux/databases.md
      - dd: linux/dd.md
      - dev_and_proc: linux/dev_and_proc.md
@@ -408,6 +408,5 @@ nav:
         - 'Search with Regex': wiki/emagnet/Searching-&-Regex.md
   - Windows:
      - bios: windows/bios.md
-     - lpe: windows/lpe.md
      - rdp: windows/rdp.md
      - wmic: windows/wmic2.md

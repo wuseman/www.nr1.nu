@@ -122,8 +122,6 @@ find /glftpd/site/archive -type f|grep '([0-9]\{1,9\})\.[^.]\+$'|parallel -n1 -j
 
 ###  Create a progress bar over entire window until we count to 1000
 
-![Screenshot](.previews/parallel_print_progress.gif)
-
 ```sh
 seq 1000 |parallel -j30 --bar '(echo {};sleep 0.1)'
 ```
@@ -144,8 +142,8 @@ netstat -lantp | grep ESTABLISHED |awk '{print $5}' | awk -F: '{print $1}' | sor
 ```sh
 int main(void)
 {
-        system("ls /path/to/.passwd");
-        return 0;
+    system("ls /path/to/.passwd");
+    return 0;
 }
 ```
 
