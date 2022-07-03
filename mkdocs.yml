@@ -234,10 +234,10 @@ nav:
             - Android 12 (Any): hacking/android/frp_bypass/android.12/README.md
             - Samsung:
                 - Samsung Galaxy A5: hacking/android/frp_bypass/samsung/Samsung_Galaxy.A5_FRP.Bypass/README.md
-                - Samsung Galaxy A10: hacking/android/frp_bypass/samsung/Samsung_Galaxy.A10_FRP.Bypass
-                - Samsung Galaxy S8: hacking/android/frp_bypass/samsung/Samsung_Galaxy.S8-FRP.Bypass
-                - Samsung Galaxy S10: hacking/android/frp_bypass/samsung/Samsung_Galaxy.s10_FRP.Bypass
-                - Samsung Xcover 4: hacking/android/frp_bypass/samsung/Samsung.Xcover.4-FrpBypass
+                - Samsung Galaxy A10: hacking/android/frp_bypass/samsung/Samsung_Galaxy.A10_FRP.Bypass/README.md
+                - Samsung Galaxy S8: hacking/android/frp_bypass/samsung/Samsung_Galaxy.S8-FRP.Bypass/README.md
+                - Samsung Galaxy S10: hacking/android/frp_bypass/samsung/Samsung_Galaxy.s10_FRP.Bypass/README.md
+                - Samsung Xcover 4: hacking/android/frp_bypass/samsung/Samsung.Xcover.4-FrpBypass/README.md
             - Huawei:
                 - Huawei Mediatab T5: hacking/android/frp_bypass/huawei/Huawei_Mediatab-T5-FRP-Bypass_V8.0/README.md
             - Motorola: 
@@ -259,7 +259,8 @@ nav:
         - Acer C740: hacking/chromebook/acer_chromebook_c740/README.md
         - Asus C203sa: hacking/chromebook/asus_c203sa/README.md
      - Dorks: 
-        - Google Dorks: /mnt/nr1/home/wuseman/m/docs/src/markdown/hacking/dorks/google/README.md
+        - Google Dorks: hacking/dorks/google/README.md
+        - SQL Dorks: hacking/dorks/sql/README.md
      - Radio: 
         - Boose Soundtouch: hacking/radio/boose_soundtouch/README.md
      - Router:
@@ -392,7 +393,7 @@ nav:
      - while loop: linux/while.md
      - wireguard: linux/wireguard.md
      - xargs: linux/xargs.md
-     - xss attack: linux/xsshacking.md
+     - xss-hacking: linux/xsshacking.md
   - Wiki:
      - 'wiki/index.md'
      - ADB:
