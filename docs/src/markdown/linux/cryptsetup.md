@@ -123,4 +123,40 @@ mount /dev/mapper/${DISK1_3} /mnt/<choosen_name>
 ```sh
 cryptsetup luksClose /dev/mapper/${DISK1_VGname}
 ```
+	
+### For lazy cows! Just edit the drivename or partition (BE CAREFUL)
 
+
+```sh
+#!/bin/bash
+### Author: wuseman
+### Encrypt and mount hdd
+
+DRIVE=""/dev/nvme0n1p4"
+KEY=".key_files/virtual-vmware.key"
+PVNAME="/dev/mapper/vmware"
+LVMDRIVE="/dev/mapper/virtual-vmware"
+MOUNTPATH="/mnt/vmware"
+	
+mkdir ~/.key_files
+dd if=/dev/urandom of=${KEY} bs=8M count=1
+
+cryptsetup -d ${KEY} \
+	--iter-time 5000 \
+	--use-random \
+	--cipher twofish-xts-plain64 \
+	--hash sha512 luksFormat ${DRIVE}
+
+cryptsetup -d ${KEY} \
+	luksOpen ${DRIVE} vmware
+
+pvcreate ${PVNAME}
+vgcreate virtual  ${PVNAME}
+lvcreate -l1100%FREE -nvmware virtual
+mkfs.ext4 ${LVMDRIVE}
+mkdir ${MOUNTPATH}
+mount ${LVMDRIVE} ${MOUNTPATH}
+```	
+
+	
+	
