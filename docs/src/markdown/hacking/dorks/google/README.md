@@ -2,23 +2,493 @@
 
 Go to [Google](https://google.com) and search for any of the below, modify the dork after you needs
 
+
+A Google Dork is a search query that looks for specific information on Google’s search engine. Google Dorks are developed and published by hackers and are often used in “Google Hacking”.
+
+Google Dorks are extremely powerful. They allow you to search for a wide variety of information on the internet and can be used to find information that you didn’t even know existed.
+
+Because of the power of Google Dorks, they are often used by hackers to find information about their victims or to find information that can be used to exploit vulnerabilities in websites and web applications.
+
+Google Search Engine is designed to crawl anything over the internet and this helps us to find images, text, videos, news and plethora of information sources. With it’s tremendous capability to crawl, it indexes data along the way, which also includes sensitive information like email addresses, login credentials, sensitive files, website vulnerabilities, and even financial information. In many cases, We as a user won’t be even aware of it.
+
+
+### How to Use Google Dorks?
+
+To use a Google Dork, you simply type in a Dork into the search box on Google and press “Enter”. Here are some of the best Google Dork queries that you can use to search for information on Google.
+Google Dork Queries Examples:
+
+
+## Search Operators
+
+### cache: 
 ```sh
-intitle:
-inurl:
-intext:
-define:
-site:
-phonebook:
-maps:
-book:
-info:
-movie:
-weather:
-related:
-link:
+[cache:www.google.com web] will show the cached content with the word “web” highlighted. This functionality is also accessible by clicking on the “Cached” link on Google’s main results page. The query [cache:] will show the version of the web page that Google has in its cache. For instance, [cache:www.google.com] will show Google’s cache of the Google homepage.
+```
+### link: 
+```sh
+[link:www.google.com] will list webpages that have links pointing to the Google homepage.
+```        
+
+### related:
+```sh
+[related:www.google.com] will list web pages that are similar to the Google homepage.
+```
+### info:
+```sh
+[info:www.google.com] will show information about the Google homepage.
+```
+
+### define:
+```sh
+The query [define:] will provide a definition of the words you enter after it, gathered from various online sources. The definition will be for the entire phrase entered (i.e., it will include all the words in the exact order you typed them). Eg: [define:google]
+```
+### stocks:
+```sh
+If you begin a query with the [stocks:] operator, Google will treat the rest of the query terms as stock ticker symbols, and will link to a page showing stock information for those symbols. For instance, [stocks: intc yhoo] will show information about Intel and Yahoo. (Note you must type the ticker symbols, not the company name.)
+```
+
+### site:
+ ```sh
+ If you include [site:] in your query, Google will restrict the results to those websites in the given domain. For instance, [help site:www.google.com] will find pages about help within www.google.com. [help site:com] will find pages about help within .com urls. Note there can be no space between the “site:” and the domain.
+```
+
+ ### allintitle:
+ ```sh
+ If you start a query with [allintitle:], Google will restrict the results to those with all of the query words in the title. For instance, [allintitle: google search] will return only documents that have both “google” and “search” in the title.
+```
+### intitle:
+
+```sh
+If you include [intitle:] in your query, Google will restrict the results to documents containing that word in the title. For instance, [intitle:google search] will return documents that mention the word “google” in their title, and mention the word “search” anywhere in the document (title or no). Putting [intitle:] in front of every word in your query is equivalent to putting [allintitle:] at the front of your query: [intitle:google intitle:search] is the same as [allintitle: google search].
+```
+
+### allinurl:
+
+```sh
+
+ If you start a query with [allinurl:], Google will restrict the results to those with all of the query words in the url. For instance, [allinurl: google search] will return only documents that have both “google” and “search” in the url. Note that [allinurl:] works on words, not url components. In particular, it ignores punctuation. Thus, [allinurl: foo/bar] will restrict the results to page with the words “foo” and “bar” in the url, but won’t require that they be separated by a slash within that url, that they be adjacent, or that they be in that particular word order. There is currently no way to enforce these constraints.
+```
+
+### inurl:
+
+```sh
+If you include [inurl:] in your query, Google will restrict the results to documents containing that word in the url. For instance, [inurl:google search] will return documents that mention the word “google” in their url, and mention the word “search” anywhere in the document (url or no). Putting “inurl:” in front of every word in your query is equivalent to putting “allinurl:” at the front of your query: [inurl:google inurl:search] is the same as [allinurl: google search].
+```
+
+
+## Google Dork Queries Examples:
+
+* This Dork searches for websites on .edu domains that contain the words “phone number”. student “phone number” 
+* This Dork searches for websites on .edu domains that contain the words “student” and “phone number”.
+
+```sh
+site:.edu “phone number”
+```
+* This Dork searches for websites on .edu domains that contain the words “login”. This Dork searches for school websites that contain student login information.
+```sh
+ inurl:edu “login”
+```
+
+* This Dork searches for websites on .edu domains that contain the words “powered by vbulletin”. This Dork searches for school websites that are running on the vbulletin forum software.
+```sh
+“powered by vbulletin” site:.edu
+```
+
+* This Dork searches for websites on .gov domains that contain the words “powered by vbulletin”. This Dork searches for governmental websites that are running on the vbulletin forum software.
+```sh
+“powered by vbulletin” site:.gov
+```
+
+* This Dork searches for websites on .mil domains that contain the words “powered by vbulletin”. This Dork searches for military websites that are running on the vbulletin forum software.
+```sh
+“powered by vbulletin” site:.mil 
+```
+
+* This Dork searches for websites on .edu domains that contain the words “powered by vbulletin”. This Dork searches for school websites that are running on the vbulletin forum software.
+```sh
+“powered by vbulletin” inurl:.edu
+```
+
+
+* This Dork searches for websites on .mil domains that contain the words “powered by vbulletin”. This Dork searches for military websites that are running on the vbulletin forum software.
+```sh
+“powered by vbulletin” inurl:.mil
+```
+
+
+* This Dork searches for websites on .com domains that contain the words “powered by vbulletin”. This Dork searches for websites that are running on the vbulletin forum software.
+```sh
+inurl:.com “powered by vbulletin”
+```
+
+
+* This Dork searches for websites on .edu domains that contain the words “register forum”. This Dork searches for school websites that allow you to register for a forum.
+```sh
+inurl:.edu “register forum” 
+```
+
+
+* This Dork searches for websites on .gov domains that contain the words “register forum”. This Dork searches for governmental websites that allow you to register for a forum.
+```sh
+inurl:.gov “register forum”
+```
+
+[Scraper API](https://www.scraperapi.com/?fp_ref=box-piper-app) provides a proxy service designed for web scraping. With over 20 million residential IPs across 12 countries, as well as software that can handle JavaScript rendering and solving CAPTCHAs, you can quickly complete large scraping jobs without ever having to worry about being blocked by any servers.
+
+## Google Dorks Updated Database:
+```sh
+Nina Simone intitle:”index.of” “parent directory” “size” “last modified” “description” I Put A Spell On You (mp4|mp3|avi|flac|aac|ape|ogg) -inurl:(jsp|php|html|aspx|htm|cf|shtml|lyrics-realm|mp3-collection) -site:.info
+Bill Gates intitle:”index.of” “parent directory” “size” “last modified” “description” Microsoft (pdf|txt|epub|doc|docx) -inurl:(jsp|php|html|aspx|htm|cf|shtml|ebooks|ebook) -site:.info
+parent directory /appz/ -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+parent directory DVDRip -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+parent directory Xvid -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+parent directory Gamez -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+parent directory MP3 -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+parent directory Name of Singer or album -xxx -html -htm -php -shtml -opendivx -md5 -md5sums
+filetype:config inurl:web.config inurl:ftp
+“Windows XP Professional” 94FBR
+ext:(doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml) (intext:confidential salary | intext:"budget approved") inurl:confidential
+ext:(doc | pdf | xls | txt | ps | rtf | odt | sxw | psw | ppt | pps | xml) (intext:confidential salary | intext:”budget approved”) inurl:confidential
+ext:inc "pwd=" "UID="
+ext:ini intext:env.ini
+ext:ini Version=... password
+ext:ini Version=4.0.0.4 password
+ext:ini eudora.ini
+ext:ini intext:env.ini
+ext:log "Software: Microsoft Internet Information Services _._"
+ext:log "Software: Microsoft Internet Information
+ext:log "Software: Microsoft Internet Information Services _._"
+ext:log \"Software: Microsoft Internet Information Services _._\"
+ext:mdb inurl:_.mdb inurl:fpdb shop.mdb
+ext:mdb inurl:_.mdb inurl:fpdb shop.mdb
+ext:mdb inurl:_.mdb inurl:fpdb shop.mdb
+filetype:SWF SWF
+filetype:TXT TXT
+filetype:XLS XLS
+filetype:asp DBQ=" _ Server.MapPath("_.mdb")
+filetype:asp "Custom Error Message" Category Source
+filetype:asp + "[ODBC SQL"
+filetype:asp DBQ=" _ Server.MapPath("_.mdb")
+filetype:asp DBQ=\" _ Server.MapPath(\"_.mdb\")
+filetype:asp “Custom Error Message” Category Source
+filetype:bak createobject sa
+filetype:bak inurl:"htaccess|passwd|shadow|htusers"
+filetype:bak inurl:\"htaccess|passwd|shadow|htusers\"
+filetype:conf inurl:firewall -intitle:cvs
+filetype:conf inurl:proftpd. PROFTP FTP server configuration file reveals
+filetype:dat "password.dat
+filetype:dat \"password.dat\"
+filetype:eml eml +intext:"Subject" +intext:"From" +intext:"To"
+filetype:eml eml +intext:\"Subject\" +intext:\"From\" +intext:\"To\"
+filetype:eml eml +intext:”Subject” +intext:”From” +intext:”To”
+filetype:inc dbconn
+filetype:inc intext:mysql*connect
+filetype:inc mysql_connect OR mysql_pconnect
+filetype:log inurl:"password.log"
+filetype:log username putty PUTTY SSH client logs can reveal usernames
+filetype:log “PHP Parse error” | “PHP Warning” | “PHP Error”
+filetype:mdb inurl:users.mdb
+filetype:ora ora
+filetype:ora tnsnames
+filetype:pass pass intext:userid
+filetype:pdf "Assessment Report" nessus
+filetype:pem intext:private
+filetype:properties inurl:db intext:password
+filetype:pst inurl:"outlook.pst"
+filetype:pst pst -from -to -date
+filetype:reg reg +intext:"defaultusername" +intext:"defaultpassword"
+filetype:reg reg +intext:\"defaultusername\" +intext:\"defaultpassword\"
+filetype:reg reg +intext:â? WINVNC3â?
+filetype:reg reg +intext:”defaultusername” +intext:”defaultpassword”
+filetype:reg reg HKEY* Windows Registry exports can reveal
+filetype:reg reg HKEY_CURRENT_USER SSHHOSTKEYS
+filetype:sql "insert into" (pass|passwd|password)
+filetype:sql ("values _ MD5" | "values _ password" | "values _ encrypt")
+filetype:sql (\"passwd values\" | \"password values\" | \"pass values\" )
+filetype:sql (\"values _ MD\" | \"values _ password\" | \"values _ encrypt\")
+filetype:sql +"IDENTIFIED BY" -cvs
+filetype:sql password
+filetype:sql password
+filetype:sql “insert into” (pass|passwd|password)
+filetype:url +inurl:"ftp://" +inurl:";@"
+filetype:url +inurl:\"ftp://\" +inurl:\";@\"
+filetype:url +inurl:”ftp://” +inurl:”;@”
+filetype:xls inurl:"email.xls"
+filetype:xls username password email
+index of: intext:Gallery in Configuration mode
+index.of passlist
+index.of perform.ini mIRC IRC ini file can list IRC usernames and
+index.of.dcim
+index.of.password
+intext:" -FrontPage-" ext:pwd inurl:(service | authors | administrators | users)
+intext:""BiTBOARD v2.0" BiTSHiFTERS Bulletin Board"
+intext:"# -FrontPage-" ext:pwd inurl:(service | authors | administrators | users) "# -FrontPage-" inurl:service.pwd
+intext:"#mysql dump" filetype:sql
+intext:"#mysql dump" filetype:sql 21232f297a57a5a743894a0e4a801fc3
+intext:"A syntax error has occurred" filetype:ihtml
+intext:"ASP.NET_SessionId" "data source="
+intext:"About Mac OS Personal Web Sharing"
+intext:"An illegal character has been found in the statement" -"previous message"
+intext:"AutoCreate=TRUE password=_"
+intext:"Can't connect to local" intitle:warning
+intext:"Certificate Practice Statement" filetype:PDF | DOC
+intext:"Certificate Practice Statement" inurl:(PDF | DOC)
+intext:"Copyright (c) Tektronix, Inc." "printer status"
+intext:"Copyright © Tektronix, Inc." "printer status"
+intext:"Emergisoft web applications are a part of our"
+intext:"Error Diagnostic Information" intitle:"Error Occurred While"
+intext:"Error Message : Error loading required libraries."
+intext:"Establishing a secure Integrated Lights Out session with" OR intitle:"Data Frame - Browser not HTTP 1.1 compatible" OR intitle:"HP Integrated Lights-
+intext:"Fatal error: Call to undefined function" -reply -the -next
+intext:"Fill out the form below completely to change your password and user name. If new username is left blank, your old one will be assumed." -edu
+intext:"Generated by phpSystem"
+intext:"Generated by phpSystem"
+intext:"Host Vulnerability Summary Report"
+intext:"HostingAccelerator" intitle:"login" +"Username" -"news" -demo
+intext:"IMail Server Web Messaging" intitle:login
+intext:"Incorrect syntax near"
+intext:"Index of" /"chat/logs"
+intext:"Index of /network" "last modified"
+intext:"Index of /" +.htaccess
+intext:"Index of /" +passwd
+intext:"Index of /" +password.txt
+intext:"Index of /admin"
+intext:"Index of /backup"
+intext:"Index of /mail"
+intext:"Index of /password"
+intext:"Microsoft (R) Windows _ (TM) Version _ DrWtsn32 Copyright (C)" ext:log
+intext:"Microsoft CRM : Unsupported Browser Version"
+intext:"Microsoft ® Windows _ ™ Version _ DrWtsn32 Copyright ©" ext:log
+intext:"Network Host Assessment Report" "Internet Scanner"
+intext:"Network Vulnerability Assessment Report"
+intext:"Network Vulnerability Assessment Report"
+intext:"Network Vulnerability Assessment Report" 本文来自 pc007.com
+intext:"SQL Server Driver][SQL Server]Line 1: Incorrect syntax near"
+intext:"Thank you for your order" +receipt
+intext:"Thank you for your order" +receipt
+intext:"Thank you for your purchase" +download
+intext:"The following report contains confidential information" vulnerability -search
+intext:"phpMyAdmin MySQL-Dump" "INSERT INTO" -"the"
+intext:"phpMyAdmin MySQL-Dump" filetype:txt
+intext:"phpMyAdmin" "running on" inurl:"main.php"
+intextpassword | passcode) intextusername | userid | user) filetype:csv
+intextpassword | passcode) intextusername | userid | user) filetype:csv
+intitle:"index of" +myd size
+intitle:"index of" etc/shadow
+intitle:"index of" htpasswd
+intitle:"index of" intext:connect.inc
+intitle:"index of" intext:globals.inc
+intitle:"index of" master.passwd
+intitle:"index of" master.passwd 007 电脑资讯
+intitle:"index of" members OR accounts
+intitle:"index of" mysql.conf OR mysql_config
+intitle:"index of" passwd
+intitle:"index of" people.lst
+intitle:"index of" pwd.db
+intitle:"index of" spwd
+intitle:"index of" user_carts OR user_cart
+intitle:"index.of \*" admin news.asp configview.asp
+intitle:("TrackerCam Live Video")|("TrackerCam Application Login")|("Trackercam Remote") -trackercam.com
+intitle:(“TrackerCam Live Video”)|(“TrackerCam Application Login”)|(“Trackercam Remote”) -trackercam.com
+inurl:admin inurl:userlist Generic userlist files
+"'dsn: mysql:host=localhost;dbname=" ext:yml | ext:txt "password:"
+"* Authentication Unique Keys and Salts" ext:txt | ext:log
+"-- Dumped from database version" + "-- Dumped by pg_dump version" ext:txt | ext:sql | ext:env | ext:log
+"-- Dumping data for table `admin`" | "-- INSERT INTO `admin`" "VALUES" ext:sql | ext:txt | ext:log | ext:env
+"-- Server version" "-- MySQL Administrator dump 1.4" ext:sql
+"DefaultPassword" ext:reg "[HKEY_LOCAL_MACHINESOFTWAREMicrosoftWindows NTCurrentVersionWinlogon]"
+"Powered by vBulletin(R) Version 5.6.3"
+"System" + "Toner" + "Input Tray" + "Output Tray" inurl:cgi
+"The SQL command completed successfully." ext:txt | ext:log
+"change the Administrator Password." intitle:"HP LaserJet" -pdf
+"define('DB_USER'," + "define('DB_PASSWORD'," ext:txt
+"define('SECURE_AUTH_KEY'" + "define('LOGGED_IN_KEY'" + "define('NONCE_KEY'" ext:txt | ext:cfg | ext:env | ext:ini
+"index of" "/home/000~ROOT~000/etc"
+"index of" inurl:database ext:sql | xls | xml | json | csv
+"keystorePass=" ext:xml | ext:txt -git -gitlab
+"mailer_password:" + "mailer_host:" + "mailer_user:" + "secret:" ext:yml
+"putty.log" ext:log | ext:cfg | ext:txt | ext:sql | ext:env
+"secret_key_base:" ext:exs | ext:txt | ext:env | ext:cfg
+/etc/certs + "index of /" */*
+/etc/config + "index of /" /
+AXIS Camera exploit
+Index of /_vti_pvt +"*.pwd"
+Server: Mida eFramework
+allintext:"Copperfasten Technologies" "Login"
+allintext:"Index Of" "cookies.txt"
+allintext:@gmail.com filetype:log
+ext:php intitle:phpinfo "published by the PHP Group"
+ext:sql | ext:txt intext:"-- phpMyAdmin SQL Dump --" + intext:"admin"
+ext:txt | ext:log | ext:cfg "Building configuration..."
+ext:txt | ext:log | ext:cfg | ext:yml "administrator:500:"
+ext:yml | ext:txt | ext:env "Database Connection Information Database server ="
+intext:"Connection" AND "Network name" AND " Cisco Meraki cloud" AND "Security Appliance details"
+intext:"Healthy" + "Product model" + " Client IP" + "Ethernet"
+intext:"Incom CMS 2.0"
+intext:"SonarQube" + "by SonarSource SA." + "LGPL v3"
+intext:"user name" intext:"orion core" -solarwinds.com
+intext:construct('mysql:host
+intitle:"Agent web client: Phone Login"
+intitle:"Exchange Log In"
+intitle:"Humatrix 8"
+intitle:"Insurance Admin Login" | "(c) Copyright 2020 Cityline Websites. All Rights Reserved." | "http://www.citylinewebsites.com"
+intitle:"NetCamSC*"
+intitle:"NetCamSC*" | intitle:"NetCamXL*" inurl:index.html
+intitle:"NetCamXL*"
+intitle:"Please Login" "Use FTM Push"
+intitle:"Powered by Pro Chat Rooms"
+intitle:"Sphider Admin Login"
+intitle:"Xenmobile Console Logon"
+intitle:"index of" "*.cert.pem" | "*.key.pem"
+intitle:"index of" "*Maildir/new"
+intitle:"index of" "/.idea"
+intitle:"index of" "/xampp/htdocs" | "C:/xampp/htdocs/"
+intitle:"index of" "Clientaccesspolicy.xml"
+intitle:"index of" "WebServers.xml"
+intitle:"index of" "anaconda-ks.cfg" | "anaconda-ks-new.cfg"
+intitle:"index of" "config.exs" | "dev.exs" | "test.exs" | "prod.secret.exs"
+intitle:"index of" "credentials.xml" | "credentials.inc" | "credentials.txt"
+intitle:"index of" "db.properties" | "db.properties.BAK"
+intitle:"index of" "dump.sql"
+intitle:"index of" "filezilla.xml"
+intitle:"index of" "password.yml
+intitle:"index of" "service-Account-Credentials.json" | "creds.json"
+intitle:"index of" "sitemanager.xml" | "recentservers.xml"
+intitle:"index of" intext:"apikey.txt
+intitle:"index of" intext:"web.xml"
+intitle:"index of" intext:credentials
+intitle:"index of" inurl:admin/download
+intitle:"irz" "router" intext:login gsm info -site:*.com -site:*.net
+intitle:"web client: login"
+intitle:("Index of" AND "wp-content/plugins/boldgrid-backup/=")
+intitle:Login intext:HIKVISION inurl:login.asp?
+intitle:index of .git/hooks/
+USG60W|USG110|USG210|USG310|USG1100|USG1900|USG2200|"ZyWALL110"|"ZyWALL310"|"ZyWALL1100"|ATP100|ATP100W|ATP200|ATP500|ATP700|ATP800|VPN50|VPN100|VPN300|VPN000|"FLEX")
+jdbc:mysql://localhost:3306/ + username + password ext:yml | ext:javascript -git -gitlab
+jdbc:oracle://localhost: + username + password ext:yml | ext:java -git -gitlab
+jdbc:postgresql://localhost: + username + password ext:yml | ext:java -git -gitlab
+jdbc:sqlserver://localhost:1433 + username + password ext:yml | ext:java
+site:*gov.* intitle:index.of db
+site:checkin.*.* intitle:"login"
+site:ftp.*.*.* "ComputerName=" + "[Unattended] UnattendMode"
+site:gov ext:sql | ext:dbf | ext:mdb
+site:password.*.* intitle:"login"
+site:portal.*.* intitle:"login"
+site:sftp.*.*/ intext:"login" intitle:"server login"
+site:user.*.* intitle:"login"
+ssh_host_dsa_key.pub + ssh_host_key + ssh_config = "index of / "
+```
+
+## Using special search string for Web Server Detection:
+```sh
+inurl:?XDEBUG_SESSION_START=phpstorm
+inurl:/config/device/wcd
+inurl:\"/phpmyadmin/user_password.php
+intext:\"SonarQube\" + \"by SonarSource SA.\" + \"LGPL v3\"
+inurl:/xprober ext:php
+intext:\"Healthy\" + \"Product model\" + \" Client IP\" + \"Ethernet\"
+inurl:/phpPgAdmin/browser.php
+ext:php | intitle:phpinfo \"published by the PHP Group\"
+allintext:\"Index Of\" \"sftp-config.json\"
+inurl:_vti_bin/Authentication.asmx
+\"Powered by 123LogAnalyzer\"
+intitle:Snoop Servlet
+allintitle:\"Pi-hole Admin Console\"
+intitle:\"Lists Web Service\"
+intitle:\"Monsta ftp\" intext:\"Lock session to IP\"
+intitle:\"Microsoft Internet Information Services 8\" -IIS
+intext:\"index of /\" \"Index of\" access_log
+inurl:\"id=*\" & intext:\"warning mysql_fetch_array()\"
+\"index of /private\" -site:net -site:com -site:org
+inurl:\":8088/cluster/apps\"
+intitle:\"index of\" \"docker.yml\"
+intitle:\"index of\" \"debug.log\" OR \"debug-log\"
+intext:\"This is the default welcome page used to test the correct operation of the Apache
+\"Powered by phpBB\" inurl:\"index.php?s\" OR inurl:\"index.php?style\"
+intitle:\"index of\" \"powered by apache \" \"port 80\"
+intitle:\"Web Server's Default Page\" intext:\"hosting using Plesk\" -www
+site:ftp.*.com \"Web File Manager\"
+intitle:\"Welcome to JBoss\"
+intitle:\"Welcome to nginx!\" intext:\"Welcome to nginx on Debian!\" intext:\"Thank you for\"
+intitle:\"index of\" \"Served by Sun-ONE\"
+-pub -pool intitle:\"index of\" \"Served by\" \"Web Server\"
+intitle:\"index of\" \"server at\"
 
 
 
+## Using special search string to find vulnerable websites:
+
+inurl:php?=id1
+inurl:index.php?id=
+inurl:trainers.php?id=
+inurl:buy.php?category=
+inurl:article.php?ID=
+inurl:play_old.php?id=
+inurl:declaration_more.php?decl_id=
+inurl:pageid=
+inurl:games.php?id=
+inurl:page.php?file=
+inurl:newsDetail.php?id=
+inurl:gallery.php?id=
+inurl:article.php?id=
+inurl:show.php?id=
+inurl:staff_id=
+inurl:newsitem.php?num= andinurl:index.php?id=
+inurl:trainers.php?id=
+inurl:buy.php?category=
+inurl:article.php?ID=
+inurl:play_old.php?id=
+inurl:declaration_more.php?decl_id=
+inurl:pageid=
+inurl:games.php?id=
+inurl:page.php?file=
+inurl:newsDetail.php?id=
+inurl:gallery.php?id=
+inurl:article.php?id=
+inurl:show.php?id=
+inurl:staff_id=
+inurl:newsitem.php?num=
+inurl: 1051/viewer/live/index.html?lang=en
+inurl: inurl:"view.shtml" ext:shtml
+inurl:"/?q=user/password/"
+inurl:"/cgi-bin/guestimage.html" "Menu"
+inurl:"/php/info.php" "PHP Version"
+inurl:"/phpmyadmin/user_password.php
+inurl:"servicedesk/customer/user/login"
+inurl:"view.shtml" "Network"
+inurl:"view.shtml" "camera"
+inurl:"woocommerce-exporter"
+inurl:/?op=register
+inurl:/Jview.htm + "View Video - Java Mode"
+inurl:/Jview.htm + intext:"Zoom :"
+inurl:/adfs/ls/?SAMLRequest
+inurl:/adfs/ls/idpinitiatedsignon
+inurl:/adfs/oauth2/authorize
+inurl:/cgi-bin/manlist?section
+inurl:/eftclient/account/login.htm
+inurl:/homej.html?
+inurl:/index.html?size=2&mode=4
+inurl:/pro_users/login
+inurl:/wp-content/themes/altair/
+inurl:/xprober ext:php
+inurl:RichWidgets/Popup_Upload.aspx
+inurl:Sitefinity/Authenticate/SWT
+inurl:adfs inurl:wctx inurl:wtrealm -microsoft.com
+inurl:authorization.ping
+inurl:https://trello.com AND intext:@gmail.com AND intext:password
+inurl:idp/Authn/UserPassword
+inurl:idp/prp.wsf
+inurl:login.seam
+inurl:nidp/idff/sso
+inurl:oidc/authorize
+inurl:opac_css
+inurl:weblogin intitle:("USG20-VPN"|"USG20W-VPN"|USG40|USG40W|USG60|
+```
+
+### RANDOM
+
+intitle:"index of" ("passenger.*.log" | "passenger.log" | | "production.log" )
+intitle:"index of" " *admin-login.php "
 _news/news.php?id=
 -site:php.net -"The PHP Group" inurl:source inurl:url ext:pHp
 !Host=*.* intext:enc_UserPassword=* ext:pcf
@@ -4244,53 +4714,162 @@ YZboard/view.php?id=
 zb/view.php?uid=
 zentrack/index.php?configFile=
 
-## 2020 Google Dorks List
 
-site:accounts..com/signin/ intitle:"index of" drupal intitle:"index of" admin inurl:login.cgi    Pages Containing Login Portals site:/joomla/administrator
- inurl:/login/index.jsp -site:hertz.*
- intitle:"Index of" inurl:wp-json/oembed    
- intitle:"Index of" phpmyadmin
- intitle:"Index of" wp-admin
- intitle:index.of.?.sql
- inurl: /filemanager/dialog.php
- s3 site:amazonaws.com filetype:log
- inurl:cgi/login.pl
- inurl:zoom.us/j and intext:scheduled for
- site:*/auth intitle:login
- nurl: admin/login.aspx    Pages Containing Login Portals
- "Index of" inurl:webalizer
- "Index of" inurl:phpmyadmin
- "Index of" inurl:htdocs inurl:xampp
- s3 site:amazonaws.com intext:dhcp filetype:txt inurl:apollo
- inurl:/index.aspx/login
- site:amazonaws.com inurl:login.php
- intitle:"IIS Windows Server" -inurl:"IIS Windows Server"
- intitle:"Apache2 Ubuntu Default Page: It works"    
- inurl:/filedown.php?file=
- inurl:Dashboard.jspa intext:"Atlassian Jira Project Management Software"
- inurl:app/kibana intext:Loading Kibana
- site:https://docs.google.com/spreadsheets edit
- inurl:8443 AND -intitle:8443 AND -intext:8443 prohibited|restricted|unauthorized
- intitle:"index of" unattend.xml
- inurl:/admin/index.php
- inurl:bc.googleusercontent.com intitle:index of
- inurl:office365 AND intitle:"Sign In | Login | Portal"
- intext:"@gmail.com" AND intext:"@yahoo.com" filetype:sql
- intitle:OmniDB intext:"user. pwd. Sign in."
- intitle:"qBittorrent Web UI" inurl:8080
- site:com inurl:jboss filetype:log -github.com
- intitle:"index of" ".cpanel/caches/config/"
- inurl:'/scopia/entry/index.jsp'
-inurl:/index.aspx/login
- intitle: "index of" "./" "./bitcoin"
- inurl:/portal/apis/fileExplorer/
- intitle:"index of" "/aws.s3/"
- intitle:"index of" hosts.csv | firewalls.csv | linux.csv | windows.csv
- intitle:Test Page for the Nginx HTTP Server on Fedora
- inurl:_cpanel/forgotpwd
- intitle:"index of /" intext:/backup
- intitle:"Swagger UI - " + "Show/Hide"
- site:drive.google.com /preview intext:movie inurl:flv | wmv | mp4 -pdf -edit -view
- intext:"class JConfig {" inurl:configuration.php
- "index of" "database.sql.zip"
-```
+
+
+
+
+
+
+
+### Cameras
+
+Have you ever wondered if your private live camera could be watched not only by you but also by anyone on the Internet? The following Google hacking techniques can help you fetch live camera web pages that are not restricted by IP. Here’s the dork to fetch various IP based cameras:
+
+	inurl:top.htm inurl:currenttime
+
+### To find WebcamXP-based transmissions:
+
+	intitle:"webcamXP 5"
+
+### And another one for general live cameras:
+
+	inurl:"lvappl.htm"
+
+There are a lot of live camera dorks that can let you watch any part of the world, live. You can find education, government, and even military cameras without IP restrictions. If you get creative you can even do some white hat penetration testing on these cameras; you’ll be surprised at how you’re able to take control of the full admin panel remotely, and even re-configure the cameras as you like.
+
+### MP3, Movie, and PDF files
+
+Nowadays almost no one downloads music after Spotify and Apple Music appeared on the market. However, if you’re one of those classic individuals who still download legal music, you can use this dork to find mp3 files:
+
+	intitle: index of mp3
+
+The same applies to legal free media files or PDF documents you may need:
+
+	intitle: index of pdf intext: .mp4
+
+
+
+### Zoom videos
+
+“Zoom-bombing” became a popular means of disrupting online meetings in 2020 during the initial lockdown. The company has since placed some restrictions to make it harder to find/disrupt Zoom meetings, but long as a URL is shared, a Zoom meeting can still be found:
+
+	inurl:zoom.us/j and intext:scheduled for
+
+The only drawback to this is the speed at which Google indexes a website. By the time a site is indexed, the Zoom meeting might already be over.
+
+### SQL dumps
+
+Misconfigured databases are one way of finding exposed data. Another way is to look for SQL dumps that are stored on servers and accessible via a domain/IP. Sometimes, these dumps appear on sites through incorrect backup mechanisms used by site admins who store backups on web servers (assuming that they aren’t indexed by Google). To find a zipped SQL file, we use:
+
+	"index of" "database.sql.zip"
+
+We’ve omitted screenshots to avoid exposing any possible data breaches.
+
+### WordPress Admin
+
+The view on whether to obfuscate your WordPress login page has arguments on both sides. Some researchers say it’s unnecessary and using tools like a web application firewall (WAF) can prevent attacks much better than obfuscation would.
+
+Finding WP Admin login pages is not too difficult with a dork:
+
+	intitle:"Index of" wp-admin
+
+
+
+Apache2
+
+This can be considered a subset of “vulnerable web servers” mentioned above, but we’re discussing Apache2 specifically because:
+
+    LAMP (Linux, Apache, MySQL, PHP) is a popular stack for hosted apps/websites
+    These Apache servers could be misconfigured/forgotten or in some stage of being setup, making them great targets for botnets
+
+Find Apache2 web pages with the following dork:
+
+intitle:"Apache2 Ubuntu Default Page: It works"
+
+
+phpMyAdmin
+
+Another risky yet frequently discovered tool on LAMP servers is phpMyAdmin software. This tool is another method of compromising data, as phpMyAdmin is used for the administration of MySQL over the web. The dork to use is:
+
+"Index of" inurl:phpmyadmin
+JIRA/Kibana
+
+Google dorks can also be used to find web applications hosting important enterprise data (via JIRA or Kibana).
+
+inurl:Dashboard.jspa intext:"Atlassian Jira Project Management Software"
+inurl:app/kibana intext:Loading Kibana
+
+An easier way to find JIRA instances is to use a tool like SurfaceBrowser™, which can identify subdomains as well as the applications on those subdomains (besides JIRA, there are many other applications).
+cPanel password reset
+
+Another dork that can be used as the first step in reconnaissance is to hosted cPanels and then exploit various weaknesses in password resets to take over the cPanel (along with all the websites hosted on it). The dork for this purpose is:
+
+inurl:_cpanel/forgotpwd
+
+
+
+Government documents
+
+Sensitive government documents are the last thing that should be exposed on the internet, but with dorks they aren’t too hard to find, as shown below:
+
+allintitle: restricted filetype:doc site:gov
+
+
+Preventing Google Dorks
+
+There are a lot of ways to avoid falling into the hands of a Google Dork.
+
+These measures are suggested to prevent your sensitive information from being indexed by search engines.
+
+    Protect private areas with a user and password authentication and also by using IP-based restrictions.
+    Encrypt your sensitive information (user, passwords, credit cards, emails, addresses, IP addresses, phone numbers, etc).
+    Run regular vulnerability scans against your site, these usually already use popular Google Dorks queries and can be pretty effective in detecting the most common ones.
+    Run regular dork queries against your own website to see if you can find any important information before the bad guys do. You can find a great list of popular dorks at the Exploit DB Dorks database.
+    If you find sensitive content exposed, request its removal by using Google Search Console.
+    Block sensitive content by using a robots.txt file located in your root-level website directory.
+
+Using robots.txt configurations to prevent Google Dorking
+
+One of the best ways to prevent Google dorks is by using a robots.txt file. Let’s see some practical examples.
+
+The following configuration will deny all crawling from any directory within your website, which is pretty useful for private access websites that don’t rely on publicly-indexable Internet content.
+
+User-agent: *
+Disallow: /
+
+You can also block specific directories to be excepted from web crawling. If you have an /admin area and you need to protect it, just place this code inside:
+
+User-agent: *
+Disallow: /admin/
+
+This will also protect all the subdirectories inside.
+
+Restrict access to specific files:
+
+User-agent: *
+Disallow: /privatearea/file.htm
+
+Restrict access to dynamic URLs that contain ‘?’ symbol
+
+User-agent: *
+Disallow: /*?
+
+To restrict access to specific file extensions you can use:
+
+User-agent: *
+Disallow: /*.php$/
+
+In this case, all access to .php files will be denied.
+Final thoughts
+
+Google is one of the most important search engines in the world. As we all know, it has the ability to index everything unless we explicitly deny it.
+
+Today we learned that Google can be also used as a hacking tool, but you can stay one step ahead of the bad guys and use it regularly to find vulnerabilities in your own websites. You can even integrate this and run automated scans by using custom third-party Google SERPs APIs.
+
+If you’re a security researcher it can be a practical tool for your cybersecurity duties when used responsibly.
+
+While Google Dorking can be used to reveal sensitive information about your website that is located and indexable via HTTP protocol, you can also perform a full DNS audit by using the SecurityTrails toolkit.
+
+If you’re looking for a way to do it all from a single interface—analyze your DNS records, zones, server IP map, related domains, subdomains as well as SSL Certificates—take a look into your SurfaceBrowser tool, request a demo with us today, or sign up for a free API account.
+

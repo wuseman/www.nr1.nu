@@ -183,10 +183,6 @@ plugins:
       minify_html: true
 
 extra:
-  analytics:
-    provider: matomo
-    url: www.nr1.nu/matomo
-    site: 1
   analytics: 
     provider: google
     property: G-B5KK88V0K4
@@ -204,9 +200,7 @@ extra:
           note: >- 
             Thanks for your feedback! Help us improve this page by
             using our <a href="..." target=_blank>feedback form</a>.
-  
   version: 1.0
-
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/wuseman
@@ -225,8 +219,9 @@ nav:
      - gentoo-cheatsheet: gentoo/gentoo-tools.md
      - gentoo-chroot: gentoo/gentoo-chroot.md
      - gentoo-vmware: gentoo/gentoo-vmware.md
-     - wuseman-overlay: gentoo/wuseman-overlay/README.md
      - gentoo-wupdate:  gentoo/gentoo-update.md
+     - gentoo-install: gentoo/gentoo-install.md
+     - wuseman-overlay: gentoo/wuseman-overlay/README.md
   - Hacking: 
      - 'hacking/index.md'
      - Android: 
@@ -259,8 +254,9 @@ nav:
         - Acer C740: hacking/chromebook/acer_chromebook_c740/README.md
         - Asus C203sa: hacking/chromebook/asus_c203sa/README.md
      - Dorks: 
-        - Google Dorks: hacking/dorks/google/README.md
-        - SQL Dorks: hacking/dorks/sql/README.md
+        - Creditcards: hacking/dorks/google/README.md
+        - Google: hacking/dorks/google/README.md
+        - SQL: hacking/dorks/sql/README.md
      - Radio: 
         - Boose Soundtouch: hacking/radio/boose_soundtouch/README.md
      - Router:

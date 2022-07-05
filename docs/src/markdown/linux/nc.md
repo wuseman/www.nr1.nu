@@ -58,31 +58,6 @@ nc -zvw 1 host port
 nc -v -l 80 < file.ext
 ```
 
-### Sharing file through http 80 port
-```sh
-nc -v -l 80 < file.ext
-```
-
-### Sharing file through http 80 port
-```sh
-nc -v -l 80 < file.ext
-```
-
-### Sharing file through http 80 port
-```sh
-nc -v -l 80 < file.ext
-```
-
-### Sharing file through http 80 port
-```sh
-nc -v -l 80 < file.ext
-```
-
-### Sharing file through http 80 port
-```sh
-nc -v -l 80 < file.ext
-```
-
 ### Show the date of easter
 ```sh
 ncal -e
@@ -103,10 +78,6 @@ ncdu directory_name
 nc -v -l 80 < file.ext
 ```
 
-### Sharing file through http 80 port
-```sh
-nc -v -l 80 < file.ext
-```
 
 ### netcat as a portscanner
 ```sh

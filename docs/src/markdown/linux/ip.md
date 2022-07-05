@@ -1,4 +1,5 @@
-#ip 
+# ip 
+
 ### Get the IP address
 ```sh
 ip a s eth0 | awk -F"[/ ]+" '/inet / {print $3}'
@@ -14,7 +15,7 @@ ip route show | awk '$3 ~ /^[1-9]+/ {print $3;}'
 ip -4 addr show eth0 | awk ' /inet/ {print $2}'
 ```
 
-### show ip address
+### Show ip address
 ```
 ```sh
 ip -f inet addr show eth0
