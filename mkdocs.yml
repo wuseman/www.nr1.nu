@@ -355,6 +355,7 @@ nav:
      - pkill: linux/pkill.md
      - printf: linux/printf.md
      - ps: linux/ps.md
+     - rclone: linux/rclone.md
      - rdesktop: linux/rdesktop.md
      - rename: linux/rename.md
      - ripgrep: linux/rg.md
