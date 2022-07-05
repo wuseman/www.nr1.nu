@@ -84,6 +84,16 @@ gpg -e -o secret.txt.gpg -r <RECIPIENT> secret.txt
 gpg -d -o secret.txt secret.txt.gpg     
 ```
 
+### Create a tarball and encrypt it
+
+```sh
+tar czvpf - foo.txt| gpg --symmetric --cipher-algo TWOFISH -o foo.txt.tar.gz
+```
+
+### Decrypt and untar
+```sh
+gpg -d foo.txt.tar.gz.gpg | tar xzvf -
+```sh
 #### Encrypt file using a shared key. You will be prompted for a passphrase.       
 
 ```sh
