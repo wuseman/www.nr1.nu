@@ -23,21 +23,21 @@ All commands that require root will have (Root_Required) in descriptionn.
 
 ## Download Android™ <small>Google Account Manager</small>
 
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v4.0.3.apk">Google Account Manager Android 4.0.3</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v4.4.4.apk">Google Account Manager Android 4.4.4</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v5.0.1.apk">Google Account Manager Android 5.0.1</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v6.0.apk">Google Account Manager Android 6.0</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v7.0.apk">Google Account Manager Android 7.0</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v7.1.2.apk">Google Account Manager Android 7.1.2</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v7.1.25.apk">Google Account Manager Android 7.1.25</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v8.0.apk">Google Account Manager Android 8.0</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v8.1.apk">Google Account Manager Android 8.1</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v9.apk">Google Account Manager Android 9</a></li>
-<li><a href="https://wuseman.nr1.nu/archive/android/google_account_manager/google_account_manager.v10.apk">Google Account Manager Android 10</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v4.0.3.apk">Google Account Manager Android 4.0.3</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v4.4.4.apk">Google Account Manager Android 4.4.4</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v5.0.1.apk">Google Account Manager Android 5.0.1</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v6.0.apk">Google Account Manager Android 6.0</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v7.0.apk">Google Account Manager Android 7.0</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v7.1.2.apk">Google Account Manager Android 7.1.2</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v7.1.25.apk">Google Account Manager Android 7.1.25</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v8.0.apk">Google Account Manager Android 8.0</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v8.1.apk">Google Account Manager Android 8.1</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v9.apk">Google Account Manager Android 9</a></li>
+<li><a href="https://www.nr1.nu/archive/android/google_account_manager/google_account_manager.v10.apk">Google Account Manager Android 10</a></li>
 
 ### Custom Apks ™ <small>Blocked</small>
-	
-!!! Notice "On rooted devices samsung health crashing and wont launch anymore and it wont help to change tima from 1 to 0 in build.prop anymore, download the below apk instead to get samsung health working on your rooted device"
+
+:bangbang: - Notice! On rooted devices samsung health crashing and wont launch anymore and it wont help to change tima from 1 to 0 in build.prop anymore, download the below apk instead to get samsung health working on your rooted device
 
 	
 <li><a href="https://w.nr1.nu/archive/android/apks/samsung_health__android.v12.working.apk">Samsung Health - Android 12</a></li>
@@ -62,7 +62,11 @@ Links works when you clicking the links with your mobile device, please visit [a
 * [Android™ Issue Tracker](https://code.google.com/p/android/issues/entry)
 
 ## ADB <strong>install</strong>
- 
+
+## Android Firmware <strong>Downloading</strong>
+
+* [Download Samsung firmware faster with Frija](https://github.com/SlackingVeteran/frija/releases/download/v1.4.4/Frija-v1.4.4.zip) 
+
 #### Source Files
 
 * [Download SDK Platform-Tools for Linux](https://dl.google.com/android/repository/platform-tools_r32.0.0-linux.zip)
@@ -307,22 +311,23 @@ adb exec-out screenrecord --bit-rate=4m --Example Output-format=h264 --size 800x
 Record your device screen via VLC on Windows
 
 ```sh
-   adb exec-out screenrecord --bit-rate=4m --Example Output-format=h264 --size 800x600 --show-frame-time - \
+adb exec-out screenrecord --bit-rate=4m --Example Output-format=h264 --size 800x600 --show-frame-time - \
     |"c:\Program Files\VideoLAN\VLC\vlc" --demux h264 --sout file/ts:c:\temp\screenrec.mpg -  vlc://quit
 ```
 
 ### Network Analyze 
 
 Sniff your device network and SMS traffic via Wireshark on your PC
-
-    adb exec-out "tcpdump -i any -U -w - 2>/dev/null" | wireshark -k -S -i -
+```sh
+adb exec-out "tcpdump -i any -U -w - 2>/dev/null" | wireshark -k -S -i -
+```
 
 ## ADB <small>reboot</small>
 
 #### System
-
-    adb reboot
-
+```sh
+adb reboot
+```
 #### Recovery
 
     adb reboot recovery
@@ -345,7 +350,57 @@ Sniff your device network and SMS traffic via Wireshark on your PC
 
 ## ADB <small>cmd</small>
 
-####    cmd testharness                                                                                                                                                                                                                    
+NOTE: when lock screen is set, all commands require the --old <CREDENTIAL> argument.
+
+#### cmd lock_settings
+
+### Sets the package name for server based resume on reboot service provider.
+```sh
+adb shell cmd lock_settings set-resume-on-reboot-provider-package <package_name>
+```
+#### Removes cached unified challenge for the managed profile.
+```sh
+adb shell cmd lock_settings remove-cache --user 0 
+```
+#### Verifies the lock credentials.
+```sh
+adb shell cmd lock_settings verify --old 1234--user 0 
+```
+#### Clears the lock credentials.
+```sh
+adb shell cmd lock_settings clear --old 1234--user 0 
+```
+#### Enables / disables synthetic password.
+```sh
+adb shell cmd lock_settings sp --old 1234--user 0  <1|0>
+```
+#### Gets whether synthetic password is enabled.
+```sh
+adb shell cmd lock_settings sp --old 1234--user 0 
+```
+#### Sets the lock screen as password, using the given PASSOWRD to unlock.
+```sh
+adb shell cmd lock_settings set-password --old 1234--user 0  <PASSWORD>
+```
+#### Sets the lock screen as PIN, using the given PIN to unlock.
+```sh
+adb shell cmd lock_settings set-pin --old 1234--user 0  <PIN>
+```
+#### Sets the lock screen as pattern, using the given PATTERN to unlock.
+```sh
+adb shell cmd lock_settings set-pattern --old 1234--user 0  <PATTERN>
+```
+#### When true, disables lock screen.
+```sh
+adb shell cmd lock_settings set-disabled --old 1234--user 0  <true|false>
+```
+#### Checks whether lock screen is disabled.
+```sh
+adb shell cmd lock_settings get-disabled --old 1234--user 0 
+```
+
+
+#### cmd testharness                                                                                                                                                                                                                    
 About:
   Test Harness Mode is a mode that the device can be placed in to prepare
   the device for running UI tests. The device is placed into this mode by
@@ -368,9 +423,6 @@ Test Harness Mode commands:
     Erase all data from this device and enable Test Harness Mode,
     preserving the stored ADB keys currently on the device and toggling
     settings in a way that are conducive to Instrumentation testing.
-
-
-
 
 #### cmd stats meminfo
 
@@ -1673,12 +1725,16 @@ com.android.vending/.AssetBrowserActivity
 
 ## ADB <small>sqlite3</small>
 
+#### Read Lock Settings: 
+
+sqlite3 -line /data/user_de/0/com.android.providers.telephony/databases/telephony.db 'select * from locksettings;'
+
 #### Read SIM Card info
 
 ```sh
 sqlite3 -line /data/user_de/0/com.android.providers.telephony/databases/telephony.db 'select icc_id,card_id,carrier_name,display_name,mcc,mnc from siminfo'
 ```
-	
+
 Example Output
 ```ini
 icc_id = 8946209802SSSSSSSSS
@@ -1695,12 +1751,6 @@ mcc = 240
 mnc = 7
 ```
 
-#### Read All SIM Card Info
-
-```sh
-sqlite3 -line /data/user_de/0/com.android.providers.telephony/databases/telephony.db 'select * from siminfo'
-```
-	
 #### Print ICCID
 
 ```sh
@@ -1926,6 +1976,9 @@ Enter Libera's network via your own client 'chat.libera.chat:+6697 or use their 
 
 - *wuseman <wuseman@nr1.nu\>**
 
+## Wiki <small>License</small>
+
+Android Nr1 nu wiki is licensed under the GNU General Public License v3.0 - See the [LICENSE.md](LICENSE.md) file for details
 
 - Happy Hacking!
 
