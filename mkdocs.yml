@@ -347,6 +347,12 @@ nav:
      - nmap: linux/nmap.md
      - nmap2: linux/nmap2.md
      - od: linux/od.md
+     - rclone: linux/rclone.md
+     - rdesktop: linux/rdesktop.md
+     - rename: linux/rename.md
+     - ripgrep: linux/rg.md
+     - rm: linux/rm.md
+     - rsync: linux/rsync.md
      - parallel: linux/parallel.md
      - paste and pr: linux/paste_and_pr.md
      - perf: linux/perf.md
@@ -355,12 +361,6 @@ nav:
      - pkill: linux/pkill.md
      - printf: linux/printf.md
      - ps: linux/ps.md
-     - rclone: linux/rclone.md
-     - rdesktop: linux/rdesktop.md
-     - rename: linux/rename.md
-     - ripgrep: linux/rg.md
-     - rm: linux/rm.md
-     - rsync: linux/rsync.md
      - screen: linux/screen.md
      - sed: linux/sed.md
      - shuf: linux/shuf.md
@@ -368,11 +368,8 @@ nav:
      - sort: linux/sort.md
      - sqlmap: linux/sqlmap.md
      - sqlite3: linux/sqlite3.md
-     - ssh-config: linux/ssh-config.md
-     - ssh-keygen: linux/ssh-keygen.md
-     - sshfs: linux/sshfs.md
-     - ssh-unsorted: linux/ssh.md
      - ssh-log: linux/ssh-log.md
+     - systemd: linux/systemd.md
      - stat: linux/stat.md
      - strace: linux/strace.md
      - sudo: linux/sudo.md
