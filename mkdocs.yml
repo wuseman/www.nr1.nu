@@ -226,9 +226,7 @@ markdown_extensions:
   - pymdownx.striphtml:
   - pymdownx.snippets:
       base_path:
-      - docs/about
-      auto_append:
-      - index.md
+      - docs/
       check_paths: true
   - pymdownx.keys:
       separator: "\uff0b"

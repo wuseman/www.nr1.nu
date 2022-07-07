@@ -1,4 +1,4 @@
-# Get In Touch
+# contact
 
 ### iRC (fastest)
 
