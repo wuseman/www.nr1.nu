@@ -1,5 +1,3 @@
-# Get In Touch
-
 ### iRC (fastest)
 
 Please, use iRC with otr or fish encryption else I will ignore you. 

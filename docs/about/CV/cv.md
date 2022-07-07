@@ -32,7 +32,7 @@ I have met many people of all ages, in all religions and in all time zones and I
 
 ### Employment
 
-* [Get in touch](contact.md) and we can talk more of course. 
+* [Get in touch](../Contact/README.md) and we can talk more of course. 
 
 ### My Skills
 
