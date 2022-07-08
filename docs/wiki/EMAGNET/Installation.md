@@ -13,16 +13,17 @@
 See video here. https://nr1.nu/emagnet/pictures/emagnet-on-windows.gif
 
  _*Notice about video:*_ ---> You don't need run emagnet-setup anymore, just run emagnet as it is and you're done!
+
 ## Get started on Linux;
 
-##### You can copy and paste below code in your shell 
+### You can copy and paste below code in your shell 
 
     git clone https://github.com/wuseman/EMAGNET
     cd EMAGNET;bash emagnet --emagnet
 
-## GET STARTED ON MACOSX
+## MacOSX
 
-##### You can copy and paste below code in your shell 
+### You can copy and paste below code in your shell 
 
     export NUMCPUS=$(nproc)
     export NUMCPUSPLUSONE=$(( NUMCPUS + 1 ))
@@ -39,7 +40,7 @@ See video here. https://nr1.nu/emagnet/pictures/emagnet-on-windows.gif
     git clone https://github.com/wuseman/EMAGNET
     cd EMAGNET;bash emagnet --emagnet
 
-## GET STARTED ON ANDROID:
+### Android
 
 [Click here for see a tutorial video how-to get started on android](https://nr1.nu/emagnet/pictures/android-emagnet.gif)
 
@@ -54,7 +55,7 @@ See video here. https://nr1.nu/emagnet/pictures/emagnet-on-windows.gif
      bash emagnet-termux.sh
 
 
-## Getting started with emagnet 'spam' - (It's not a spamming feature - Just baptized it that way)
+## Email SPAM
 
 > Uhm, so why is this added to a brute tool and who is it for then?
 
@@ -62,7 +63,7 @@ See video here. https://nr1.nu/emagnet/pictures/emagnet-on-windows.gif
 * If you're an idiot that spreading nigeria letters, you can use this feature for spreading your shit
 * If you just want to get your commercial out to new people
 
-* You must install ssmtp before you can use this. 
+You must install ssmtp before you can use this. 
 
 ### Gentoo
 
@@ -137,7 +138,7 @@ You will now see how many email addresses you will send your email to, if you sa
       ........... and so on
 
 
-## Getting started with Spotify bruteforcer
+## Spotify Bruteforcer
 
 ### On GNU/Linux Gentoo wich is the supported distro for emagnet, just do as following:
 
