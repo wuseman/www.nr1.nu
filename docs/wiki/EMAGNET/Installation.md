@@ -62,21 +62,19 @@ See video here. https://nr1.nu/emagnet/pictures/emagnet-on-windows.gif
 * If you're an idiot that spreading nigeria letters, you can use this feature for spreading your shit
 * If you just want to get your commercial out to new people
 
-### How to get started: 
-
 * You must install ssmtp before you can use this. 
 
-#### Gentoo
+### Gentoo
 
     emerge --ask ssmtp
 
-#### Debian/Ubuntu/Kali/Mint and other apt distros:
+### Debian/Ubuntu/Kali/Mint and other apt distros:
 
     apt install ssmtp
 
 Once installed, edit the values for your setup and copy and paste into a terminal and that's it!
 
-#### Let me show you an example for gmail:
+### Let me show you an example for gmail:
 
     cat < "EOF" > /etc/ssmtp/ssmtp.conf
       user="Wuzeman Emagnetzon"
@@ -139,9 +137,9 @@ You will now see how many email addresses you will send your email to, if you sa
       ........... and so on
 
 
-## How to get started with brute forcer for spotify:
+## Getting started with Spotify bruteforcer
 
-#### On GNU/Linux Gentoo wich is the supported distro for emagnet, just do as following:
+### On GNU/Linux Gentoo wich is the supported distro for emagnet, just do as following:
 
       emerge --ask eselect-repository
       eselect repository enable palmer
@@ -153,7 +151,7 @@ You will now see how many email addresses you will send your email to, if you sa
 
       bash emagnet --bruteforce spotify
 
-####  On Ubuntu/Kali/Debian:
+###  On Ubuntu/Kali/Debian:
 
       wget -q -O - https://apt.mopidy.com/mopidy.gpg | sudo apt-key add -
       wget -q -O /etc/apt/sources.list.d/mopidy.list https://apt.mopidy.com/stretch.list
@@ -164,7 +162,7 @@ You will now see how many email addresses you will send your email to, if you sa
 
       bash emagnet --bruteforce spotify
 
-# How to get VPN running with emagnet..
+## How to get VPN running with emagnet..
 
 * Create a folder in /etc/openvpn with your providers name, for example hidemyass:
 
@@ -209,8 +207,7 @@ You can of course edit the countrys to anything else but feel free to get it wor
 
 If you have two providers or even three as I do, just do exactly as above then but edit VPNPROVIDER2 and 3 for your other provider and same with countries name them after VPNCOUNTRYS2 and 3. Now you can scrape pastebin every second if you want since you will change ip asap you have been banned but please don't do that. Use it with common sense.
 
-# A quick sample script for getting started with a script running beside emagnet: 
-##### Mod it after your needs:
+### Mod it after your needs:
 
     cat > my-bruteforce-tool.sh <<EOF
  
@@ -238,16 +235,16 @@ If you have two providers or even three as I do, just do exactly as above then b
      done
     EOF
  
-#### Change permissions so you are allowed to execute your script:
+### Change permissions so you are allowed to execute your script:
     chmod +x my-bruteforce-tool.sh
 
-#### Now run your script by:
+### Now run your script by:
     ./my-bruteforce-tool.sh
 
-#### And at same time in another window start emagnet by.
+### And at same time in another window start emagnet by.
     
     ./emagnet --emagnet
 
-#### Now go spend your time on sensible things, let this setup be up and running for a while and I can guarantee that you have managed to hack some account(s) if there is no problems with your own script. . Now you're a hacker!
+Now go spend your time on sensible things, let this setup be up and running for a while and I can guarantee that you have managed to hack some account(s) if there is no problems with your own script. . Now you're a hacker!
 
-##### Before every successful Coder there an even more successful De-coder to understand that code, the easier it is, the better it is. ;)
+Before every successful Coder there an even more successful De-coder to understand that code, the easier it is, the better it is. ;)
