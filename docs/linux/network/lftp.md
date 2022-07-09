@@ -1,5 +1,13 @@
 # lftp 
 
+### FXP Between SITE 1 and SITE 2 with 20 threads at same time
+
+```sh
+lftp -e "set ftp:use-fxp true ;mirror -R -P20 \
+	ftp://user1:pass1:site1:port:/path \
+	ftp://user1:pass1:site1:port:/path"  -d
+```
+
 ### Use lftp to multi-threaded download files from websites
 ```sh
 lftp -c "pget -n 10 http://example.com/foo.bar"
