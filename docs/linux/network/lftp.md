@@ -1,5 +1,11 @@
 # lftp 
 
+### Download all folders inside /mp3/* on ftp to mp3
+
+```sh
+lftp -e open ftp://user1:pass1:site1:port -e "mirror -c -P1 remote/path /local/path" -d
+```
+
 ### FXP Between SITE 1 and SITE 2 with 20 threads at same time
 
 ```sh
