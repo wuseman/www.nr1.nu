@@ -27,7 +27,11 @@ Remove the contents of path.  Unlike purge it obeys include/exclude filters so c
 
     rclone --min-size 100M delete remote:path
 
+### Copy several folders at once with 20 tranders and view progress bar
 
+for i in foo foo1 foo2 foo3; do rclone copy \ 
+  --transfers 20 $i cloud:/backup/$i --progress; 
+ done
 
 ### Copy
 
