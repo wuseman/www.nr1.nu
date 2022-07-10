@@ -1,5 +1,10 @@
 <h1 align="center">welcome to wuziduzi world!</h1>
 
+[Subscribe to our newsletter](#){ .md-button .md-button--primary }
+
+[Subscribe to our newsletter](#){ .md-button }
+[Send :fontawesome-solid-paper-plane:](#){ .md-button }
+
 !!! success "This website is my worldHQ from now."
 
 - For me time is more valuable than money and I love to hack everything that you can imagine. 
