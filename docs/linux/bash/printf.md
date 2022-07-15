@@ -4,8 +4,14 @@
 
 printf "\e[7m%-`tput cols`s\e[0m\n" "Full width highlighted line"
 
+### Delete folders/files fast
+
+```sh
+printf './%s\0' *|xargs -0 -n1 -P250  rm -rf
+```
 
 ### Generate a sequence of numbers
+
 ```sh
 printf '%s\n' {1..10}
 ```
