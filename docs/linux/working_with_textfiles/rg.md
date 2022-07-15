@@ -425,22 +425,24 @@ rga -o "([0-9a-zA-Z]{32}):(S{3,32})" *.txt > vbulletin.txt
 ```sh
 rga -o '$H$S{31}' *.txt > phpBB3-md5.txt
 ```
-#Extract Wordpress-MD5
+
+### Extract Wordpress-MD5
 
 ```sh
 rga -o '$P$S{31}' *.txt > wordpress-md5.txt
 ```
-#Extract Drupal 7
+
+### Extract Drupal 7
 
 ```sh
 rga -o '$S$S{52}' *.txt > drupal-7.txt
 ```
-#Extract old Unix-md5
+### Extract old Unix-md5
 
 ```sh
 rga -o '$1$w{8}S{22}' *.txt > md5-unix-old.txt
 ```
-#Extract md5-apr1
+### Extract md5-apr1
 
 ```sh
 rga -o '$apr1$w{8}S{22}' *.txt > md5-apr1.txt
