@@ -3,11 +3,16 @@
 ### Rename all bad characters at once 
 
 ```sh
+for file in *'_'*;  do   mv -- "$file" "${file//_/_}";  done 
+for file in *' '*;  do   mv -- "$file" "${file// /_}";  done 
 for file in *'['*;  do   mv -- "$file" "${file//[/_}";  done 
 for file in *']'*;  do   mv -- "$file" "${file//]/_}";  done 
 for file in *'}'*;  do   mv -- "$file" "${file//}/_}";  done 
 for file in *'{'*;  do   mv -- "$file" "${file//{/_}";  done 
+for file in *'('*;  do   mv -- "$file" "${file//(/_}";  done 
+for file in *')'*;  do   mv -- "$file" "${file//)/_}";  done 
 for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr 'A-Z' 'a-z'`; done 
+
 ```
 
 
