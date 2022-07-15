@@ -1,5 +1,16 @@
 # rename
 
+### Rename all bad characters at once 
+
+```sh
+for file in *'['*;  do   mv -- "$file" "${file//[/_}";  done 
+for file in *']'*;  do   mv -- "$file" "${file//]/_}";  done 
+for file in *'}'*;  do   mv -- "$file" "${file//}/_}";  done 
+for file in *'{'*;  do   mv -- "$file" "${file//{/_}";  done 
+for i in $( ls | grep [A-Z] ); do mv -i $i `echo $i | tr 'A-Z' 'a-z'`; done 
+```
+
+
 ### Remove all Parentheses from file/folder names
 ```sh
 rename '(' '' *```sh
