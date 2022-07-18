@@ -5,21 +5,6 @@
 echo "ls -l" | at midnight
 ```
 
-### Execute a command at a given time
-```sh
-echo "ls -l" | at midnight
-```
-
-### Execute a command at a given time
-```sh
-echo "ls -l" | at midnight
-```
-
-### Execute a command at a given time
-```sh
-echo "ls -l" | at midnight
-```
-
 ### Simulate typing
 ```sh
 echo "You can simulate on-screen typing just like in the movies" | pv -qL 10
@@ -29,12 +14,6 @@ echo "You can simulate on-screen typing just like in the movies" | pv -qL 10
 ```sh
 echo "rm -rf /unwanted-but-large/folder" | batch
 ```
-
-### Run a command only when load average is below a certain threshold
-```sh
-echo "rm -rf /unwanted-but-large/folder" | batch
-```
-
 ### Isolate file name from full path/find output
 ```sh
 echo ${fullpath##*/}
@@ -90,7 +69,7 @@ echo "address=/com/0.0.0.0" | sudo tee /etc/dnsmasq.d/dnsmasq-com-blackhole.conf
 echo | gcc -dM -E -
 ```
 
-### underscore to camelCase
+### Underscore to camelCase
 ```sh
 echo to_camel_case__variable | sed -r 's/(.)_+(.)/\1\U\2/g;s/^[a-z]/\U&/'
 ```
