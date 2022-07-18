@@ -98,6 +98,7 @@ awk 'END{print NR}'
 awk '1;{print "\n"}'
 ```
 ### Setup 2 files side by side
+```sh
 paste 1 2|awk -F'\t' '{ printf("%-30s %s\n", $1, $2) }'
 ```
 ### Reverse shell 
