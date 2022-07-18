@@ -5,26 +5,6 @@
 dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
 ```
 
-### output your microphone to a remote computer's speaker
-```sh
-dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
-```
-
-### output your microphone to a remote computer's speaker
-```sh
-dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
-```
-
-### output your microphone to a remote computer's speaker
-```sh
-dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
-```
-
-### output your microphone to a remote computer's speaker
-```sh
-dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
-```
-
 ### Watch the progress of 'dd'
 ```sh
 dd if=/dev/zero | pv | dd of=/dev/null
@@ -183,11 +163,6 @@ dd if=/dev/zero of=T bs=1024 count=10240;mkfs.ext3 -q T;E=$(echo 'read O;mount -
 ### Rip a CD/DVD to ISO format.
 ```sh
 dd if=/dev/cdrom of=~/cdrom_image.iso
-```
-
-### gag version of current date
-```sh
-ddate
 ```
 
 ### Test network speed without wasting disk
