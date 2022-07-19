@@ -1,28 +1,14 @@
 # man 
 
-### Quick access to the ascii table.
+### Display manual in swedish 
+
 ```sh
-man ascii
+man --locale=sv apropos
 ```
 
 ### Quick access to the ascii table.
 ```sh
 man ascii
-```
-
-### Quick access to the ascii table.
-```sh
-man ascii
-```
-
-### Quick access to the ascii table.
-```sh
-man ascii
-```
-
-### See The MAN page for the last command
-```sh
-man !!
 ```
 
 ### See The MAN page for the last command
