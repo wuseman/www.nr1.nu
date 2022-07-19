@@ -5,6 +5,16 @@
 ```sh
 export GPG_TTY=$(tty)
 ```
+
+### Change password on your current key
+
+```sh
+gpg --list-keys
+gpg --edit-key key
+passwd
+save
+```
+
 ### Print Version
 
 ```sh
