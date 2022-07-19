@@ -16,6 +16,24 @@ Many prefer to use higher-level analysis tools such Wireshark, _but I believe it
 * The final one is -S, which changes the display of sequence numbers to absolute rather than relative.
 
 ```
+
+
+### Monitor bandwidth with tcpdump
+```sh
+tcpdump -l -e -n  | \
+  awk '{
+  t=substr($1, 0, 8);
+  n=substr($9, 0, length($9)-1);
+  if(t != pt){
+    print t, sum;
+    sum = 0;
+  } else {
+    sum += n
+  }
+  pt=t;
+}'
+```
+
 ### Show the packet’s contents in both hex and ascii.   
 
 ```sh
