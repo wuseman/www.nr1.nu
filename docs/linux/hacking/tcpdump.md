@@ -1,22 +1,16 @@
 # tcpdump
 
- [TCPDUMP](https://wuseman.github.io/TCPDUMP/)
-
-
 Tcpdump is one of the best network analysis-tools ever for information security professionals. 
 Tcpdump is for everyone for hackers and people who have less of TCP/IP understanding. 
 
 Many prefer to use higher-level analysis tools such Wireshark, _but I believe it is a mistake_. 
 
-```
+
 #### Below are some tcpdump options (with useful examples) that will help you working with the tool. They’re very easy to forget and/or confuse with other types of filters, i.e. ethereal, so hopefully this article can serve as a reference for you, as it does me:)
 
 * The first of these is -n, which requests that names are not resolved, resulting in the IPs themselves.
 * The second is -X, which displays both hex and ascii content within the packet.
 * The final one is -S, which changes the display of sequence numbers to absolute rather than relative.
-
-```
-
 
 ### Monitor bandwidth with tcpdump
 ```sh
