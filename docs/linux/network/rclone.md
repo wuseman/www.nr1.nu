@@ -37,21 +37,48 @@ for i in foo foo1 foo2 foo3; do rclone copy \
 
 ### Transfer file and ignore if file exist
 
-    rclone copy cloud:/  -L --ignore-existing  --fast-list --max-backlog=999999         --drive-chunk-size=512M --transfers=145 --checkers=145 --buffer-size=8175M --verbose local/
+    rclone copy cloud:/  -L \
+    --ignore-existing  \
+    --fast-list \
+    --max-backlog=999999 \
+    --drive-chunk-size=512M \
+    --transfers=145 \
+    --checkers=145 \
+    --buffer-size=8175M \
+    --verbose local/
 
 ### Transfer files from local PC to cloud
 
-    rclone copy local_path/  -L --fast-list --max-backlog=999999 \
-        --drive-chunk-size=512M --transfers=145 --checkers=145 --buffer-size=8175M --verbose cloud:/
+    rclone copy local_path/  -L \
+    --fast-list \
+    --max-backlog=999999 \
+    --drive-chunk-size=512M \
+    --transfers=145  \
+    --checkers=145  \
+    --buffer-size=8175M  \
+    --verbose cloud:/
 
 ### Transfer files from cloud to local PC
 
-    rclone copy cloud:/  -L --fast-list --max-backlog=999999 \
-        --drive-chunk-size=512M --transfers=145 --checkers=145 --buffer-size=8175M --verbose ~/cloud_backup
+    rclone copy cloud:/  -L \
+    --fast-list  \
+    --max-backlog=999999 \
+    --drive-chunk-size=512M \ 
+    --transfers=145  \
+    --checkers=145  \
+    --buffer-size=8175M  \
+    --verbose ~/cloud_backup
 
 ### Transfer file from cloud to local PC and show progress and also delete files after transfering is complete
 
-    rclone copy cloud:/   -L --fast-list --max-backlog=999999 \
-        --drive-chunk-size=512M --transfers=145 --checkers=145 --buffer-size=8175M --verbose ~/backup
+    rclone copy cloud:/   -L  \
+    --fast-list  \
+    --max-backlog=999999 \
+    --drive-chunk-size=512M \
+    --transfers=145 \
+    --checkers=145 \
+    --buffer-size=8175M \ 
+    --verbose \
+    ~/backup
 
 
