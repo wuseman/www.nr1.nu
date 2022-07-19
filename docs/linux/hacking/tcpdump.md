@@ -34,6 +34,15 @@ tcpdump -l -e -n  | \
 }'
 ```
 
+### Monitor bandwidth with tcpdump (Method.2)
+
+```sh
+tcpdump -l -e -n \
+| awk '{t=substr($1,0,8);n=substr($9,0,length($9)-1);
+if(t!=pt){print t,sum;sum=0;};sum+=n;pt=t;}
+```
+
+```sh
 ### Show the packet’s contents in both hex and ascii.   
 
 ```sh
