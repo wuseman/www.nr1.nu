@@ -42,7 +42,6 @@ tcpdump -l -e -n \
 if(t!=pt){print t,sum;sum=0;};sum+=n;pt=t;}
 ```
 
-```sh
 ### Show the packet’s contents in both hex and ascii.   
 
 ```sh
