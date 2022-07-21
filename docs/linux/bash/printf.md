@@ -1,8 +1,45 @@
 # printf
 
+* ![print horizontal line (bash-hackers)](https://wiki.bash-hackers.org/snipplets/print_horizontal_line)
+
+### Print width higlighted line, could be used for a banner
+
+```sh
+echo "This is some title"
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+echo "This is some foot msg"
+```
+
+### Print width higlighted line
+
+```sh
+printf '%.s─' $(seq 1 $(tput cols))
+```
+
+### Print width higlighted line with color
+
+```sh
+export RED=$(tput setaf 1 :-"" 2>/dev/null)
+export GREEN=$(tput setaf 2 :-"" 2>/dev/null)
+export YELLOW=$(tput setaf 3 :-"" 2>/dev/null)
+export BLUE=$(tput setaf 4 :-"" 2>/dev/null)
+export RESET=$(tput sgr0 :-"" 2>/dev/null)
+echo $GREEN some text $RESET
+echo $RED; printf -- "-%.0s" $(seq $(tput cols)); echo $RESET
+echo $YELLOW more text $RESET
+```
+
+### Print width higlighted line
+
+```sh
+printf '%*s\n' "${COLUMNS:-$(tput cols)}" '' | tr ' ' -
+```
+
 ### Full width higlighted line
 
+```sh
 printf "\e[7m%-`tput cols`s\e[0m\n" "Full width highlighted line"
+```
 
 ### Delete folders/files fast
 
@@ -339,3 +376,4 @@ printf "g/^/m0\nw\nq"|ed $FILE
 ```sh
 printf "%$(tput cols)s\n"|tr ' ' '='
 ```
+

@@ -2,7 +2,19 @@
 
 Stream Editor for filtering and transforming text, really handy one-liners for SED
 
-### ### Append line after match
+### Create a cheatsheet for a command for mkdocs
+```sh
+rclone --help   \
+|sed 's/^  /rclone /g'         \
+|awk '{$3="-" OFS $2} 1'       \
+|sed 's/ - / \t# /g'          \
+|sed 's/#/\n###/g'            \
+|sed 's/$./\n/g'              \
+|sed "0~2a \`\`\`sh \\ "      \
+|sed 's/###/\`\`\`\n###/g'
+```
+
+### Append line after match
 ```sh
 sed  '/\[option\]/a Hello World' input
 ```

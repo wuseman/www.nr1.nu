@@ -1,0 +1,5 @@
+# wdiff
+
+##### Colored word-by-word diff of two files
+
+   wdiff  -n -w $'\033[30;41m' -x $'\033[0m' -y $'\033[30;42m' -z $'\033[0m' oldversion.txt newversion.txt
