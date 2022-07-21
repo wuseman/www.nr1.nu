@@ -93,6 +93,11 @@ while
     1;2;sleep 0.1;
 done < test
 ```
+### Print date and time in human readable format 
+
+```sh
+awk -F: '{print strftime("%Y-%m-%d -> %X --> ", $1),$2}' /var/log/emerge.log
+```
 
 ### Download files fast as ****:
 
