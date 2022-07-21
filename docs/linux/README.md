@@ -42,6 +42,12 @@ parallel -j${NUMCPUSPLUSONE} -n${NUMTHREADS} ....
 
 If someone has another awesome suggestion how to speed up things, please let me know :) 
 
+### Jump to examples in tcpdump manual 
+
+```sh
+man tcpdump | less -Ip examples
+```
+
 ### Really fast portscanner with colorized output:
 
 65535 ports scanned in ~3.5s 
