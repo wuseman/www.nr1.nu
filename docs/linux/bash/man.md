@@ -1,18 +1,9 @@
 # man 
 
-### Quick access to the ascii table.
-```sh
-man ascii
-```
+### Print examples from tcpdump manual
 
-### Quick access to the ascii table.
 ```sh
-man ascii
-```
-
-### Quick access to the ascii table.
-```sh
-man ascii
+man tcpdump | less -Ip examples
 ```
 
 ### Quick access to the ascii table.
@@ -25,24 +16,10 @@ man ascii
 man !!
 ```
 
-### See The MAN page for the last command
-```sh
-man !!:0
-```
 
 ### Backup a file before editing it.
 ```sh
 man emacs
-```
-
-### Display a random man page
-```sh
-man $(ls /bin | sed -n $((RANDOM % $(ls /bin | wc -l) + 1))p)
-```
-
-### Display a random man page
-```sh
-man $(ls -1 /usr/share/man/man?/ | shuf -n1 | cut -d. -f1)
 ```
 
 ### Get some useful Information
