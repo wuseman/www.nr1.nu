@@ -96,6 +96,7 @@ theme:
         name: Switch to light mode
 
 plugins:
+  - tags:
 # https://smarie.github.io/mkdocs-gallery/
   - search:
       lang: en
