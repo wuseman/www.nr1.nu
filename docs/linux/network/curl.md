@@ -1,6 +1,13 @@
 # curl 
 
-### curl scan
+### Browse other oneliners from cheat.sh
+
+```sh
+curl cheat.sh/<command-to-search>
+```
+
+
+### Scan
 
 ```sh
 #!/bin/bash
