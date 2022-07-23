@@ -42,6 +42,12 @@ And then:
 parallel -j${NUMCPUSPLUSONE} -n${NUMTHREADS} ....
 ```
 
+### Run last command again
+
+```sh
+!!
+```
+
 ### Clone starred github repos in parallel with unlimited speed, clone `20` repos in `parallel`.
 
 [Also shared here](https://www.commandlinefu.com/commands/view/26591/clone-starred-github-repos-in-parallel-with-unlimited-speed-this-example-will-clone-25-repositories-in-parallel-at-same-time.)
