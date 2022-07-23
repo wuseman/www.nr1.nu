@@ -1,9 +1,0 @@
-# bsro3
-
-##### Batch edition of all OpenOffice.org Writer files in the current directory (body text)
-
-   bsro3  () { P=`pwd`; S=$1; R=$2; ls *.odt > /dev/null 2>&1; if [[ $? -ne 0 ]]; then exit 1; fi; for i in *.odt; do mkdir ${P}/T; cd ${P}/T; unzip -qq "$P"/"$i"; sed -i "s/$S/$R/" ${P}/T/content.xml; zip -qq -r "$P"/"$i" *; cd ${P}; rm -rf ${P}/T; done; }
-
-##### Batch edition of all OpenOffice.org Writer files in the current directory (body text)
-
-   bsro3  () { P=`pwd`; S=$1; R=$2; ls *.odt > /dev/null 2>&1; if [[ $? -ne 0 ]]; then exit 1; fi; for i in *.odt; do mkdir ${P}/T; cd ${P}/T; unzip -qq "$P"/"$i"; sed -i "s/$S/$R/" ${P}/T/content.xml; zip -qq -r "$P"/"$i" *; cd ${P}; rm -rf ${P}/T; done; }

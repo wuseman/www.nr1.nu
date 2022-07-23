@@ -1,5 +1,0 @@
-# gsed
-
-##### extract links from a google results page saved as a file
-
-   gsed  -e :a -e 's/\(<\/[^>]*>\)/\1\n/g;s/\(<br>\)/\1\n/g' page2.txt | sed -n '/<cite>/p;s/<cite>\(.*\)<\/cite>/\1/g' >> output

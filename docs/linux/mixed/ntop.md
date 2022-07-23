@@ -1,5 +1,0 @@
-# ntop
-
-##### Network Information
-
-   ntop 

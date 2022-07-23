@@ -1,9 +1,0 @@
-# expdp
-
-##### Consistent Oracle Datapump Export
-
-   expdp  user/password FLASHBACK_SCN=$(echo -e "select current_scn from v\$database;" | sqlplus / as sysdba 2>/dev/null| grep [0-9][0-9][0-9][0-9][0-9][0-9]*)
-
-##### Consistent Oracle Datapump Export
-
-   expdp  user/password FLASHBACK_SCN=$(echo -e "select current_scn from v\$database;" | sqlplus / as sysdba 2>/dev/null| grep [0-9][0-9][0-9][0-9][0-9][0-9]*)

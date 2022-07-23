@@ -1,5 +1,0 @@
-# getenforce
-
-##### SELinux Status
-
-   getenforce 

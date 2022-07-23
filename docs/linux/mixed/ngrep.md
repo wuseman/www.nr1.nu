@@ -1,9 +1,0 @@
-# ngrep
-
-##### Dump TCP traffic to a host into a text and pcap file
-
-   ngrep  host 192.168.1.6 -O $(date +%Y%m%d_%H%M%S).pcap > $(date +%Y%m%d_%H%M%S).txt
-
-##### Dump TCP traffic to a host into a text and pcap file
-
-   ngrep  host 192.168.1.6 -O $(date +%Y%m%d_%H%M%S).pcap > $(date +%Y%m%d_%H%M%S).txt
