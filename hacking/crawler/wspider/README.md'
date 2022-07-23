@@ -1,0 +1,83 @@
+# wspider 
+
+<p align="center">
+  <h1 align="center"># wspider (v1.0)</h1>
+  <h3 align="center">Probably one of the fastest crawler <i>you've</i> ever seen</h3>
+</p>
+
+
+This is a newer version of former [wmirror](https://github.com/wuseman/wmirror) wich now is archived and I will spend alot more time on wspider and it will be ALOT more powerful, wmirror was using single thread with old wget during download and **wspider** is downloading how many files you want. wspider extremely small and fast and I will do my best for add support for authentications asap so you can crawl sites you've logged in to.
+
+Like I said, it is probably one of the fastest crawler/spider tool around that is minimal and just require wget2 and coreutils! 
+
+wspider is **EXTREMLY** powerful and fast and is using wget2 and In many cases wget2 downloads much faster than wget1.x due to HTTP2, HTTP compression, parallel connections and use of If-Modified-Since HTTP header.
+
+<p align="center">
+<b>Be careful and use wspider on your own risk, maybe its to fast4u!</b><br><br>
+<b>Happy crawling! ; )</b>
+</p>
+
+| Version            |  Released      | Description                          |
+| :----------------- | :------------- | :---------------------------------- | 
+| `1.0`              |  2022-07-02    | Clone/Crawl/Mirror/Spidering any website extremely fast with how many threads you want   | 
+
+### wspider (250 threads)
+
+![wspider1](https://user-images.githubusercontent.com/26827453/178808318-e8a671b5-698f-4d40-b965-ed0bb6246953.gif)
+
+### wspider (full preview)
+
+![wspider1](wspider.gif)
+
+### wspider (10 thread)
+
+![wspider_10threads](https://user-images.githubusercontent.com/26827453/178815097-e9760ddf-28f6-4313-a6d3-a98ecf4de938.gif)
+
+
+### wspider (1 thread)
+
+![wspider_1thread](https://user-images.githubusercontent.com/26827453/178814816-d5ba5fc6-4fcc-4bef-8d35-a4123d3a3857.gif)
+
+
+### GNU/Parallel (old and slow)
+
+Crawler is from here: https://www.gnu.org/software/parallel/man.html
+
+![gnu-parallel2](https://user-images.githubusercontent.com/26827453/178814053-5ecb5e50-988b-4d78-8058-096b7eabc2d1.gif)
+
+### To Be Fixed
+
+- [ ] Add support for darknet
+- [ ] Add support for pastebin similiar sites
+- [ ] Fix so we can crawl all subdomains
+- [ ] Add support for some filetypes only 
+- [ ] Add support for socks5 proxy servers from the public
+
+
+### Get Started On Linux/MacOSX
+
+     git clone https://github.com/wuseman/wspider
+     cd wspider
+     chmod +x wspider.sh
+     ./wpider.sh -u <url> -p <path> -t <threads>
+
+### System requirements
+
+- wget2     - Find more info about _wget2_ [here](https://gnuwget.gitlab.io/wget2)
+
+### Changelog
+
+[Versions changelog](CHANGELOG.md).
+
+## Authors: 
+
+* **wuseman <wuseman@nr1.nu\>** 
+
+
+### License
+
+This project is licensed under the GNU General Public License v3.0 - see the [LICENSE.md](LICENSE.md) file for details
+
+### Notice:
+
+_wuseman cannot be held as responsible for users actions regardless of what damage a user can achieve with the information/data wmirror might collect for any user(s). All users that  gathering information or data via wmirror is 100% responsible for their own actions, wmirror has been developed for a legal purpose._
