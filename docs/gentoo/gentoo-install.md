@@ -2,7 +2,7 @@
 ```sh
 
 #!/bin/bash
-# Author: ${USER}
+# Author: wuseman
 
 # EDIT BELOW #########################################################################
 # System disk
