@@ -48,7 +48,7 @@ parallel -j${NUMCPUSPLUSONE} -n${NUMTHREADS} ....
 !!
 ```
 
-### Open editor and print paste the last 20 commands
+### Below will open your editor andt paste the last 20 commands you used in cli
 
 ```sh
 fc -1 -20
