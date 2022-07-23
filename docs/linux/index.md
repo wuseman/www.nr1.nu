@@ -76,7 +76,7 @@ fi
 ```
 
 
-###  Almost invisible SSH
+### Almost invisible SSH
 
 Author [hackerschoice](https://github.com/hackerschoice/thc-tips-tricks-hacks-cheat-sheet#lbwh-anchor)
 
@@ -105,7 +105,7 @@ export HISTFILE=/dev/null
 /bin/bash -c "exec ls"
 ```
 
-### Bash Suicode
+### Bash Suicide
 
 ```sh
 kill -9  $$
