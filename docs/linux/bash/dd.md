@@ -5,26 +5,6 @@
 dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
 ```
 
-### output your microphone to a remote computer's speaker
-```sh
-dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
-```
-
-### output your microphone to a remote computer's speaker
-```sh
-dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
-```
-
-### output your microphone to a remote computer's speaker
-```sh
-dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
-```
-
-### output your microphone to a remote computer's speaker
-```sh
-dd if=/dev/dsp | ssh -c arcfour -C username@host dd of=/dev/dsp
-```
-
 ### Watch the progress of 'dd'
 ```sh
 dd if=/dev/zero | pv | dd of=/dev/null
