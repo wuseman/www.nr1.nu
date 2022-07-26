@@ -1,6 +1,6 @@
 # printf
 
-* ![print horizontal line (bash-hackers)](https://wiki.bash-hackers.org/snipplets/print_horizontal_line)
+[print horizontal line (bash-hackers)](https://wiki.bash-hackers.org/snipplets/print_horizontal_line)
 
 ### Print width higlighted line, could be used for a banner
 
