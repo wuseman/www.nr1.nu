@@ -8,7 +8,7 @@ for file in `ls -1 /sys/class/drm/*/edid`; do
      edid-decode "$file" | grep -e Manufacturer: -e Product; sleep 0.0001; 
 fi 
 done
-
+```
 
 ### Show numerical values for each of the 256 colors in bash
 ```sh
