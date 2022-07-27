@@ -1,5 +1,15 @@
 # for-loop
 
+### Print screen manifacturer and Model (require edid-decode)
+
+```sh
+for file in `ls -1 /sys/class/drm/*/edid`; do 
+     text=$(tr -d '\0' <"$file"); if [ -n "$text" ]; then 
+     edid-decode "$file" | grep -e Manufacturer: -e Product; sleep 0.0001; 
+fi 
+done
+
+
 ### Show numerical values for each of the 256 colors in bash
 ```sh
 for i in {0..255}; do echo -e "\e[38;05;${i}m${i}"; done | column -c 80 -s '  '; echo -e "\e[m"
